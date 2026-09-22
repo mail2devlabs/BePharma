@@ -1,0 +1,5177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Medical Devices | BePharma Traders</title>
+
+     <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <!-- Remix Icon -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+    rel="stylesheet"
+  >
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+    <meta name="description"
+        content="Explore BePharma Traders medical devices including blood pressure monitors, pulse oximeters, glucometers, thermometers, nebulizers and other healthcare devices.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+     <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: "#10756d"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+
+        :root {
+            --primary: #10756d;
+            --primary-dark: #0d5e57;
+            --primary-light: #e8f6f4;
+            --dark: #102f2c;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #fff;
+            color: #1f2937;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            min-height: 455px;
+            overflow: hidden;
+            color: #fff;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(8, 36, 48, .95),
+                    rgba(8, 36, 48, .80),
+                    rgba(8, 36, 48, .40)
+                ),
+                url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=2000&q=85")
+                center / cover no-repeat;
+        }
+
+        .hero:after {
+            content: "";
+            position: absolute;
+            right: -100px;
+            top: -120px;
+            width: 360px;
+            height: 360px;
+            border: 1px solid rgba(255,255,255,.1);
+            border-radius: 50%;
+            box-shadow:
+                0 0 0 60px rgba(255,255,255,.025),
+                0 0 0 120px rgba(255,255,255,.018);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #72e0d5;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 9px;
+            font-size: 14px;
+            color: rgba(255,255,255,.72);
+        }
+
+        .breadcrumb a {
+            color: #fff;
+        }
+
+        .breadcrumb a:hover {
+            color: #72e0d5;
+        }
+
+        /* SEARCH */
+
+        .filter-wrap {
+            background: #f7fbfa;
+            border: 1px solid #e5efed;
+            border-radius: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            border: 1px solid #dce8e6;
+            border-radius: 13px;
+            padding: 0 15px;
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(16,117,109,.08);
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 48px;
+            border: 0;
+            outline: 0;
+            color: #374151;
+            background: transparent;
+        }
+
+        .filter-btn {
+            border: 1px solid #d8e5e3;
+            background: #fff;
+            color: #4b5563;
+            border-radius: 11px;
+            padding: 10px 15px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: .2s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+        }
+
+        /* PRODUCT CARD */
+
+        .product-card {
+            position: relative;
+            background: #fff;
+            border: 1px solid #e4eceb;
+            border-radius: 22px;
+            overflow: hidden;
+            transition: .3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            border-color: #cfe5e2;
+            box-shadow: 0 22px 50px rgba(15,23,42,.10);
+        }
+
+        .product-image {
+            height: 220px;
+            background: #f5faf9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .35s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-content {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .product-meta {
+            color: #6b7280;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin-top: auto;
+            padding-top: 18px;
+        }
+
+        .view-btn,
+        .enquiry-product-btn {
+            min-height: 43px;
+            border-radius: 11px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 800;
+            transition: .25s;
+        }
+
+        .view-btn {
+            border: 1px solid #d8e5e3;
+            color: #374151;
+            background: #fff;
+        }
+
+        .view-btn:hover {
+            background: var(--primary-light);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .enquiry-product-btn {
+            border: 1px solid var(--primary);
+            color: #fff;
+            background: var(--primary);
+        }
+
+        .enquiry-product-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .product-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.94);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 900;
+            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+        }
+
+        /* MODAL */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15,23,42,.68);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: .25s;
+        }
+
+        .modal-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-box {
+            width: min(900px, 100%);
+            max-height: 90vh;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 30px 80px rgba(0,0,0,.2);
+            transform: translateY(20px) scale(.98);
+            transition: .25s;
+        }
+
+        .modal-overlay.show .modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        /* TOAST */
+
+        .toast {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1100;
+            background: #102f2c;
+            color: #fff;
+            padding: 14px 18px;
+            border-radius: 13px;
+            box-shadow: 0 15px 40px rgba(0,0,0,.18);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(30px);
+            opacity: 0;
+            pointer-events: none;
+            transition: .3s;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .empty-state {
+            display: none;
+        }
+
+        .empty-state.show {
+            display: block;
+        }
+
+        @media(max-width:768px) {
+
+            .hero {
+                min-height: 430px;
+
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(8,36,48,.76),
+                        rgba(8,36,48,.95)
+                    ),
+                    url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=85")
+                    center / cover no-repeat;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+
+            .product-actions {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *:before,
+            *:after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+            }
+
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 3px solid rgba(16,117,109,.3);
+            outline-offset: 3px;
+        }
+
+        .search-box input:focus,
+        .search-box input:focus-visible {
+            outline: none;
+            box-shadow: none;
+        }
+
+          /* ================================================= */
+    /* FOOTER LINKS */
+    /* ================================================= */
+
+    .footer-link {
+      transition: all 0.3s ease;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+      padding-left: 6px;
+    }
+
+
+    /* ================================================= */
+    /* SOCIAL ICONS */
+    /* ================================================= */
+
+    .social-icon {
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      transform: translateY(-5px);
+      background: #10756d;
+      color: white;
+    }
+
+
+    /* ================================================= */
+    /* CONTACT ICON */
+    /* ================================================= */
+
+    .contact-icon {
+      transition: all 0.3s ease;
+    }
+
+    .contact-box:hover .contact-icon {
+      background: #10756d;
+      color: white;
+      transform: scale(1.08);
+    }
+
+
+    /* ================================================= */
+    /* PRODUCT LINKS */
+    /* ================================================= */
+
+    .product-link {
+      transition: all 0.3s ease;
+    }
+
+    .product-link:hover {
+      color: white;
+      padding-left: 6px;
+    }
+
+
+    /* ================================================= */
+    /* DROPDOWN */
+    /* ================================================= */
+
+    .dropdown {
+      position: relative;
+    }
+
+
+    .dropdown-menu {
+      visibility: hidden;
+      opacity: 0;
+
+      position: absolute;
+
+      left: 0;
+      top: calc(100% + 5px);
+
+      min-width: 260px;
+
+      background: #073b3a;
+
+      padding: 10px 0;
+
+      border-radius: 10px;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 10px 25px rgba(0,0,0,0.35);
+
+      z-index: 9999;
+
+      transform: translateY(8px);
+
+      pointer-events: none;
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+    }
+
+
+    /* ================================================= */
+    /* ACTIVE DROPDOWN */
+    /* ================================================= */
+
+    .dropdown.active .dropdown-menu {
+
+      visibility: visible;
+
+      opacity: 1;
+
+      transform: translateY(0);
+
+      pointer-events: auto;
+
+    }
+
+
+    /* ================================================= */
+    /* DROPDOWN LINKS */
+    /* ================================================= */
+
+    .dropdown-menu a {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 11px 16px;
+
+      color: #ccfbf1;
+
+      font-size: 14px;
+
+      white-space: nowrap;
+
+      transition: all 0.25s ease;
+
+    }
+
+
+    .dropdown-menu a:hover {
+
+      background: #10756d;
+
+      color: white;
+
+      padding-left: 22px;
+
+    }
+
+
+    .dropdown-menu a i {
+
+      width: 20px;
+
+      text-align: center;
+
+      font-size: 17px;
+
+      color: #55c9bd;
+
+      transition: all 0.25s ease;
+
+    }
+
+
+    .dropdown-menu a:hover i {
+
+      color: white;
+
+      transform: scale(1.15);
+
+    }
+
+
+    /* ================================================= */
+    /* DROPDOWN ARROW */
+    /* ================================================= */
+
+    .dropdown-arrow {
+
+      font-size: 16px;
+
+      color: #55c9bd;
+
+      transition: transform 0.3s ease;
+
+    }
+
+
+    .dropdown.active .dropdown-arrow {
+
+      transform: rotate(180deg);
+
+    }
+
+
+    /* ================================================= */
+    /* MOBILE */
+    /* ================================================= */
+
+    @media (max-width: 768px) {
+
+      .dropdown-menu {
+
+        position: static;
+
+        width: 100%;
+
+        margin-top: 5px;
+
+        margin-left: 20px;
+
+        box-shadow: none;
+
+        transform: none;
+
+      }
+
+      .dropdown.active .dropdown-menu {
+
+        transform: none;
+
+      }
+
+    }
+
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+    <!-- =====================================================
+                        NAVBAR
+====================================================== -->
+
+<nav
+    class="
+        bg-white
+        border-b border-gray-200
+        shadow-xl
+        sticky top-0
+        z-50
+    "
+>
+
+    <div class="w-full px-3 sm:px-5 lg:px-8">
+
+        <!-- =================================================
+                            NAVBAR ROW
+        ================================================== -->
+
+        <div class="flex items-center justify-between h-20">
+
+
+            <!-- =================================================
+                                LOGO
+            ================================================== -->
+
+            <a
+                href="index.html"
+                class="
+                    flex
+                    items-center
+                    gap-3
+                    group
+                    flex-shrink-0
+                "
+            >
+
+                <!-- LOGO -->
+
+                <div class="relative w-14 h-14">
+
+                    <div
+                        class="
+                            absolute inset-0
+                            rounded-2xl
+                            bg-brand
+                            shadow-lg
+                            shadow-teal-200
+                            group-hover:scale-105
+                            transition duration-300
+                        "
+                    ></div>
+
+
+                    <div
+                        class="
+                            absolute inset-1.5
+                            rounded-xl
+                            bg-white
+                            flex
+                            items-center
+                            justify-center
+                        "
+                    >
+
+                        <div class="relative w-7 h-7">
+
+                            <div
+                                class="
+                                    absolute
+                                    left-2.5
+                                    top-0
+                                    w-2
+                                    h-7
+                                    bg-brand
+                                    rounded-full
+                                "
+                            ></div>
+
+                            <div
+                                class="
+                                    absolute
+                                    top-2.5
+                                    left-0
+                                    w-7
+                                    h-2
+                                    bg-brand
+                                    rounded-full
+                                "
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- CAPSULE -->
+
+                    <div
+                        class="
+                            absolute
+                            -right-1
+                            -bottom-1
+                            w-6
+                            h-6
+                            bg-brand
+                            rounded-full
+                            border-2
+                            border-white
+                            flex
+                            items-center
+                            justify-center
+                        "
+                    >
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-capsules
+                                text-white
+                                text-[10px]
+                            "
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BRAND NAME -->
+
+                <div class="leading-none">
+
+                    <h1
+                        class="
+                            text-2xl
+                            font-extrabold
+                            tracking-tight
+                            text-brand
+                        "
+                    >
+                        Be Pharma
+                    </h1>
+
+                    <div class="flex items-center gap-2 mt-1.5">
+
+                        <span class="h-px w-5 bg-brand"></span>
+
+                        <p
+                            class="
+                                text-xs
+                                font-bold
+                                tracking-[0.25em]
+                                text-brand
+                                uppercase
+                            "
+                        >
+                            Traders
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <!-- =================================================
+                        DESKTOP NAVIGATION
+            ================================================== -->
+
+            <div
+                class="
+                    hidden
+                    lg:flex
+                    items-center
+                    gap-7
+                "
+            >
+
+                <!-- HOME -->
+
+                <a
+                    href="index.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
+                    Home
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <a
+                    href="about.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
+                    About Us
+                </a>
+
+
+
+                <!-- =================================================
+                            PRODUCTS
+                ================================================== -->
+
+                <div class="relative group">
+
+                    <button
+                        type="button"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
+                    >
+
+                        Products
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        class="
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-64
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
+                            transition-all duration-300
+                        "
+                    >
+
+                        <div class="p-2">
+
+                            <a
+                                href="pharmaceuticals.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-pills"></i>
+                                </span>
+
+                                <span>Pharmaceuticals</span>
+                            </a>
+
+
+                            <a
+                                href="OTC.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-capsules"></i>
+                                </span>
+
+                                <span>OTC Products</span>
+                            </a>
+
+
+                            <a
+                                href="surgical-medical.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-kit-medical"></i>
+                                </span>
+
+                                <span>Surgical & Medical</span>
+                            </a>
+
+
+                            <a
+                                href="healthcare-essentials.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-heart-pulse"></i>
+                                </span>
+
+                                <span>Healthcare Essentials</span>
+                            </a>
+
+
+                            <a
+                                href="personal-care.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-hand-holding-medical"></i>
+                                </span>
+
+                                <span>Personal Care</span>
+                            </a>
+
+
+                            <a
+                                href="veterinary-products.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-paw"></i>
+                                </span>
+
+                                <span>Veterinary Products</span>
+                            </a>
+
+
+                            <div class="mt-1 border-t border-gray-100 pt-1">
+
+                                <a
+                                    href="product.html"
+                                    class="
+                                        flex
+                                        items-center
+                                        justify-between
+                                        px-4 py-3
+                                        rounded-lg
+                                        text-brand
+                                        font-semibold
+                                        hover:bg-teal-50
+                                        transition
+                                    "
+                                >
+
+                                    <span>View All Products</span>
+
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                            SERVICES
+                ================================================== -->
+
+                <div class="relative group">
+
+                    <button
+                        type="button"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
+                    >
+
+                        Services
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        class="
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-64
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
+                            transition-all duration-300
+                        "
+                    >
+
+                        <div class="p-2">
+
+                            <a
+                                href="pharmaceutical-distribution.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-truck-medical"></i>
+                                </span>
+
+                                <span>Pharmaceutical Distribution</span>
+                            </a>
+
+
+                            <a
+                                href="wholesale-supply.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-boxes-stacked"></i>
+                                </span>
+
+                                <span>Wholesale Supply</span>
+                            </a>
+
+
+                            <a
+                                href="institutional-supply.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-hospital"></i>
+                                </span>
+
+                                <span>Institutional Supply</span>
+                            </a>
+
+
+                            <a
+                                href="surgical-medical-supplies.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-kit-medical"></i>
+                                </span>
+
+                                <span>Surgical & Medical Supply</span>
+                            </a>
+
+
+                            <a
+                                href="otc-healthcare-products.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-heart-circle-check"></i>
+                                </span>
+
+                                <span>OTC & Healthcare Supply</span>
+                            </a>
+
+
+                            <a
+                                href="delivery-support.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-truck-fast"></i>
+                                </span>
+
+                                <span>Delivery Support</span>
+                            </a>
+
+
+                            <div class="mt-1 border-t border-gray-100 pt-1">
+
+                                <a
+                                    href="services.html"
+                                    class="
+                                        flex items-center justify-between
+                                        px-4 py-3 rounded-lg
+                                        text-brand font-semibold
+                                        hover:bg-teal-50 transition
+                                    "
+                                >
+                                    <span>View All Services</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                            CATEGORIES
+                ================================================== -->
+
+                <div class="relative group">
+
+                    <button
+                        type="button"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
+                    >
+
+                        Categories
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        class="
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-56
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
+                            transition-all duration-300
+                        "
+                    >
+
+                        <div class="p-2">
+
+                            <a
+                                href="tablets-capsules.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-tablets"></i>
+                                </span>
+
+                                <span>Tablets & Capsules</span>
+                            </a>
+
+
+                            <a
+                                href="injections.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-syringe"></i>
+                                </span>
+
+                                <span>Injections</span>
+                            </a>
+
+
+                            <a
+                                href="medical-devices.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-microscope"></i>
+                                </span>
+
+                                <span>Medical Devices</span>
+                            </a>
+
+
+                            <a
+                                href="surgical-items.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-scissors"></i>
+                                </span>
+
+                                <span>Surgical Items</span>
+                            </a>
+
+
+                            <a
+                                href="OTC.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-bottle-droplet"></i>
+                                </span>
+
+                                <span>OTC Products</span>
+                            </a>
+
+
+                            <a
+                                href="healthcare-essentials.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-notes-medical"></i>
+                                </span>
+
+                                <span>Healthcare Essentials</span>
+                            </a>
+
+
+                            <div class="mt-1 border-t border-gray-100 pt-1">
+
+                                <a
+                                    href="categories.html"
+                                    class="
+                                        flex
+                                        items-center
+                                        justify-between
+                                        px-4 py-3
+                                        rounded-lg
+                                        text-brand
+                                        font-semibold
+                                        hover:bg-teal-50
+                                        transition
+                                    "
+                                >
+                                    <span>View All Categories</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <a
+                    href="contact.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
+                    Contact Us
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                    DESKTOP RIGHT SIDE
+            ================================================== -->
+
+            <div
+                class="
+                    hidden
+                    lg:flex
+                    items-center
+                    gap-4
+                "
+            >
+
+
+                <!-- =================================================
+                            FOLLOW US ICON
+                ================================================== -->
+
+                <div class="relative group">
+
+                    <button
+                        type="button"
+                        aria-label="Follow Us"
+                        class="
+                            w-11 h-11
+                            rounded-full
+                            bg-teal-50
+                            text-brand
+                            flex
+                            items-center
+                            justify-center
+                            hover:bg-brand
+                            hover:text-white
+                            transition
+                            duration-300
+                        "
+                    >
+
+                        <!-- FOLLOW US ICON -->
+
+                        <i class="fa-solid fa-user-plus text-lg"></i>
+
+                    </button>
+
+
+                    <!-- FOLLOW US DROPDOWN -->
+
+                    <div
+                        class="
+                            absolute
+                            right-0
+                            top-full
+                            mt-4
+                            w-52
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
+                            transition-all duration-300
+                        "
+                    >
+
+                        <div class="p-2">
+
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-facebook
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    Facebook
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-instagram
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    Instagram
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-linkedin
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    LinkedIn
+                                </span>
+
+                            </a>
+
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-whatsapp
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    WhatsApp
+                                </span>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- GET IN TOUCH -->
+
+                <a
+                    href="contact.html"
+                    class="
+                        bg-brand
+                        text-white
+                        px-5 py-3
+                        rounded-lg
+                        font-semibold
+                        hover:bg-[#0b625b]
+                        shadow-md
+                        hover:shadow-lg
+                        transition
+                    "
+                >
+                    Get in Touch
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                        MOBILE MENU BUTTON
+            ================================================== -->
+
+            <button
+                id="menuBtn"
+                type="button"
+                aria-label="Open Menu"
+                class="
+                    lg:hidden
+                    w-11 h-11
+                    rounded-lg
+                    bg-teal-50
+                    text-brand
+                    flex
+                    items-center
+                    justify-center
+                    hover:bg-brand
+                    hover:text-white
+                    transition
+                "
+            >
+
+                <i
+                    id="menuIcon"
+                    class="fa-solid fa-bars text-xl"
+                ></i>
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================================
+                        MOBILE MENU
+        ================================================== -->
+
+        <div
+            id="mobileMenu"
+            class="
+                hidden
+                lg:hidden
+                pb-6
+            "
+        >
+
+            <div
+                class="
+                    pt-4
+                    border-t border-gray-200
+                    space-y-2
+                "
+            >
+
+
+                <!-- HOME -->
+
+                <a
+                    href="index.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
+                    Home
+                </a>
+
+
+                <!-- ABOUT -->
+
+                <a
+                    href="about.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
+                    About Us
+                </a>
+
+
+
+                <!-- =================================================
+                            MOBILE PRODUCTS
+                ================================================== -->
+
+                <div>
+
+                    <button
+                        id="productBtn"
+                        type="button"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
+                    >
+
+                        <span>Products</span>
+
+                        <i
+                            id="productIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        id="productMenu"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
+                    >
+
+                        <a href="pharmaceuticals.html" class="mobile-sub-link">
+                            Pharmaceuticals
+                        </a>
+
+                        <a href="OTC.html" class="mobile-sub-link">
+                            OTC Products
+                        </a>
+
+                        <a href="surgical-medical.html" class="mobile-sub-link">
+                            Surgical & Medical
+                        </a>
+
+                        <a href="healthcare-essentials.html" class="mobile-sub-link">
+                            Healthcare Essentials
+                        </a>
+
+                        <a href="personal-care.html" class="mobile-sub-link">
+                            Personal Care
+                        </a>
+
+                        <a href="veterinary-products.html" class="mobile-sub-link">
+                            Veterinary Products
+                        </a>
+
+                        <a
+                            href="product.html"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
+                        >
+                            View All Products
+                            <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                            MOBILE SERVICES
+                ================================================== -->
+
+                <div>
+
+                    <button
+                        id="serviceBtn"
+                        type="button"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
+                    >
+
+                        <span>Services</span>
+
+                        <i
+                            id="serviceIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        id="serviceMenu"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
+                    >
+
+                        <a
+                            href="pharmaceutical-distribution.html"
+                            class="mobile-sub-link"
+                        >
+                            Pharmaceutical Distribution
+                        </a>
+
+                        <a
+                            href="wholesale-supply.html"
+                            class="mobile-sub-link"
+                        >
+                            Wholesale Supply
+                        </a>
+
+                        <a
+                            href="institutional-supply.html"
+                            class="mobile-sub-link"
+                        >
+                            Institutional Supply
+                        </a>
+
+                        <a
+                            href="surgical-medical-supplies.html"
+                            class="mobile-sub-link"
+                        >
+                            Surgical & Medical Supply
+                        </a>
+
+                        <a
+                            href="otc-healthcare-products.html"
+                            class="mobile-sub-link"
+                        >
+                            OTC & Healthcare Supply
+                        </a>
+
+                        <a
+                            href="delivery-support.html"
+                            class="mobile-sub-link"
+                        >
+                            Delivery Support
+                        </a>
+
+                        <a
+                            href="services.html"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
+                        >
+                            View All Services
+                            <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                            MOBILE CATEGORIES
+                ================================================== -->
+
+                <div>
+
+                    <button
+                        id="categoryBtn"
+                        type="button"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
+                    >
+
+                        <span>Categories</span>
+
+                        <i
+                            id="categoryIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
+                    </button>
+
+
+                    <div
+                        id="categoryMenu"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
+                    >
+
+                        <a
+                            href="tablets-capsules.html"
+                            class="mobile-sub-link"
+                        >
+                            Tablets & Capsules
+                        </a>
+
+                        <a
+                            href="injections.html"
+                            class="mobile-sub-link"
+                        >
+                            Injections
+                        </a>
+
+                        <a
+                            href="medical-devices.html"
+                            class="mobile-sub-link"
+                        >
+                            Medical Devices
+                        </a>
+
+                        <a
+                            href="surgical-items.html"
+                            class="mobile-sub-link"
+                        >
+                            Surgical Items
+                        </a>
+
+                        <a
+                            href="OTC.html"
+                            class="mobile-sub-link"
+                        >
+                            OTC Products
+                        </a>
+
+                        <a
+                            href="healthcare-essentials.html"
+                            class="mobile-sub-link"
+                        >
+                            Healthcare Essentials
+                        </a>
+
+                        <a
+                            href="categories.html"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
+                        >
+                            View All Categories
+                            <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <a
+                    href="contact.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
+                    Contact Us
+                </a>
+
+
+
+                <!-- =================================================
+                            MOBILE FOLLOW US
+                ================================================== -->
+
+                <div class="pt-5">
+
+                    <div class="px-4 pb-3">
+
+                        <div
+                            class="
+                                flex
+                                items-center
+                                gap-3
+                                p-3
+                                rounded-2xl
+                                bg-gradient-to-r
+                                from-teal-50
+                                to-white
+                                border
+                                border-teal-100
+                            "
+                        >
+
+                            <!-- FOLLOW ICON -->
+
+                            <div
+                                class="
+                                    w-11 h-11
+                                    rounded-xl
+                                    bg-brand
+                                    text-white
+                                    flex
+                                    items-center
+                                    justify-center
+                                    shadow-md
+                                "
+                            >
+
+                                <i class="fa-solid fa-user-plus text-lg"></i>
+
+                            </div>
+
+
+                            <!-- TEXT -->
+
+                            <div>
+
+                                <p
+                                    class="
+                                        text-brand
+                                        font-bold
+                                        text-sm
+                                    "
+                                >
+                                    Follow Us
+                                </p>
+
+                                <p
+                                    class="
+                                        text-gray-400
+                                        text-xs
+                                        mt-0.5
+                                    "
+                                >
+                                    Stay connected with Be Pharma
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- SOCIAL ICONS -->
+
+                    <div class="flex gap-3 px-4">
+
+
+                        <a
+                            href="#"
+                            aria-label="Facebook"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
+                        >
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
+                        >
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="LinkedIn"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
+                        >
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="WhatsApp"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
+                        >
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                        MOBILE GET IN TOUCH
+                ================================================== -->
+
+                <div class="pt-4 px-4">
+
+                    <a
+                        href="contact.html"
+                        class="
+                            block
+                            text-center
+                            bg-brand
+                            text-white
+                            py-3
+                            rounded-lg
+                            font-semibold
+                            hover:bg-[#0b625b]
+                            shadow-md
+                            transition
+                        "
+                    >
+                        Get in Touch
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div
+        class="hero-content max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 min-h-[455px] flex items-center">
+
+        <div class="max-w-3xl pt-8">
+
+            <div class="breadcrumb mb-6">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <i class="fas fa-chevron-right text-[9px]"></i>
+
+                <a href="categories.html">
+                    Categories
+                </a>
+
+                <i class="fas fa-chevron-right text-[9px]"></i>
+
+                <span>
+                    Medical Devices
+                </span>
+
+            </div>
+
+            <span class="eyebrow">
+
+                <i class="fas fa-microscope"></i>
+
+                Healthcare Equipment Category
+
+            </span>
+
+            <h1
+                class="font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl mt-5">
+
+                Medical
+
+                <span class="block text-[#66d8ce]">
+                    Devices
+                </span>
+
+            </h1>
+
+            <p
+                class="text-white/85 leading-7 text-base sm:text-lg max-w-2xl mt-6">
+
+                Explore our range of essential medical devices and healthcare
+                equipment designed for hospitals, clinics, pharmacies,
+                healthcare professionals and institutional requirements.
+
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-7">
+
+                <a href="#products"
+                    class="primary-btn bg-white !text-[#10756d] hover:!bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm">
+
+                    <i class="fas fa-microscope"></i>
+
+                    Browse Devices
+
+                </a>
+
+                <a href="contact.html"
+                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-[#10756d] transition">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Send Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORY INFO -->
+
+<section class="py-12 md:py-16 bg-[#f7fbfa]">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+
+                <div
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
+
+                    <i class="fas fa-heart-pulse"></i>
+
+                </div>
+
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
+                    Monitoring
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Patient monitoring devices
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+
+                <div
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
+
+                    <i class="fas fa-temperature-half"></i>
+
+                </div>
+
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
+                    Diagnostics
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Everyday diagnostic devices
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+
+                <div
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
+
+                    <i class="fas fa-lungs"></i>
+
+                </div>
+
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
+                    Respiratory
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Respiratory care devices
+                </p>
+
+            </div>
+
+
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+
+                <div
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
+
+                    <i class="fas fa-hospital"></i>
+
+                </div>
+
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
+                    B2B Supply
+                </p>
+
+                <p class="text-sm text-gray-500 mt-1">
+                    Institutional procurement
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products"
+    class="py-20 md:py-24">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mx-auto text-center">
+
+            <span
+                class="text-[#10756d] text-xs font-extrabold uppercase tracking-[.12em]">
+
+                Medical Devices
+
+            </span>
+
+            <h2
+                class="text-3xl md:text-4xl font-extrabold text-gray-800 mt-3">
+
+                Explore Our
+
+                <span class="text-[#10756d]">
+                    Medical Devices
+                </span>
+
+            </h2>
+
+            <p class="text-gray-500 leading-7 mt-5">
+
+                Search and explore healthcare devices available in the
+                Medical Devices category.
+
+            </p>
+
+        </div>
+
+
+        <!-- FILTER -->
+
+        <div class="filter-wrap p-4 md:p-5 mt-10">
+
+            <div class="grid lg:grid-cols-[1fr_auto] gap-4 items-center">
+
+                <div class="search-box">
+
+                    <i class="fas fa-search text-[#10756d]"></i>
+
+                    <input
+                        id="productSearch"
+                        type="search"
+                        placeholder="Search medical devices..."
+                        aria-label="Search medical devices">
+
+                </div>
+
+
+                <div class="flex flex-wrap gap-2">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all">
+
+                        All
+
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="monitoring">
+
+                        Monitoring
+
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="diagnostic">
+
+                        Diagnostic
+
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="respiratory">
+
+                        Respiratory
+
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="homecare">
+
+                        Homecare
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT GRID -->
+
+        <div id="productGrid"
+            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+
+
+            <!-- PRODUCT 01 -->
+
+            <article
+                class="product-card product-item"
+                data-category="monitoring"
+                data-search="digital blood pressure monitor bp machine blood pressure monitoring">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Blood Pressure Monitor"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    01
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Monitoring
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Digital BP Monitor
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Digital blood pressure monitoring device
+                        suitable for home and healthcare use.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Monitoring Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Monitoring
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Digital BP Monitor"
+                            data-description="Digital blood pressure monitoring device suitable for healthcare facilities, pharmacies and homecare requirements."
+                            data-type="Monitoring Device"
+                            data-category="Monitoring"
+                            data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Digital BP Monitor">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 02 -->
+
+            <article
+                class="product-card product-item"
+                data-category="monitoring homecare"
+                data-search="pulse oximeter spo2 oxygen saturation monitor">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85"
+                        alt="Pulse Oximeter"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    02
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Monitoring
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Pulse Oximeter
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Compact device for measuring oxygen
+                        saturation and pulse rate.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Monitoring Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Homecare
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Pulse Oximeter"
+                            data-description="Compact pulse oximetry device designed for oxygen saturation and pulse rate monitoring requirements."
+                            data-type="Monitoring Device"
+                            data-category="Homecare"
+                            data-image="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Pulse Oximeter">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 03 -->
+
+            <article
+                class="product-card product-item"
+                data-category="diagnostic homecare"
+                data-search="glucometer blood glucose sugar testing glucose meter diabetes">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85"
+                        alt="Blood Glucose Meter"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    03
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Diagnostic
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Blood Glucose Meter
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Portable glucose monitoring device for
+                        routine blood sugar testing requirements.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Diagnostic Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Diagnostic
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Blood Glucose Meter"
+                            data-description="Portable blood glucose monitoring device intended for routine healthcare and home monitoring requirements."
+                            data-type="Diagnostic Device"
+                            data-category="Diagnostic"
+                            data-image="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Blood Glucose Meter">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 04 -->
+
+            <article
+                class="product-card product-item"
+                data-category="diagnostic homecare"
+                data-search="digital thermometer temperature medical thermometer fever">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Thermometer"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    04
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Diagnostic
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Digital Thermometer
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Compact temperature measurement device
+                        for routine healthcare requirements.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Diagnostic Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Homecare
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Digital Thermometer"
+                            data-description="Digital temperature measurement device suitable for homecare, pharmacy and general healthcare requirements."
+                            data-type="Diagnostic Device"
+                            data-category="Homecare"
+                            data-image="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Digital Thermometer">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 05 -->
+
+            <article
+                class="product-card product-item"
+                data-category="respiratory homecare"
+                data-search="nebulizer machine respiratory nebulisation inhalation device">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"
+                        alt="Nebulizer Machine"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    05
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Respiratory
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Nebulizer Machine
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Respiratory care device used for
+                        nebulization and inhalation therapy requirements.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Respiratory Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Respiratory
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Nebulizer Machine"
+                            data-description="Respiratory care device designed for nebulization and inhalation therapy supply requirements."
+                            data-type="Respiratory Device"
+                            data-category="Respiratory"
+                            data-image="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Nebulizer Machine">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 06 -->
+
+            <article
+                class="product-card product-item"
+                data-category="monitoring"
+                data-search="stethoscope medical diagnostic auscultation doctor healthcare">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
+                        alt="Medical Stethoscope"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    06
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Monitoring
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Medical Stethoscope
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Essential clinical diagnostic device
+                        for routine examination and auscultation.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Clinical Device
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Monitoring
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Medical Stethoscope"
+                            data-description="Essential clinical diagnostic device used for routine examination and auscultation requirements."
+                            data-type="Clinical Device"
+                            data-category="Monitoring"
+                            data-image="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Medical Stethoscope">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults"
+            class="empty-state text-center py-16">
+
+            <div
+                class="w-16 h-16 mx-auto rounded-2xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center text-xl">
+
+                <i class="fas fa-magnifying-glass"></i>
+
+            </div>
+
+            <h3 class="font-extrabold text-xl text-gray-800 mt-5">
+                No devices found
+            </h3>
+
+            <p class="text-gray-500 mt-2">
+                Try another device name or select another category.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="py-20 md:py-24 bg-[#f7fbfa]">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div
+            class="bg-[#10756d] rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
+
+            <div
+                class="mx-auto w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-xl">
+
+                <i class="fas fa-microscope"></i>
+
+            </div>
+
+            <h2
+                class="text-2xl md:text-4xl font-extrabold text-white mt-5">
+
+                Need A Specific Medical Device?
+
+            </h2>
+
+            <p class="text-teal-50 mt-3 text-sm md:text-base max-w-2xl mx-auto">
+
+                Share your required device, quantity or preferred
+                healthcare equipment with our team.
+
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
+
+                <a href="contact.html"
+                    class="inline-flex items-center gap-2 bg-white text-[#10756d] px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-teal-50 transition">
+
+                    <i class="fas fa-paper-plane"></i>
+
+                    Send An Enquiry
+
+                </a>
+
+                <a href="categories.html"
+                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-[#10756d] transition">
+
+                    <i class="fas fa-layer-group"></i>
+
+                    Other Categories
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalProductName">
+
+    <div class="modal-box">
+
+        <div class="p-5 md:p-7">
+
+            <div class="flex items-center justify-between gap-4 mb-5">
+
+                <div>
+
+                    <span
+                        class="text-[#10756d] text-xs font-extrabold uppercase tracking-wider">
+
+                        Device Details
+
+                    </span>
+
+                    <h2
+                        id="modalProductName"
+                        class="text-2xl md:text-3xl font-extrabold text-gray-800 mt-1">
+
+                        Medical Device
+
+                    </h2>
+
+                </div>
+
+                <button id="modalClose"
+                    type="button"
+                    aria-label="Close product details"
+                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-[#e8f6f4] hover:text-[#10756d] transition">
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-7 items-start">
+
+                <img id="modalImage"
+                    class="modal-image"
+                    src=""
+                    alt="">
+
+                <div>
+
+                    <p id="modalDescription"
+                        class="text-gray-500 leading-7">
+                    </p>
+
+                    <div class="mt-6 space-y-3">
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#f7fbfa]">
+
+                            <span class="text-sm text-gray-500">
+                                Device Type
+                            </span>
+
+                            <strong id="modalType"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#f7fbfa]">
+
+                            <span class="text-sm text-gray-500">
+                                Category
+                            </span>
+
+                            <strong id="modalCategory"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button id="modalEnquiryBtn"
+                        type="button"
+                        class="primary-btn w-full py-3.5 rounded-xl font-bold mt-6">
+
+                        <i class="fas fa-clipboard-list"></i>
+
+                        Add To Enquiry
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"
+    class="toast">
+
+    <i class="fas fa-circle-check text-[#72e0d5]"></i>
+
+    <span id="toastText">
+        Product added to enquiry.
+    </span>
+
+</div>
+
+  <!-- ========================================================= -->
+<!--                         FOOTER                            -->
+<!-- ========================================================= -->
+
+<footer
+  id="contact"
+  class="bg-[#073b3a] text-white"
+>
+
+
+  <!-- ================================================= -->
+  <!-- MAIN FOOTER -->
+  <!-- ================================================= -->
+
+  <div
+    class="mx-auto max-w-7xl px-6 py-16 sm:px-8"
+  >
+
+    <div
+      class="grid gap-12 md:grid-cols-2 lg:grid-cols-4"
+    >
+
+
+      <!-- ================================================= -->
+      <!-- COMPANY -->
+      <!-- ================================================= -->
+
+      <div>
+
+
+        <!-- LOGO -->
+
+        <a
+          href="index.html"
+          class="group flex items-center gap-3"
+        >
+
+          <div
+            class="relative h-14 w-14 shrink-0"
+          >
+
+            <div
+              class="absolute inset-0
+                     rounded-2xl
+                     bg-[#0f766e]
+                     shadow-lg shadow-black/20
+                     transition duration-300
+                     group-hover:scale-105"
+            ></div>
+
+
+            <div
+              class="absolute inset-1.5
+                     flex items-center justify-center
+                     rounded-xl bg-white"
+            >
+
+              <div
+                class="relative h-7 w-7"
+              >
+
+                <div
+                  class="absolute left-2.5 top-0
+                         h-7 w-2
+                         rounded-full bg-[#0f766e]"
+                ></div>
+
+                <div
+                  class="absolute left-0 top-2.5
+                         h-2 w-7
+                         rounded-full bg-[#0f766e]"
+                ></div>
+
+              </div>
+
+            </div>
+
+
+            <div
+              class="absolute -bottom-1 -right-1
+                     flex h-6 w-6
+                     items-center justify-center
+                     rounded-full
+                     border-2 border-[#073b3a]
+                     bg-[#0f766e]"
+            >
+
+              <i
+                class="fa-solid fa-capsules
+                       text-[10px] text-white"
+              ></i>
+
+            </div>
+
+          </div>
+
+
+          <div>
+
+            <h2
+              class="text-2xl font-extrabold
+                     tracking-tight text-white"
+            >
+              Be Pharma
+            </h2>
+
+            <div
+              class="mt-1 flex items-center gap-2"
+            >
+
+              <span
+                class="h-px w-5 bg-[#55c9bd]"
+              ></span>
+
+              <p
+                class="text-xs font-bold
+                       uppercase
+                       tracking-[0.25em]
+                       text-[#55c9bd]"
+              >
+                Traders
+              </p>
+
+            </div>
+
+          </div>
+
+        </a>
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+          class="mt-6 max-w-sm
+                 text-sm leading-7
+                 text-white"
+        >
+
+          We strive to empower our partners and clients
+          with reliable support, quality products, and
+          innovative pharmaceutical solutions.
+
+          Our mission is to advance healthcare by providing
+          trusted pharmaceutical products with efficiency,
+          integrity, and excellence.
+
+        </p>
+
+
+        <!-- SOCIAL -->
+
+        <div
+          class="mt-7 flex gap-3"
+        >
+
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+
+          <a
+            href="https://www.youtube.com/" 
+            target="_blank" 
+            class="social-icon 
+                   flex h-10 w-10 
+                   items-center justify-center 
+                   rounded-full 
+                   bg-white/10 
+                   text-white" 
+          > 
+            <i class="fab fa-youtube"></i> 
+          </a> 
+ 
+        </div> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- QUICK LINKS --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Quick Links 
+        </h3> 
+ 
+ 
+        <ul 
+          class="space-y-4 
+                 text-sm 
+                 text-teal-100/70" 
+        > 
+ 
+ 
+          <!-- HOME --> 
+ 
+          <li> 
+ 
+            <a 
+              href="index.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-home-5-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Home 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ABOUT --> 
+ 
+          <li> 
+ 
+            <a 
+              href="about.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-information-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              About Us 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ================================================= --> 
+          <!-- SERVICES --> 
+          <!-- ================================================= --> 
+ 
+          <li class="dropdown"> 
+ 
+ 
+            <a 
+              href="services.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-service-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Services 
+ 
+              <i 
+                class="ri-arrow-down-s-line 
+                       dropdown-arrow 
+                       ml-auto" 
+              ></i> 
+ 
+            </a> 
+ 
+ 
+            <!-- SERVICES MENU --> 
+ 
+            <div 
+              class="dropdown-menu" 
+            > 
+ 
+ 
+              <a 
+                href="pharmaceutical-distribution.html" 
+              > 
+ 
+                <i class="ri-truck-line"></i> 
+ 
+                <span> 
+                  Pharmaceutical Distribution 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="wholesale-supply.html" 
+              > 
+ 
+                <i class="ri-store-2-line"></i> 
+ 
+                <span> 
+                  Wholesale Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="institutional-supply.html" 
+              > 
+ 
+                <i class="ri-hospital-line"></i> 
+ 
+                <span> 
+                  Institutional Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="surgical-medical-supplies.html" 
+              > 
+ 
+                <i class="ri-building-4-line"></i> 
+ 
+                <span> 
+                  Surgical & Medical Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+            </div> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ================================================= --> 
+          <!-- CATEGORIES --> 
+          <!-- ================================================= --> 
+ 
+          <li class="dropdown"> 
+ 
+ 
+            <a 
+              href="categories.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-list-check-2 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Categories 
+ 
+              <i 
+                class="ri-arrow-down-s-line 
+                       dropdown-arrow 
+                       ml-auto" 
+              ></i> 
+ 
+            </a> 
+ 
+ 
+            <!-- CATEGORIES MENU --> 
+ 
+            <div 
+              class="dropdown-menu" 
+            > 
+ 
+ 
+              <a 
+                href="tablets-healthcare-essentials.html" 
+              > 
+ 
+                <i class="ri-capsule-line"></i> 
+ 
+                <span> 
+                  OTC Products & Healthcare Essentials 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="injections.html" 
+              > 
+ 
+                <i class="ri-syringe-line"></i> 
+ 
+                <span> 
+                  Injections 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="medical-devices.html" 
+              > 
+ 
+                <i class="ri-heart-pulse-line"></i> 
+ 
+                <span> 
+                  Medical Devices 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="surgical-items.html" 
+              > 
+ 
+                <i class="ri-first-aid-kit-line"></i> 
+ 
+                <span> 
+                  Surgical Items 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="OTC.html" 
+              > 
+ 
+                <i class="ri-capsule-line"></i> 
+ 
+                <span> 
+                  OTC Products 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="healthcare-essentials.html" 
+              > 
+ 
+                <i class="ri-capsule-fill"></i> 
+ 
+                <span> 
+                  Healthcare Essentials 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="personal-care.html" 
+              > 
+ 
+                <i class="ri-medicine-bottle-line"></i> 
+ 
+                <span> 
+                  Personal Care 
+                </span> 
+ 
+              </a> 
+ 
+ 
+            </div> 
+ 
+          </li> 
+ 
+ 
+        </ul> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- PRODUCTS --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Products 
+        </h3> 
+ 
+ 
+        <ul 
+          class="space-y-4 
+                 text-sm 
+                 text-teal-100/70" 
+        > 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="pharmaceuticals.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-medicine-bottle-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Pharmaceuticals 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="surgical-medical.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-capsule-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Surgical & Medical 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="OTC.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-medicine-bottle-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              OTC Products 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="healthcare-essentials.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-capsule-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Healthcare Essentials 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+        </ul> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- CONTACT --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Contact Us 
+        </h3> 
+ 
+ 
+        <div class="space-y-5"> 
+ 
+ 
+          <!-- ADDRESS --> 
+ 
+          <a 
+            href="contact.html" 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-map-pin-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Address 
+              </p> 
+ 
+ 
+              <p 
+                class="mt-1 
+                       text-sm leading-6 
+                       text-teal-100/70" 
+              > 
+ 
+                Be Pharma Traders<br> 
+                India 
+ 
+              </p> 
+ 
+            </div> 
+ 
+          </a> 
+ 
+ 
+ 
+          <!-- PHONE --> 
+ 
+          <div 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-phone-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Phone 
+              </p> 
+ 
+ 
+              <a 
+                href="tel:+919973100210" 
+                class="mt-1 block 
+                       text-sm 
+                       text-teal-100/70 
+                       hover:text-white" 
+              > 
+                +91 99731 00210 
+              </a> 
+ 
+            </div> 
+ 
+          </div> 
+ 
+ 
+ 
+          <!-- EMAIL --> 
+ 
+          <div 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-mail-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Email 
+              </p> 
+ 
+ 
+              <a 
+                href="mailto:addressbepharmatraders@gmail.com" 
+                class="mt-1 block break-all 
+                       text-sm 
+                       text-teal-100/70 
+                       hover:text-white" 
+              > 
+                addressbepharmatraders@gmail.com 
+              </a> 
+ 
+            </div> 
+ 
+          </div> 
+ 
+ 
+ 
+          <!-- WORKING HOURS --> 
+ 
+          <a 
+            href="contact.html" 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-time-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Working Hours 
+              </p> 
+ 
+ 
+              <p 
+                class="mt-1 
+                       text-sm 
+                       leading-6 
+                       text-teal-100/70" 
+              > 
+ 
+                Monday - Saturday<br> 
+                9:00 AM - 6:00 PM 
+ 
+              </p> 
+ 
+            </div> 
+ 
+          </a> 
+ 
+ 
+        </div> 
+ 
+      </div> 
+ 
+ 
+    </div> 
+ 
+  </div> 
+ 
+ 
+ 
+  <!-- ================================================= --> 
+  <!-- COPYRIGHT --> 
+  <!-- ================================================= --> 
+ 
+  <div 
+    class="border-t border-white/10" 
+  > 
+ 
+    <div 
+      class="mx-auto 
+             flex max-w-7xl 
+             flex-col 
+             gap-3 
+             px-6 py-6 
+             text-center 
+             text-xs 
+             text-teal-100/50 
+             sm:px-8 
+             md:flex-row 
+             md:items-center 
+             md:justify-between 
+             md:text-left" 
+    > 
+ 
+ 
+      <!-- COPYRIGHT --> 
+ 
+      <p> 
+ 
+        © 2026 
+ 
+        <a 
+          href="index.html" 
+          class="font-semibold 
+                 text-teal-100/80 
+                 hover:text-white" 
+        > 
+          Be Pharma Traders 
+        </a> 
+ 
+        . All Rights Reserved. 
+ 
+      </p> 
+ 
+ 
+ 
+      <!-- PRIVACY / TERMS --> 
+ 
+      <div 
+        class="flex 
+               justify-center 
+               gap-5 
+               md:justify-end" 
+      > 
+ 
+        <a 
+          href="privacy-policy.html" 
+          class="transition hover:text-white" 
+        > 
+          Privacy Policy 
+        </a> 
+ 
+ 
+        <span class="text-white/20"> 
+          | 
+        </span> 
+ 
+ 
+        <a 
+          href="terms.html" 
+          class="transition hover:text-white" 
+        > 
+          Terms & Conditions 
+        </a> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- DEV LABS --> 
+ 
+      <p> 
+ 
+        Crafted by 
+ 
+       <a 
+          href="appreciation.html" 
+          class="font-semibold 
+                 text-[#55c9bd] 
+                 hover:text-white" 
+        > 
+          Our Team |  
+        </a> 
+        <a 
+          href="https://devlabs.org.in/" 
+          class="font-semibold 
+                 text-[#55c9bd] 
+                 hover:text-white" 
+        > 
+          Dev Labs  
+        </a> 
+ 
+      </p> 
+ 
+ 
+    </div> 
+ 
+  </div> 
+ 
+ 
+</footer> 
+ 
+ 
+ 
+<!-- ========================================================= --> 
+<!--                     DROPDOWN JAVASCRIPT                   --> 
+<!-- ========================================================= --> 
+ 
+<script> 
+ 
+document.addEventListener("DOMContentLoaded", function () { 
+ 
+ 
+  /* Get all dropdowns */ 
+ 
+  const dropdowns = 
+    document.querySelectorAll(".dropdown"); 
+ 
+ 
+  dropdowns.forEach(function (dropdown) { 
+ 
+ 
+    /* Get main dropdown link */ 
+ 
+    const button = 
+      dropdown.querySelector(":scope > a"); 
+ 
+ 
+    button.addEventListener("click", function (e) { 
+ 
+ 
+      /* 
+        Services/Categories ka main page 
+        click karne ke bajay pehle dropdown open hoga. 
+      */ 
+ 
+      e.preventDefault(); 
+ 
+ 
+      /* 
+        Baaki dropdown close karo 
+      */ 
+ 
+      dropdowns.forEach(function (otherDropdown) { 
+ 
+        if (otherDropdown !== dropdown) { 
+ 
+          otherDropdown.classList.remove("active"); 
+ 
+        } 
+ 
+      }); 
+ 
+ 
+      /* 
+        Current dropdown open/close 
+      */ 
+ 
+      dropdown.classList.toggle("active"); 
+ 
+    }); 
+ 
+  }); 
+ 
+ 
+ 
+  /* 
+    Dropdown ke bahar click karne par 
+    dropdown close hoga. 
+  */ 
+ 
+  document.addEventListener("click", function (e) { 
+ 
+ 
+    if (!e.target.closest(".dropdown")) { 
+ 
+ 
+      dropdowns.forEach(function (dropdown) { 
+ 
+        dropdown.classList.remove("active"); 
+ 
+      }); 
+ 
+ 
+    } 
+ 
+  }); 
+ 
+ 
+}); 
+ 
+ 
+
+
+
+/* =====================================================
+                    MAIN MOBILE MENU
+====================================================== */
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuIcon = document.getElementById("menuIcon");
+
+
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("hidden");
+
+    const open =
+        !mobileMenu.classList.contains("hidden");
+
+
+    if (open) {
+
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+
+    } else {
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+
+/* =====================================================
+                        PRODUCTS
+====================================================== */
+
+const productBtn = document.getElementById("productBtn");
+const productMenu = document.getElementById("productMenu");
+const productIcon = document.getElementById("productIcon");
+
+
+productBtn.addEventListener("click", () => {
+
+    productMenu.classList.toggle("hidden");
+    productIcon.classList.toggle("rotate-180");
+
+});
+
+
+
+/* =====================================================
+                        SERVICES
+====================================================== */
+
+const serviceBtn = document.getElementById("serviceBtn");
+const serviceMenu = document.getElementById("serviceMenu");
+const serviceIcon = document.getElementById("serviceIcon");
+
+
+serviceBtn.addEventListener("click", () => {
+
+    serviceMenu.classList.toggle("hidden");
+    serviceIcon.classList.toggle("rotate-180");
+
+});
+
+
+
+/* =====================================================
+                        CATEGORIES
+====================================================== */
+
+const categoryBtn = document.getElementById("categoryBtn");
+const categoryMenu = document.getElementById("categoryMenu");
+const categoryIcon = document.getElementById("categoryIcon");
+
+
+categoryBtn.addEventListener("click", () => {
+
+    categoryMenu.classList.toggle("hidden");
+    categoryIcon.classList.toggle("rotate-180");
+
+});
+
+
+
+/* =====================================================
+                    MOBILE SUB LINKS
+====================================================== */
+
+document.querySelectorAll(".mobile-sub-link").forEach(link => {
+
+    link.className = `
+        block
+        px-4
+        py-2.5
+        rounded-lg
+        text-brand
+        hover:bg-teal-50
+        transition
+    `;
+
+});
+
+
+
+/* =====================================================
+                CLOSE MOBILE MENU
+====================================================== */
+
+mobileMenu.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.add("hidden");
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+
+    });
+
+});
+
+
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================
+       ENQUIRY SYSTEM
+    ========================================= */
+
+    function getEnquiryList() {
+
+        try {
+
+            const data =
+                JSON.parse(
+                    localStorage.getItem(
+                        "bepharmaEnquiry"
+                    )
+                );
+
+            return Array.isArray(data)
+                ? data
+                : [];
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    function saveEnquiryList(list) {
+
+        localStorage.setItem(
+            "bepharmaEnquiry",
+            JSON.stringify(list)
+        );
+
+        window.dispatchEvent(
+            new Event("bepharmaEnquiryUpdated")
+        );
+
+    }
+
+
+    function addToEnquiry(productName) {
+
+        const list =
+            getEnquiryList();
+
+
+        const exists =
+            list.some(function (item) {
+
+                if (typeof item === "string") {
+
+                    return item === productName;
+
+                }
+
+                return item &&
+                    item.name === productName;
+
+            });
+
+
+        if (exists) {
+
+            showToast(
+                "This product is already in your enquiry list."
+            );
+
+            return;
+
+        }
+
+
+        list.push({
+            name: productName,
+            category: "Medical Devices",
+            addedAt: new Date().toISOString()
+        });
+
+
+        saveEnquiryList(list);
+
+
+        showToast(
+            productName + " added to enquiry."
+        );
+
+    }
+
+
+    document
+        .querySelectorAll("[data-add]")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    addToEnquiry(
+                        button.dataset.add
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* =========================================
+       PRODUCT FILTER
+    ========================================= */
+
+    const cards =
+        [
+            ...document.querySelectorAll(
+                ".product-item"
+            )
+        ];
+
+
+    const buttons =
+        [
+            ...document.querySelectorAll(
+                ".filter-btn"
+            )
+        ];
+
+
+    const search =
+        document.getElementById(
+            "productSearch"
+        );
+
+
+    const noResults =
+        document.getElementById(
+            "noResults"
+        );
+
+
+    let activeFilter =
+        "all";
+
+
+    function filterProducts() {
+
+        const query =
+            (search?.value || "")
+                .trim()
+                .toLowerCase();
+
+
+        let visible =
+            0;
+
+
+        cards.forEach(function (card) {
+
+            const categories =
+                (
+                    card.dataset.category ||
+                    ""
+                ).toLowerCase();
+
+
+            const searchableText =
+                (
+                    card.dataset.search ||
+                    card.textContent ||
+                    ""
+                ).toLowerCase();
+
+
+            const filterMatch =
+                activeFilter === "all" ||
+                categories.includes(
+                    activeFilter
+                );
+
+
+            const searchMatch =
+                !query ||
+                searchableText.includes(
+                    query
+                );
+
+
+            const show =
+                filterMatch &&
+                searchMatch;
+
+
+            card.style.display =
+                show
+                    ? "flex"
+                    : "none";
+
+
+            if (show) {
+                visible++;
+            }
+
+        });
+
+
+        if (noResults) {
+
+            noResults.classList.toggle(
+                "show",
+                visible === 0
+            );
+
+        }
+
+    }
+
+
+    buttons.forEach(function (button) {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                buttons.forEach(
+                    function (item) {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                activeFilter =
+                    button.dataset.filter;
+
+
+                filterProducts();
+
+            }
+        );
+
+    });
+
+
+    search?.addEventListener(
+        "input",
+        filterProducts
+    );
+
+
+    /* =========================================
+       PRODUCT MODAL
+    ========================================= */
+
+    const modal =
+        document.getElementById(
+            "productModal"
+        );
+
+
+    const modalClose =
+        document.getElementById(
+            "modalClose"
+        );
+
+
+    const modalName =
+        document.getElementById(
+            "modalProductName"
+        );
+
+
+    const modalDescription =
+        document.getElementById(
+            "modalDescription"
+        );
+
+
+    const modalImage =
+        document.getElementById(
+            "modalImage"
+        );
+
+
+    const modalType =
+        document.getElementById(
+            "modalType"
+        );
+
+
+    const modalCategory =
+        document.getElementById(
+            "modalCategory"
+        );
+
+
+    const modalEnquiry =
+        document.getElementById(
+            "modalEnquiryBtn"
+        );
+
+
+    let currentProduct =
+        "";
+
+
+    function openModal(button) {
+
+        currentProduct =
+            button.dataset.product || "";
+
+
+        if (modalName) {
+
+            modalName.textContent =
+                currentProduct;
+
+        }
+
+
+        if (modalDescription) {
+
+            modalDescription.textContent =
+                button.dataset.description || "";
+
+        }
+
+
+        if (modalType) {
+
+            modalType.textContent =
+                button.dataset.type || "";
+
+        }
+
+
+        if (modalCategory) {
+
+            modalCategory.textContent =
+                button.dataset.category || "";
+
+        }
+
+
+        if (modalImage) {
+
+            modalImage.src =
+                button.dataset.image || "";
+
+            modalImage.alt =
+                currentProduct;
+
+        }
+
+
+        modal?.classList.add("show");
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    function closeModal() {
+
+        modal?.classList.remove("show");
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    document
+        .querySelectorAll(".view-btn")
+        .forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    openModal(button);
+
+                }
+            );
+
+        });
+
+
+    modalClose?.addEventListener(
+        "click",
+        closeModal
+    );
+
+
+    modal?.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === modal) {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+    modalEnquiry?.addEventListener(
+        "click",
+        function () {
+
+            if (currentProduct) {
+
+                addToEnquiry(
+                    currentProduct
+                );
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeModal();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================
+       TOAST
+    ========================================= */
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    const toastText =
+        document.getElementById(
+            "toastText"
+        );
+
+
+    let toastTimer;
+
+
+    function showToast(message) {
+
+        if (!toast) return;
+
+
+        if (toastText) {
+
+            toastText.textContent =
+                message;
+
+        }
+
+
+        toast.classList.add(
+            "show"
+        );
+
+
+        clearTimeout(
+            toastTimer
+        );
+
+
+        toastTimer =
+            setTimeout(
+                function () {
+
+                    toast.classList.remove(
+                        "show"
+                    );
+
+                },
+                2500
+            );
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>

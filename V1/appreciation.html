@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Journey | Be Pharma Traders</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Caveat:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+
+        tailwind.config = {
+
+            theme: {
+
+                extend: {
+
+                    colors: {
+
+                        paper: "#FBF8F3",
+                        ink: "#292631",
+                        purple: "#7667A8",
+                        pink: "#D98A9B",
+                        blue: "#7599B8",
+                        green: "#7E9B86",
+                        yellow: "#D7AA57"
+
+                    },
+
+                    fontFamily: {
+
+                        sans: ["DM Sans", "sans-serif"],
+
+                        display: [
+                            "Playfair Display",
+                            "serif"
+                        ],
+
+                        handwritten: [
+                            "Caveat",
+                            "cursive"
+                        ]
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            background: #FBF8F3;
+
+            color: #292631;
+
+            font-family: "DM Sans", sans-serif;
+
+            overflow-x: hidden;
+
+        }
+
+
+        /* =========================================
+                        PAPER TEXTURE
+        ========================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: .35;
+
+            background-image:
+
+                radial-gradient(
+                    rgba(41,38,49,.07) .7px,
+                    transparent .7px
+                );
+
+            background-size: 7px 7px;
+
+            z-index: -1;
+
+        }
+
+
+        /* =========================================
+                        FLOATING ELEMENTS
+        ========================================== */
+
+        .float {
+
+            animation:
+                float 5s ease-in-out infinite;
+
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px)
+                    rotate(3deg);
+
+            }
+
+        }
+
+
+        /* =========================================
+                        TAPE
+        ========================================== */
+
+        .tape {
+
+            position: absolute;
+
+            width: 75px;
+
+            height: 24px;
+
+            background: rgba(255,225,170,.65);
+
+            transform: rotate(-4deg);
+
+            top: -12px;
+
+            left: 50%;
+
+            margin-left: -37px;
+
+        }
+
+
+        /* =========================================
+                        PAPER NOTE
+        ========================================== */
+
+        .note {
+
+            transition:
+                transform .4s ease,
+                box-shadow .4s ease;
+
+        }
+
+
+        .note:hover {
+
+            transform:
+                translateY(-7px)
+                rotate(0deg);
+
+            box-shadow:
+                0 25px 45px
+                rgba(41,38,49,.12);
+
+        }
+
+
+        /* =========================================
+                        TIMELINE
+        ========================================== */
+
+        .timeline-line {
+
+            position: absolute;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 2px;
+
+            background:
+                repeating-linear-gradient(
+                    to bottom,
+                    #D7CBDC 0,
+                    #D7CBDC 8px,
+                    transparent 8px,
+                    transparent 16px
+                );
+
+            top: 0;
+
+            bottom: 0;
+
+        }
+
+
+        .timeline-dot {
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+
+        }
+
+
+        .timeline-item:hover
+        .timeline-dot {
+
+            transform: scale(1.25);
+
+            box-shadow:
+                0 0 0 8px
+                rgba(118,103,168,.12);
+
+        }
+
+
+        /* =========================================
+                        REVEAL
+        ========================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(35px);
+
+            animation:
+                reveal .8s ease forwards;
+
+        }
+
+
+        @keyframes reveal {
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+
+            }
+
+        }
+
+
+        /* =========================================
+                        STAMP
+        ========================================== */
+
+        .stamp {
+
+            border:
+                2px solid
+                currentColor;
+
+            border-radius: 50%;
+
+            transform: rotate(-10deg);
+
+        }
+
+
+        /* =========================================
+                        MOBILE TIMELINE
+        ========================================== */
+
+        @media(max-width: 767px) {
+
+            .timeline-line {
+
+                left: 20px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================================
+                            DECORATIONS
+    ======================================================= -->
+
+    <div
+        class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+
+        <div
+            class="absolute
+                   top-20
+                   left-[-70px]
+                   w-64
+                   h-64
+                   rounded-full
+                   bg-purple/10
+                   blur-3xl">
+        </div>
+
+
+        <div
+            class="absolute
+                   top-[45%]
+                   right-[-80px]
+                   w-72
+                   h-72
+                   rounded-full
+                   bg-pink/10
+                   blur-3xl">
+        </div>
+
+
+        <div
+            class="absolute
+                   bottom-20
+                   left-[35%]
+                   w-64
+                   h-64
+                   rounded-full
+                   bg-blue/10
+                   blur-3xl">
+        </div>
+
+    </div>
+
+
+
+    <!-- ======================================================
+                            HERO
+    ======================================================= -->
+
+    <section
+        class="min-h-screen
+               flex
+               items-center
+               relative">
+
+        <!-- Decorative stars -->
+
+        <span
+            class="absolute
+                   top-24
+                   left-[10%]
+                   text-yellow
+                   text-2xl
+                   float">
+
+            ✦
+
+        </span>
+
+
+        <span
+            class="absolute
+                   top-[35%]
+                   right-[10%]
+                   text-pink
+                   text-3xl
+                   float"
+            style="animation-delay:1s">
+
+            ✷
+
+        </span>
+
+
+        <span
+            class="absolute
+                   bottom-24
+                   left-[18%]
+                   text-purple
+                   text-xl
+                   float"
+            style="animation-delay:2s">
+
+            ✦
+
+        </span>
+
+
+        <div
+            class="max-w-6xl
+                   mx-auto
+                   px-6
+                   w-full
+                   text-center">
+
+
+            <!-- Small Label -->
+
+            <div
+                class="reveal
+                       inline-flex
+                       items-center
+                       gap-3
+                       px-5
+                       py-2
+                       border
+                       border-gray-200
+                       rounded-full
+                       bg-white/70
+                       backdrop-blur
+                       text-sm
+                       font-semibold
+                       text-gray-500">
+
+                <span class="text-pink">
+                    ♥
+                </span>
+
+                A page dedicated to our team
+
+                <a
+                    href="https://devlabs.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-purple hover:text-pink transition duration-300">
+
+                    • Dev Labs
+
+                </a>
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1
+                class="reveal
+                       font-display
+                       text-6xl
+                       sm:text-7xl
+                       lg:text-9xl
+                       leading-[.95]
+                       mt-9"
+                style="animation-delay:.1s">
+
+                Our
+
+                <span
+                    class="italic
+                           text-purple">
+
+                    Journey
+
+                </span>
+
+            </h1>
+
+
+            <!-- First Paragraph Removed -->
+
+            <p
+                class="reveal
+                       max-w-2xl
+                       mx-auto
+                       mt-7
+                       text-gray-500
+                       leading-8
+                       text-sm
+                       sm:text-base"
+                style="animation-delay:.2s">
+
+                This isn't just a list of names.
+                It's a small reminder of the people,
+                ideas and efforts that turned a project
+                into something we can proudly call ours.
+
+            </p>
+
+
+            <!-- Dev Labs -->
+
+            <div
+                class="reveal
+                       mt-6
+                       font-handwritten
+                       text-3xl
+                       text-purple"
+                style="animation-delay:.3s">
+
+                Proudly created at
+
+                <a
+                    href="https://devlabs.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-purple hover:text-pink transition duration-300">
+
+                    • Dev Labs
+
+                </a>
+
+                ✦
+
+            </div>
+
+
+            <!-- Scroll -->
+
+            <div
+                class="reveal
+                       mt-14
+                       flex
+                       justify-center
+                       items-center
+                       gap-3
+                       text-gray-400
+                       text-xs
+                       uppercase
+                       tracking-[.3em]"
+                style="animation-delay:.4s">
+
+                <span>
+                    Scroll through our story
+                </span>
+
+                <i
+                    class="fa-solid fa-arrow-down animate-bounce">
+                </i>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+                    STORY INTRODUCTION
+    ======================================================= -->
+
+    <section class="pb-24">
+
+        <div
+            class="max-w-4xl
+                   mx-auto
+                   px-6
+                   text-center">
+
+            <div
+                class="font-handwritten
+                       text-4xl
+                       text-purple">
+
+                It all started with an idea...
+
+            </div>
+
+
+            <p
+                class="mt-5
+                       text-gray-500
+                       leading-8
+                       max-w-2xl
+                       mx-auto">
+
+                And then came planning,
+                brainstorming, coding,
+                designing, testing,
+                fixing bugs and countless
+                "ek baar aur check kar lo" moments.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+                        JOURNEY TIMELINE
+    ======================================================= -->
+
+    <section class="pb-32">
+
+        <div
+            class="max-w-6xl
+                   mx-auto
+                   px-5
+                   sm:px-8
+                   relative">
+
+
+            <!-- Timeline -->
+
+            <div class="timeline-line"></div>
+
+
+            <!-- =================================================
+                            MEMBER 01
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div class="md:text-right md:pr-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-white
+                               p-7
+                               sm:p-9
+                               rounded-sm
+                               shadow-lg
+                               rotate-[-1.5deg]">
+
+                        <div class="tape"></div>
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-purple">
+
+                            Member 01
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Snehpriya Raj
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            Every journey needs someone
+                            willing to take the first step.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-purple
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-flag
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           pl-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[-4deg]">
+
+                        The beginning ✦
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 02
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           justify-end
+                           pr-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[4deg]">
+
+                        Ideas everywhere!
+
+                    </span>
+
+                </div>
+
+
+                <div class="md:pl-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#FFF8E8]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[1.5deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(180,220,255,.55)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-blue">
+
+                            Member 02
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Supriya Raj
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            Good design makes technology
+                            feel human.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-blue
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-pen-nib
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 03
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div class="md:text-right md:pr-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#F0F8F1]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[-1deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(210,240,215,.7)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-green">
+
+                            Member 03
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Prity Kumari
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            If it looks simple,
+                            someone worked hard behind it.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-green
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-code
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           pl-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[3deg]">
+
+                        Behind the scenes ✦
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 04
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           justify-end
+                           pr-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[-3deg]">
+
+                        Make it beautiful.
+
+                    </span>
+
+                </div>
+
+
+                <div class="md:pl-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#FFF0F3]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[1deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(255,200,210,.65)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-pink">
+
+                            Member 04
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Kajal Kumari
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            Details are small,
+                            but their impact isn't.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-pink
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-palette
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 05
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div class="md:text-right md:pr-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-white
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[-1.5deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(225,210,245,.65)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-purple">
+
+                            Member 05
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Manish Kumar Mahto
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            Every good project deserves
+                            a good story.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-purple
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-file-lines
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           pl-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400">
+
+                        Put it into words ✦
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 06
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           justify-end
+                           pr-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[3deg]">
+
+                        Find. Fix. Repeat.
+
+                    </span>
+
+                </div>
+
+
+                <div class="md:pl-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#EEF6FB]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[1.5deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(190,220,240,.65)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-blue">
+
+                            Member 06
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Akash Kumar
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            A finished project is not complete
+                            until it has been tested.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-blue
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-check
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 07
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       mb-24
+                       reveal">
+
+                <div class="md:text-right md:pr-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#FFF8E8]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[-1deg]">
+
+                        <div class="tape"></div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-yellow-600">
+
+                            Member 07
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Puja Kumari
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            Good planning saves countless
+                            hours later.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-yellow
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-lightbulb
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           pl-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400">
+
+                        Think first. Build better.
+
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                            MEMBER 08
+            ================================================== -->
+
+            <div
+                class="timeline-item
+                       relative
+                       grid
+                       md:grid-cols-2
+                       gap-10
+                       reveal">
+
+                <div
+                    class="hidden md:flex
+                           items-center
+                           justify-end
+                           pr-16">
+
+                    <span
+                        class="font-handwritten
+                               text-3xl
+                               text-gray-400
+                               rotate-[-4deg]">
+
+                        And finally... ✦
+
+                    </span>
+
+                </div>
+
+
+                <div class="md:pl-16">
+
+                    <div
+                        class="note
+                               relative
+                               bg-[#F0F8F1]
+                               p-7
+                               sm:p-9
+                               shadow-lg
+                               rotate-[1deg]">
+
+                        <div
+                            class="tape"
+                            style="background:rgba(205,230,210,.7)">
+                        </div>
+
+
+                        <p
+                            class="font-handwritten
+                                   text-2xl
+                                   text-green">
+
+                            Member 08
+
+                        </p>
+
+
+                        <h2
+                            class="font-display
+                                   text-3xl
+                                   mt-3">
+
+                            Pallavi Kumari
+
+                        </h2>
+
+
+                        <div
+                            class="mt-6
+                                   text-gray-400
+                                   text-sm">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            A team becomes stronger when
+                            everyone moves together.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="timeline-dot
+                           absolute
+                           left-[20px]
+                           md:left-1/2
+                           top-8
+                           -translate-x-1/2
+                           w-10
+                           h-10
+                           rounded-full
+                           bg-green
+                           border-8
+                           border-paper
+                           z-10
+                           flex
+                           items-center
+                           justify-center">
+
+                    <i
+                        class="fa-solid
+                               fa-people-group
+                               text-white
+                               text-xs">
+                    </i>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+                        APPRECIATION
+    ======================================================= -->
+
+    <section
+        class="py-28
+               bg-[#292631]
+               relative
+               overflow-hidden">
+
+
+        <!-- Background circles -->
+
+        <div
+            class="absolute
+                   -top-32
+                   -left-32
+                   w-72
+                   h-72
+                   rounded-full
+                   bg-purple/20
+                   blur-3xl">
+        </div>
+
+
+        <div
+            class="absolute
+                   -bottom-32
+                   -right-32
+                   w-72
+                   h-72
+                   rounded-full
+                   bg-pink/20
+                   blur-3xl">
+        </div>
+
+
+        <div
+            class="max-w-5xl
+                   mx-auto
+                   px-6
+                   text-center
+                   relative
+                   z-10">
+
+
+            <div
+                class="stamp
+                       inline-flex
+                       w-28
+                       h-28
+                       items-center
+                       justify-center
+                       text-white/70">
+
+                <div>
+
+                    <i
+                        class="fa-solid
+                               fa-heart
+                               text-2xl">
+                    </i>
+
+                    <p
+                        class="font-handwritten
+                               text-lg
+                               mt-1">
+
+                        Thank You
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <h2
+                class="font-display
+                       text-5xl
+                       sm:text-6xl
+                       lg:text-7xl
+                       text-white
+                       mt-9">
+
+                To the people
+
+                <br>
+
+                <span
+                    class="italic
+                           text-pink">
+
+                    behind the work.
+
+                </span>
+
+            </h2>
+
+
+            <p
+                class="max-w-2xl
+                       mx-auto
+                       text-white/60
+                       leading-8
+                       mt-8
+                       text-sm
+                       sm:text-base">
+
+                Thank you for the ideas that became solutions,
+                the mistakes that became lessons,
+                the challenges that became achievements,
+                and most importantly —
+                for showing up for each other.
+
+            </p>
+
+
+            <div
+                class="mt-10
+                       flex
+                       justify-center
+                       gap-4
+                       text-white/50">
+
+                <span>✦</span>
+                <span>✦</span>
+                <span>✦</span>
+
+            </div>
+
+
+            <p
+                class="font-handwritten
+                       text-4xl
+                       text-white
+                       mt-8">
+
+                We built this together. 🤍
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+                        FINAL MESSAGE
+    ======================================================= -->
+
+    <section class="py-28">
+
+        <div
+            class="max-w-4xl
+                   mx-auto
+                   px-6
+                   text-center">
+
+
+            <p
+                class="font-handwritten
+                       text-3xl
+                       text-purple">
+
+                One last thing...
+
+            </p>
+
+
+            <h2
+                class="font-display
+                       text-5xl
+                       sm:text-6xl
+                       mt-5">
+
+                The project may end.
+
+                <br>
+
+                <span class="italic text-pink">
+
+                    The memories won't.
+
+                </span>
+
+            </h2>
+
+
+            <p
+                class="text-gray-500
+                       max-w-xl
+                       mx-auto
+                       mt-7
+                       leading-8">
+
+                Whatever comes next,
+                this chapter will always remind us
+                that something meaningful can happen
+                when different people choose to work
+                towards one goal.
+
+            </p>
+
+
+            <div
+                class="mt-10
+                       inline-flex
+                       items-center
+                       gap-3
+                       px-6
+                       py-3
+                       bg-white
+                       rounded-full
+                       shadow-md
+                       text-sm
+                       font-semibold">
+
+                <span class="text-yellow">
+                    ★
+                </span>
+
+                Proud of our team
+
+                <span class="text-yellow">
+                    ★
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ======================================================
+                            FOOTER
+    ======================================================= -->
+
+    <footer
+        class="border-t
+               border-gray-200
+               py-8">
+
+        <div
+            class="max-w-6xl
+                   mx-auto
+                   px-6
+                   flex
+                   flex-col
+                   sm:flex-row
+                   justify-between
+                   items-center
+                   gap-3">
+
+            <p
+                class="text-sm
+                       text-gray-400">
+
+                © 2026 Be Pharma Traders
+
+            </p>
+
+
+            <p
+                class="font-handwritten
+                       text-2xl
+                       text-gray-500">
+
+                Made together ♥
+        
+                <a
+                    href="https://devlabs.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-purple hover:text-pink transition duration-300">
+
+                    • Dev Labs
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
