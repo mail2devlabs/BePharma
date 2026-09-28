@@ -1089,13 +1089,11 @@
                 width: 20px;
             }
 
-            /* Keep the hero typography large on mobile so the text
-               wraps naturally into the same visual lines as the design. */
             .hero h1 {
-                font-size: clamp(40px, 11vw, 65px);
-                line-height: 1.08;
-                letter-spacing: -1.5px;
-                margin-bottom: 22px;
+                font-size: clamp(27px, 7.5vw, 38px);
+                line-height: 1.15;
+                letter-spacing: -0.5px;
+                margin-bottom: 16px;
             }
 
             .hero-description {
@@ -1105,8 +1103,8 @@
             }
 
             .hero-trust {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 8px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px 8px;
                 margin-top: 30px;
                 padding-top: 18px;
             }
@@ -1530,247 +1528,587 @@
         .dropdown.active .dropdown-arrow {
             transform: rotate(180deg);
         }
-    
-        /* =========================================================
-           FINAL RESPONSIVE LAYOUT
-           Desktop/Laptop + Tablet + Mobile
-           Content, colours, buttons and functionality unchanged
-        ========================================================= */
+    </style>
+<style>
 
-        /* Laptop / Desktop */
-        @media (min-width: 1024px) {
-            .hero-content {
-                width: min(560px, 100%);
-            }
+/* =========================================================
+   FINAL RESPONSIVE SAFETY + SPACING FIX
+   Never let text/cards touch the viewport edge.
+   Original desktop alignment is preserved.
+========================================================= */
 
-            .hero h1 {
-                font-size: clamp(52px, 5vw, 65px);
-                line-height: 1.08;
-            }
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
-            .hero-description {
-                max-width: 530px;
-            }
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
 
-            .hero-buttons {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
+/* Every element must be allowed to shrink inside its parent */
+*, *::before, *::after {
+    box-sizing: border-box;
+    min-width: 0;
+}
 
-            .hero-trust {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
+img, video, iframe, svg {
+    max-width: 100%;
+}
 
-        /* Tablet */
-        @media (min-width: 601px) and (max-width: 1023px) {
-            .container {
-                width: 92%;
-            }
+img, video {
+    height: auto;
+}
 
-            .hero {
-                min-height: auto;
-                padding: 45px 0 55px;
-            }
+p, h1, h2, h3, h4, h5, h6, a, span, strong, label, li, button {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
 
-            .hero-content {
-                width: 100%;
-                max-width: 620px;
-                padding: 35px 0 10px;
-            }
+/* ---------------------------------------------------------
+   PAGE-WIDE CONTENT GUTTERS
+--------------------------------------------------------- */
 
-            .hero h1 {
-                font-size: clamp(48px, 8vw, 62px);
-                line-height: 1.08;
-            }
+.container {
+    width: min(100% - 48px, 1280px);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            .hero-description {
-                max-width: 560px;
-                font-size: 17px;
-                line-height: 1.55;
-            }
+section,
+.site-footer,
+footer {
+    max-width: 100%;
+    overflow: hidden;
+}
 
-            .hero-buttons {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
+/* ---------------------------------------------------------
+   HERO — KEEP LEFT ALIGNMENT, GIVE IT ROOM
+--------------------------------------------------------- */
 
-            .hero-trust {
-                width: 100%;
-                max-width: 620px;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-            }
+.hero,
+.hero-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
 
-            .trust-item {
-                min-width: 0;
-            }
+.hero .container,
+.hero-section .container {
+    width: min(100% - 48px, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+}
 
-            .trust-item span {
-                white-space: normal;
-            }
-        }
+.hero-content,
+.hero-text {
+    min-width: 0;
+    max-width: 720px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .container {
-                width: 92%;
-            }
+.hero h1,
+.hero-title {
+    max-width: 720px;
+    margin-bottom: 22px;
+    line-height: 1.08;
+    overflow-wrap: normal;
+}
 
-            .hero {
-                min-height: auto;
-                padding: 28px 0 45px;
-            }
+.hero p,
+.hero-description {
+    max-width: 650px;
+    margin-bottom: 30px;
+    line-height: 1.75;
+}
 
-            .hero-content {
-                width: 100%;
-                max-width: 100%;
-                padding: 18px 0 5px;
-            }
+.hero-buttons,
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
 
-            .hero-label {
-                max-width: 100%;
-                white-space: normal;
-            }
+.hero-buttons .btn,
+.hero-actions .btn {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 13px 22px;
+}
 
-            .hero h1 {
-                width: 100%;
-                max-width: 100%;
-                font-size: clamp(43px, 11.5vw, 58px);
-                line-height: 1.08;
-                letter-spacing: -1.2px;
-                margin-bottom: 22px;
-                overflow-wrap: normal;
-                word-break: normal;
-            }
+/* ---------------------------------------------------------
+   ALL COMMON GRIDS / CARDS
+--------------------------------------------------------- */
 
-            .hero-description {
-                width: 100%;
-                max-width: 100%;
-                font-size: 16px;
-                line-height: 1.55;
-            }
+.about-grid,
+.services-grid,
+.products-grid,
+.categories-grid,
+.why-grid,
+.contact-grid,
+.stats-grid {
+    width: 100%;
+    min-width: 0;
+}
 
-            .hero-buttons {
-                width: 100%;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 12px;
-            }
+.about-content,
+.about-image,
+.service-card,
+.product-card,
+.category-card,
+.why-card,
+.contact-card,
+.form-card,
+.quick-item {
+    min-width: 0;
+}
 
-            .hero-buttons .btn {
-                flex: 0 1 auto;
-            }
+.service-card,
+.product-card,
+.category-card,
+.why-card,
+.contact-card {
+    padding: 26px;
+}
 
-            .hero-trust {
-                width: 100%;
-                max-width: 100%;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
-                gap: 0;
-            }
+.service-card p,
+.product-card p,
+.category-card p,
+.why-card p,
+.contact-card p {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
 
-            .trust-item {
-                min-width: 0;
-                gap: 7px;
-                padding-right: 8px;
-            }
+/* ---------------------------------------------------------
+   NAVBAR
+--------------------------------------------------------- */
 
-            .trust-item i {
-                flex: 0 0 auto;
-                font-size: 19px;
-            }
+nav {
+    width: 100%;
+    max-width: 100%;
+}
 
-            .trust-item span {
-                min-width: 0;
-                font-size: 9px;
-                line-height: 1.25;
-                white-space: normal;
-                overflow-wrap: normal;
-                word-break: normal;
-            }
+nav > div {
+    min-width: 0;
+}
 
-            .quick-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+nav svg {
+    max-width: 190px;
+}
 
-            .quick-item {
-                padding: 10px 12px;
-            }
-        }
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
 
-        /* Very small phones */
-        @media (max-width: 430px) {
-            .hero h1 {
-                font-size: clamp(40px, 11.8vw, 50px);
-                line-height: 1.08;
-            }
+footer .container,
+.site-footer > div {
+    min-width: 0;
+}
 
-            .hero-buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
 
-            .hero-buttons .btn {
-                width: 100%;
-                justify-content: center;
-            }
+@media (max-width: 1024px) {
 
-            .hero-trust {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                row-gap: 14px;
-            }
+    .container,
+    .hero .container,
+    .hero-section .container {
+        width: min(100% - 40px, 960px);
+    }
 
-            .trust-item:nth-child(2) {
-                border-right: none;
-            }
+    .hero-content,
+    .hero-text {
+        max-width: 650px;
+    }
 
-            .trust-item:nth-child(3),
-            .trust-item:nth-child(4) {
-                border-top: 1px solid rgba(9, 47, 73, 0.08);
-                padding-top: 12px;
-            }
-        }
+    .hero h1,
+    .hero-title {
+        font-size: clamp(38px, 5.5vw, 60px);
+    }
 
-        /* Smallest phones */
-        @media (max-width: 360px) {
-            .hero h1 {
-                font-size: 40px;
-            }
+    .hero p,
+    .hero-description {
+        max-width: 600px;
+    }
 
-            .hero-description {
-                font-size: 15px;
-            }
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card {
+        padding: 22px;
+    }
+}
 
-            .hero-trust {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
+/* ---------------------------------------------------------
+   MOBILE — 768px
+--------------------------------------------------------- */
 
-            .trust-item span {
-                font-size: 8.5px;
-            }
+@media (max-width: 768px) {
 
-            .quick-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .container,
+    .hero .container,
+    .hero-section .container {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
 
+    /* NEVER CENTER THE HOME TEXT */
+    .hero-content,
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 22px 0 28px;
+        text-align: left;
+    }
 
-        /* =========================================================
-           FIXED NAVBAR
-           Navbar stays at the top while the page is scrolling.
-        ========================================================= */
-        nav {
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            right: 0 !important;
-            width: 100% !important;
-            z-index: 9999 !important;
-        }
+    .hero h1,
+    .hero-title {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(32px, 8vw, 48px);
+        line-height: 1.12;
+        margin: 0 0 18px;
+    }
 
-        body {
-            padding-top: 80px;
-        }
+    .hero p,
+    .hero-description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.75;
+        margin: 0 0 26px;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin: 0;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        margin: 0;
+    }
+
+    /* Sections */
+    .section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section > .container {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* Make every grid safe on narrow screens */
+    .about-grid,
+    .services-grid,
+    .products-grid,
+    .categories-grid,
+    .why-grid,
+    .contact-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .stats-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 22px 18px;
+        margin: 0;
+    }
+
+    .about-content,
+    .about-image,
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        min-width: 0;
+    }
+
+    /* Images never create horizontal overflow */
+    .about-image img,
+    .service-card img,
+    .product-card img,
+    .category-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Contact inputs */
+    input,
+    textarea,
+    select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    textarea {
+        min-height: 140px;
+    }
+
+    .form-submit {
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        margin-top: 8px;
+    }
+
+    /* Footer */
+    footer .mx-auto,
+    .site-footer .mx-auto {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* Prevent giant SVG/logo from forcing width */
+    nav svg,
+    footer svg {
+        width: auto;
+        max-width: 170px;
+    }
+}
+
+/* ---------------------------------------------------------
+   SMALL PHONES — 480px
+--------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container,
+    .section > .container {
+        width: calc(100% - 28px);
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .hero-content,
+    .hero-text {
+        padding-top: 18px;
+        padding-bottom: 24px;
+    }
+
+    .hero h1,
+    .hero-title {
+        font-size: clamp(29px, 9vw, 40px);
+        line-height: 1.13;
+        margin-bottom: 16px;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .section-title {
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle,
+    .section-description {
+        margin-bottom: 28px;
+        line-height: 1.7;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        padding: 20px 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px;
+    }
+
+    nav svg {
+        max-width: 145px;
+    }
+}
+
+/* ---------------------------------------------------------
+   VERY SMALL PHONES — 363px AND BELOW
+   This is the specific case causing the sticking.
+--------------------------------------------------------- */
+
+@media (max-width: 363px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container,
+    .section > .container {
+        width: calc(100% - 24px) !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+
+    .hero-content,
+    .hero-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 0 22px !important;
+    }
+
+    .hero h1,
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 13.5px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        width: 100% !important;
+        gap: 9px !important;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 11px 14px !important;
+        white-space: normal !important;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        width: 100% !important;
+        padding: 18px 14px !important;
+    }
+
+    .service-card *,
+    .product-card *,
+    .category-card *,
+    .why-card *,
+    .contact-card *,
+    .form-card * {
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        max-width: 100% !important;
+    }
+
+    nav svg {
+        max-width: 130px !important;
+    }
+
+    nav .px-3 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    footer .mx-auto,
+    .site-footer .mx-auto {
+        width: calc(100% - 24px) !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   SAFETY: elements with fixed widths must never overflow
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    [style*="width"],
+    [style*="min-width"] {
+        max-width: 100%;
+    }
+
+    pre,
+    code {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .flex,
+    .grid {
+        min-width: 0;
+    }
+}
 
 </style>
 </head>
@@ -4007,55 +4345,91 @@
 
           <li class="dropdown">
 
-            <a href="services.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-concierge-bell text-lg text-accent"></i>
+
+            <a
+              href="services.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-service-line
+                       text-lg text-accent"
+              ></i>
+
               Services
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- SERVICES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="pharmaceutical-distribution.html">
-                <i class="fas fa-truck-medical"></i>
-                <span>Pharmaceutical Distribution</span>
+            <!-- SERVICES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="wholesale-distribution.html"
+              >
+
+                <i class="ri-truck-line"></i>
+
+                <span>
+                  Wholesale Distribution
+                </span>
+
               </a>
 
-              <a href="wholesale-supply.html">
-                <i class="fas fa-boxes-stacked"></i>
-                <span>Wholesale Supply</span>
+
+              <a
+                href="retail-supply.html"
+              >
+
+                <i class="ri-store-2-line"></i>
+
+                <span>
+                  Retail Supply
+                </span>
+
               </a>
 
-              <a href="institutional-supply.html">
-                <i class="fas fa-hospital"></i>
-                <span>Institutional Supply</span>
+
+              <a
+                href="hospital-supply.html"
+              >
+
+                <i class="ri-hospital-line"></i>
+
+                <span>
+                  Hospital Supply
+                </span>
+
               </a>
 
-              <a href="surgical-medical-supplies.html">
-                <i class="fas fa-kit-medical"></i>
-                <span>Surgical &amp; Medical Supply</span>
+
+              <a
+                href="third-party-manufacturing.html"
+              >
+
+                <i class="ri-building-4-line"></i>
+
+                <span>
+                  Third Party Manufacturing
+                </span>
+
               </a>
 
-              <a href="otc-healthcare-products.html">
-                <i class="fas fa-heart-circle-check"></i>
-                <span>OTC &amp; Healthcare Supply</span>
-              </a>
-
-              <a href="delivery-support.html">
-                <i class="fas fa-truck-fast"></i>
-                <span>Delivery Support</span>
-              </a>
-
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="services.html" class="flex items-center justify-between">
-                  <span>View All Services</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
 
             </div>
 
           </li>
+
 
 
           <!-- ================================================= -->
@@ -4064,51 +4438,125 @@
 
           <li class="dropdown">
 
-            <a href="categories.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-list-check text-lg text-accent"></i>
+
+            <a
+              href="categories.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-list-check-2
+                       text-lg text-accent"
+              ></i>
+
               Categories
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- CATEGORIES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="tablets-capsules.html">
-                <i class="fas fa-tablets"></i>
-                <span>Tablets &amp; Capsules</span>
+            <!-- CATEGORIES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="medicines.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Medicines
+                </span>
+
               </a>
 
-              <a href="injections.html">
-                <i class="fas fa-syringe"></i>
-                <span>Injections</span>
+
+              <a
+                href="injections.html"
+              >
+
+                <i class="ri-syringe-line"></i>
+
+                <span>
+                  Injections
+                </span>
+
               </a>
 
-              <a href="medical-devices.html">
-                <i class="fas fa-microscope"></i>
-                <span>Medical Devices</span>
+
+              <a
+                href="medical-devices.html"
+              >
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <span>
+                  Medical Devices
+                </span>
+
               </a>
 
-              <a href="surgical-items.html">
-                <i class="fas fa-scissors"></i>
-                <span>Surgical Items</span>
+
+              <a
+                href="medical-equipment.html"
+              >
+
+                <i class="ri-first-aid-kit-line"></i>
+
+                <span>
+                  Medical Equipment
+                </span>
+
               </a>
 
-              <a href="OTC.html">
-                <i class="fas fa-bottle-droplet"></i>
-                <span>OTC Products</span>
+
+              <a
+                href="tablets.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Tablets
+                </span>
+
               </a>
 
-              <a href="healthcare-essentials.html">
-                <i class="fas fa-notes-medical"></i>
-                <span>Healthcare Essentials</span>
+
+              <a
+                href="capsules.html"
+              >
+
+                <i class="ri-capsule-fill"></i>
+
+                <span>
+                  Capsules
+                </span>
+
               </a>
 
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="categories.html" class="flex items-center justify-between">
-                  <span>View All Categories</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
+
+              <a
+                href="syrup.html"
+              >
+
+                <i class="ri-medicine-bottle-line"></i>
+
+                <span>
+                  Syrup
+                </span>
+
+              </a>
+
 
             </div>
 
@@ -4685,7 +5133,7 @@
         Crafted by
 
         <a
-          href="https://devlabs.org.in/"
+          href="index.html"
           class="font-semibold
                  text-white
                  hover:underline"
