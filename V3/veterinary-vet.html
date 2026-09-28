@@ -5,12 +5,17 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BePharma supplies reliable surgical, medical and healthcare products for hospitals, clinics, pharmacies and healthcare institutions.">
 
-    <title>Surgical &amp; Medical Supplies | BePharma</title>
+    <title>Vet Products | BePharma</title>
 
+    <meta
+        name="description"
+        content="Veterinary healthcare products and animal care solutions by BePharma."
+    >
 
-    <!-- Tailwind CSS -->
+    <!-- ===================================================== -->
+    <!-- TAILWIND CSS -->
+    <!-- ===================================================== -->
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -25,22 +30,18 @@
                     colors: {
 
                         brand: {
-
                             DEFAULT: "#0b7b97",
-
                             dark: "#08627a"
-
                         },
 
                         navy: "#0b2545",
 
                         mist: {
-
                             DEFAULT: "#eaf6fb",
-
                             line: "#cfe9f3"
+                        },
 
-                        }
+                        accent: "#4fc3dc"
 
                     }
 
@@ -53,7 +54,9 @@
     </script>
 
 
-    <!-- Font Awesome -->
+    <!-- ===================================================== -->
+    <!-- FONT AWESOME -->
+    <!-- ===================================================== -->
 
     <link
         rel="stylesheet"
@@ -61,7 +64,9 @@
     >
 
 
-    <!-- Remix Icon -->
+    <!-- ===================================================== -->
+    <!-- REMIX ICON -->
+    <!-- ===================================================== -->
 
     <link
         href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
@@ -69,7 +74,9 @@
     >
 
 
-    <!-- Google Fonts -->
+    <!-- ===================================================== -->
+    <!-- GOOGLE FONTS -->
+    <!-- ===================================================== -->
 
     <link
         rel="preconnect"
@@ -88,82 +95,142 @@
     >
 
 
+    <!-- ===================================================== -->
+    <!-- STYLE -->
+    <!-- ===================================================== -->
+
     <style>
 
         html {
             scroll-behavior: smooth;
         }
 
-
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
-
 
         .playfair {
             font-family: 'Playfair Display', serif;
         }
 
-
-        .category-card {
+        .vet-card {
             transition: all 0.35s ease;
         }
 
-
-        .category-card:hover {
+        .vet-card:hover {
             transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(11, 37, 69, 0.11);
         }
 
-
         .product-card {
+            transition: all 0.35s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(11, 37, 69, 0.10);
+        }
+
+        .icon-box {
+            transition: all 0.35s ease;
+        }
+
+        .vet-card:hover .icon-box {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .hero-bg {
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(79, 195, 220, 0.18),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 10% 90%,
+                    rgba(11, 123, 151, 0.10),
+                    transparent 30%
+                );
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: revealUp 0.8s ease forwards;
+        }
+
+        .delay-1 {
+            animation-delay: 0.15s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.45s;
+        }
+
+        .delay-4 {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes revealUp {
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .float-card {
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        .hero-image {
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.03);
+        }
+
+        .btn-hover {
             transition: all 0.3s ease;
         }
 
-
-        .product-card:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(7, 137, 168, 0.14);
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(11, 123, 151, 0.22);
         }
-
-
-        #productSidebar {
-            transition: transform 0.4s ease;
-        }
-
-
-        #sidebarOverlay {
-            transition: opacity 0.3s ease;
-        }
-
-
-
-        /* ================================================= */
-        /* FOOTER LINKS */
-        /* ================================================= */
 
         .footer-link {
             transition: all 0.3s ease;
         }
-
 
         .footer-link:hover {
             color: #ffffff;
             padding-left: 6px;
         }
 
-
-
-        /* ================================================= */
-        /* SOCIAL ICONS */
-        /* ================================================= */
-
         .social-icon {
             transition: all 0.3s ease;
         }
-
 
         .social-icon:hover {
             transform: translateY(-5px);
@@ -171,16 +238,9 @@
             color: white;
         }
 
-
-
-        /* ================================================= */
-        /* CONTACT ICON */
-        /* ================================================= */
-
         .contact-icon {
             transition: all 0.3s ease;
         }
-
 
         .contact-box:hover .contact-icon {
             background: #0b7b97;
@@ -188,49 +248,28 @@
             transform: scale(1.08);
         }
 
-
-
-        /* ================================================= */
-        /* PRODUCT LINKS */
-        /* ================================================= */
-
         .product-link {
             transition: all 0.3s ease;
         }
-
 
         .product-link:hover {
             color: white;
             padding-left: 6px;
         }
 
-
-
-        /* ================================================= */
-        /* DROPDOWN */
-        /* ================================================= */
-
         .dropdown {
             position: relative;
         }
 
-
         .dropdown-menu {
 
             visibility: hidden;
-
             opacity: 0;
-
             max-height: 0;
-
             overflow: hidden;
-
             margin-top: 0;
-
             padding: 0;
-
             background: #0e3158;
-
             border-radius: 10px;
 
             box-shadow:
@@ -238,211 +277,115 @@
                 rgba(255,255,255,0.12);
 
             transition:
-
                 max-height 0.35s ease,
-
                 opacity 0.25s ease,
-
                 margin-top 0.25s ease,
-
                 padding 0.25s ease,
-
                 visibility 0.25s ease;
-
         }
-
 
         .dropdown.active .dropdown-menu {
 
             visibility: visible;
-
             opacity: 1;
-
             max-height: 480px;
-
             margin-top: 12px;
-
             padding: 8px 0;
 
         }
 
-
-
-        /* ================================================= */
-        /* DROPDOWN LINKS */
-        /* ================================================= */
-
         .dropdown-menu a {
 
             display: flex;
-
             align-items: center;
-
             gap: 10px;
-
             padding: 11px 16px;
-
             color: #d6eef6;
-
             font-size: 14px;
-
             white-space: normal;
-
             transition: all 0.25s ease;
 
         }
-
 
         .dropdown-menu a:hover {
 
             background: #0b7b97;
-
             color: white;
-
             padding-left: 22px;
 
         }
 
-
         .dropdown-menu a i {
 
             width: 20px;
-
             text-align: center;
-
             font-size: 17px;
-
             color: #4fc3dc;
-
             transition: all 0.25s ease;
 
         }
 
-
         .dropdown-menu a:hover i {
 
             color: white;
-
             transform: scale(1.15);
 
         }
 
-
-
-        /* ================================================= */
-        /* DROPDOWN ARROW */
-        /* ================================================= */
-
         .dropdown-arrow {
 
             font-size: 16px;
-
             color: #4fc3dc;
-
             transition: transform 0.3s ease;
 
         }
 
-
         .dropdown.active .dropdown-arrow {
-
             transform: rotate(180deg);
-
         }
-
-
-
-        /* ================================================= */
-        /* MOBILE SUB LINK */
-        /* ================================================= */
 
         .mobile-sub-link {
 
             display: block;
-
             padding: 10px 16px;
-
             border-radius: 8px;
-
             color: #0b2545;
-
             transition: all 0.3s ease;
 
         }
-
 
         .mobile-sub-link:hover {
 
             background: white;
-
             color: #0b7b97;
 
         }
 
+        .cta-image {
 
-
-        footer#contact {
-
-            margin-top: auto;
-
-            margin-bottom: 0;
+            filter: blur(2px);
+            transform: scale(1.04);
 
         }
-
-    
-        /* ===== PAGE SPECIFIC ===== */
-        .hero-bg {
-            background:
-                linear-gradient(90deg, rgba(11,41,66,0.96) 0%, rgba(11,41,66,0.82) 45%, rgba(11,41,66,0.40) 100%),
-                url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=2000&q=85');
-            background-size: cover;
-            background-position: center;
-        }
-        .glass {
-            background: rgba(255,255,255,0.10);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.16);
-        }
-        .supply-card { transition: all 0.35s ease; }
-        .supply-card:hover {
-            transform: translateY(-7px);
-            box-shadow: 0 18px 45px rgba(7,137,168,0.14);
-        }
-        .process-line {
-            position: absolute; left: 25px; top: 55px; bottom: -30px;
-            width: 2px; background: #cfe9f3;
-        }
-        .process-item:last-child .process-line { display: none; }
-        .back-top {
-            opacity: 0; visibility: hidden; transform: translateY(15px);
-            transition: all 0.3s ease;
-        }
-        .back-top.show { opacity: 1; visibility: visible; transform: translateY(0); }
 
     </style>
 
 </head>
 
 
-<body class="bg-white text-gray-700">
-
-<!-- NAVBAR -->
-
-<nav
-    class="bg-mist border-b border-mist-line shadow-lg sticky top-0 z-50"
->
-
-    <div
-        class="w-full px-3 sm:px-5 lg:px-8"
-    >
+<body class="bg-white text-slate-700">
 
 
-        <!-- NAVBAR ROW -->
 
-        <div
-            class="flex items-center justify-between h-20"
-        >
+<!-- ========================================================= -->
+<!--                         NAVBAR                            -->
+<!-- ========================================================= -->
+
+<nav class="bg-mist border-b border-mist-line shadow-lg sticky top-0 z-50">
+
+    <div class="w-full px-3 sm:px-5 lg:px-8">
+
+        <div class="flex items-center justify-between h-20">
 
 
             <!-- LOGO -->
@@ -452,7 +395,6 @@
                 aria-label="Be Pharma Traders &amp; Co - Home"
                 class="flex items-center flex-shrink-0"
             >
-
 
                 <svg
                     viewBox="60 50 1420 590"
@@ -466,7 +408,6 @@
                         Be Pharma Traders &amp; Co
                     </title>
 
-
                     <g fill="currentColor">
 
                         <rect
@@ -477,7 +418,6 @@
                             rx="93">
                         </rect>
 
-
                         <rect
                             x="75"
                             y="245"
@@ -487,7 +427,6 @@
                         </rect>
 
                     </g>
-
 
                     <text
                         x="358"
@@ -501,7 +440,6 @@
                         B
                     </text>
 
-
                     <text
                         x="500"
                         y="382"
@@ -513,7 +451,6 @@
                     >
                         e
                     </text>
-
 
                     <text
                         x="678"
@@ -528,7 +465,6 @@
                         Pharma
                     </text>
 
-
                     <text
                         x="680"
                         y="528"
@@ -542,21 +478,15 @@
                         Traders &amp; Co
                     </text>
 
-
                 </svg>
 
             </a>
 
 
 
-            <!-- DESKTOP NAVIGATION -->
+            <!-- DESKTOP NAV -->
 
-            <div
-                class="hidden lg:flex items-center gap-7"
-            >
-
-
-                <!-- HOME -->
+            <div class="hidden lg:flex items-center gap-7">
 
                 <a
                     href="index.html"
@@ -564,9 +494,6 @@
                 >
                     Home
                 </a>
-
-
-                <!-- ABOUT -->
 
                 <a
                     href="about.html"
@@ -576,22 +503,18 @@
                 </a>
 
 
-
                 <!-- PRODUCTS -->
 
                 <div class="relative group">
-
 
                     <button
                         type="button"
                         class="flex items-center gap-2 text-navy font-medium hover:text-brand transition"
                     >
-
                         Products
 
                         <i
-                            class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"
-                        >
+                            class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition">
                         </i>
 
                     </button>
@@ -615,8 +538,6 @@
                         <div class="p-2">
 
 
-                            <!-- PHARMACEUTICALS -->
-
                             <a
                                 href="pharmaceuticals.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -625,9 +546,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
                                     <i class="fas fa-pills"></i>
-
                                 </span>
 
                                 <span>
@@ -637,8 +556,6 @@
                             </a>
 
 
-                            <!-- OTC -->
-
                             <a
                                 href="OTC.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -647,9 +564,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
                                     <i class="fas fa-capsules"></i>
-
                                 </span>
 
                                 <span>
@@ -663,35 +578,20 @@
 
                             <div class="relative group/sub">
 
-
                                 <a
                                     href="surgical-medical.html"
-                                    class="
-                                        flex items-center gap-3
-                                        px-4 py-3 rounded-lg
-                                        text-navy hover:bg-mist
-                                        hover:text-brand
-                                        group-hover/sub:bg-mist
-                                        group-hover/sub:text-brand
-                                        transition
-                                    "
+                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand group-hover/sub:bg-mist group-hover/sub:text-brand transition"
                                 >
 
                                     <span
                                         class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                     >
-
-                                        <i
-                                            class="fas fa-kit-medical">
-                                        </i>
-
+                                        <i class="fas fa-kit-medical"></i>
                                     </span>
-
 
                                     <span class="flex-1">
                                         Surgical
                                     </span>
-
 
                                     <i
                                         class="fa-solid fa-chevron-right text-[10px]">
@@ -700,17 +600,8 @@
                                 </a>
 
 
-                                <!-- SUB MENU -->
-
                                 <div
-                                    class="
-                                        absolute left-full -top-2 w-60 pl-2
-                                        opacity-0 invisible -translate-x-2
-                                        group-hover/sub:opacity-100
-                                        group-hover/sub:visible
-                                        group-hover/sub:translate-x-0
-                                        transition-all duration-300
-                                    "
+                                    class="absolute left-full -top-2 w-60 pl-2 opacity-0 invisible -translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all duration-300"
                                 >
 
                                     <div
@@ -725,9 +616,7 @@
                                             <span
                                                 class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                             >
-
                                                 <i class="fas fa-bandage"></i>
-
                                             </span>
 
                                             <span>
@@ -745,11 +634,7 @@
                                             <span
                                                 class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                             >
-
-                                                <i
-                                                    class="fas fa-mask-face">
-                                                </i>
-
+                                                <i class="fas fa-mask-face"></i>
                                             </span>
 
                                             <span>
@@ -781,7 +666,6 @@
                             </div>
 
 
-
                             <!-- NUTRACEUTICAL -->
 
                             <a
@@ -792,9 +676,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
                                     <i class="fas fa-leaf"></i>
-
                                 </span>
 
                                 <span>
@@ -804,8 +686,7 @@
                             </a>
 
 
-
-                            <!-- HEALTHCARE ESSENTIALS -->
+                            <!-- HEALTHCARE -->
 
                             <a
                                 href="healthcare-essentials.html"
@@ -815,11 +696,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-heart-pulse">
-                                    </i>
-
+                                    <i class="fas fa-heart-pulse"></i>
                                 </span>
 
                                 <span>
@@ -827,7 +704,6 @@
                                 </span>
 
                             </a>
-
 
 
                             <!-- PERSONAL CARE -->
@@ -840,11 +716,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-hand-holding-medical">
-                                    </i>
-
+                                    <i class="fas fa-hand-holding-medical"></i>
                                 </span>
 
                                 <span>
@@ -854,42 +726,24 @@
                             </a>
 
 
-
                             <!-- VETERINARY -->
 
-                            <div
-                                class="relative group/sub"
-                            >
-
+                            <div class="relative group/sub">
 
                                 <a
                                     href="veterinary-products.html"
-                                    class="
-                                        flex items-center gap-3
-                                        px-4 py-3 rounded-lg
-                                        text-navy hover:bg-mist
-                                        hover:text-brand
-                                        group-hover/sub:bg-mist
-                                        group-hover/sub:text-brand
-                                        transition
-                                    "
+                                    class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand group-hover/sub:bg-mist group-hover/sub:text-brand transition"
                                 >
 
                                     <span
                                         class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                     >
-
-                                        <i
-                                            class="fas fa-paw">
-                                        </i>
-
+                                        <i class="fas fa-paw"></i>
                                     </span>
-
 
                                     <span class="flex-1">
                                         Veterinary Products
                                     </span>
-
 
                                     <i
                                         class="fa-solid fa-chevron-right text-[10px]">
@@ -899,14 +753,7 @@
 
 
                                 <div
-                                    class="
-                                        absolute left-full -top-2 w-60 pl-2
-                                        opacity-0 invisible -translate-x-2
-                                        group-hover/sub:opacity-100
-                                        group-hover/sub:visible
-                                        group-hover/sub:translate-x-0
-                                        transition-all duration-300
-                                    "
+                                    class="absolute left-full -top-2 w-60 pl-2 opacity-0 invisible -translate-x-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0 transition-all duration-300"
                                 >
 
                                     <div
@@ -921,9 +768,7 @@
                                             <span
                                                 class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                             >
-
                                                 <i class="fas fa-dog"></i>
-
                                             </span>
 
                                             <span>
@@ -941,9 +786,7 @@
                                             <span
                                                 class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                             >
-
                                                 <i class="fas fa-egg"></i>
-
                                             </span>
 
                                             <span>
@@ -961,11 +804,7 @@
                                             <span
                                                 class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                             >
-
-                                                <i
-                                                    class="fas fa-cow">
-                                                </i>
-
+                                                <i class="fas fa-cow"></i>
                                             </span>
 
                                             <span>
@@ -979,7 +818,6 @@
                                 </div>
 
                             </div>
-
 
 
                             <!-- VIEW ALL -->
@@ -1018,7 +856,6 @@
 
                 <div class="relative group">
 
-
                     <button
                         type="button"
                         class="flex items-center gap-2 text-navy font-medium hover:text-brand transition"
@@ -1034,20 +871,10 @@
 
 
                     <div
-                        class="
-                            absolute left-0 top-full mt-4 w-64
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100
-                            group-hover:visible
-                            group-hover:translate-y-0
-                            transition-all duration-300
-                        "
+                        class="absolute left-0 top-full mt-4 w-64 bg-white rounded-xl shadow-xl border border-mist-line opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300"
                     >
 
                         <div class="p-2">
-
 
                             <a
                                 href="pharmaceutical-distribution.html"
@@ -1057,11 +884,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-truck-medical">
-                                    </i>
-
+                                    <i class="fas fa-truck-medical"></i>
                                 </span>
 
                                 <span>
@@ -1079,11 +902,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-boxes-stacked">
-                                    </i>
-
+                                    <i class="fas fa-boxes-stacked"></i>
                                 </span>
 
                                 <span>
@@ -1101,11 +920,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-hospital">
-                                    </i>
-
+                                    <i class="fas fa-hospital"></i>
                                 </span>
 
                                 <span>
@@ -1123,11 +938,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-kit-medical">
-                                    </i>
-
+                                    <i class="fas fa-kit-medical"></i>
                                 </span>
 
                                 <span>
@@ -1145,11 +956,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-heart-circle-check">
-                                    </i>
-
+                                    <i class="fas fa-heart-circle-check"></i>
                                 </span>
 
                                 <span>
@@ -1167,11 +974,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-truck-fast">
-                                    </i>
-
+                                    <i class="fas fa-truck-fast"></i>
                                 </span>
 
                                 <span>
@@ -1202,7 +1005,6 @@
 
                             </div>
 
-
                         </div>
 
                     </div>
@@ -1214,7 +1016,6 @@
                 <!-- CATEGORIES -->
 
                 <div class="relative group">
-
 
                     <button
                         type="button"
@@ -1231,20 +1032,10 @@
 
 
                     <div
-                        class="
-                            absolute left-0 top-full mt-4 w-56
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100
-                            group-hover:visible
-                            group-hover:translate-y-0
-                            transition-all duration-300
-                        "
+                        class="absolute left-0 top-full mt-4 w-56 bg-white rounded-xl shadow-xl border border-mist-line opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300"
                     >
 
                         <div class="p-2">
-
 
                             <a
                                 href="tablets-capsules.html"
@@ -1254,11 +1045,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-tablets">
-                                    </i>
-
+                                    <i class="fas fa-tablets"></i>
                                 </span>
 
                                 <span>
@@ -1276,11 +1063,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-syringe">
-                                    </i>
-
+                                    <i class="fas fa-syringe"></i>
                                 </span>
 
                                 <span>
@@ -1298,11 +1081,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-microscope">
-                                    </i>
-
+                                    <i class="fas fa-microscope"></i>
                                 </span>
 
                                 <span>
@@ -1320,11 +1099,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-scissors">
-                                    </i>
-
+                                    <i class="fas fa-scissors"></i>
                                 </span>
 
                                 <span>
@@ -1342,11 +1117,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-bottle-droplet">
-                                    </i>
-
+                                    <i class="fas fa-bottle-droplet"></i>
                                 </span>
 
                                 <span>
@@ -1364,11 +1135,7 @@
                                 <span
                                     class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center"
                                 >
-
-                                    <i
-                                        class="fas fa-notes-medical">
-                                    </i>
-
+                                    <i class="fas fa-notes-medical"></i>
                                 </span>
 
                                 <span>
@@ -1399,7 +1166,6 @@
 
                             </div>
 
-
                         </div>
 
                     </div>
@@ -1428,10 +1194,7 @@
             >
 
 
-                <!-- FOLLOW US -->
-
                 <div class="relative group">
-
 
                     <button
                         type="button"
@@ -1458,82 +1221,41 @@
 
 
                     <div
-                        class="
-                            absolute right-0 top-full mt-4 w-52
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100
-                            group-hover:visible
-                            group-hover:translate-y-0
-                            transition-all duration-300
-                        "
+                        class="absolute right-0 top-full mt-4 w-52 bg-white rounded-xl shadow-xl border border-mist-line opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300"
                     >
 
                         <div class="p-2">
-
 
                             <a
                                 href="#"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
                             >
-
-                                <i
-                                    class="fa-brands fa-facebook text-brand text-lg w-5">
-                                </i>
-
-                                <span>
-                                    Facebook
-                                </span>
-
+                                <i class="fa-brands fa-facebook text-brand text-lg w-5"></i>
+                                <span>Facebook</span>
                             </a>
-
 
                             <a
                                 href="https://www.instagram.com/"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
                             >
-
-                                <i
-                                    class="fa-brands fa-instagram text-brand text-lg w-5">
-                                </i>
-
-                                <span>
-                                    Instagram
-                                </span>
-
+                                <i class="fa-brands fa-instagram text-brand text-lg w-5"></i>
+                                <span>Instagram</span>
                             </a>
-
 
                             <a
                                 href="#"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
                             >
-
-                                <i
-                                    class="fa-brands fa-linkedin text-brand text-lg w-5">
-                                </i>
-
-                                <span>
-                                    LinkedIn
-                                </span>
-
+                                <i class="fa-brands fa-linkedin text-brand text-lg w-5"></i>
+                                <span>LinkedIn</span>
                             </a>
-
 
                             <a
                                 href="#"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
                             >
-
-                                <i
-                                    class="fa-brands fa-whatsapp text-brand text-lg w-5">
-                                </i>
-
-                                <span>
-                                    WhatsApp
-                                </span>
-
+                                <i class="fa-brands fa-whatsapp text-brand text-lg w-5"></i>
+                                <span>WhatsApp</span>
                             </a>
 
                         </div>
@@ -1543,26 +1265,11 @@
                 </div>
 
 
-
-                <!-- GET IN TOUCH -->
-
                 <a
                     href="contact.html"
-                    class="
-                        bg-brand
-                        text-white
-                        px-5 py-3
-                        rounded-lg
-                        font-semibold
-                        hover:bg-brand-dark
-                        shadow-md
-                        hover:shadow-lg
-                        transition
-                    "
+                    class="bg-brand text-white px-5 py-3 rounded-lg font-semibold hover:bg-brand-dark shadow-md hover:shadow-lg transition"
                 >
-
                     Get in Touch
-
                 </a>
 
             </div>
@@ -1575,20 +1282,7 @@
                 id="menuBtn"
                 type="button"
                 aria-label="Open Menu"
-                class="
-                    lg:hidden
-                    w-11 h-11
-                    rounded-lg
-                    bg-white
-                    border border-mist-line
-                    text-brand
-                    flex items-center
-                    justify-center
-                    hover:bg-brand
-                    hover:text-white
-                    hover:border-brand
-                    transition
-                "
+                class="lg:hidden w-11 h-11 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:border-brand transition"
             >
 
                 <i
@@ -1606,21 +1300,12 @@
 
         <div
             id="mobileMenu"
-            class="
-                hidden
-                lg:hidden
-                pb-6
-                max-h-[calc(100vh-5rem)]
-                overflow-y-auto
-            "
+            class="hidden lg:hidden pb-6 max-h-[calc(100vh-5rem)] overflow-y-auto"
         >
 
             <div
                 class="pt-4 border-t border-mist-line space-y-2"
             >
-
-
-                <!-- HOME -->
 
                 <a
                     href="index.html"
@@ -1630,8 +1315,6 @@
                 </a>
 
 
-                <!-- ABOUT -->
-
                 <a
                     href="about.html"
                     class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition"
@@ -1640,8 +1323,7 @@
                 </a>
 
 
-
-                <!-- PRODUCTS -->
+                <!-- MOBILE PRODUCTS -->
 
                 <div>
 
@@ -1683,64 +1365,28 @@
                         </a>
 
 
-                        <!-- SURGICAL -->
-
-                        <div>
-
-                            <button
-                                type="button"
-                                data-toggle="surgicalSub"
-                                class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-navy hover:bg-white hover:text-brand transition"
-                            >
-
-                                <span>
-                                    Surgical
-                                </span>
-
-                                <i
-                                    class="fa-solid fa-chevron-down text-xs transition">
-                                </i>
-
-                            </button>
+                        <a
+                            href="surgical-medical.html"
+                            class="mobile-sub-link"
+                        >
+                            Surgical
+                        </a>
 
 
-                            <div
-                                id="surgicalSub"
-                                class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
-                            >
-
-                                <a
-                                    href="surgical-medical.html"
-                                    class="mobile-sub-link"
-                                >
-
-                                    All Surgical Products
-
-                                    <i
-                                        class="fa-solid fa-arrow-right text-xs ml-3">
-                                    </i>
-
-                                </a>
+                        <a
+                            href="surgical-medical-consumable.html"
+                            class="mobile-sub-link"
+                        >
+                            Consumable
+                        </a>
 
 
-                                <a
-                                    href="surgical-medical-consumable.html"
-                                    class="mobile-sub-link"
-                                >
-                                    Consumable
-                                </a>
-
-
-                                <a
-                                    href="surgical-medical-disposable.html"
-                                    class="mobile-sub-link"
-                                >
-                                    Disposable
-                                </a>
-
-                            </div>
-
-                        </div>
+                        <a
+                            href="surgical-medical-disposable.html"
+                            class="mobile-sub-link"
+                        >
+                            Disposable
+                        </a>
 
 
                         <a
@@ -1767,66 +1413,36 @@
                         </a>
 
 
-                        <!-- VETERINARY -->
-
-                        <div>
-
-                            <button
-                                type="button"
-                                data-toggle="vetSub"
-                                class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-navy hover:bg-white hover:text-brand transition"
-                            >
-
-                                <span>
-                                    Veterinary Products
-                                </span>
-
-                                <i
-                                    class="fa-solid fa-chevron-down text-xs transition">
-                                </i>
-
-                            </button>
+                        <a
+                            href="veterinary-products.html"
+                            class="mobile-sub-link"
+                        >
+                            Veterinary Products
+                        </a>
 
 
-                            <div
-                                id="vetSub"
-                                class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
-                            >
-
-                                <a
-                                    href="veterinary-products.html"
-                                    class="mobile-sub-link"
-                                >
-                                    All Veterinary Products
-                                </a>
+                        <a
+                            href="veterinary-vet.html"
+                            class="mobile-sub-link"
+                        >
+                            Vet
+                        </a>
 
 
-                                <a
-                                    href="veterinary-vet.html"
-                                    class="mobile-sub-link"
-                                >
-                                    Vet
-                                </a>
+                        <a
+                            href="veterinary-poultry.html"
+                            class="mobile-sub-link"
+                        >
+                            Poultry
+                        </a>
 
 
-                                <a
-                                    href="veterinary-poultry.html"
-                                    class="mobile-sub-link"
-                                >
-                                    Poultry
-                                </a>
-
-
-                                <a
-                                    href="veterinary-cattle.html"
-                                    class="mobile-sub-link"
-                                >
-                                    Cattle
-                                </a>
-
-                            </div>
-
-                        </div>
+                        <a
+                            href="veterinary-cattle.html"
+                            class="mobile-sub-link"
+                        >
+                            Cattle
+                        </a>
 
 
                         <a
@@ -1848,7 +1464,7 @@
 
 
 
-                <!-- SERVICES -->
+                <!-- MOBILE SERVICES -->
 
                 <div>
 
@@ -1881,14 +1497,12 @@
                             Pharmaceutical Distribution
                         </a>
 
-
                         <a
                             href="wholesale-supply.html"
                             class="mobile-sub-link"
                         >
                             Wholesale Supply
                         </a>
-
 
                         <a
                             href="institutional-supply.html"
@@ -1897,14 +1511,12 @@
                             Institutional Supply
                         </a>
 
-
                         <a
                             href="surgical-medical-supplies.html"
                             class="mobile-sub-link"
                         >
                             Surgical &amp; Medical Supply
                         </a>
-
 
                         <a
                             href="otc-healthcare-products.html"
@@ -1913,7 +1525,6 @@
                             OTC &amp; Healthcare Supply
                         </a>
 
-
                         <a
                             href="delivery-support.html"
                             class="mobile-sub-link"
@@ -1921,18 +1532,12 @@
                             Delivery Support
                         </a>
 
-
                         <a
                             href="services.html"
                             class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
                         >
-
                             View All Services
-
-                            <i
-                                class="fa-solid fa-arrow-right text-xs ml-1">
-                            </i>
-
+                            <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
                         </a>
 
                     </div>
@@ -1941,7 +1546,7 @@
 
 
 
-                <!-- CATEGORIES -->
+                <!-- MOBILE CATEGORIES -->
 
                 <div>
 
@@ -1974,14 +1579,12 @@
                             Tablets &amp; Capsules
                         </a>
 
-
                         <a
                             href="injections.html"
                             class="mobile-sub-link"
                         >
                             Injections
                         </a>
-
 
                         <a
                             href="medical-devices.html"
@@ -1990,14 +1593,12 @@
                             Medical Devices
                         </a>
 
-
                         <a
                             href="surgical-items.html"
                             class="mobile-sub-link"
                         >
                             Surgical Items
                         </a>
-
 
                         <a
                             href="OTC.html"
@@ -2006,7 +1607,6 @@
                             OTC Products
                         </a>
 
-
                         <a
                             href="healthcare-essentials.html"
                             class="mobile-sub-link"
@@ -2014,18 +1614,12 @@
                             Healthcare Essentials
                         </a>
 
-
                         <a
                             href="categories.html"
                             class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
                         >
-
                             View All Categories
-
-                            <i
-                                class="fa-solid fa-arrow-right text-xs ml-1">
-                            </i>
-
+                            <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
                         </a>
 
                     </div>
@@ -2096,9 +1690,7 @@
                             aria-label="Facebook"
                             class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
                         >
-                            <i
-                                class="fa-brands fa-facebook">
-                            </i>
+                            <i class="fa-brands fa-facebook"></i>
                         </a>
 
 
@@ -2107,9 +1699,7 @@
                             aria-label="Instagram"
                             class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
                         >
-                            <i
-                                class="fa-brands fa-instagram">
-                            </i>
+                            <i class="fa-brands fa-instagram"></i>
                         </a>
 
 
@@ -2118,9 +1708,7 @@
                             aria-label="LinkedIn"
                             class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
                         >
-                            <i
-                                class="fa-brands fa-linkedin">
-                            </i>
+                            <i class="fa-brands fa-linkedin"></i>
                         </a>
 
 
@@ -2129,9 +1717,7 @@
                             aria-label="WhatsApp"
                             class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
                         >
-                            <i
-                                class="fa-brands fa-whatsapp">
-                            </i>
+                            <i class="fa-brands fa-whatsapp"></i>
                         </a>
 
                     </div>
@@ -2153,7 +1739,6 @@
 
                 </div>
 
-
             </div>
 
         </div>
@@ -2163,352 +1748,1256 @@
 </nav>
 
 
-<!-- ===================================================== -->
-<!-- HERO -->
-<!-- ===================================================== -->
-<main>
 
-<section class="hero-bg min-h-[620px] lg:min-h-[680px] flex items-center py-16">
-    <div class="max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8">
-        <div class="max-w-3xl text-white">
+<!-- ========================================================= -->
+<!-- HERO SECTION -->
+<!-- ========================================================= -->
 
-            <div class="flex items-center gap-2 text-sm text-white/70 mb-7">
-                <a href="services.html" class="hover:text-white transition">Services</a>
-                <i class="fa-solid fa-chevron-right text-[9px]"></i>
-                <span class="text-white">Surgical &amp; Medical Supplies</span>
-            </div>
+<section
+    class="relative overflow-hidden bg-[#e8f7fb] hero-bg"
+>
 
-            <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium mb-6">
-                <i class="fa-solid fa-kit-medical text-[#4fc3dc]"></i>
-                Surgical &amp; Medical Supplies
-            </span>
-
-            <h1 class="playfair text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                Essential Medical Supplies for
-                <span class="text-[#4fc3dc]">Better Healthcare</span>
-            </h1>
-
-            <p class="mt-6 text-lg text-white/80 leading-8 max-w-2xl">
-                BePharma provides dependable surgical, medical and healthcare supply solutions for hospitals, clinics, pharmacies and healthcare institutions.
-            </p>
-
-            <div class="flex flex-wrap gap-4 mt-9">
-                <a href="contact.html" class="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-white text-[#0b2942] font-semibold hover:bg-[#e8f7fb] hover:-translate-y-1 transition duration-300 shadow-lg">
-                    Start Your Enquiry <i class="fa-solid fa-arrow-right"></i>
-                </a>
-                <a href="#supply-categories" class="inline-flex items-center gap-3 px-7 py-4 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 hover:-translate-y-1 transition duration-300">
-                    Explore Supplies <i class="fa-solid fa-arrow-down text-sm"></i>
-                </a>
-            </div>
-
-        </div>
+    <div
+        class="absolute -top-32 -right-32 w-96 h-96 bg-[#12a9c8]/10 rounded-full">
     </div>
-</section>
 
 
-<!-- ===================================================== -->
-<!-- OVERVIEW -->
-<!-- ===================================================== -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-
-            <div class="relative order-2 lg:order-1">
-                <div class="rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
-                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1200&q=85" alt="Medical and surgical supplies" class="w-full h-[480px] object-cover">
-                </div>
-                <div class="absolute -bottom-7 right-5 sm:right-7 bg-white rounded-2xl shadow-xl border border-[#dceef3] p-5 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-xl bg-[#0789a8] text-white flex items-center justify-center"><i class="fa-solid fa-shield-heart"></i></div>
-                    <div>
-                        <p class="text-xs text-gray-400">Healthcare Supplies</p>
-                        <p class="font-bold text-[#0b2942]">Reliable &amp; Organized</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="order-1 lg:order-2">
-                <span class="text-sm font-semibold uppercase tracking-[2px] text-[#0789a8]">Medical Supply Solutions</span>
-                <h2 class="playfair text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0b2942] mt-4 leading-tight">
-                    Supporting healthcare teams with <span class="text-[#0789a8]">essential supplies</span>
-                </h2>
-                <p class="mt-6 text-gray-600 leading-8">
-                    Medical and surgical supplies play an important role in the daily operation of hospitals, clinics, pharmacies and other healthcare facilities.
-                </p>
-                <p class="mt-4 text-gray-600 leading-8">
-                    BePharma helps simplify procurement by providing organized supply support across a range of medical, surgical and healthcare product requirements.
-                </p>
-                <div class="grid sm:grid-cols-2 gap-4 mt-8">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-[#e8f7fb] flex items-center justify-center text-[#0789a8]"><i class="fa-solid fa-boxes-stacked"></i></div>
-                        <div>
-                            <h3 class="font-semibold text-[#0b2942]">Wide Supply Range</h3>
-                            <p class="text-sm text-gray-500 mt-1">Multiple healthcare product categories.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 shrink-0 rounded-xl bg-[#e8f7fb] flex items-center justify-center text-[#0789a8]"><i class="fa-solid fa-truck"></i></div>
-                        <div>
-                            <h3 class="font-semibold text-[#0b2942]">Supply Coordination</h3>
-                            <p class="text-sm text-gray-500 mt-1">Organized order and delivery support.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div
+        class="absolute -bottom-40 -left-24 w-96 h-96 bg-[#0789a8]/5 rounded-full">
     </div>
-</section>
 
 
-<!-- ===================================================== -->
-<!-- SUPPLY CATEGORIES -->
-<!-- ===================================================== -->
-<section id="supply-categories" class="py-20 lg:py-24 bg-[#f6fbfd]">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mb-12">
-            <span class="text-sm font-semibold uppercase tracking-[2px] text-[#0789a8]">Supply Categories</span>
-            <h2 class="playfair text-3xl sm:text-4xl font-bold text-[#0b2942] mt-3">Medical and surgical supplies for everyday healthcare needs</h2>
-            <p class="text-gray-600 mt-4 leading-7">Our supply offering can support a variety of routine medical, surgical and healthcare requirements.</p>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-syringe"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">Injection &amp; Infusion Supplies</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Essential supplies used for routine injection, infusion and clinical procedures.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-hand-dots"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">Gloves &amp; Protective Supplies</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Medical protective products supporting hygiene and everyday clinical activities.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-bandage"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">Wound Care Products</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Products used for wound management, dressing and routine clinical care.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-stethoscope"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">Diagnostic Accessories</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Supporting accessories and supplies for routine clinical assessment.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-scissors"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">Surgical Essentials</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Selected surgical-use supplies for healthcare facilities and clinical environments.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl p-7 border border-[#dceef3]">
-                        <div class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center text-xl"><i class="fa-solid fa-hospital-user"></i></div>
-                        <h3 class="playfair text-xl font-bold text-[#0b2942] mt-6">General Medical Supplies</h3>
-                        <p class="text-gray-500 mt-3 leading-7 text-sm">Everyday medical and healthcare products for routine institutional requirements.</p>
-                    </div>
-        </div>
-    </div>
-</section>
+    <div
+        class="max-w-7xl mx-auto px-6 py-20 lg:py-24 relative z-10"
+    >
+
+        <div
+            class="grid lg:grid-cols-2 gap-14 items-center"
+        >
 
 
-<!-- ===================================================== -->
-<!-- KEY BENEFITS -->
-<!-- ===================================================== -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <!-- LEFT CONTENT -->
 
             <div>
-                <span class="text-sm font-semibold uppercase tracking-[2px] text-[#0789a8]">Why Choose Our Supply Service</span>
-                <h2 class="playfair text-3xl sm:text-4xl font-bold text-[#0b2942] mt-3 leading-tight">
-                    A practical approach to <span class="text-[#0789a8]">medical supply</span>
-                </h2>
-                <p class="mt-5 text-gray-600 leading-8">
-                    We focus on making the supply process simple, organized and responsive to the needs of healthcare businesses and institutions.
+
+
+                <div
+                    class="reveal inline-flex items-center gap-2 bg-white border border-[#cfe9f3] text-[#0b7b97] px-5 py-2.5 rounded-full shadow-sm"
+                >
+
+                    <i
+                        class="fa-solid fa-stethoscope">
+                    </i>
+
+                    <span
+                        class="text-sm font-semibold"
+                    >
+                        Veterinary Healthcare
+                    </span>
+
+                </div>
+
+
+                <h1
+                    class="reveal delay-1 playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-[#0b2545] leading-tight mt-7"
+                >
+
+                    Professional
+
+                    <span
+                        class="text-[#0b7b97]"
+                    >
+                        Vet Care
+                    </span>
+
+                    Solutions
+
+                </h1>
+
+
+                <div
+                    class="w-16 h-1 bg-[#0b7b97] rounded-full mt-7"
+                >
+                </div>
+
+
+                <p
+                    class="reveal delay-2 text-slate-600 text-base md:text-lg leading-8 max-w-xl mt-7"
+                >
+
+                    Reliable veterinary healthcare products designed
+                    for veterinary clinics, professionals and animal
+                    healthcare requirements.
+
                 </p>
-                <div class="mt-8 space-y-5">
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 shrink-0 rounded-full bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <h3 class="font-semibold text-[#0b2942]">Requirement-Based Supply</h3>
-                                    <p class="text-sm text-gray-500 mt-1 leading-6">Supply support based on your specific product and quantity requirements.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 shrink-0 rounded-full bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <h3 class="font-semibold text-[#0b2942]">Organized Order Handling</h3>
-                                    <p class="text-sm text-gray-500 mt-1 leading-6">Clear coordination from enquiry to fulfilment.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 shrink-0 rounded-full bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <h3 class="font-semibold text-[#0b2942]">Flexible Quantities</h3>
-                                    <p class="text-sm text-gray-500 mt-1 leading-6">Support for routine as well as larger healthcare supply requirements.</p>
-                                </div>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-11 h-11 shrink-0 rounded-full bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-check"></i></div>
-                                <div>
-                                    <h3 class="font-semibold text-[#0b2942]">Responsive Support</h3>
-                                    <p class="text-sm text-gray-500 mt-1 leading-6">Assistance throughout the supply coordination process.</p>
-                                </div>
-                            </div>
-                </div>
-            </div>
-
-            <div class="bg-[#0b2942] rounded-[2rem] p-8 sm:p-10 text-white">
-                <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-2xl"><i class="fa-solid fa-box-open"></i></div>
-                <h3 class="playfair text-2xl font-bold mt-7">Supply That Fits Your Needs</h3>
-                <p class="text-white/75 mt-4 leading-7">
-                    Whether you need routine medical consumables, surgical essentials or healthcare accessories, our team can help coordinate the right supply requirements.
-                </p>
-                <div class="mt-8 space-y-4">
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><i class="fa-solid fa-check text-[#4fc3dc] text-sm"></i></div>
-                                <span class="text-sm">Medical consumables</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><i class="fa-solid fa-check text-[#4fc3dc] text-sm"></i></div>
-                                <span class="text-sm">Surgical supplies</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><i class="fa-solid fa-check text-[#4fc3dc] text-sm"></i></div>
-                                <span class="text-sm">Healthcare accessories</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><i class="fa-solid fa-check text-[#4fc3dc] text-sm"></i></div>
-                                <span class="text-sm">Institutional requirements</span>
-                            </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
 
 
-<!-- ===================================================== -->
-<!-- PROCESS -->
-<!-- ===================================================== -->
-<section id="supply-process" class="py-20 lg:py-28 bg-[#f6fbfd]">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="text-center max-w-2xl mx-auto">
-            <span class="text-sm font-semibold uppercase tracking-[2px] text-[#0789a8]">Our Supply Process</span>
-            <h2 class="playfair text-3xl sm:text-4xl font-bold text-[#0b2942] mt-3">Simple, clear and coordinated</h2>
-            <p class="text-gray-600 mt-4 leading-7">From your initial requirement to final delivery, we keep the process structured.</p>
-        </div>
-        <div class="max-w-3xl mx-auto mt-14">
-                    <div class="process-item relative flex gap-6 pb-12">
-                        <div class="process-line"></div>
-                        <div class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-[#0789a8] text-white flex items-center justify-center font-bold shadow-lg">01</div>
-                        <div>
-                            <h3 class="playfair text-xl font-bold text-[#0b2942]">Send Your Requirement</h3>
-                            <p class="text-gray-500 mt-2 leading-7">Tell us which products you need, along with required quantities and other details.</p>
-                        </div>
-                    </div>
-                    <div class="process-item relative flex gap-6 pb-12">
-                        <div class="process-line"></div>
-                        <div class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-[#0789a8] text-white flex items-center justify-center font-bold shadow-lg">02</div>
-                        <div>
-                            <h3 class="playfair text-xl font-bold text-[#0b2942]">Product Assessment</h3>
-                            <p class="text-gray-500 mt-2 leading-7">Our team reviews your requirement and coordinates the requested supply.</p>
-                        </div>
-                    </div>
-                    <div class="process-item relative flex gap-6 pb-12">
-                        <div class="process-line"></div>
-                        <div class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-[#0789a8] text-white flex items-center justify-center font-bold shadow-lg">03</div>
-                        <div>
-                            <h3 class="playfair text-xl font-bold text-[#0b2942]">Order Confirmation</h3>
-                            <p class="text-gray-500 mt-2 leading-7">Product details, quantities and fulfilment requirements are confirmed.</p>
-                        </div>
-                    </div>
-                    <div class="process-item relative flex gap-6">
-                        
-                        <div class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-[#0789a8] text-white flex items-center justify-center font-bold shadow-lg">04</div>
-                        <div>
-                            <h3 class="playfair text-xl font-bold text-[#0b2942]">Supply &amp; Delivery</h3>
-                            <p class="text-gray-500 mt-2 leading-7">Your confirmed order moves through fulfilment and coordinated delivery.</p>
-                        </div>
-                    </div>
-        </div>
-    </div>
-</section>
+                <div
+                    class="reveal delay-3 flex flex-wrap gap-4 mt-9"
+                >
 
+                    <a
+                        href="#vet-products"
+                        class="btn-hover inline-flex items-center gap-3 bg-[#0b7b97] text-white px-7 py-3.5 rounded-full font-semibold"
+                    >
 
-<!-- ===================================================== -->
-<!-- WHO WE SERVE -->
-<!-- ===================================================== -->
-<section class="py-20 lg:py-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mb-12">
-            <span class="text-sm font-semibold uppercase tracking-[2px] text-[#0789a8]">Who We Serve</span>
-            <h2 class="playfair text-3xl sm:text-4xl font-bold text-[#0b2942] mt-3">Medical supply support across healthcare</h2>
-        </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    <div class="supply-card bg-white rounded-3xl border border-[#dceef3] p-7">
-                        <div class="w-12 h-12 rounded-xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-hospital"></i></div>
-                        <h3 class="font-bold text-lg text-[#0b2942] mt-5">Hospitals</h3>
-                        <p class="text-sm text-gray-500 mt-2 leading-6">Medical and surgical supply support for hospitals and larger healthcare facilities.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl border border-[#dceef3] p-7">
-                        <div class="w-12 h-12 rounded-xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-house-medical"></i></div>
-                        <h3 class="font-bold text-lg text-[#0b2942] mt-5">Clinics</h3>
-                        <p class="text-sm text-gray-500 mt-2 leading-6">Everyday medical supplies for clinics and medical practices.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl border border-[#dceef3] p-7">
-                        <div class="w-12 h-12 rounded-xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-prescription-bottle-medical"></i></div>
-                        <h3 class="font-bold text-lg text-[#0b2942] mt-5">Pharmacies</h3>
-                        <p class="text-sm text-gray-500 mt-2 leading-6">Healthcare product support for pharmacies and medical retailers.</p>
-                    </div>
-                    <div class="supply-card bg-white rounded-3xl border border-[#dceef3] p-7">
-                        <div class="w-12 h-12 rounded-xl bg-[#e8f7fb] text-[#0789a8] flex items-center justify-center"><i class="fa-solid fa-building-circle-check"></i></div>
-                        <h3 class="font-bold text-lg text-[#0b2942] mt-5">Institutions</h3>
-                        <p class="text-sm text-gray-500 mt-2 leading-6">Structured medical supply support for healthcare institutions and organizations.</p>
-                    </div>
-        </div>
-    </div>
-</section>
+                        Explore Products
 
+                        <i
+                            class="fa-solid fa-arrow-right">
+                        </i>
 
-<!-- ===================================================== -->
-<!-- CTA -->
-<!-- ===================================================== -->
-<section class="pb-20 lg:pb-28 bg-white">
-    <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-[2rem] bg-[#0b2942] px-7 py-12 sm:px-12 lg:px-16 lg:py-14">
-            <div class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-[#12a9c8]/10"></div>
-            <div class="absolute -left-20 -bottom-32 w-80 h-80 rounded-full bg-[#0789a8]/10"></div>
-            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-                <div class="max-w-2xl text-white">
-                    <span class="text-sm font-semibold uppercase tracking-[2px] text-[#4fc3dc]">Medical Supply Enquiry</span>
-                    <h2 class="playfair text-3xl sm:text-4xl font-bold mt-3">Need medical or surgical supplies?</h2>
-                    <p class="text-white/70 mt-4 leading-7">Share your product requirements with our team and discuss a suitable supply solution.</p>
-                </div>
-                <div class="shrink-0">
-                    <a href="contact.html" class="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-[#0789a8] text-white font-semibold hover:bg-white hover:text-[#0b2942] hover:-translate-y-1 transition duration-300 shadow-lg">
-                        Contact Our Team <i class="fa-solid fa-arrow-right"></i>
                     </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="btn-hover inline-flex items-center gap-3 bg-white text-[#0b7b97] border border-[#bcdfe8] px-7 py-3.5 rounded-full font-semibold"
+                    >
+
+                        Enquire Now
+
+                        <i
+                            class="fa-solid fa-phone">
+                        </i>
+
+                    </a>
+
                 </div>
+
+
+                <div
+                    class="reveal delay-4 grid sm:grid-cols-3 gap-5 mt-10"
+                >
+
+
+                    <div
+                        class="flex items-center gap-3"
+                    >
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-white text-[#0b7b97] flex items-center justify-center shadow-sm"
+                        >
+                            <i
+                                class="fa-solid fa-shield-heart">
+                            </i>
+                        </div>
+
+                        <span
+                            class="text-sm font-semibold text-[#0b2545]"
+                        >
+                            Quality Focus
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="flex items-center gap-3"
+                    >
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-white text-[#0b7b97] flex items-center justify-center shadow-sm"
+                        >
+                            <i
+                                class="fa-solid fa-paw">
+                            </i>
+                        </div>
+
+                        <span
+                            class="text-sm font-semibold text-[#0b2545]"
+                        >
+                            Animal Care
+                        </span>
+
+                    </div>
+
+
+                    <div
+                        class="flex items-center gap-3"
+                    >
+
+                        <div
+                            class="w-10 h-10 rounded-full bg-white text-[#0b7b97] flex items-center justify-center shadow-sm"
+                        >
+                            <i
+                                class="fa-solid fa-truck-fast">
+                            </i>
+                        </div>
+
+                        <span
+                            class="text-sm font-semibold text-[#0b2545]"
+                        >
+                            Reliable Supply
+                        </span>
+
+                    </div>
+
+                </div>
+
             </div>
+
+
+
+            <!-- RIGHT IMAGE -->
+
+            <div
+                class="relative"
+            >
+
+                <div
+                    class="relative h-[430px] sm:h-[500px] rounded-[2rem] overflow-hidden border-8 border-white shadow-2xl"
+                >
+
+                    <img
+                        src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1200&q=85"
+                        alt="Veterinary Dog Care"
+                        class="hero-image absolute inset-0 w-full h-full object-cover"
+                    >
+
+
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#0b2545]/70 via-transparent to-transparent"
+                    >
+                    </div>
+
+
+                    <div
+                        class="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-5 shadow-xl"
+                    >
+
+                        <div
+                            class="flex items-center gap-4"
+                        >
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#0b7b97] text-white flex items-center justify-center"
+                            >
+
+                                <i
+                                    class="fa-solid fa-stethoscope">
+                                </i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p
+                                    class="text-xs uppercase tracking-wider text-[#0b7b97] font-bold"
+                                >
+                                    Vet Care
+                                </p>
+
+
+                                <h3
+                                    class="font-bold text-[#0b2545]"
+                                >
+                                    Supporting Better Animal Healthcare
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="float-card absolute -bottom-6 -left-5 hidden sm:flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-xl border border-[#cfe9f3]"
+                >
+
+                    <div
+                        class="w-11 h-11 rounded-full bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center"
+                    >
+
+                        <i
+                            class="fa-solid fa-heart-pulse">
+                        </i>
+
+                    </div>
+
+
+                    <div>
+
+                        <p
+                            class="text-xs text-slate-400"
+                        >
+                            Care Focus
+                        </p>
+
+                        <p
+                            class="font-bold text-[#0b2545]"
+                        >
+                            Veterinary Health
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
 </section>
 
-</main>
 
 
-<!-- BACK TO TOP -->
-<button id="backTop" type="button" aria-label="Back to top" class="back-top fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[#0789a8] text-white shadow-xl flex items-center justify-center hover:bg-[#0b2942] transition">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
+<!-- ========================================================= -->
+<!-- INTRO / STATS -->
+<!-- ========================================================= -->
+
+<section
+    class="py-16 bg-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+        <div
+            class="grid lg:grid-cols-3 gap-7"
+        >
 
 
+            <div
+                class="lg:col-span-2"
+            >
+
+                <span
+                    class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+                >
+                    Vet Healthcare
+                </span>
+
+
+                <h2
+                    class="playfair text-3xl md:text-4xl font-bold text-[#0b2545] mt-3"
+                >
+                    Focused Products For Veterinary Professionals
+                </h2>
+
+
+                <p
+                    class="text-slate-600 leading-8 mt-4 max-w-3xl"
+                >
+
+                    Our veterinary range is focused specifically on
+                    animal healthcare products, nutritional support
+                    and routine veterinary requirements.
+
+                </p>
+
+            </div>
+
+
+
+            <div
+                class="grid grid-cols-2 gap-4"
+            >
+
+                <div
+                    class="bg-[#f3fbfd] rounded-2xl p-5 border border-[#d8edf3] text-center"
+                >
+
+                    <div
+                        class="text-3xl font-extrabold text-[#0b7b97]"
+                    >
+                        15+
+                    </div>
+
+                    <p
+                        class="text-sm text-slate-500 mt-2"
+                    >
+                        Vet Solutions
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="bg-[#f3fbfd] rounded-2xl p-5 border border-[#d8edf3] text-center"
+                >
+
+                    <div
+                        class="text-3xl font-extrabold text-[#0b7b97]"
+                    >
+                        24/7
+                    </div>
+
+                    <p
+                        class="text-sm text-slate-500 mt-2"
+                    >
+                        Care Focus
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- VET CATEGORIES -->
+<!-- ========================================================= -->
+
+<section
+    id="vet-products"
+    class="py-20 bg-[#f4fbfd]"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+
+        <div
+            class="text-center max-w-3xl mx-auto mb-14"
+        >
+
+            <span
+                class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+            >
+                Our Vet Range
+            </span>
+
+
+            <h2
+                class="playfair text-3xl md:text-5xl font-bold text-[#0b2545] mt-3"
+            >
+                Veterinary Products
+            </h2>
+
+
+            <p
+                class="text-slate-500 mt-4 leading-7"
+            >
+
+                Explore our veterinary-focused product categories
+                for routine animal healthcare requirements.
+
+            </p>
+
+        </div>
+
+
+
+        <div
+            class="grid md:grid-cols-3 gap-7"
+        >
+
+
+            <!-- VETERINARY MEDICINES -->
+
+            <div
+                class="vet-card bg-white border border-[#d8edf3] rounded-[2rem] p-8"
+            >
+
+                <div
+                    class="icon-box w-16 h-16 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-2xl"
+                >
+
+                    <i
+                        class="fa-solid fa-pills">
+                    </i>
+
+                </div>
+
+
+                <p
+                    class="text-xs uppercase tracking-[0.2em] text-[#0b7b97] font-bold mt-7"
+                >
+                    Category 01
+                </p>
+
+
+                <h3
+                    class="text-2xl font-bold text-[#0b2545] mt-2"
+                >
+                    Veterinary Medicines
+                </h3>
+
+
+                <p
+                    class="text-slate-500 text-sm leading-7 mt-3"
+                >
+
+                    Veterinary medicine solutions for routine
+                    animal healthcare and professional requirements.
+
+                </p>
+
+
+                <a
+                    href="#medicine-products"
+                    class="mt-6 inline-flex items-center gap-2 text-[#0b7b97] font-bold"
+                >
+
+                    View Products
+
+                    <i
+                        class="fa-solid fa-arrow-right text-sm">
+                    </i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- SUPPLEMENTS -->
+
+            <div
+                class="vet-card bg-white border border-[#d8edf3] rounded-[2rem] p-8"
+            >
+
+                <div
+                    class="icon-box w-16 h-16 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-2xl"
+                >
+
+                    <i
+                        class="fa-solid fa-capsules">
+                    </i>
+
+                </div>
+
+
+                <p
+                    class="text-xs uppercase tracking-[0.2em] text-[#0b7b97] font-bold mt-7"
+                >
+                    Category 02
+                </p>
+
+
+                <h3
+                    class="text-2xl font-bold text-[#0b2545] mt-2"
+                >
+                    Animal Supplements
+                </h3>
+
+
+                <p
+                    class="text-slate-500 text-sm leading-7 mt-3"
+                >
+
+                    Nutritional supplements supporting everyday
+                    animal health and nutritional requirements.
+
+                </p>
+
+
+                <a
+                    href="#supplement-products"
+                    class="mt-6 inline-flex items-center gap-2 text-[#0b7b97] font-bold"
+                >
+
+                    View Products
+
+                    <i
+                        class="fa-solid fa-arrow-right text-sm">
+                    </i>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- GENERAL CARE -->
+
+            <div
+                class="vet-card bg-white border border-[#d8edf3] rounded-[2rem] p-8"
+            >
+
+                <div
+                    class="icon-box w-16 h-16 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-2xl"
+                >
+
+                    <i
+                        class="fa-solid fa-kit-medical">
+                    </i>
+
+                </div>
+
+
+                <p
+                    class="text-xs uppercase tracking-[0.2em] text-[#0b7b97] font-bold mt-7"
+                >
+                    Category 03
+                </p>
+
+
+                <h3
+                    class="text-2xl font-bold text-[#0b2545] mt-2"
+                >
+                    General Vet Care
+                </h3>
+
+
+                <p
+                    class="text-slate-500 text-sm leading-7 mt-3"
+                >
+
+                    General veterinary care products for clinics,
+                    professionals and animal healthcare facilities.
+
+                </p>
+
+
+                <a
+                    href="#general-products"
+                    class="mt-6 inline-flex items-center gap-2 text-[#0b7b97] font-bold"
+                >
+
+                    View Products
+
+                    <i
+                        class="fa-solid fa-arrow-right text-sm">
+                    </i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- SEARCH -->
+<!-- ========================================================= -->
+
+<section
+    class="py-16 bg-white"
+>
+
+    <div
+        class="max-w-5xl mx-auto px-6"
+    >
+
+        <div
+            class="text-center"
+        >
+
+            <span
+                class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+            >
+                Product Finder
+            </span>
+
+
+            <h2
+                class="playfair text-3xl md:text-4xl font-bold text-[#0b2545] mt-3"
+            >
+                Find Veterinary Products
+            </h2>
+
+
+            <p
+                class="text-slate-500 mt-3"
+            >
+                Search veterinary medicines, supplements and care products.
+            </p>
+
+        </div>
+
+
+        <div
+            class="relative max-w-3xl mx-auto mt-8"
+        >
+
+            <i
+                class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-slate-400">
+            </i>
+
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search veterinary medicine, supplement, care..."
+                class="w-full bg-[#f7fcfd] border border-[#d2e9ef] rounded-2xl py-5 pl-14 pr-6 outline-none focus:border-[#0b7b97] focus:ring-4 focus:ring-[#0b7b97]/10 transition"
+            >
+
+        </div>
+
+
+        <div
+            id="searchResults"
+            class="hidden mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- VETERINARY MEDICINES -->
+<!-- ========================================================= -->
+
+<section
+    id="medicine-products"
+    class="py-20 bg-[#edf9fc]"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+        <div
+            class="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start"
+        >
+
+            <div
+                class="lg:sticky lg:top-28"
+            >
+
+                <span
+                    class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+                >
+                    Category 01
+                </span>
+
+
+                <h2
+                    class="playfair text-4xl font-bold text-[#0b2545] mt-3"
+                >
+                    Veterinary Medicines
+                </h2>
+
+
+                <div
+                    class="w-14 h-1 bg-[#0b7b97] rounded-full mt-5"
+                >
+                </div>
+
+
+                <p
+                    class="text-slate-600 leading-8 mt-6"
+                >
+
+                    Products designed for veterinary medicine and
+                    routine animal healthcare requirements.
+
+                </p>
+
+
+                <div
+                    class="mt-8 bg-white rounded-3xl border border-[#d8edf3] p-6 shadow-sm"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                    >
+
+                        <i
+                            class="fa-solid fa-pills">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold text-[#0b2545] mt-5"
+                    >
+                        Veterinary Support
+                    </h3>
+
+
+                    <p
+                        class="text-sm text-slate-500 leading-6 mt-2"
+                    >
+                        Focused solutions for veterinary healthcare
+                        professionals.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="medicineContainer"
+                class="grid sm:grid-cols-2 gap-6"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- SUPPLEMENT PRODUCTS -->
+<!-- ========================================================= -->
+
+<section
+    id="supplement-products"
+    class="py-20 bg-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+        <div
+            class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-start"
+        >
+
+
+            <div
+                id="supplementContainer"
+                class="grid sm:grid-cols-2 gap-6"
+            >
+            </div>
+
+
+            <div
+                class="lg:sticky lg:top-28"
+            >
+
+                <span
+                    class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+                >
+                    Category 02
+                </span>
+
+
+                <h2
+                    class="playfair text-4xl font-bold text-[#0b2545] mt-3"
+                >
+                    Animal Supplements
+                </h2>
+
+
+                <div
+                    class="w-14 h-1 bg-[#0b7b97] rounded-full mt-5"
+                >
+                </div>
+
+
+                <p
+                    class="text-slate-600 leading-8 mt-6"
+                >
+
+                    Nutritional support products for everyday
+                    animal health and wellness requirements.
+
+                </p>
+
+
+                <div
+                    class="mt-8 bg-[#f3fbfd] rounded-3xl border border-[#d8edf3] p-6"
+                >
+
+                    <div
+                        class="w-14 h-14 rounded-2xl bg-white text-[#0b7b97] flex items-center justify-center text-xl shadow-sm"
+                    >
+
+                        <i
+                            class="fa-solid fa-capsules">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="font-bold text-[#0b2545] mt-5"
+                    >
+                        Nutritional Support
+                    </h3>
+
+
+                    <p
+                        class="text-sm text-slate-500 leading-6 mt-2"
+                    >
+                        Supplement solutions for animal nutritional
+                        requirements.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- GENERAL VET PRODUCTS -->
+<!-- ========================================================= -->
+
+<section
+    id="general-products"
+    class="py-20 bg-[#edf9fc]"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+        <div
+            class="grid lg:grid-cols-3 gap-12 items-start"
+        >
+
+
+            <div
+                class="lg:col-span-1 lg:sticky lg:top-28"
+            >
+
+                <span
+                    class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+                >
+                    Category 03
+                </span>
+
+
+                <h2
+                    class="playfair text-4xl font-bold text-[#0b2545] mt-3"
+                >
+                    General Vet Care
+                </h2>
+
+
+                <div
+                    class="w-14 h-1 bg-[#0b7b97] rounded-full mt-5"
+                >
+                </div>
+
+
+                <p
+                    class="text-slate-600 leading-8 mt-6"
+                >
+
+                    General veterinary care solutions for clinics,
+                    professionals and animal healthcare facilities.
+
+                </p>
+
+            </div>
+
+
+            <div
+                id="generalContainer"
+                class="lg:col-span-2 grid sm:grid-cols-2 gap-6"
+            >
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- WHY CHOOSE BEPHARMA -->
+<!-- ========================================================= -->
+
+<section
+    class="py-20 bg-white"
+>
+
+    <div
+        class="max-w-7xl mx-auto px-6"
+    >
+
+        <div
+            class="text-center max-w-2xl mx-auto mb-14"
+        >
+
+            <span
+                class="text-[#0b7b97] text-sm font-bold uppercase tracking-[0.2em]"
+            >
+                Why BePharma
+            </span>
+
+
+            <h2
+                class="playfair text-3xl md:text-5xl font-bold text-[#0b2545] mt-3"
+            >
+                Focused On Veterinary Healthcare
+            </h2>
+
+        </div>
+
+
+        <div
+            class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+        >
+
+
+            <div
+                class="bg-[#f7fcfd] border border-[#d8edf3] rounded-3xl p-7"
+            >
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                >
+
+                    <i
+                        class="fa-solid fa-shield-heart">
+                    </i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-[#0b2545] mt-5"
+                >
+                    Quality Focus
+                </h3>
+
+
+                <p
+                    class="text-sm text-slate-500 leading-6 mt-2"
+                >
+                    A dedicated product range for veterinary
+                    healthcare needs.
+                </p>
+
+            </div>
+
+
+            <div
+                class="bg-[#f7fcfd] border border-[#d8edf3] rounded-3xl p-7"
+            >
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                >
+
+                    <i
+                        class="fa-solid fa-paw">
+                    </i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-[#0b2545] mt-5"
+                >
+                    Vet Focused
+                </h3>
+
+
+                <p
+                    class="text-sm text-slate-500 leading-6 mt-2"
+                >
+                    Products organized specifically around
+                    veterinary care requirements.
+                </p>
+
+            </div>
+
+
+            <div
+                class="bg-[#f7fcfd] border border-[#d8edf3] rounded-3xl p-7"
+            >
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                >
+
+                    <i
+                        class="fa-solid fa-boxes-stacked">
+                    </i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-[#0b2545] mt-5"
+                >
+                    Product Range
+                </h3>
+
+
+                <p
+                    class="text-sm text-slate-500 leading-6 mt-2"
+                >
+                    Multiple veterinary product solutions in
+                    one focused range.
+                </p>
+
+            </div>
+
+
+            <div
+                class="bg-[#f7fcfd] border border-[#d8edf3] rounded-3xl p-7"
+            >
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                >
+
+                    <i
+                        class="fa-solid fa-headset">
+                    </i>
+
+                </div>
+
+
+                <h3
+                    class="font-bold text-[#0b2545] mt-5"
+                >
+                    Support
+                </h3>
+
+
+                <p
+                    class="text-sm text-slate-500 leading-6 mt-2"
+                >
+                    Assistance for product enquiries and
+                    veterinary supply requirements.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
+<!-- CTA -->
+<!-- ========================================================= -->
+
+<section
+    class="py-20 bg-white"
+>
+
+    <div
+        class="max-w-6xl mx-auto px-6"
+    >
+
+        <div
+            class="relative overflow-hidden rounded-[2rem] min-h-[360px] flex items-center"
+        >
+
+
+            <!-- BACKGROUND IMAGE -->
+
+            <img
+                src="https://images.unsplash.com/photo-1544568100-847a948585b9?auto=format&fit=crop&w=1400&q=85"
+                alt="Veterinary Animal Care"
+                class="absolute inset-0 w-full h-full object-cover cta-image"
+            >
+
+
+            <!-- OVERLAY -->
+
+            <div
+                class="absolute inset-0 bg-[#061d2d]/70"
+            >
+            </div>
+
+
+            <div
+                class="relative z-10 p-8 md:p-14 w-full"
+            >
+
+                <div
+                    class="grid md:grid-cols-2 gap-10 items-center"
+                >
+
+
+                    <div>
+
+                        <p
+                            class="text-[#78d6e8] text-sm uppercase tracking-[0.2em] font-bold"
+                        >
+                            Need Vet Products?
+                        </p>
+
+
+                        <h2
+                            class="playfair text-3xl md:text-5xl font-bold text-white mt-3"
+                        >
+                            Let's Discuss Your Requirement
+                        </h2>
+
+
+                        <p
+                            class="text-white/80 leading-7 mt-5 max-w-xl"
+                        >
+
+                            Contact BePharma for veterinary products,
+                            medicines, supplements and animal care
+                            requirements.
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="md:text-right"
+                    >
+
+                        <a
+                            href="contact.html"
+                            class="btn-hover inline-flex items-center gap-3 bg-white text-[#0b7b97] px-7 py-4 rounded-full font-bold shadow-xl"
+                        >
+
+                            Contact BePharma
+
+                            <i
+                                class="fa-solid fa-arrow-right">
+                            </i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ========================================================= -->
 <!-- FOOTER -->
+<!-- ========================================================= -->
 
 <footer
     id="contact"
     class="mt-auto mb-0 bg-navy text-white"
 >
-
-
-    <!-- MAIN FOOTER -->
 
     <div
         class="mx-auto max-w-7xl px-6 py-16 sm:px-8"
@@ -2522,9 +3011,6 @@
             <!-- COMPANY -->
 
             <div>
-
-
-                <!-- LOGO -->
 
                 <a
                     href="index.html"
@@ -2544,7 +3030,6 @@
                             Be Pharma Traders &amp; Co
                         </title>
 
-
                         <g fill="currentColor">
 
                             <rect
@@ -2554,7 +3039,6 @@
                                 height="560"
                                 rx="93">
                             </rect>
-
 
                             <rect
                                 x="75"
@@ -2625,8 +3109,6 @@
                 </a>
 
 
-                <!-- DESCRIPTION -->
-
                 <p
                     class="mt-6 max-w-sm text-sm leading-7 text-white"
                 >
@@ -2642,8 +3124,6 @@
                 </p>
 
 
-                <!-- SOCIAL -->
-
                 <div
                     class="mt-7 flex flex-wrap gap-3"
                 >
@@ -2652,11 +3132,7 @@
                         href="https://www.facebook.com/"
                         class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
                     >
-
-                        <i
-                            class="fab fa-facebook-f">
-                        </i>
-
+                        <i class="fab fa-facebook-f"></i>
                     </a>
 
 
@@ -2664,11 +3140,7 @@
                         href="https://www.instagram.com/"
                         class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
                     >
-
-                        <i
-                            class="fab fa-instagram">
-                        </i>
-
+                        <i class="fab fa-instagram"></i>
                     </a>
 
 
@@ -2676,11 +3148,7 @@
                         href="https://www.linkedin.com/"
                         class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
                     >
-
-                        <i
-                            class="fab fa-linkedin-in">
-                        </i>
-
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
 
 
@@ -2688,11 +3156,7 @@
                         href="https://wa.me/"
                         class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
                     >
-
-                        <i
-                            class="fab fa-whatsapp">
-                        </i>
-
+                        <i class="fab fa-whatsapp"></i>
                     </a>
 
 
@@ -2700,11 +3164,7 @@
                         href="https://www.youtube.com/"
                         class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
                     >
-
-                        <i
-                            class="fab fa-youtube">
-                        </i>
-
+                        <i class="fab fa-youtube"></i>
                     </a>
 
                 </div>
@@ -2727,7 +3187,6 @@
                 <ul
                     class="space-y-4 text-sm text-sky-100/70"
                 >
-
 
                     <li>
 
@@ -2765,11 +3224,7 @@
                     </li>
 
 
-                    <!-- SERVICES -->
-
-                    <li
-                        class="dropdown"
-                    >
+                    <li>
 
                         <a
                             href="services.html"
@@ -2782,42 +3237,12 @@
 
                             Services
 
-                            <i
-                                class="ri-arrow-down-s-line dropdown-arrow ml-auto">
-                            </i>
-
                         </a>
-
-
-                        <div
-                            class="dropdown-menu"
-                        >
-
-                            <a href="pharmaceutical-distribution.html"><i class="fas fa-truck-medical"></i><span>Pharmaceutical Distribution</span></a>
-
-                            <a href="wholesale-supply.html"><i class="fas fa-boxes-stacked"></i><span>Wholesale Supply</span></a>
-
-                            <a href="institutional-supply.html"><i class="fas fa-hospital"></i><span>Institutional Supply</span></a>
-
-                            <a href="surgical-medical-supplies.html"><i class="fas fa-kit-medical"></i><span>Surgical &amp; Medical Supply</span></a>
-
-                            <a href="otc-healthcare-products.html"><i class="fas fa-heart-circle-check"></i><span>OTC &amp; Healthcare Supply</span></a>
-
-                            <a href="delivery-support.html"><i class="fas fa-truck-fast"></i><span>Delivery Support</span></a>
-
-                            <a href="services.html"><i class="fa-solid fa-arrow-right"></i><span>View All Services</span></a>
-
-                        </div>
 
                     </li>
 
 
-
-                    <!-- CATEGORIES -->
-
-                    <li
-                        class="dropdown"
-                    >
+                    <li>
 
                         <a
                             href="categories.html"
@@ -2830,122 +3255,7 @@
 
                             Categories
 
-                            <i
-                                class="ri-arrow-down-s-line dropdown-arrow ml-auto">
-                            </i>
-
                         </a>
-
-
-                        <div
-                            class="dropdown-menu"
-                        >
-
-                            <a
-                                href="medicines.html"
-                            >
-
-                                <i
-                                    class="ri-capsule-line">
-                                </i>
-
-                                <span>
-                                    Medicines
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="injections.html"
-                            >
-
-                                <i
-                                    class="ri-syringe-line">
-                                </i>
-
-                                <span>
-                                    Injections
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="medical-devices.html"
-                            >
-
-                                <i
-                                    class="ri-heart-pulse-line">
-                                </i>
-
-                                <span>
-                                    Medical Devices
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="medical-equipment.html"
-                            >
-
-                                <i
-                                    class="ri-first-aid-kit-line">
-                                </i>
-
-                                <span>
-                                    Medical Equipment
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="tablets.html"
-                            >
-
-                                <i
-                                    class="ri-capsule-line">
-                                </i>
-
-                                <span>
-                                    Tablets
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="capsules.html"
-                            >
-
-                                <i
-                                    class="ri-capsule-fill">
-                                </i>
-
-                                <span>
-                                    Capsules
-                                </span>
-
-                            </a>
-
-
-                            <a
-                                href="syrup.html"
-                            >
-
-                                <i
-                                    class="ri-medicine-bottle-line">
-                                </i>
-
-                                <span>
-                                    Syrup
-                                </span>
-
-                            </a>
-
-                        </div>
 
                     </li>
 
@@ -2971,74 +3281,92 @@
                 >
 
                     <li>
-                        <a href="pharmaceuticals.html" class="product-link flex items-center gap-3">
-                            <i class="ri-medicine-bottle-line text-lg text-accent"></i>
-                            Pharmaceuticals
+
+                        <a
+                            href="pharmaceutical-products.html"
+                            class="product-link flex items-center gap-3"
+                        >
+
+                            <i
+                                class="ri-medicine-bottle-line text-lg text-accent">
+                            </i>
+
+                            Pharmaceutical Products
+
                         </a>
+
                     </li>
 
+
                     <li>
-                        <a href="OTC.html" class="product-link flex items-center gap-3">
-                            <i class="ri-capsule-line text-lg text-accent"></i>
+
+                        <a
+                            href="otc-products.html"
+                            class="product-link flex items-center gap-3"
+                        >
+
+                            <i
+                                class="ri-medicine-bottle-line text-lg text-accent">
+                            </i>
+
                             OTC Products
+
                         </a>
+
                     </li>
 
-                    <!-- SURGICAL -->
-                    <li class="dropdown">
-                        <a href="surgical-medical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-first-aid-kit-line text-lg text-accent"></i>
-                            Surgical
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="surgical-medical-consumable.html"><i class="fas fa-bandage"></i><span>Consumable</span></a>
-                            <a href="surgical-medical-disposable.html"><i class="fas fa-mask-face"></i><span>Disposable</span></a>
-                            <a href="surgical-medical.html"><i class="fa-solid fa-arrow-right"></i><span>All Surgical Products</span></a>
-                        </div>
-                    </li>
 
                     <li>
-                        <a href="nutraceutical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-leaf-line text-lg text-accent"></i>
+
+                        <a
+                            href="surgical-medical.html"
+                            class="product-link flex items-center gap-3"
+                        >
+
+                            <i
+                                class="ri-first-aid-kit-line text-lg text-accent">
+                            </i>
+
+                            Surgical &amp; Medical
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a
+                            href="nutraceutical.html"
+                            class="product-link flex items-center gap-3"
+                        >
+
+                            <i
+                                class="ri-leaf-line text-lg text-accent">
+                            </i>
+
                             Nutraceutical
+
                         </a>
+
                     </li>
+
 
                     <li>
-                        <a href="healthcare-essentials.html" class="product-link flex items-center gap-3">
-                            <i class="ri-heart-pulse-line text-lg text-accent"></i>
-                            Healthcare Essentials
-                        </a>
-                    </li>
 
-                    <li>
-                        <a href="personal-care.html" class="product-link flex items-center gap-3">
-                            <i class="ri-hand-heart-line text-lg text-accent"></i>
-                            Personal Care
-                        </a>
-                    </li>
+                        <a
+                            href="veterinary-products.html"
+                            class="product-link flex items-center gap-3"
+                        >
 
-                    <!-- VETERINARY -->
-                    <li class="dropdown">
-                        <a href="veterinary-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-stethoscope-line text-lg text-accent"></i>
+                            <i
+                                class="ri-stethoscope-line text-lg text-accent">
+                            </i>
+
                             Veterinary Products
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="veterinary-vet.html"><i class="fas fa-dog"></i><span>Vet</span></a>
-                            <a href="veterinary-poultry.html"><i class="fas fa-egg"></i><span>Poultry</span></a>
-                            <a href="veterinary-cattle.html"><i class="fas fa-cow"></i><span>Cattle</span></a>
-                            <a href="veterinary-products.html"><i class="fa-solid fa-arrow-right"></i><span>All Veterinary Products</span></a>
-                        </div>
-                    </li>
 
-                    <li>
-                        <a href="product.html" class="product-link flex items-center gap-3 font-semibold text-white">
-                            <i class="ri-arrow-right-line text-lg text-accent"></i>
-                            View All Products
                         </a>
+
                     </li>
 
                 </ul>
@@ -3062,8 +3390,6 @@
                     class="space-y-5"
                 >
 
-
-                    <!-- ADDRESS -->
 
                     <a
                         href="contact.html"
@@ -3105,8 +3431,6 @@
 
 
 
-                    <!-- PHONE -->
-
                     <div
                         class="contact-box flex gap-4"
                     >
@@ -3144,8 +3468,6 @@
 
 
 
-                    <!-- EMAIL -->
-
                     <div
                         class="contact-box flex gap-4"
                     >
@@ -3182,8 +3504,6 @@
                     </div>
 
 
-
-                    <!-- WORKING HOURS -->
 
                     <a
                         href="contact.html"
@@ -3227,7 +3547,6 @@
 
             </div>
 
-
         </div>
 
     </div>
@@ -3243,7 +3562,6 @@
         <div
             class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-center text-xs text-white/85 sm:px-8 md:flex-row md:items-center md:justify-between md:text-left"
         >
-
 
             <p>
 
@@ -3295,7 +3613,7 @@
                 Crafted by
 
                 <a
-                    href="https://devlabs.org.in/"
+                    href="index.html"
                     class="font-semibold text-white hover:underline"
                 >
                     Dev Labs
@@ -3303,18 +3621,373 @@
 
             </p>
 
-
         </div>
 
     </div>
 
-
 </footer>
+
+
+
+<!-- ========================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================================= -->
 
 <script>
 
+
 /* =========================================================
-   MOBILE NAVBAR
+   VET PRODUCT DATA
+========================================================= */
+
+const vetProducts = [
+
+    {
+        category: "Veterinary Medicines",
+        icon: "fa-pills",
+        name: "Veterinary Multivitamin",
+        description:
+            "Multivitamin support product for routine veterinary healthcare requirements."
+    },
+
+    {
+        category: "Veterinary Medicines",
+        icon: "fa-syringe",
+        name: "Veterinary Care Solution",
+        description:
+            "Veterinary healthcare solution intended for routine animal care."
+    },
+
+    {
+        category: "Veterinary Medicines",
+        icon: "fa-capsules",
+        name: "Animal Health Medicine",
+        description:
+            "Veterinary medicine product for general animal healthcare needs."
+    },
+
+    {
+        category: "Veterinary Medicines",
+        icon: "fa-prescription-bottle-medical",
+        name: "Veterinary Oral Solution",
+        description:
+            "Oral veterinary healthcare solution for animal care requirements."
+    },
+
+
+    {
+        category: "Animal Supplements",
+        icon: "fa-capsules",
+        name: "Animal Calcium Supplement",
+        description:
+            "Calcium support product for animal nutritional requirements."
+    },
+
+    {
+        category: "Animal Supplements",
+        icon: "fa-leaf",
+        name: "Animal Mineral Supplement",
+        description:
+            "Mineral support product designed for balanced animal nutrition."
+    },
+
+    {
+        category: "Animal Supplements",
+        icon: "fa-flask",
+        name: "Animal Vitamin Supplement",
+        description:
+            "Vitamin support product for everyday animal nutritional care."
+    },
+
+    {
+        category: "Animal Supplements",
+        icon: "fa-heart-pulse",
+        name: "Animal Electrolyte",
+        description:
+            "Electrolyte support product for animal hydration management."
+    },
+
+
+    {
+        category: "General Vet Care",
+        icon: "fa-kit-medical",
+        name: "Animal Digestive Support",
+        description:
+            "Veterinary nutritional support product for digestive health."
+    },
+
+    {
+        category: "General Vet Care",
+        icon: "fa-shield-heart",
+        name: "Veterinary Care Powder",
+        description:
+            "Veterinary powder product for general animal care applications."
+    },
+
+    {
+        category: "General Vet Care",
+        icon: "fa-box",
+        name: "Animal Health Support Kit",
+        description:
+            "General veterinary support solution for animal care requirements."
+    },
+
+    {
+        category: "General Vet Care",
+        icon: "fa-paw",
+        name: "Animal Wellness Support",
+        description:
+            "General healthcare support product for routine animal care."
+    }
+
+];
+
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+function createProductCard(product) {
+
+    return `
+
+        <div
+            class="product-card bg-white rounded-3xl border border-[#d8edf3] p-6 shadow-sm"
+        >
+
+            <div
+                class="flex items-start justify-between gap-4"
+            >
+
+                <div
+                    class="w-14 h-14 rounded-2xl bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                >
+
+                    <i
+                        class="fa-solid ${product.icon}">
+                    </i>
+
+                </div>
+
+
+                <span
+                    class="text-xs font-semibold text-[#0b7b97] bg-[#edf9fc] px-3 py-1.5 rounded-full"
+                >
+
+                    ${product.category}
+
+                </span>
+
+            </div>
+
+
+            <h3
+                class="text-lg font-bold text-[#0b2545] mt-6"
+            >
+
+                ${product.name}
+
+            </h3>
+
+
+            <p
+                class="text-sm text-slate-500 leading-6 mt-3"
+            >
+
+                ${product.description}
+
+            </p>
+
+
+            <a
+                href="contact.html"
+                class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-[#0b7b97]"
+            >
+
+                Enquire Now
+
+                <i
+                    class="fa-solid fa-arrow-right">
+                </i>
+
+            </a>
+
+        </div>
+
+    `;
+
+}
+
+
+
+/* =========================================================
+   RENDER CATEGORY PRODUCTS
+========================================================= */
+
+function renderCategory(
+    categoryName,
+    containerId
+) {
+
+    const container =
+        document.getElementById(
+            containerId
+        );
+
+
+    const products =
+        vetProducts.filter(
+            product =>
+                product.category === categoryName
+        );
+
+
+    container.innerHTML =
+        products
+            .map(
+                createProductCard
+            )
+            .join("");
+
+}
+
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+
+const searchResults =
+    document.getElementById(
+        "searchResults"
+    );
+
+
+searchInput.addEventListener(
+    "input",
+    function () {
+
+
+        const value =
+            this.value
+                .toLowerCase()
+                .trim();
+
+
+        if (!value) {
+
+            searchResults.innerHTML = "";
+
+            searchResults.classList.add(
+                "hidden"
+            );
+
+            searchResults.classList.remove(
+                "grid"
+            );
+
+            return;
+
+        }
+
+
+        const results =
+            vetProducts.filter(
+                product =>
+
+                    product.name
+                        .toLowerCase()
+                        .includes(value)
+
+                    ||
+
+                    product.category
+                        .toLowerCase()
+                        .includes(value)
+
+                    ||
+
+                    product.description
+                        .toLowerCase()
+                        .includes(value)
+            );
+
+
+        searchResults.classList.remove(
+            "hidden"
+        );
+
+
+        searchResults.classList.add(
+            "grid"
+        );
+
+
+        if (
+            results.length === 0
+        ) {
+
+            searchResults.innerHTML = `
+
+                <div
+                    class="col-span-full bg-[#f7fcfd] border border-[#d8edf3] rounded-3xl p-10 text-center"
+                >
+
+                    <div
+                        class="w-16 h-16 mx-auto rounded-full bg-[#e8f7fb] text-[#0b7b97] flex items-center justify-center text-xl"
+                    >
+
+                        <i
+                            class="fa-solid fa-magnifying-glass">
+                        </i>
+
+                    </div>
+
+
+                    <h3
+                        class="text-xl font-bold text-[#0b2545] mt-5"
+                    >
+                        No Products Found
+                    </h3>
+
+
+                    <p
+                        class="text-slate-500 text-sm mt-2"
+                    >
+                        Try another product name or category.
+                    </p>
+
+                </div>
+
+            `;
+
+
+            return;
+
+        }
+
+
+        searchResults.innerHTML =
+            results
+                .map(
+                    createProductCard
+                )
+                .join("");
+
+    }
+);
+
+
+
+/* =========================================================
+   MOBILE MENU
 ========================================================= */
 
 const menuBtn =
@@ -3337,7 +4010,7 @@ const menuIcon =
 
 menuBtn.addEventListener(
     "click",
-    () => {
+    function () {
 
 
         mobileMenu.classList.toggle(
@@ -3389,11 +4062,9 @@ document
     .forEach(
         btn => {
 
-
             btn.addEventListener(
                 "click",
-                () => {
-
+                function () {
 
                     const target =
                         document.getElementById(
@@ -3425,21 +4096,17 @@ document
 
 
 /* =========================================================
-   CLOSE MOBILE MENU
+   CLOSE MOBILE MENU ON LINK CLICK
 ========================================================= */
 
 mobileMenu
-    .querySelectorAll(
-        "a"
-    )
+    .querySelectorAll("a")
     .forEach(
         link => {
 
-
             link.addEventListener(
                 "click",
-                () => {
-
+                function () {
 
                     mobileMenu.classList.add(
                         "hidden"
@@ -3567,24 +4234,28 @@ document.addEventListener(
 
 
 /* =========================================================
-   BACK TO TOP
+   INITIAL RENDER
 ========================================================= */
 
-const backTop = document.getElementById("backTop");
+renderCategory(
+    "Veterinary Medicines",
+    "medicineContainer"
+);
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
-        backTop.classList.add("show");
-    } else {
-        backTop.classList.remove("show");
-    }
-});
 
-backTop.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+renderCategory(
+    "Animal Supplements",
+    "supplementContainer"
+);
+
+
+renderCategory(
+    "General Vet Care",
+    "generalContainer"
+);
 
 </script>
+
 
 </body>
 

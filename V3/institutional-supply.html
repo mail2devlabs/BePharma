@@ -2,47 +2,50 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tablets & Capsules | BePharma Traders</title>
+    <title>Medical Devices | BePharma Traders</title>
 
-      <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
+    <meta
+        name="description"
+        content="Explore BePharma Traders medical devices including blood pressure monitors, pulse oximeters, glucometers, thermometers, nebulizers and other healthcare devices."
+    >
 
-  <!-- Remix Icon -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
-    rel="stylesheet"
-  >
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Remix Icon -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+        rel="stylesheet"
+    >
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
-    rel="stylesheet"
-  >
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bitter:ital,wght@0,700;0,800;1,700&display=swap"
+        rel="stylesheet"
+    >
 
-
-    <meta name="description"
-        content="Explore BePharma Traders tablets and capsules including pharmaceutical medicines, antibiotics, vitamins, pain relief, gastro medicines and other solid dosage products.">
-
+    <!-- Tailwind (navbar + footer ke liye) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        /* COLOR PALETTE (same as navbar + footer)
+                           brand  -> teal blue (buttons, links, accents)
+                           navy   -> dark navy (text, footer background)
+                           accent -> light cyan (footer icons)
+                           mist   -> very light sky blue (nav background, hover) */
                         brand: {
                             DEFAULT: "#0b7b97",
                             dark: "#08627a"
@@ -52,179 +55,89 @@
                         mist: {
                             DEFAULT: "#eaf6fb",
                             line: "#cfe9f3"
-                        }
+                        },
+                        pharma: "#0b7b97",
+                        pharmaDark: "#08627a",
+                        pharmaLight: "#eaf6fb"
                     }
                 }
             }
-        }
+        };
     </script>
-    <style>
 
-        :root {
-            --primary: #0b7b97;
-            --primary-dark: #08627a;
-            --primary-light: #eaf6fb;
-            --dark: #0b2545;
-        }
+    <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
 
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
         html {
+            height: 100%;
             scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            background: #fff;
-            color: #1f2937;
             font-family: Arial, Helvetica, sans-serif;
-        }
+            color: #183244;
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
 
-        .main-navbar {
-            background: rgba(255, 255, 255, .97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .top-bar {
-            background: var(--primary);
-        }
-
-        .nav-link {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #374151;
-            font-size: 15px;
-            font-weight: 600;
-            transition: .25s;
-            padding: 27px 0;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary);
-        }
-
-        .nav-link.active:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 10px;
-            height: 2px;
-            border-radius: 10px;
-            background: var(--primary);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% - 2px);
-            left: 50%;
-            transform: translateX(-50%) translateY(12px);
-            width: 285px;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 10px;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, .14);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: .25s;
-            z-index: 100;
-        }
-
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-item {
+            /* FOOTER ALWAYS AT THE VERY BOTTOM */
+            margin: 0;
+            min-height: 100vh;
+            min-height: 100dvh;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            width: 100%;
-            padding: 12px 13px;
-            border-radius: 10px;
-            color: #374151;
-            font-size: 14px;
-            font-weight: 500;
-            transition: .2s;
+            flex-direction: column;
         }
 
-        .dropdown-item:hover {
-            background: var(--primary-light);
-            color: var(--primary);
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        .dropdown-icon {
-            width: 34px;
-            height: 34px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9px;
-            background: var(--primary-light);
-            color: var(--primary);
+        button,
+        input,
+        textarea,
+        select {
+            font-family: inherit;
         }
 
-        .dropdown-footer {
-            margin-top: 5px;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 8px;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        .dropdown-footer a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 11px 13px;
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 9px;
+        :root {
+            --navy: #0b2545;
+            --navy-light: #123f59;
+            --blue: #087f9b;
+            --brand: #0b7b97;
+            --brand-dark: #08627a;
+            --primary: #0b7b97;
+            --primary-dark: #08627a;
+            --primary-light: #eaf6fb;
+            --dark: #0b2545;
+            --cyan: #10a8c4;
+            --accent: #4fc3dc;
+            --cyan-light: #dff5fa;
+            --pale: #eaf6fb;
+            --mist: #eaf6fb;
+            --mist-line: #cfe9f3;
+            --border: #cfe9f3;
+            --text: #183244;
+            --muted: #637681;
+            --white: #ffffff;
+            --shadow: 0 12px 35px rgba(9, 47, 73, 0.10);
         }
 
-        .dropdown-footer a:hover {
-            background: var(--primary-light);
-        }
-
-        .enquiry-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--primary);
-            font-size: 15px;
-            font-weight: 700;
-            white-space: nowrap;
-            padding: 10px 0;
-        }
-
-        .enquiry-count {
-            min-width: 21px;
-            height: 21px;
-            padding: 0 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 999px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
+        section[id] {
+            scroll-margin-top: 95px;
         }
 
         .primary-btn {
@@ -242,6 +155,10 @@
             transform: translateY(-2px);
         }
 
+        /* =========================================================
+           HERO
+        ========================================================= */
+
         .hero {
             position: relative;
             min-height: 455px;
@@ -251,11 +168,11 @@
             background:
                 linear-gradient(
                     90deg,
-                    rgba(8, 36, 48, .95),
-                    rgba(8, 36, 48, .80),
-                    rgba(8, 36, 48, .42)
+                    rgba(11, 37, 69, .95),
+                    rgba(11, 37, 69, .80),
+                    rgba(11, 37, 69, .40)
                 ),
-                url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=2000&q=85")
+                url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=2000&q=85")
                 center / cover no-repeat;
         }
 
@@ -282,7 +199,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #4fc3dc;
+            color: var(--accent);
             font-size: 13px;
             font-weight: 800;
             letter-spacing: .08em;
@@ -303,12 +220,16 @@
         }
 
         .breadcrumb a:hover {
-            color: #4fc3dc;
+            color: var(--accent);
         }
 
+        /* =========================================================
+           SEARCH & FILTER
+        ========================================================= */
+
         .filter-wrap {
-            background: #f7fbfa;
-            border: 1px solid #e5efed;
+            background: #f8fcfe;
+            border: 1px solid var(--border);
             border-radius: 20px;
         }
 
@@ -317,14 +238,14 @@
             align-items: center;
             gap: 10px;
             background: #fff;
-            border: 1px solid #dce8e6;
+            border: 1px solid var(--border);
             border-radius: 13px;
             padding: 0 15px;
         }
 
         .search-box:focus-within {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(11,123,151,.08);
+            box-shadow: 0 0 0 4px rgba(11, 123, 151, .15);
         }
 
         .search-box input {
@@ -332,12 +253,12 @@
             height: 48px;
             border: 0;
             outline: 0;
-            color: #374151;
+            color: var(--text);
             background: transparent;
         }
 
         .filter-btn {
-            border: 1px solid #d8e5e3;
+            border: 1px solid var(--border);
             background: #fff;
             color: #4b5563;
             border-radius: 11px;
@@ -345,6 +266,7 @@
             font-size: 13px;
             font-weight: 700;
             transition: .2s;
+            cursor: pointer;
         }
 
         .filter-btn:hover,
@@ -354,10 +276,14 @@
             border-color: var(--primary);
         }
 
+        /* =========================================================
+           PRODUCT CARD
+        ========================================================= */
+
         .product-card {
             position: relative;
             background: #fff;
-            border: 1px solid #e4eceb;
+            border: 1px solid var(--border);
             border-radius: 22px;
             overflow: hidden;
             transition: .3s;
@@ -368,13 +294,13 @@
 
         .product-card:hover {
             transform: translateY(-7px);
-            border-color: #cfe5e2;
-            box-shadow: 0 22px 50px rgba(15,23,42,.10);
+            border-color: var(--accent);
+            box-shadow: 0 22px 50px rgba(11, 37, 69, .10);
         }
 
         .product-image {
             height: 220px;
-            background: #f5faf9;
+            background: var(--primary-light);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -412,7 +338,7 @@
         }
 
         .product-meta {
-            color: #6b7280;
+            color: var(--muted);
             font-size: 13px;
             line-height: 1.7;
         }
@@ -436,10 +362,11 @@
             font-size: 13px;
             font-weight: 800;
             transition: .25s;
+            cursor: pointer;
         }
 
         .view-btn {
-            border: 1px solid #d8e5e3;
+            border: 1px solid var(--border);
             color: #374151;
             background: #fff;
         }
@@ -471,17 +398,21 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255,255,255,.94);
+            background: rgba(255, 255, 255, .94);
             color: var(--primary);
             font-size: 11px;
             font-weight: 900;
-            box-shadow: 0 5px 15px rgba(0,0,0,.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
         }
+
+        /* =========================================================
+           MODAL
+        ========================================================= */
 
         .modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(15,23,42,.68);
+            background: rgba(11, 37, 69, .70);
             backdrop-filter: blur(5px);
             display: flex;
             align-items: center;
@@ -504,7 +435,7 @@
             overflow-y: auto;
             background: #fff;
             border-radius: 24px;
-            box-shadow: 0 30px 80px rgba(0,0,0,.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .2);
             transform: translateY(20px) scale(.98);
             transition: .25s;
         }
@@ -520,16 +451,20 @@
             border-radius: 18px;
         }
 
+        /* =========================================================
+           TOAST
+        ========================================================= */
+
         .toast {
             position: fixed;
             right: 20px;
             bottom: 20px;
             z-index: 1100;
-            background: #0b2545;
+            background: var(--navy);
             color: #fff;
             padding: 14px 18px;
             border-radius: 13px;
-            box-shadow: 0 15px 40px rgba(0,0,0,.18);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, .18);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -537,48 +472,12 @@
             opacity: 0;
             pointer-events: none;
             transition: .3s;
+            border-left: 4px solid var(--accent);
         }
 
         .toast.show {
             transform: translateY(0);
             opacity: 1;
-        }
-
-        .mobile-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 13px 20px;
-            color: #374151;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 10px;
-        }
-
-        .mobile-link:hover,
-        .mobile-link.active {
-            background: var(--primary-light);
-            color: var(--primary);
-        }
-
-        .mobile-submenu {
-            display: none;
-            padding: 0 20px 8px 36px;
-        }
-
-        .mobile-submenu.open {
-            display: block;
-        }
-
-        .mobile-submenu a {
-            display: block;
-            padding: 9px 0;
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        .mobile-submenu a:hover {
-            color: var(--primary);
         }
 
         .empty-state {
@@ -590,17 +489,15 @@
         }
 
         @media(max-width:768px) {
-
             .hero {
                 min-height: 430px;
-
                 background:
                     linear-gradient(
                         180deg,
-                        rgba(8,36,48,.76),
-                        rgba(8,36,48,.95)
+                        rgba(11, 37, 69, .76),
+                        rgba(11, 37, 69, .95)
                     ),
-                    url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=85")
+                    url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=85")
                     center / cover no-repeat;
             }
 
@@ -611,27 +508,23 @@
             .product-actions {
                 grid-template-columns: 1fr;
             }
-
         }
 
         @media(prefers-reduced-motion:reduce) {
-
             html {
                 scroll-behavior: auto;
             }
-
             *,
             *:before,
             *:after {
                 animation-duration: .01ms !important;
                 transition-duration: .01ms !important;
             }
-
         }
 
         button:focus-visible,
         a:focus-visible {
-            outline: 3px solid rgba(11,123,151,.3);
+            outline: 3px solid rgba(11, 123, 151, .3);
             outline-offset: 3px;
         }
 
@@ -641,315 +534,209 @@
             box-shadow: none;
         }
 
-         /* ================================================= */
-    /* FOOTER LINKS */
-    /* ================================================= */
-
-    .footer-link {
-      transition: all 0.3s ease;
-    }
-
-    .footer-link:hover {
-      color: #ffffff;
-      padding-left: 6px;
-    }
-
-
-    /* ================================================= */
-    /* SOCIAL ICONS */
-    /* ================================================= */
-
-    .social-icon {
-      transition: all 0.3s ease;
-    }
-
-    .social-icon:hover {
-      transform: translateY(-5px);
-      background: #0b7b97;
-      color: white;
-    }
-
-
-    /* ================================================= */
-    /* CONTACT ICON */
-    /* ================================================= */
-
-    .contact-icon {
-      transition: all 0.3s ease;
-    }
-
-    .contact-box:hover .contact-icon {
-      background: #0b7b97;
-      color: white;
-      transform: scale(1.08);
-    }
-
-
-    /* ================================================= */
-    /* PRODUCT LINKS */
-    /* ================================================= */
-
-    .product-link {
-      transition: all 0.3s ease;
-    }
-
-    .product-link:hover {
-      color: white;
-      padding-left: 6px;
-    }
-
-
-    /* ================================================= */
-    /* DROPDOWN */
-    /* ================================================= */
-
-    .dropdown {
-      position: relative;
-    }
-
-
-    .dropdown-menu {
-      visibility: hidden;
-      opacity: 0;
-
-      position: absolute;
-
-      left: 0;
-      top: calc(100% + 5px);
-
-      min-width: 260px;
-
-      background: #0b2545;
-
-      padding: 10px 0;
-
-      border-radius: 10px;
-
-      border: 1px solid rgba(255,255,255,0.12);
-
-      box-shadow:
-        0 10px 25px rgba(0,0,0,0.35);
-
-      z-index: 9999;
-
-      transform: translateY(8px);
-
-      pointer-events: none;
-
-      transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-    }
-
-
-    /* ================================================= */
-    /* ACTIVE DROPDOWN */
-    /* ================================================= */
-
-    .dropdown.active .dropdown-menu {
-
-      visibility: visible;
-
-      opacity: 1;
-
-      transform: translateY(0);
-
-      pointer-events: auto;
-
-    }
-
-
-    /* ================================================= */
-    /* DROPDOWN LINKS */
-    /* ================================================= */
-
-    .dropdown-menu a {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 10px;
-
-      padding: 11px 16px;
-
-      color: #ccfbf1;
-
-      font-size: 14px;
-
-      white-space: nowrap;
-
-      transition: all 0.25s ease;
-
-    }
-
-
-    .dropdown-menu a:hover {
-
-      background: #0b7b97;
-
-      color: white;
-
-      padding-left: 22px;
-
-    }
-
-
-    .dropdown-menu a i {
-
-      width: 20px;
-
-      text-align: center;
-
-      font-size: 17px;
-
-      color: #4fc3dc;
-
-      transition: all 0.25s ease;
-
-    }
-
-
-    .dropdown-menu a:hover i {
-
-      color: white;
-
-      transform: scale(1.15);
-
-    }
-
-
-    /* ================================================= */
-    /* DROPDOWN ARROW */
-    /* ================================================= */
-
-    .dropdown-arrow {
-
-      font-size: 16px;
-
-      color: #4fc3dc;
-
-      transition: transform 0.3s ease;
-
-    }
-
-
-    .dropdown.active .dropdown-arrow {
-
-      transform: rotate(180deg);
-
-    }
-
-
-    /* ================================================= */
-    /* MOBILE */
-    /* ================================================= */
-
-    @media (max-width: 768px) {
-
-      .dropdown-menu {
-
-        position: static;
-
-        width: 100%;
-
-        margin-top: 5px;
-
-        margin-left: 20px;
-
-        box-shadow: none;
-
-        transform: none;
-
-      }
-
-      .dropdown.active .dropdown-menu {
-
-        transform: none;
-
-      }
-
-    }
-
-
-    /* =========================================================
-       FOOTER DROPDOWN FIX
-       ========================================================= */
-
-    #site-footer .dropdown {
-        position: relative;
-    }
-
-    #site-footer .dropdown-menu {
-        position: static;
-        width: 100%;
-        min-width: 0;
-        margin-top: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: none;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    #site-footer .dropdown.active .dropdown-menu {
-        max-height: 500px;
-        margin-top: 10px;
-        padding: 8px 0;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    #site-footer .dropdown-menu a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding: 11px 16px;
-        color: #d9f3fa;
-        text-decoration: none;
-    }
-
-    #site-footer .dropdown-menu a:hover {
-        background: rgba(255,255,255,.08);
-        color: #fff;
-    }
-
-    #site-footer .dropdown-arrow {
-        transition: transform .3s ease;
-    }
-
-    #site-footer .dropdown.active .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-
+        /* =================================================== */
+        /* ============  NAVBAR + FOOTER STYLES  ============= */
+        /* ====  (product.html / index.html se exactly same) = */
+        /* =================================================== */
+
+        nav,
+        footer.site-footer {
+            font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+                BlinkMacSystemFont, "Segoe UI", sans-serif;
+            line-height: normal;
+        }
+
+        footer.site-footer {
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        /* ================================================= */
+        /* FOOTER LINKS */
+        /* ================================================= */
+
+        .footer-link {
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            padding-left: 6px;
+        }
+
+        /* ================================================= */
+        /* SOCIAL ICONS */
+        /* ================================================= */
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background: #0b7b97;
+            color: white;
+        }
+
+        /* ================================================= */
+        /* CONTACT ICON */
+        /* ================================================= */
+
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover .contact-icon {
+            background: #0b7b97;
+            color: white;
+            transform: scale(1.08);
+        }
+
+        /* ================================================= */
+        /* PRODUCT LINKS */
+        /* ================================================= */
+
+        .product-link {
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: white;
+            padding-left: 6px;
+        }
+
+        /* ================================================= */
+        /* DROPDOWN (footer accordion)                       */
+        /* ================================================= */
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 0;
+            background: #0e3158;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            transition:
+                max-height 0.35s ease,
+                opacity 0.25s ease,
+                margin-top 0.25s ease,
+                padding 0.25s ease,
+                visibility 0.25s ease;
+        }
+
+        .dropdown.active .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            max-height: 480px;
+            margin-top: 12px;
+            padding: 8px 0;
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 16px;
+            color: #d6eef6;
+            font-size: 14px;
+            white-space: normal;
+            transition: all 0.25s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #0b7b97;
+            color: white;
+            padding-left: 22px;
+        }
+
+        .dropdown-menu a i {
+            width: 20px;
+            text-align: center;
+            font-size: 17px;
+            color: #4fc3dc;
+            transition: all 0.25s ease;
+        }
+
+        .dropdown-menu a:hover i {
+            color: white;
+            transform: scale(1.15);
+        }
+
+        /* ================================================= */
+        /* DROPDOWN ARROW */
+        /* ================================================= */
+
+        .dropdown-arrow {
+            font-size: 16px;
+            color: #4fc3dc;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* ================================================= */
+        /* BACK TO TOP BUTTON */
+        /* ================================================= */
+
+        .back-top {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 44px;
+            height: 44px;
+            border: none;
+            border-radius: 6px;
+            background: var(--brand);
+            color: #ffffff;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(15px);
+            transition: 0.3s ease;
+            z-index: 900;
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-top:hover {
+            background: var(--navy);
+        }
     </style>
-
 </head>
 
 <body>
 
-
-
 <!-- =====================================================
-                        NAVBAR
+                    NAVBAR
 ====================================================== -->
 
 <nav class="bg-mist border-b border-mist-line shadow-lg sticky top-0 z-50">
 
     <div class="w-full px-3 sm:px-5 lg:px-8">
 
-        <!-- NAVBAR ROW -->
+        <!-- =================================================
+                            NAVBAR ROW
+        ================================================== -->
 
         <div class="flex items-center justify-between h-20">
 
 
-            <!-- LOGO -->
+            <!-- =================================================
+                                LOGO
+            ================================================== -->
 
             <a
                 href="index.html"
@@ -1024,7 +811,9 @@
 
 
 
-            <!-- DESKTOP NAVIGATION -->
+            <!-- =================================================
+                        DESKTOP NAVIGATION
+            ================================================== -->
 
             <div class="hidden lg:flex items-center gap-7">
 
@@ -1043,7 +832,9 @@
 
 
 
-                <!-- PRODUCTS -->
+                <!-- =================================================
+                            PRODUCTS
+                ================================================== -->
 
                 <div class="relative group">
 
@@ -1096,7 +887,9 @@
                             </a>
 
 
-                            <!-- SURGICAL & MEDICAL (DROPDOWN): Consumable / Disposable -->
+                            <!-- =========================================
+                                 SURGICAL & MEDICAL  (DROPDOWN)
+                            ========================================== -->
 
                             <div class="relative group/sub">
 
@@ -1198,7 +991,9 @@
                             </a>
 
 
-                            <!-- VETERINARY (DROPDOWN): Vet / Poultry / Cattle -->
+                            <!-- =========================================
+                                 VETERINARY  (DROPDOWN)
+                            ========================================== -->
 
                             <div class="relative group/sub">
 
@@ -1288,7 +1083,9 @@
 
 
 
-                <!-- SERVICES -->
+                <!-- =================================================
+                            SERVICES
+                ================================================== -->
 
                 <div class="relative group">
 
@@ -1395,7 +1192,9 @@
 
 
 
-                <!-- CATEGORIES -->
+                <!-- =================================================
+                            CATEGORIES
+                ================================================== -->
 
                 <div class="relative group">
 
@@ -1512,7 +1311,9 @@
 
 
 
-            <!-- DESKTOP RIGHT SIDE -->
+            <!-- =================================================
+                    DESKTOP RIGHT SIDE
+            ================================================== -->
 
             <div class="hidden lg:flex items-center gap-4">
 
@@ -1557,7 +1358,7 @@
                                 <span>Facebook</span>
                             </a>
 
-                            <a href="https://www.instagram.com/" class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
+                            <a href="https://www.instagram.com/ " class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
                                 <i class="fa-brands fa-instagram text-brand text-lg w-5"></i>
                                 <span>Instagram</span>
                             </a>
@@ -1599,7 +1400,9 @@
 
 
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- =================================================
+                        MOBILE MENU BUTTON
+            ================================================== -->
 
             <button
                 id="menuBtn"
@@ -1620,7 +1423,9 @@
 
 
 
-        <!-- MOBILE MENU -->
+        <!-- =================================================
+                        MOBILE MENU
+        ================================================== -->
 
         <div id="mobileMenu" class="hidden lg:hidden pb-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
 
@@ -1981,8 +1786,6 @@
 
 </nav>
 
-
-
 <!-- HERO -->
 
 <section class="hero">
@@ -2007,57 +1810,52 @@
                 <i class="fas fa-chevron-right text-[9px]"></i>
 
                 <span>
-                    Tablets & Capsules
+                    Medical Devices
                 </span>
 
             </div>
 
-
             <span class="eyebrow">
 
-                <i class="fas fa-tablets"></i>
+                <i class="fas fa-microscope"></i>
 
-                Pharmaceutical Category
+                Healthcare Equipment Category
 
             </span>
-
 
             <h1
                 class="font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl mt-5">
 
-                Tablets &
+                Medical
 
-                <span class="block text-[#66d8ce]">
-                    Capsules
+                <span class="block text-accent">
+                    Devices
                 </span>
 
             </h1>
 
-
             <p
                 class="text-white/85 leading-7 text-base sm:text-lg max-w-2xl mt-6">
 
-                Explore our range of pharmaceutical tablets and capsules
-                including antibiotics, vitamins, analgesics, gastro medicines
-                and other solid dosage formulations.
+                Explore our range of essential medical devices and healthcare
+                equipment designed for hospitals, clinics, pharmacies,
+                healthcare professionals and institutional requirements.
 
             </p>
-
 
             <div class="flex flex-wrap gap-3 mt-7">
 
                 <a href="#products"
-                    class="primary-btn bg-white !text-[#0b7b97] hover:!bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm">
+                    class="primary-btn bg-white !text-brand hover:!bg-mist px-6 py-3 rounded-xl font-bold text-sm">
 
-                    <i class="fas fa-tablets"></i>
+                    <i class="fas fa-microscope"></i>
 
-                    Browse Products
+                    Browse Devices
 
                 </a>
 
-
                 <a href="contact.html"
-                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
+                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
 
                     <i class="fas fa-paper-plane"></i>
 
@@ -2076,87 +1874,87 @@
 
 <!-- CATEGORY INFO -->
 
-<section class="py-12 md:py-16 bg-[#f7fbfa]">
+<section class="py-12 md:py-16 bg-[#f8fcfe]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-mist-line rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
 
-                    <i class="fas fa-tablets"></i>
+                    <i class="fas fa-heart-pulse"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Tablets
+                <p class="text-2xl font-extrabold text-brand mt-4">
+                    Monitoring
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Solid dosage formulations
+                    Patient monitoring devices
                 </p>
 
             </div>
 
 
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-mist-line rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
 
-                    <i class="fas fa-capsules"></i>
+                    <i class="fas fa-temperature-half"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Capsules
+                <p class="text-2xl font-extrabold text-brand mt-4">
+                    Diagnostics
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Pharmaceutical capsule products
+                    Everyday diagnostic devices
                 </p>
 
             </div>
 
 
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-mist-line rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
 
-                    <i class="fas fa-shield-virus"></i>
+                    <i class="fas fa-lungs"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Antibiotics
+                <p class="text-2xl font-extrabold text-brand mt-4">
+                    Respiratory
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Antibiotic tablet & capsule products
+                    Respiratory care devices
                 </p>
 
             </div>
 
 
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-mist-line rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
 
-                    <i class="fas fa-boxes-stacked"></i>
+                    <i class="fas fa-hospital"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
+                <p class="text-2xl font-extrabold text-brand mt-4">
                     B2B Supply
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Business procurement
+                    Institutional procurement
                 </p>
 
             </div>
@@ -2178,9 +1976,9 @@
         <div class="max-w-3xl mx-auto text-center">
 
             <span
-                class="text-[#0b7b97] text-xs font-extrabold uppercase tracking-[.12em]">
+                class="text-brand text-xs font-extrabold uppercase tracking-[.12em]">
 
-                Tablets & Capsules
+                Medical Devices
 
             </span>
 
@@ -2189,21 +1987,23 @@
 
                 Explore Our
 
-                <span class="text-[#0b7b97]">
-                    Tablet & Capsule Products
+                <span class="text-brand">
+                    Medical Devices
                 </span>
 
             </h2>
 
             <p class="text-gray-500 leading-7 mt-5">
 
-                Search and explore pharmaceutical tablets and capsules
-                available in this category.
+                Search and explore healthcare devices available in the
+                Medical Devices category.
 
             </p>
 
         </div>
 
+
+        <!-- FILTER -->
 
         <div class="filter-wrap p-4 md:p-5 mt-10">
 
@@ -2211,13 +2011,13 @@
 
                 <div class="search-box">
 
-                    <i class="fas fa-search text-[#0b7b97]"></i>
+                    <i class="fas fa-search text-brand"></i>
 
                     <input
                         id="productSearch"
                         type="search"
-                        placeholder="Search tablets, capsules, antibiotics..."
-                        aria-label="Search tablets and capsules">
+                        placeholder="Search medical devices..."
+                        aria-label="Search medical devices">
 
                 </div>
 
@@ -2234,49 +2034,33 @@
 
                     <button
                         class="filter-btn"
-                        data-filter="tablet">
+                        data-filter="monitoring">
 
-                        Tablets
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="capsule">
-
-                        Capsules
+                        Monitoring
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="antibiotic">
+                        data-filter="diagnostic">
 
-                        Antibiotic
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="vitamin">
-
-                        Vitamins
+                        Diagnostic
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="analgesic">
+                        data-filter="respiratory">
 
-                        Analgesic
+                        Respiratory
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="gastro">
+                        data-filter="homecare">
 
-                        Gastro
+                        Homecare
 
                     </button>
 
@@ -2287,6 +2071,8 @@
         </div>
 
 
+        <!-- PRODUCT GRID -->
+
         <div id="productGrid"
             class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
@@ -2295,14 +2081,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet antibiotic"
-                data-search="amoxicillin tablet antibiotic tablets medicine">
+                data-category="monitoring"
+                data-search="digital blood pressure monitor bp machine blood pressure monitoring">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85"
-                        alt="Amoxicillin Tablets"
+                        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Blood Pressure Monitor"
                         loading="lazy">
 
                 </div>
@@ -2314,31 +2100,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Monitoring
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Amoxicillin Tablets
+                        Digital BP Monitor
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Pharmaceutical antibiotic tablet formulation
-                        supplied for healthcare and institutional requirements.
+                        Digital blood pressure monitoring device
+                        suitable for home and healthcare use.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Monitoring Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Antibiotic
+                            <strong>Category:</strong> Monitoring
                         </p>
 
                     </div>
@@ -2346,12 +2132,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Amoxicillin Tablets"
-                            data-description="Pharmaceutical antibiotic tablet formulation supplied for healthcare, pharmaceutical and institutional procurement requirements."
-                            data-type="Tablet"
-                            data-category="Antibiotic"
-                            data-image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Digital BP Monitor"
+                            data-description="Digital blood pressure monitoring device suitable for healthcare facilities, pharmacies and homecare requirements."
+                            data-type="Monitoring Device"
+                            data-category="Monitoring"
+                            data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2359,8 +2145,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Amoxicillin Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Digital BP Monitor">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2378,14 +2164,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="capsule antibiotic"
-                data-search="azithromycin capsule antibiotic capsule medicine">
+                data-category="monitoring homecare"
+                data-search="pulse oximeter spo2 oxygen saturation monitor">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=900&q=85"
-                        alt="Azithromycin Capsules"
+                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85"
+                        alt="Pulse Oximeter"
                         loading="lazy">
 
                 </div>
@@ -2397,31 +2183,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Capsule
+                        Monitoring
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Azithromycin Capsules
+                        Pulse Oximeter
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Pharmaceutical antibiotic capsule formulation
-                        for healthcare and pharmaceutical supply requirements.
+                        Compact device for measuring oxygen
+                        saturation and pulse rate.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Capsule
+                            <strong>Type:</strong> Monitoring Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Antibiotic
+                            <strong>Category:</strong> Homecare
                         </p>
 
                     </div>
@@ -2429,12 +2215,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Azithromycin Capsules"
-                            data-description="Pharmaceutical antibiotic capsule formulation supplied for healthcare and institutional procurement requirements."
-                            data-type="Capsule"
-                            data-category="Antibiotic"
-                            data-image="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Pulse Oximeter"
+                            data-description="Compact pulse oximetry device designed for oxygen saturation and pulse rate monitoring requirements."
+                            data-type="Monitoring Device"
+                            data-category="Homecare"
+                            data-image="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2442,8 +2228,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Azithromycin Capsules">
+                            class="enquiry-product-btn"
+                            data-add="Pulse Oximeter">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2461,14 +2247,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet vitamin"
-                data-search="vitamin c tablet vitamin tablet supplement">
+                data-category="diagnostic homecare"
+                data-search="glucometer blood glucose sugar testing glucose meter diabetes">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1729700985359-a7ffadd963f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVkaWNhbCUyMHN1cHBsaWVzJTIwdml0YW1pbiUyMGMlMjB0YWJsZXRzfGVufDB8fDB8fHww"
-                        alt="Vitamin C Tablets"
+                        src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85"
+                        alt="Blood Glucose Meter"
                         loading="lazy">
 
                 </div>
@@ -2480,31 +2266,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Diagnostic
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Vitamin C Tablets
+                        Blood Glucose Meter
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Vitamin-based tablet formulation supplied for
-                        pharmaceutical and healthcare requirements.
+                        Portable glucose monitoring device for
+                        routine blood sugar testing requirements.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Diagnostic Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Vitamins
+                            <strong>Category:</strong> Diagnostic
                         </p>
 
                     </div>
@@ -2512,12 +2298,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Vitamin C Tablets"
-                            data-description="Vitamin-based tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Vitamins"
-                            data-image="https://images.unsplash.com/photo-1550572017-9e7d7d4a8c7e?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Blood Glucose Meter"
+                            data-description="Portable blood glucose monitoring device intended for routine healthcare and home monitoring requirements."
+                            data-type="Diagnostic Device"
+                            data-category="Diagnostic"
+                            data-image="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2525,8 +2311,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Vitamin C Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Blood Glucose Meter">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2544,14 +2330,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet analgesic"
-                data-search="paracetamol tablet analgesic pain relief tablet medicine">
+                data-category="diagnostic homecare"
+                data-search="digital thermometer temperature medical thermometer fever">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=85"
-                        alt="Paracetamol Tablets"
+                        src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Thermometer"
                         loading="lazy">
 
                 </div>
@@ -2563,31 +2349,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Diagnostic
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Paracetamol Tablets
+                        Digital Thermometer
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Analgesic and antipyretic tablet formulation
-                        supplied for pharmaceutical procurement.
+                        Compact temperature measurement device
+                        for routine healthcare requirements.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Diagnostic Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Analgesic
+                            <strong>Category:</strong> Homecare
                         </p>
 
                     </div>
@@ -2595,12 +2381,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Paracetamol Tablets"
-                            data-description="Analgesic and antipyretic tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Analgesic"
-                            data-image="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Digital Thermometer"
+                            data-description="Digital temperature measurement device suitable for homecare, pharmacy and general healthcare requirements."
+                            data-type="Diagnostic Device"
+                            data-category="Homecare"
+                            data-image="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2608,8 +2394,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Paracetamol Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Digital Thermometer">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2627,14 +2413,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="capsule gastro"
-                data-search="omeprazole capsule gastro gastric acidity capsule">
+                data-category="respiratory homecare"
+                data-search="nebulizer machine respiratory nebulisation inhalation device">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
-                        alt="Omeprazole Capsules"
+                        src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"
+                        alt="Nebulizer Machine"
                         loading="lazy">
 
                 </div>
@@ -2646,31 +2432,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Capsule
+                        Respiratory
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Omeprazole Capsules
+                        Nebulizer Machine
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Gastrointestinal capsule formulation supplied
-                        for pharmaceutical healthcare requirements.
+                        Respiratory care device used for
+                        nebulization and inhalation therapy requirements.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Capsule
+                            <strong>Type:</strong> Respiratory Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Gastro
+                            <strong>Category:</strong> Respiratory
                         </p>
 
                     </div>
@@ -2678,12 +2464,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Omeprazole Capsules"
-                            data-description="Gastrointestinal capsule formulation supplied for pharmaceutical, healthcare and institutional procurement requirements."
-                            data-type="Capsule"
-                            data-category="Gastro"
-                            data-image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Nebulizer Machine"
+                            data-description="Respiratory care device designed for nebulization and inhalation therapy supply requirements."
+                            data-type="Respiratory Device"
+                            data-category="Respiratory"
+                            data-image="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2691,8 +2477,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Omeprazole Capsules">
+                            class="enquiry-product-btn"
+                            data-add="Nebulizer Machine">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2710,14 +2496,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet vitamin"
-                data-search="multivitamin tablets vitamin mineral tablet healthcare">
+                data-category="monitoring"
+                data-search="stethoscope medical diagnostic auscultation doctor healthcare">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=85"
-                        alt="Multivitamin Tablets"
+                        src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
+                        alt="Medical Stethoscope"
                         loading="lazy">
 
                 </div>
@@ -2729,31 +2515,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Monitoring
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Multivitamin Tablets
+                        Medical Stethoscope
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Multivitamin and mineral tablet formulation
-                        supplied for healthcare and pharmaceutical needs.
+                        Essential clinical diagnostic device
+                        for routine examination and auscultation.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Clinical Device
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Vitamins
+                            <strong>Category:</strong> Monitoring
                         </p>
 
                     </div>
@@ -2761,12 +2547,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Multivitamin Tablets"
-                            data-description="Multivitamin and mineral tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Vitamins"
-                            data-image="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Medical Stethoscope"
+                            data-description="Essential clinical diagnostic device used for routine examination and auscultation requirements."
+                            data-type="Clinical Device"
+                            data-category="Monitoring"
+                            data-image="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2774,8 +2560,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Multivitamin Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Medical Stethoscope">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2791,22 +2577,24 @@
         </div>
 
 
+        <!-- NO RESULTS -->
+
         <div id="noResults"
             class="empty-state text-center py-16">
 
             <div
-                class="w-16 h-16 mx-auto rounded-2xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center text-xl">
+                class="w-16 h-16 mx-auto rounded-2xl bg-mist text-brand flex items-center justify-center text-xl">
 
                 <i class="fas fa-magnifying-glass"></i>
 
             </div>
 
             <h3 class="font-extrabold text-xl text-gray-800 mt-5">
-                No products found
+                No devices found
             </h3>
 
             <p class="text-gray-500 mt-2">
-                Try another tablet or capsule name or select another category.
+                Try another device name or select another category.
             </p>
 
         </div>
@@ -2818,42 +2606,39 @@
 
 <!-- CTA -->
 
-<section class="py-20 md:py-24 bg-[#f7fbfa]">
+<section class="py-20 md:py-24 bg-[#f8fcfe]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
-            class="bg-[#0b7b97] rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
+            class="bg-brand rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
 
             <div
                 class="mx-auto w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-xl">
 
-                <i class="fas fa-clipboard-list"></i>
+                <i class="fas fa-microscope"></i>
 
             </div>
-
 
             <h2
                 class="text-2xl md:text-4xl font-extrabold text-white mt-5">
 
-                Need A Specific Tablet Or Capsule?
+                Need A Specific Medical Device?
 
             </h2>
 
+            <p class="text-sky-100/90 mt-3 text-sm md:text-base max-w-2xl mx-auto">
 
-            <p class="text-teal-50 mt-3 text-sm md:text-base max-w-2xl mx-auto">
-
-                Share your tablet or capsule requirement, quantity or
-                preferred pharmaceutical formulation with our team.
+                Share your required device, quantity or preferred
+                healthcare equipment with our team.
 
             </p>
-
 
             <div
                 class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
 
                 <a href="contact.html"
-                    class="inline-flex items-center gap-2 bg-white text-[#0b7b97] px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-teal-50 transition">
+                    class="inline-flex items-center gap-2 bg-white text-brand px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-mist transition">
 
                     <i class="fas fa-paper-plane"></i>
 
@@ -2861,9 +2646,8 @@
 
                 </a>
 
-
                 <a href="categories.html"
-                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
+                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
 
                     <i class="fas fa-layer-group"></i>
 
@@ -2879,661 +2663,1236 @@
 
 </section>
 
-    <!-- ========================================================= -->
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalProductName">
+
+    <div class="modal-box">
+
+        <div class="p-5 md:p-7">
+
+            <div class="flex items-center justify-between gap-4 mb-5">
+
+                <div>
+
+                    <span
+                        class="text-brand text-xs font-extrabold uppercase tracking-wider">
+
+                        Device Details
+
+                    </span>
+
+                    <h2
+                        id="modalProductName"
+                        class="text-2xl md:text-3xl font-extrabold text-gray-800 mt-1">
+
+                        Medical Device
+
+                    </h2>
+
+                </div>
+
+                <button id="modalClose"
+                    type="button"
+                    aria-label="Close product details"
+                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-mist hover:text-brand transition">
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-7 items-start">
+
+                <img id="modalImage"
+                    class="modal-image"
+                    src=""
+                    alt="">
+
+                <div>
+
+                    <p id="modalDescription"
+                        class="text-gray-500 leading-7">
+                    </p>
+
+                    <div class="mt-6 space-y-3">
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-mist/50">
+
+                            <span class="text-sm text-gray-500">
+                                Device Type
+                            </span>
+
+                            <strong id="modalType"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-mist/50">
+
+                            <span class="text-sm text-gray-500">
+                                Category
+                            </span>
+
+                            <strong id="modalCategory"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button id="modalEnquiryBtn"
+                        type="button"
+                        class="primary-btn w-full py-3.5 rounded-xl font-bold mt-6">
+
+                        <i class="fas fa-clipboard-list"></i>
+
+                        Add To Enquiry
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"
+    class="toast">
+
+    <i class="fas fa-circle-check text-accent"></i>
+
+    <span id="toastText">
+        Product added to enquiry.
+    </span>
+
+</div>
+
+<!-- ========================================================= -->
 <!--                         FOOTER                            -->
 <!-- ========================================================= -->
 
-<footer id="site-footer" class="bg-navy text-white">
+<footer
+  class="site-footer mt-auto mb-0 bg-navy text-white"
+>
 
 
-    <!-- MAIN FOOTER -->
+  <!-- ================================================= -->
+  <!-- MAIN FOOTER -->
+  <!-- ================================================= -->
 
-    <div class="mx-auto max-w-7xl px-6 py-16 sm:px-8">
-
-        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+  <div
+    class="mx-auto max-w-7xl px-6 py-16 sm:px-8"
+  >
 
-
-            <!-- COMPANY -->
-
-            <div>
-
-                <!-- LOGO (same logo as navbar) -->
-
-                <a
-                    href="index.html"
-                    aria-label="Be Pharma Traders &amp; Co - Home"
-                    class="inline-flex items-center"
-                >
-
-                    <svg
-                        viewBox="60 50 1420 590"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Be Pharma Traders &amp; Co"
-                        class="h-16 md:h-20 w-auto text-[#c9651b] hover:opacity-90 transition"
-                    >
-
-                        <title>Be Pharma Traders &amp; Co</title>
-
-                        <g fill="currentColor">
-                            <rect x="262" y="62" width="186" height="560" rx="93"></rect>
-                            <rect x="75" y="245" width="562" height="196" rx="98"></rect>
-                        </g>
-
-                        <text
-                            x="358" y="415"
-                            text-anchor="middle"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="800"
-                            font-size="240"
-                            fill="#ffffff"
-                        >B</text>
-
-                        <text
-                            x="500" y="382"
-                            font-family="'Bitter', Georgia, serif"
-                            font-style="italic"
-                            font-weight="700"
-                            font-size="115"
-                            fill="#ffffff"
-                        >e</text>
-
-                        <text
-                            x="678" y="392"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="800"
-                            font-size="205"
-                            fill="currentColor"
-                            textLength="777"
-                            lengthAdjust="spacingAndGlyphs"
-                        >Pharma</text>
-
-                        <text
-                            x="680" y="528"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="700"
-                            font-size="96"
-                            fill="currentColor"
-                            textLength="760"
-                            lengthAdjust="spacingAndGlyphs"
-                        >Traders &amp; Co</text>
-
-                    </svg>
-
-                </a>
-
-
-                <!-- DESCRIPTION -->
-
-                <p class="mt-6 max-w-sm text-sm leading-7 text-white">
-                    We strive to empower our partners and clients
-                    with reliable support, quality products, and
-                    innovative pharmaceutical solutions.
-
-                    Our mission is to advance healthcare by providing
-                    trusted pharmaceutical products with efficiency,
-                    integrity, and excellence.
-                </p>
-
-
-                <!-- SOCIAL (links are set in the SOCIAL_LINKS block at the bottom) -->
-
-                <div class="mt-7 flex flex-wrap gap-3">
-
-                    <a
-                        href="https://www.facebook.com/"
-                        data-social="facebook"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-
-                    <a
-                        href="https://www.instagram.com/"
-                        data-social="instagram"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-instagram"></i>
-                    </a>
-
-                    <a
-                        href="https://www.linkedin.com/"
-                        data-social="linkedin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-
-                    <a
-                        href="https://wa.me/"
-                        data-social="whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="WhatsApp"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-
-                    <a
-                        href="https://www.youtube.com/"
-                        data-social="youtube"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-youtube"></i>
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- QUICK LINKS -->
-
-            <div>
-
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Quick Links
-                </h3>
-
-                <ul class="space-y-4 text-sm text-sky-100/70">
-
-                    <!-- HOME -->
-
-                    <li>
-                        <a href="index.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-home-5-line text-lg text-accent"></i>
-                            Home
-                        </a>
-                    </li>
-
-                    <!-- ABOUT -->
-
-                    <li>
-                        <a href="about.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-information-line text-lg text-accent"></i>
-                            About Us
-                        </a>
-                    </li>
-
-
-                    <!-- SERVICES - SAME AS NAVBAR SERVICES -->
-
-                    <li class="dropdown">
-
-                        <a href="services.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-service-line text-lg text-accent"></i>
-                            Services
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="pharmaceutical-distribution.html">
-                                <i class="fas fa-truck-medical"></i>
-                                <span>Pharmaceutical Distribution</span>
-                            </a>
+    <div
+      class="grid gap-12 md:grid-cols-2 lg:grid-cols-4"
+    >
 
-                            <a href="wholesale-supply.html">
-                                <i class="fas fa-boxes-stacked"></i>
-                                <span>Wholesale Supply</span>
-                            </a>
 
-                            <a href="institutional-supply.html">
-                                <i class="fas fa-hospital"></i>
-                                <span>Institutional Supply</span>
-                            </a>
+      <!-- ================================================= -->
+      <!-- COMPANY -->
+      <!-- ================================================= -->
 
-                            <a href="surgical-medical-supplies.html">
-                                <i class="fas fa-kit-medical"></i>
-                                <span>Surgical &amp; Medical Supply</span>
-                            </a>
+      <div>
 
-                            <a href="otc-healthcare-products.html">
-                                <i class="fas fa-heart-circle-check"></i>
-                                <span>OTC &amp; Healthcare Supply</span>
-                            </a>
 
-                            <a href="delivery-support.html">
-                                <i class="fas fa-truck-fast"></i>
-                                <span>Delivery Support</span>
-                            </a>
+        <!-- LOGO (same logo as navbar) -->
 
-                            <div class="mt-1 border-t border-white/10 pt-1">
+        <a
+          href="index.html"
+          aria-label="Be Pharma Traders &amp; Co - Home"
+          class="inline-flex items-center"
+        >
 
-                                <a href="services.html"
-                                   class="text-accent font-semibold">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span>View All Services</span>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- CATEGORIES -->
-
-                    <li class="dropdown">
-
-                        <a href="categories.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-list-check-2 text-lg text-accent"></i>
-                            Categories
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="tablets-capsules.html">
-                                <i class="fas fa-tablets"></i>
-                                <span>Tablets &amp; Capsules</span>
-                            </a>
-
-                            <a href="injections.html">
-                                <i class="fas fa-syringe"></i>
-                                <span>Injections</span>
-                            </a>
-
-                            <a href="medical-devices.html">
-                                <i class="fas fa-microscope"></i>
-                                <span>Medical Devices</span>
-                            </a>
-
-                            <a href="surgical-items.html">
-                                <i class="fas fa-scissors"></i>
-                                <span>Surgical Items</span>
-                            </a>
-
-                            <a href="OTC.html">
-                                <i class="fas fa-bottle-droplet"></i>
-                                <span>OTC Products</span>
-                            </a>
-
-                            <a href="healthcare-essentials.html">
-                                <i class="fas fa-notes-medical"></i>
-                                <span>Healthcare Essentials</span>
-                            </a>
-
-                            <div class="mt-1 border-t border-white/10 pt-1">
-
-                                <a href="categories.html" class="text-accent font-semibold">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span>View All Categories</span>
-                                </a>
-
-                            </div>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- PRODUCTS (same options as navbar) -->
-
-            <div>
-
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Products
-                </h3>
-
-                <ul class="space-y-4 text-sm text-sky-100/70">
-
-                    <!-- PHARMACEUTICAL -->
-
-                    <li>
-                        <a href="pharmaceutical-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-medicine-bottle-line text-lg text-accent"></i>
-                            Pharmaceutical Products
-                        </a>
-                    </li>
-
-                    <!-- OTC -->
-
-                    <li>
-                        <a href="otc-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-medicine-bottle-line text-lg text-accent"></i>
-                            OTC Products
-                        </a>
-                    </li>
-
-
-                    <!-- SURGICAL & MEDICAL (DROPDOWN): Consumable / Disposable -->
-
-                    <li class="dropdown">
-
-                        <a href="surgical-medical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-first-aid-kit-line text-lg text-accent"></i>
-                            Surgical &amp; Medical
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="surgical-medical-consumable.html">
-                                <i class="fas fa-bandage"></i>
-                                <span>Consumable</span>
-                            </a>
-
-                            <a href="surgical-medical-disposable.html">
-                                <i class="fas fa-mask-face"></i>
-                                <span>Disposable</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- NUTRACEUTICAL -->
-
-                    <li>
-                        <a href="nutraceutical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-leaf-line text-lg text-accent"></i>
-                            Nutraceutical
-                        </a>
-                    </li>
-
-
-                    <!-- HEALTHCARE -->
-
-                    <li>
-                        <a href="healthcare-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-capsule-line text-lg text-accent"></i>
-                            Healthcare Products
-                        </a>
-                    </li>
-
-
-                    <!-- VETERINARY (DROPDOWN): Vet / Poultry / Cattle -->
-
-                    <li class="dropdown">
-
-                        <a href="veterinary-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-stethoscope-line text-lg text-accent"></i>
-                            Veterinary Products
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="veterinary-vet.html">
-                                <i class="fas fa-dog"></i>
-                                <span>Vet</span>
-                            </a>
-
-                            <a href="veterinary-poultry.html">
-                                <i class="fas fa-egg"></i>
-                                <span>Poultry</span>
-                            </a>
-
-                            <a href="veterinary-cattle.html">
-                                <i class="fas fa-cow"></i>
-                                <span>Cattle</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- CONTACT -->
-
-            <div>
-
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Contact Us
-                </h3>
-
-                <div class="space-y-5">
-
-                    <!-- ADDRESS -->
-
-                    <a href="contact.html" class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-map-pin-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Address
-                            </p>
-
-                            <p class="mt-1 text-sm leading-6 text-sky-100/70">
-                                Be Pharma Traders<br>
-                                India
-                            </p>
-                        </div>
-
-                    </a>
-
-
-                    <!-- PHONE -->
-
-                    <div class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-phone-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Phone
-                            </p>
-
-                            <a href="tel:+919973100210" class="mt-1 block text-sm text-sky-100/70 hover:text-white">
-                                +91 99731 00210
-                            </a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- EMAIL -->
-
-                    <div class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-mail-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Email
-                            </p>
-
-                            <a href="mailto:addressbepharmatraders@gmail.com" class="mt-1 block break-all text-sm text-sky-100/70 hover:text-white">
-                                addressbepharmatraders@gmail.com
-                            </a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- WORKING HOURS -->
-
-                    <a href="contact.html" class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-time-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Working Hours
-                            </p>
-
-                            <p class="mt-1 text-sm leading-6 text-sky-100/70">
-                                Monday - Saturday<br>
-                                9:00 AM - 6:00 PM
-                            </p>
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
-
+          <svg
+            viewBox="60 50 1420 590"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Be Pharma Traders &amp; Co"
+            class="h-16 md:h-20 w-auto text-[#c9651b] hover:opacity-90 transition"
+          >
+
+            <title>Be Pharma Traders &amp; Co</title>
+
+            <!-- CROSS (two rounded bars) -->
+
+            <g fill="currentColor">
+              <rect x="262" y="62" width="186" height="560" rx="93"></rect>
+              <rect x="75" y="245" width="562" height="196" rx="98"></rect>
+            </g>
+
+            <!-- "B" and "e" inside the cross -->
+
+            <text
+              x="358" y="415"
+              text-anchor="middle"
+              font-family="'Bitter', Georgia, serif"
+              font-weight="800"
+              font-size="240"
+              fill="#ffffff"
+            >B</text>
+
+            <text
+              x="500" y="382"
+              font-family="'Bitter', Georgia, serif"
+              font-style="italic"
+              font-weight="700"
+              font-size="115"
+              fill="#ffffff"
+            >e</text>
+
+            <!-- PHARMA -->
+
+            <text
+              x="678" y="392"
+              font-family="'Bitter', Georgia, serif"
+              font-weight="800"
+              font-size="205"
+              fill="currentColor"
+              textLength="777"
+              lengthAdjust="spacingAndGlyphs"
+            >Pharma</text>
+
+            <!-- TRADERS & CO -->
+
+            <text
+              x="680" y="528"
+              font-family="'Bitter', Georgia, serif"
+              font-weight="700"
+              font-size="96"
+              fill="currentColor"
+              textLength="760"
+              lengthAdjust="spacingAndGlyphs"
+            >Traders &amp; Co</text>
+
+          </svg>
+
+        </a>
+
+
+        <!-- DESCRIPTION -->
+
+        <p
+          class="mt-6 max-w-sm
+                 text-sm leading-7
+                 text-white"
+        >
+
+          We strive to empower our partners and clients
+          with reliable support, quality products, and
+          innovative pharmaceutical solutions.
+
+          Our mission is to advance healthcare by providing
+          trusted pharmaceutical products with efficiency,
+          integrity, and excellence.
+
+        </p>
+
+
+        <!-- SOCIAL (links are set in the SOCIAL_LINKS block at the bottom) -->
+
+        <div
+          class="mt-7 flex flex-wrap gap-3"
+        >
+
+          <a
+            href="https://www.facebook.com/"
+            data-social="facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+
+          <a
+            href="https://www.instagram.com/"
+            data-social="instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/"
+            data-social="linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+
+
+          <a
+            href="https://wa.me/"
+            data-social="whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+
+
+          <a
+            href="https://www.youtube.com/"
+            data-social="youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-youtube"></i>
+          </a>
 
         </div>
 
-    </div>
+      </div>
 
 
 
-    <!-- COPYRIGHT BAR -->
+      <!-- ================================================= -->
+      <!-- QUICK LINKS -->
+      <!-- ================================================= -->
 
-    <div class="bg-brand">
+      <div>
 
-        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-center text-xs text-white/85 sm:px-8 md:flex-row md:items-center md:justify-between md:text-left">
+        <h3
+          class="mb-6 text-lg font-bold text-white"
+        >
+          Quick Links
+        </h3>
 
-            <!-- COPYRIGHT -->
 
-            <p>
-                © 2026
-                <a href="index.html" class="font-semibold text-white hover:underline">
-                    Be Pharma Traders
-                </a>
-                . All Rights Reserved.
-            </p>
+        <ul
+          class="space-y-4
+                 text-sm
+                 text-sky-100/70"
+        >
 
-            <!-- PRIVACY / TERMS -->
 
-            <div class="flex justify-center gap-5 md:justify-end">
+          <!-- HOME -->
 
-                <a href="privacy-policy.html" class="transition hover:text-white hover:underline">
-                    Privacy Policy
-                </a>
+          <li>
 
-                <span class="text-white/40">
-                    |
+            <a
+              href="index.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-home-5-line
+                       text-lg text-accent"
+              ></i>
+
+              Home
+
+            </a>
+
+          </li>
+
+
+
+          <!-- ABOUT -->
+
+          <li>
+
+            <a
+              href="about.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-information-line
+                       text-lg text-accent"
+              ></i>
+
+              About Us
+
+            </a>
+
+          </li>
+
+
+
+          <!-- ================================================= -->
+          <!-- SERVICES -->
+          <!-- ================================================= -->
+
+          <li class="dropdown">
+
+
+            <a
+              href="services.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-service-line
+                       text-lg text-accent"
+              ></i>
+
+              Services
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
+            </a>
+
+
+            <!-- SERVICES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="wholesale-distribution.html"
+              >
+
+                <i class="ri-truck-line"></i>
+
+                <span>
+                  Wholesale Distribution
                 </span>
 
-                <a href="terms.html" class="transition hover:text-white hover:underline">
-                    Terms &amp; Conditions
-                </a>
+              </a>
+
+
+              <a
+                href="retail-supply.html"
+              >
+
+                <i class="ri-store-2-line"></i>
+
+                <span>
+                  Retail Supply
+                </span>
+
+              </a>
+
+
+              <a
+                href="hospital-supply.html"
+              >
+
+                <i class="ri-hospital-line"></i>
+
+                <span>
+                  Hospital Supply
+                </span>
+
+              </a>
+
+
+              <a
+                href="third-party-manufacturing.html"
+              >
+
+                <i class="ri-building-4-line"></i>
+
+                <span>
+                  Third Party Manufacturing
+                </span>
+
+              </a>
+
 
             </div>
 
-            <!-- DEV LABS -->
+          </li>
 
-            <p>
-                Crafted by
-                <a href="https://devlabs.org.in/" class="font-semibold text-white hover:underline">
-                    Dev Labs
-                </a>
-            </p>
+
+
+          <!-- ================================================= -->
+          <!-- CATEGORIES -->
+          <!-- ================================================= -->
+
+          <li class="dropdown">
+
+
+            <a
+              href="categories.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-list-check-2
+                       text-lg text-accent"
+              ></i>
+
+              Categories
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
+            </a>
+
+
+            <!-- CATEGORIES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="medicines.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Medicines
+                </span>
+
+              </a>
+
+
+              <a
+                href="injections.html"
+              >
+
+                <i class="ri-syringe-line"></i>
+
+                <span>
+                  Injections
+                </span>
+
+              </a>
+
+
+              <a
+                href="medical-devices.html"
+              >
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <span>
+                  Medical Devices
+                </span>
+
+              </a>
+
+
+              <a
+                href="medical-equipment.html"
+              >
+
+                <i class="ri-first-aid-kit-line"></i>
+
+                <span>
+                  Medical Equipment
+                </span>
+
+              </a>
+
+
+              <a
+                href="tablets.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Tablets
+                </span>
+
+              </a>
+
+
+              <a
+                href="capsules.html"
+              >
+
+                <i class="ri-capsule-fill"></i>
+
+                <span>
+                  Capsules
+                </span>
+
+              </a>
+
+
+              <a
+                href="syrup.html"
+              >
+
+                <i class="ri-medicine-bottle-line"></i>
+
+                <span>
+                  Syrup
+                </span>
+
+              </a>
+
+
+            </div>
+
+          </li>
+
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- ================================================= -->
+      <!-- PRODUCTS (same options as navbar) -->
+      <!-- ================================================= -->
+
+      <div>
+
+        <h3
+          class="mb-6 text-lg font-bold text-white"
+        >
+          Products
+        </h3>
+
+
+        <ul
+          class="space-y-4
+                 text-sm
+                 text-sky-100/70"
+        >
+
+
+          <!-- PHARMACEUTICAL -->
+
+          <li>
+
+            <a
+              href="pharmaceutical-products.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-medicine-bottle-line
+                       text-lg text-accent"
+              ></i>
+
+              Pharmaceutical Products
+
+            </a>
+
+          </li>
+
+
+          <!-- OTC -->
+
+          <li>
+
+            <a
+              href="otc-products.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-medicine-bottle-line
+                       text-lg text-accent"
+              ></i>
+
+              OTC Products
+
+            </a>
+
+          </li>
+
+
+
+          <!-- ================================================= -->
+          <!-- SURGICAL & MEDICAL  (DROPDOWN)                     -->
+          <!-- ================================================= -->
+
+          <li class="dropdown">
+
+            <a
+              href="surgical-medical.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-first-aid-kit-line
+                       text-lg text-accent"
+              ></i>
+
+              Surgical &amp; Medical
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
+            </a>
+
+
+            <div
+              class="dropdown-menu"
+            >
+
+              <a
+                href="surgical-medical-consumable.html"
+              >
+
+                <i class="fas fa-bandage"></i>
+
+                <span>
+                  Consumable
+                </span>
+
+              </a>
+
+
+              <a
+                href="surgical-medical-disposable.html"
+              >
+
+                <i class="fas fa-mask-face"></i>
+
+                <span>
+                  Disposable
+                </span>
+
+              </a>
+
+            </div>
+
+          </li>
+
+
+
+          <!-- ================================================= -->
+          <!-- NUTRACEUTICAL                                      -->
+          <!-- ================================================= -->
+
+          <li>
+
+            <a
+              href="nutraceutical.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-leaf-line
+                       text-lg text-accent"
+              ></i>
+
+              Nutraceutical
+
+            </a>
+
+          </li>
+
+
+          <!-- HEALTHCARE -->
+
+          <li>
+
+            <a
+              href="healthcare-products.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-capsule-line
+                       text-lg text-accent"
+              ></i>
+
+              Healthcare Products
+
+            </a>
+
+          </li>
+
+
+
+          <!-- ================================================= -->
+          <!-- VETERINARY  (DROPDOWN)                             -->
+          <!-- ================================================= -->
+
+          <li class="dropdown">
+
+            <a
+              href="veterinary-products.html"
+              class="product-link flex items-center gap-3"
+            >
+
+              <i
+                class="ri-stethoscope-line
+                       text-lg text-accent"
+              ></i>
+
+              Veterinary Products
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
+            </a>
+
+
+            <div
+              class="dropdown-menu"
+            >
+
+              <a
+                href="veterinary-vet.html"
+              >
+
+                <i class="fas fa-dog"></i>
+
+                <span>
+                  Vet
+                </span>
+
+              </a>
+
+
+              <a
+                href="veterinary-poultry.html"
+              >
+
+                <i class="fas fa-egg"></i>
+
+                <span>
+                  Poultry
+                </span>
+
+              </a>
+
+
+              <a
+                href="veterinary-cattle.html"
+              >
+
+                <i class="fas fa-cow"></i>
+
+                <span>
+                  Cattle
+                </span>
+
+              </a>
+
+            </div>
+
+          </li>
+
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- ================================================= -->
+      <!-- CONTACT -->
+      <!-- ================================================= -->
+
+      <div>
+
+
+        <h3
+          class="mb-6 text-lg font-bold text-white"
+        >
+          Contact Us
+        </h3>
+
+
+        <div class="space-y-5">
+
+
+          <!-- ADDRESS -->
+
+          <a
+            href="contact.html"
+            class="contact-box flex gap-4"
+          >
+
+            <div
+              class="contact-icon
+                     flex h-11 w-11 shrink-0
+                     items-center justify-center
+                     rounded-xl
+                     bg-white/10
+                     text-accent"
+            >
+
+              <i
+                class="ri-map-pin-line text-xl"
+              ></i>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs uppercase
+                       tracking-wider
+                       text-sky-200/50"
+              >
+                Address
+              </p>
+
+
+              <p
+                class="mt-1
+                       text-sm leading-6
+                       text-sky-100/70"
+              >
+
+                Be Pharma Traders<br>
+                India
+
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <!-- PHONE -->
+
+          <div
+            class="contact-box flex gap-4"
+          >
+
+            <div
+              class="contact-icon
+                     flex h-11 w-11 shrink-0
+                     items-center justify-center
+                     rounded-xl
+                     bg-white/10
+                     text-accent"
+            >
+
+              <i
+                class="ri-phone-line text-xl"
+              ></i>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs uppercase
+                       tracking-wider
+                       text-sky-200/50"
+              >
+                Phone
+              </p>
+
+
+              <a
+                href="tel:+919973100210"
+                class="mt-1 block
+                       text-sm
+                       text-sky-100/70
+                       hover:text-white"
+              >
+                +91 99731 00210
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- EMAIL -->
+
+          <div
+            class="contact-box flex gap-4"
+          >
+
+            <div
+              class="contact-icon
+                     flex h-11 w-11 shrink-0
+                     items-center justify-center
+                     rounded-xl
+                     bg-white/10
+                     text-accent"
+            >
+
+              <i
+                class="ri-mail-line text-xl"
+              ></i>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs uppercase
+                       tracking-wider
+                       text-sky-200/50"
+              >
+                Email
+              </p>
+
+
+              <a
+                href="mailto:addressbepharmatraders@gmail.com"
+                class="mt-1 block break-all
+                       text-sm
+                       text-sky-100/70
+                       hover:text-white"
+              >
+                addressbepharmatraders@gmail.com
+              </a>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- WORKING HOURS -->
+
+          <a
+            href="contact.html"
+            class="contact-box flex gap-4"
+          >
+
+            <div
+              class="contact-icon
+                     flex h-11 w-11 shrink-0
+                     items-center justify-center
+                     rounded-xl
+                     bg-white/10
+                     text-accent"
+            >
+
+              <i
+                class="ri-time-line text-xl"
+              ></i>
+
+            </div>
+
+
+            <div>
+
+              <p
+                class="text-xs uppercase
+                       tracking-wider
+                       text-sky-200/50"
+              >
+                Working Hours
+              </p>
+
+
+              <p
+                class="mt-1
+                       text-sm
+                       leading-6
+                       text-sky-100/70"
+              >
+
+                Monday - Saturday<br>
+                9:00 AM - 6:00 PM
+
+              </p>
+
+            </div>
+
+          </a>
+
 
         </div>
 
+      </div>
+
+
     </div>
 
-</footer> 
- 
- 
- 
-<!-- ========================================================= --> 
-<!--                     DROPDOWN JAVASCRIPT                   --> 
-<!-- ========================================================= --> 
- 
-<script> 
- 
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =====================================================
-                        FOOTER DROPDOWN
-       ===================================================== */
-
-    const footer = document.getElementById("site-footer");
-
-    if (!footer) return;
-
-    const dropdowns = footer.querySelectorAll(".dropdown");
-
-    dropdowns.forEach(function (dropdown) {
-
-        const button = dropdown.querySelector(":scope > a");
-
-        if (!button) return;
-
-        button.addEventListener("click", function (e) {
-
-            e.preventDefault();
-            e.stopPropagation();
-
-            dropdowns.forEach(function (otherDropdown) {
-
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove("active");
-                }
-
-            });
-
-            dropdown.classList.toggle("active");
-
-        });
-
-    });
-
-    document.addEventListener("click", function (e) {
-
-        if (!e.target.closest("#site-footer .dropdown")) {
-
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("active");
-            });
-
-        }
-
-    });
-
-    document.addEventListener("keydown", function (e) {
-
-        if (e.key === "Escape") {
-
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("active");
-            });
-
-        }
-
-    });
-
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
+  </div>
 
 
 
+  <!-- ================================================= -->
+  <!-- COPYRIGHT BAR -->
+  <!-- ================================================= -->
 
-    
+  <div
+    class="bg-brand"
+  >
+
+    <div
+      class="mx-auto
+             flex max-w-7xl
+             flex-col
+             gap-3
+             px-6 py-6
+             text-center
+             text-xs
+             text-white/85
+             sm:px-8
+             md:flex-row
+             md:items-center
+             md:justify-between
+             md:text-left"
+    >
+
+
+      <!-- COPYRIGHT -->
+
+      <p>
+
+        © 2026
+
+        <a
+          href="index.html"
+          class="font-semibold
+                 text-white
+                 hover:underline"
+        >
+          Be Pharma Traders
+        </a>
+
+        . All Rights Reserved.
+
+      </p>
+
+
+
+      <!-- PRIVACY / TERMS -->
+
+      <div
+        class="flex
+               justify-center
+               gap-5
+               md:justify-end"
+      >
+
+        <a
+          href="privacy-policy.html"
+          class="transition hover:text-white hover:underline"
+        >
+          Privacy Policy
+        </a>
+
+
+        <span class="text-white/40">
+          |
+        </span>
+
+
+        <a
+          href="terms.html"
+          class="transition hover:text-white hover:underline"
+        >
+          Terms &amp; Conditions
+        </a>
+
+      </div>
+
+
+
+      <!-- DEV LABS -->
+
+      <p>
+
+        Crafted by
+
+        <a
+          href="index.html"
+          class="font-semibold
+                 text-white
+                 hover:underline"
+        >
+          Dev Labs
+        </a>
+
+      </p>
+
+
+    </div>
+
+  </div>
+
+
+</footer>
+
+    <!-- BACK TO TOP -->
+    <button
+        class="back-top"
+        id="backTop"
+        aria-label="Back to Top"
+    >
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+<!-- ========================================================= -->
+<!--                   NAVBAR JAVASCRIPT                       -->
+<!-- ========================================================= -->
+
+<script>
 
 
 /* =====================================================
@@ -3545,97 +3904,45 @@ const mobileMenu = document.getElementById("mobileMenu");
 const menuIcon = document.getElementById("menuIcon");
 
 
-if (menuBtn && mobileMenu && menuIcon) {
+menuBtn.addEventListener("click", () => {
 
-    menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
 
-        mobileMenu.classList.toggle("hidden");
+    const open = !mobileMenu.classList.contains("hidden");
 
-        const open =
-            !mobileMenu.classList.contains("hidden");
+    if (open) {
 
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
 
-        if (open) {
+    } else {
 
-            menuIcon.classList.remove("fa-bars");
-            menuIcon.classList.add("fa-xmark");
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
 
-        } else {
+    }
 
-            menuIcon.classList.remove("fa-xmark");
-            menuIcon.classList.add("fa-bars");
-
-        }
-
-    });
-
-}
+});
 
 
 
 /* =====================================================
-                        PRODUCTS
+        MOBILE DROPDOWNS
 ====================================================== */
 
-const productBtn = document.getElementById("productBtn");
-const productMenu = document.getElementById("productMenu");
-const productIcon = document.getElementById("productIcon");
+document.querySelectorAll("[data-toggle]").forEach(btn => {
 
+    btn.addEventListener("click", () => {
 
-if (productBtn && productMenu && productIcon) {
+        const target = document.getElementById(btn.dataset.toggle);
+        const icon = btn.querySelector("i");
 
-    productBtn.addEventListener("click", () => {
-
-        productMenu.classList.toggle("hidden");
-        productIcon.classList.toggle("rotate-180");
+        target.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
 
     });
 
-}
-
-
-
-/* =====================================================
-                        SERVICES
-====================================================== */
-
-const serviceBtn = document.getElementById("serviceBtn");
-const serviceMenu = document.getElementById("serviceMenu");
-const serviceIcon = document.getElementById("serviceIcon");
-
-
-if (serviceBtn && serviceMenu && serviceIcon) {
-
-    serviceBtn.addEventListener("click", () => {
-
-        serviceMenu.classList.toggle("hidden");
-        serviceIcon.classList.toggle("rotate-180");
-
-    });
-
-}
-
-
-
-/* =====================================================
-                        CATEGORIES
-====================================================== */
-
-const categoryBtn = document.getElementById("categoryBtn");
-const categoryMenu = document.getElementById("categoryMenu");
-const categoryIcon = document.getElementById("categoryIcon");
-
-
-if (categoryBtn && categoryMenu && categoryIcon) {
-
-    categoryBtn.addEventListener("click", () => {
-
-        categoryMenu.classList.toggle("hidden");
-        categoryIcon.classList.toggle("rotate-180");
-
-    });
-
-}
+});
 
 
 
@@ -3650,8 +3957,9 @@ document.querySelectorAll(".mobile-sub-link").forEach(link => {
         px-4
         py-2.5
         rounded-lg
-        text-brand
-        hover:bg-teal-50
+        text-navy
+        hover:bg-white
+        hover:text-brand
         transition
     `;
 
@@ -3663,49 +3971,184 @@ document.querySelectorAll(".mobile-sub-link").forEach(link => {
                 CLOSE MOBILE MENU
 ====================================================== */
 
-if (mobileMenu && menuIcon) {
+mobileMenu.querySelectorAll("a").forEach(link => {
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", () => {
 
-        link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
 
-            mobileMenu.classList.add("hidden");
-
-            menuIcon.classList.remove("fa-xmark");
-            menuIcon.classList.add("fa-bars");
-
-        });
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
 
     });
 
-}
+});
 
 
+</script>
+
+<!-- ========================================================= -->
+<!--                   FOOTER JAVASCRIPT                       -->
+<!-- ========================================================= -->
+
+<script>
+
+
+/* =====================================================
+            SOCIAL LINKS  (PASTE YOUR LINKS HERE)
+====================================================== */
+
+const SOCIAL_LINKS = {
+    facebook:  "https://www.facebook.com/YOUR_PAGE",
+    instagram: "https://www.instagram.com/YOUR_PAGE",
+    linkedin:  "https://www.linkedin.com/company/YOUR_PAGE",
+    youtube:   "https://www.youtube.com/@YOUR_PAGE",
+    whatsapp:  "919973100210"
+};
+
+/* WhatsApp khulne par ye message pehle se likha hoga */
+const WHATSAPP_MESSAGE = "Hello Be Pharma Traders, I would like to know more about your products.";
+
+
+document.querySelectorAll("[data-social]").forEach(function (link) {
+
+  const key = link.dataset.social;
+  const value = SOCIAL_LINKS[key];
+
+  /* jab tak asli link nahi daala, purana link waisa hi rahega */
+  if (!value || /YOUR_PAGE|X{4,}/.test(value)) {
+
+    console.warn("Social link not set yet: " + key);
+    return;
+
+  }
+
+  link.href = key === "whatsapp"
+    ? "https://wa.me/" + value + "?text=" + encodeURIComponent(WHATSAPP_MESSAGE)
+    : value;
+
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+});
+
+
+
+/* =====================================================
+                    FOOTER DROPDOWNS
+====================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+  const dropdowns =
+    document.querySelectorAll(".dropdown");
+
+
+  dropdowns.forEach(function (dropdown) {
+
+
+    const button =
+      dropdown.querySelector(":scope > a");
+
+
+    button.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+
+      dropdowns.forEach(function (otherDropdown) {
+
+        if (otherDropdown !== dropdown) {
+
+          otherDropdown.classList.remove("active");
+
+        }
+
+      });
+
+
+      dropdown.classList.toggle("active");
+
+    });
+
+  });
+
+
+
+  document.addEventListener("click", function (e) {
+
+
+    if (!e.target.closest(".dropdown")) {
+
+
+      dropdowns.forEach(function (dropdown) {
+
+        dropdown.classList.remove("active");
+
+      });
+
+
+    }
+
+  });
+
+
+});
+
+</script>
+
+<!-- ========================================================= -->
+<!--                   BACK TO TOP JAVASCRIPT                  -->
+<!-- ========================================================= -->
+<script>
+    const backTop = document.getElementById("backTop");
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 500) {
+            backTop.classList.add("show");
+        } else {
+            backTop.classList.remove("show");
+        }
+    });
+
+    backTop.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    const contactForm = document.getElementById("contactForm");
+    if (contactForm) {
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Thank you for your enquiry. B.E. Pharma Traders & Co. will get in touch with you.");
+            this.reset();
+        });
+    }
+</script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
        ENQUIRY SYSTEM
-       COMMON STORAGE KEY
     ========================================= */
-
-    const ENQUIRY_KEY = "bepharmaEnquiry";
-
 
     function getEnquiryList() {
 
         try {
 
-            const saved =
-                localStorage.getItem(ENQUIRY_KEY);
+            const data =
+                JSON.parse(
+                    localStorage.getItem(
+                        "bepharmaEnquiry"
+                    )
+                );
 
-            if (!saved) {
-                return [];
-            }
-
-            const parsed =
-                JSON.parse(saved);
-
-            return Array.isArray(parsed)
-                ? parsed
+            return Array.isArray(data)
+                ? data
                 : [];
 
         } catch (error) {
@@ -3717,127 +4160,45 @@ if (mobileMenu && menuIcon) {
     }
 
 
-    function normalizeProduct(item) {
-
-        if (typeof item === "string") {
-
-            const name =
-                item.trim();
-
-            return {
-                name: name,
-                productName: name,
-                category: "Tablets & Capsules",
-                source: "tablets-capsules.html",
-                addedAt: ""
-            };
-
-        }
-
-
-        if (
-            item &&
-            typeof item === "object"
-        ) {
-
-            const name =
-                String(
-                    item.name ||
-                    item.productName ||
-                    item.title ||
-                    ""
-                ).trim();
-
-
-            return {
-                ...item,
-                name: name,
-                productName:
-                    item.productName ||
-                    name
-            };
-
-        }
-
-
-        return null;
-
-    }
-
-
-    function cleanEnquiryList(list) {
-
-        const cleaned = [];
-        const names = new Set();
-
-
-        list.forEach(function (item) {
-
-            const product =
-                normalizeProduct(item);
-
-            if (!product) {
-                return;
-            }
-
-
-            const name =
-                String(
-                    product.name || ""
-                ).trim();
-
-
-            if (!name) {
-                return;
-            }
-
-
-            const key =
-                name.toLowerCase();
-
-
-            if (names.has(key)) {
-                return;
-            }
-
-
-            names.add(key);
-
-
-            cleaned.push({
-                ...product,
-                name: name,
-                productName:
-                    product.productName ||
-                    name
-            });
-
-        });
-
-
-        return cleaned;
-
-    }
-
-
     function saveEnquiryList(list) {
 
-        const cleanedList =
-            cleanEnquiryList(list);
+        localStorage.setItem(
+            "bepharmaEnquiry",
+            JSON.stringify(list)
+        );
+
+        window.dispatchEvent(
+            new Event("bepharmaEnquiryUpdated")
+        );
+
+    }
 
 
-        try {
+    function addToEnquiry(productName) {
 
-            localStorage.setItem(
-                ENQUIRY_KEY,
-                JSON.stringify(cleanedList)
-            );
+        const list =
+            getEnquiryList();
 
-        } catch (error) {
 
-            console.error(
-                "Unable to save enquiry list:",
-                error
+        const exists =
+            list.some(function (item) {
+
+                if (typeof item === "string") {
+
+                    return item === productName;
+
+                }
+
+                return item &&
+                    item.name === productName;
+
+            });
+
+
+        if (exists) {
+
+            showToast(
+                "This product is already in your enquiry list."
             );
 
             return;
@@ -3845,123 +4206,10 @@ if (mobileMenu && menuIcon) {
         }
 
 
-        updateEnquiryCount();
-
-
-        window.dispatchEvent(
-            new CustomEvent(
-                "bepharmaEnquiryUpdated",
-                {
-                    detail: cleanedList
-                }
-            )
-        );
-
-    }
-
-
-    function updateEnquiryCount() {
-
-        const list =
-            cleanEnquiryList(
-                getEnquiryList()
-            );
-
-
-        const count =
-            list.length;
-
-
-        const desktopCount =
-            document.getElementById(
-                "enquiryCount"
-            );
-
-
-        const mobileCount =
-            document.getElementById(
-                "mobileEnquiryCount"
-            );
-
-
-        if (desktopCount) {
-
-            desktopCount.textContent =
-                count;
-
-        }
-
-
-        if (mobileCount) {
-
-            mobileCount.textContent =
-                count;
-
-        }
-
-    }
-
-
-    function addToEnquiry(productName) {
-
-        const cleanName =
-            String(
-                productName || ""
-            ).trim();
-
-
-        if (!cleanName) {
-            return false;
-        }
-
-
-        let list =
-            cleanEnquiryList(
-                getEnquiryList()
-            );
-
-
-        const exists =
-            list.some(function (item) {
-
-                return (
-                    String(
-                        item.name || ""
-                    )
-                    .trim()
-                    .toLowerCase() ===
-                    cleanName.toLowerCase()
-                );
-
-            });
-
-
-        if (exists) {
-
-            saveEnquiryList(list);
-
-            showToast(
-                "This product is already in your enquiry list."
-            );
-
-            return false;
-
-        }
-
-
         list.push({
-
-            name: cleanName,
-
-            productName: cleanName,
-
-            category: "Tablets & Capsules",
-
-            source: "tablets-capsules.html",
-
-            addedAt:
-                new Date().toISOString()
-
+            name: productName,
+            category: "Medical Devices",
+            addedAt: new Date().toISOString()
         });
 
 
@@ -3969,19 +4217,11 @@ if (mobileMenu && menuIcon) {
 
 
         showToast(
-            cleanName +
-            " added to enquiry."
+            productName + " added to enquiry."
         );
-
-
-        return true;
 
     }
 
-
-    /* =========================================
-       PRODUCT ENQUIRY BUTTONS
-    ========================================= */
 
     document
         .querySelectorAll("[data-add]")
@@ -3989,18 +4229,10 @@ if (mobileMenu && menuIcon) {
 
             button.addEventListener(
                 "click",
-                function (event) {
-
-                    event.preventDefault();
-                    event.stopPropagation();
-
-
-                    const productName =
-                        button.dataset.add;
-
+                function () {
 
                     addToEnquiry(
-                        productName
+                        button.dataset.add
                     );
 
                 }
@@ -4010,111 +4242,26 @@ if (mobileMenu && menuIcon) {
 
 
     /* =========================================
-       DESKTOP ENQUIRY BUTTON
+       PRODUCT FILTER
     ========================================= */
 
-    const desktopEnquiryBtn =
-        document.getElementById(
-            "desktopEnquiryBtn"
-        );
+    const cards =
+        [
+            ...document.querySelectorAll(
+                ".product-item"
+            )
+        ];
 
 
-    if (desktopEnquiryBtn) {
-
-        desktopEnquiryBtn.addEventListener(
-            "click",
-            function () {
-
-                window.location.href =
-                    "product.html";
-
-            }
-        );
-
-    }
+    const buttons =
+        [
+            ...document.querySelectorAll(
+                ".filter-btn"
+            )
+        ];
 
 
-    /* =========================================
-       MOBILE ENQUIRY BUTTON
-    ========================================= */
-
-    const mobileEnquiryBtn =
-        document.getElementById(
-            "mobileEnquiryBtn"
-        );
-
-
-    if (mobileEnquiryBtn) {
-
-        mobileEnquiryBtn.addEventListener(
-            "click",
-            function () {
-
-                window.location.href =
-                    "product.html";
-
-            }
-        );
-
-    }
-
-
-    /* =========================================
-       INITIAL COUNT
-    ========================================= */
-
-    updateEnquiryCount();
-
-
-    /* =========================================
-       STORAGE SYNC
-    ========================================= */
-
-    window.addEventListener(
-        "storage",
-        function (event) {
-
-            if (
-                event.key === ENQUIRY_KEY
-            ) {
-
-                updateEnquiryCount();
-
-            }
-
-        }
-    );
-
-
-    window.addEventListener(
-        "bepharmaEnquiryUpdated",
-        function () {
-
-            updateEnquiryCount();
-
-        }
-    );
-
-
-    /* =========================================
-       PRODUCT FILTER + SEARCH
-    ========================================= */
-
-    const cards = [
-        ...document.querySelectorAll(
-            ".product-item"
-        )
-    ];
-
-
-    const filterButtons = [
-        ...document.querySelectorAll(
-            ".filter-btn"
-        )
-    ];
-
-
-    const searchInput =
+    const search =
         document.getElementById(
             "productSearch"
         );
@@ -4133,26 +4280,26 @@ if (mobileMenu && menuIcon) {
     function filterProducts() {
 
         const query =
-            String(
-                searchInput?.value || ""
-            )
-            .trim()
-            .toLowerCase();
+            (search?.value || "")
+                .trim()
+                .toLowerCase();
 
 
-        let visibleCount = 0;
+        let visible =
+            0;
 
 
         cards.forEach(function (card) {
 
             const categories =
-                String(
-                    card.dataset.category || ""
+                (
+                    card.dataset.category ||
+                    ""
                 ).toLowerCase();
 
 
             const searchableText =
-                String(
+                (
                     card.dataset.search ||
                     card.textContent ||
                     ""
@@ -4161,29 +4308,31 @@ if (mobileMenu && menuIcon) {
 
             const filterMatch =
                 activeFilter === "all" ||
-                categories
-                    .split(/\s+/)
-                    .includes(activeFilter);
+                categories.includes(
+                    activeFilter
+                );
 
 
             const searchMatch =
                 !query ||
-                searchableText.includes(query);
+                searchableText.includes(
+                    query
+                );
 
 
-            const shouldShow =
+            const show =
                 filterMatch &&
                 searchMatch;
 
 
             card.style.display =
-                shouldShow
+                show
                     ? "flex"
                     : "none";
 
 
-            if (shouldShow) {
-                visibleCount++;
+            if (show) {
+                visible++;
             }
 
         });
@@ -4193,7 +4342,7 @@ if (mobileMenu && menuIcon) {
 
             noResults.classList.toggle(
                 "show",
-                visibleCount === 0
+                visible === 0
             );
 
         }
@@ -4201,13 +4350,13 @@ if (mobileMenu && menuIcon) {
     }
 
 
-    filterButtons.forEach(function (button) {
+    buttons.forEach(function (button) {
 
         button.addEventListener(
             "click",
             function () {
 
-                filterButtons.forEach(
+                buttons.forEach(
                     function (item) {
 
                         item.classList.remove(
@@ -4224,8 +4373,7 @@ if (mobileMenu && menuIcon) {
 
 
                 activeFilter =
-                    button.dataset.filter ||
-                    "all";
+                    button.dataset.filter;
 
 
                 filterProducts();
@@ -4236,14 +4384,10 @@ if (mobileMenu && menuIcon) {
     });
 
 
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterProducts
-        );
-
-    }
+    search?.addEventListener(
+        "input",
+        filterProducts
+    );
 
 
     /* =========================================
@@ -4298,7 +4442,8 @@ if (mobileMenu && menuIcon) {
         );
 
 
-    let currentProduct = "";
+    let currentProduct =
+        "";
 
 
     function openModal(button) {
@@ -4318,8 +4463,7 @@ if (mobileMenu && menuIcon) {
         if (modalDescription) {
 
             modalDescription.textContent =
-                button.dataset.description ||
-                "";
+                button.dataset.description || "";
 
         }
 
@@ -4327,8 +4471,7 @@ if (mobileMenu && menuIcon) {
         if (modalType) {
 
             modalType.textContent =
-                button.dataset.type ||
-                "";
+                button.dataset.type || "";
 
         }
 
@@ -4336,8 +4479,7 @@ if (mobileMenu && menuIcon) {
         if (modalCategory) {
 
             modalCategory.textContent =
-                button.dataset.category ||
-                "";
+                button.dataset.category || "";
 
         }
 
@@ -4345,8 +4487,7 @@ if (mobileMenu && menuIcon) {
         if (modalImage) {
 
             modalImage.src =
-                button.dataset.image ||
-                "";
+                button.dataset.image || "";
 
             modalImage.alt =
                 currentProduct;
@@ -4354,14 +4495,7 @@ if (mobileMenu && menuIcon) {
         }
 
 
-        if (modal) {
-
-            modal.classList.add(
-                "show"
-            );
-
-        }
-
+        modal?.classList.add("show");
 
         document.body.style.overflow =
             "hidden";
@@ -4371,19 +4505,10 @@ if (mobileMenu && menuIcon) {
 
     function closeModal() {
 
-        if (modal) {
-
-            modal.classList.remove(
-                "show"
-            );
-
-        }
-
+        modal?.classList.remove("show");
 
         document.body.style.overflow =
             "";
-
-        currentProduct = "";
 
     }
 
@@ -4404,105 +4529,49 @@ if (mobileMenu && menuIcon) {
         });
 
 
-    if (modalClose) {
-
-        modalClose.addEventListener(
-            "click",
-            closeModal
-        );
-
-    }
+    modalClose?.addEventListener(
+        "click",
+        closeModal
+    );
 
 
-    if (modal) {
+    modal?.addEventListener(
+        "click",
+        function (event) {
 
-        modal.addEventListener(
-            "click",
-            function (event) {
+            if (event.target === modal) {
 
-                if (
-                    event.target === modal
-                ) {
-
-                    closeModal();
-
-                }
+                closeModal();
 
             }
-        );
 
-    }
-
-
-    /* =========================================
-       MODAL ENQUIRY
-    ========================================= */
-
-    if (modalEnquiry) {
-
-        modalEnquiry.addEventListener(
-            "click",
-            function (event) {
-
-                event.preventDefault();
+        }
+    );
 
 
-                if (currentProduct) {
+    modalEnquiry?.addEventListener(
+        "click",
+        function () {
 
-                    addToEnquiry(
-                        currentProduct
-                    );
+            if (currentProduct) {
 
-                }
+                addToEnquiry(
+                    currentProduct
+                );
 
             }
-        );
 
-    }
+        }
+    );
 
-
-    /* =========================================
-       ESCAPE KEY
-    ========================================= */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (
-                event.key !== "Escape"
-            ) {
-                return;
-            }
+            if (event.key === "Escape") {
 
-
-            closeModal();
-
-
-            if (
-                mobileMenu &&
-                !mobileMenu.classList.contains(
-                    "hidden"
-                )
-            ) {
-
-                mobileMenu.classList.add(
-                    "hidden"
-                );
-
-
-                menuBtn?.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-
-                if (menuIcon) {
-
-                    menuIcon.className =
-                        "fas fa-bars";
-
-                }
+                closeModal();
 
             }
 
@@ -4526,14 +4595,12 @@ if (mobileMenu && menuIcon) {
         );
 
 
-    let toastTimer = null;
+    let toastTimer;
 
 
     function showToast(message) {
 
-        if (!toast) {
-            return;
-        }
+        if (!toast) return;
 
 
         if (toastText) {
@@ -4570,151 +4637,7 @@ if (mobileMenu && menuIcon) {
 
 });
 
-
-/* =========================================================
-   PRODUCT BUTTON SAFETY FIX
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const modal = document.getElementById("productModal");
-    const modalClose = document.getElementById("modalClose");
-    const modalName = document.getElementById("modalProductName");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalImage = document.getElementById("modalImage");
-    const modalType = document.getElementById("modalType");
-    const modalCategory = document.getElementById("modalCategory");
-    const modalEnquiry = document.getElementById("modalEnquiryBtn");
-
-    let selectedProduct = "";
-
-    function openProductModal(button) {
-
-        selectedProduct = button.dataset.product || "";
-
-        if (modalName) modalName.textContent = selectedProduct;
-        if (modalDescription) modalDescription.textContent =
-            button.dataset.description || "";
-        if (modalType) modalType.textContent =
-            button.dataset.type || "";
-        if (modalCategory) modalCategory.textContent =
-            button.dataset.category || "";
-
-        if (modalImage) {
-            modalImage.src = button.dataset.image || "";
-            modalImage.alt = selectedProduct;
-        }
-
-        if (modal) {
-            modal.classList.add("show");
-            document.body.style.overflow = "hidden";
-        }
-
-    }
-
-    function closeProductModal() {
-
-        if (modal) modal.classList.remove("show");
-        document.body.style.overflow = "";
-        selectedProduct = "";
-
-    }
-
-    document.querySelectorAll(".view-btn").forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            openProductModal(button);
-
-        });
-
-    });
-
-    document.querySelectorAll(".enquiry-product-btn").forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            const name = button.dataset.add || "";
-
-            if (typeof addToEnquiry === "function") {
-                addToEnquiry(name);
-            }
-
-        });
-
-    });
-
-    if (modalClose) {
-        modalClose.addEventListener("click", closeProductModal);
-    }
-
-    if (modal) {
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                closeProductModal();
-            }
-
-        });
-    }
-
-    if (modalEnquiry) {
-        modalEnquiry.addEventListener("click", function (event) {
-
-            event.preventDefault();
-
-            if (
-                selectedProduct &&
-                typeof addToEnquiry === "function"
-            ) {
-                addToEnquiry(selectedProduct);
-            }
-
-        });
-    }
-
-});
-
 </script>
 
-
-<!-- PRODUCT DETAILS MODAL -->
-<div id="productModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box relative p-6 md:p-8">
-    <button id="modalClose" type="button" class="absolute right-4 top-4 w-10 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xl font-bold" aria-label="Close">&times;</button>
-
-    <div class="grid md:grid-cols-2 gap-6 items-center">
-      <div>
-        <img id="modalImage" class="modal-image" src="" alt="Product">
-      </div>
-      <div>
-        <p class="text-xs uppercase tracking-widest text-cyan-600 font-bold mb-2">Product Details</p>
-        <h2 id="modalProductName" class="text-2xl md:text-3xl font-extrabold text-[#0b2545] mb-4"></h2>
-        <p id="modalDescription" class="text-gray-600 leading-7 mb-5"></p>
-        <div class="space-y-2 text-sm mb-6">
-          <p><strong>Dosage:</strong> <span id="modalType"></span></p>
-          <p><strong>Category:</strong> <span id="modalCategory"></span></p>
-        </div>
-        <button id="modalEnquiryBtn" type="button" class="enquiry-product-btn">
-          <i class="fas fa-plus"></i> Enquiry
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- TOAST -->
-<div id="toast" class="toast" role="status" aria-live="polite">
-  <i class="fas fa-check-circle"></i>
-  <span id="toastText"></span>
-</div>
-
 </body>
-
 </html>

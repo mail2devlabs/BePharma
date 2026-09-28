@@ -1,0 +1,3225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cattle Products | BePharma</title>
+
+    <meta name="description"
+        content="Explore BePharma cattle healthcare products including medicines, supplements, nutrition and livestock wellness solutions.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        bitter: ['Bitter', 'serif']
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: "#0b7b97",
+                            dark: "#08627a"
+                        },
+                        navy: "#0b2545",
+                        mist: {
+                            DEFAULT: "#eaf6fb",
+                            line: "#cfe9f3"
+                        },
+                        accent: "#4fc3dc"
+                    },
+                    boxShadow: {
+                        soft: "0 20px 60px rgba(11, 37, 69, 0.12)"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+
+        * {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #0b2545;
+            background: #ffffff;
+        }
+
+        .bitter {
+            font-family: 'Bitter', serif;
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Image */
+        .hero-image-box {
+            transition: all 0.5s ease;
+        }
+
+        .hero-image-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 28px 65px rgba(11, 37, 69, 0.18);
+        }
+
+        /* Category Cards */
+        .category-card {
+            transition: all 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 22px 50px rgba(11, 123, 151, 0.14);
+        }
+
+        .category-icon {
+            transition: all 0.35s ease;
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.08) rotate(5deg);
+        }
+
+        /* Product Card */
+        .product-card {
+            transition: all 0.35s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(11, 37, 69, 0.12);
+        }
+
+        .product-icon {
+            transition: all 0.35s ease;
+        }
+
+        .product-card:hover .product-icon {
+            transform: scale(1.1);
+        }
+
+        /* Search */
+        .search-input {
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #0b7b97;
+            box-shadow: 0 0 0 4px rgba(11, 123, 151, 0.12);
+        }
+
+        /* CTA */
+        .cta-section {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(7, 25, 45, 0.72);
+            backdrop-filter: blur(3px);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Footer */
+        .footer-link {
+            transition: all 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #ffffff;
+            padding-left: 6px;
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background: #0b7b97;
+            color: white;
+        }
+
+        .contact-icon {
+            transition: all 0.3s ease;
+        }
+
+        .contact-box:hover .contact-icon {
+            background: #0b7b97;
+            color: white;
+            transform: scale(1.08);
+        }
+
+        .product-link {
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            color: white;
+            padding-left: 6px;
+        }
+
+        /* Footer Dropdown */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            visibility: hidden;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            margin-top: 0;
+            padding: 0;
+            background: #0e3158;
+            border-radius: 10px;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+            transition:
+                max-height .35s ease,
+                opacity .25s ease,
+                margin-top .25s ease,
+                padding .25s ease,
+                visibility .25s ease;
+        }
+
+        .dropdown.active .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            max-height: 480px;
+            margin-top: 12px;
+            padding: 8px 0;
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 11px 16px;
+            color: #d6eef6;
+            font-size: 14px;
+            white-space: normal;
+            transition: all .25s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: #0b7b97;
+            color: white;
+            padding-left: 22px;
+        }
+
+        .dropdown-menu a i {
+            width: 20px;
+            text-align: center;
+            font-size: 17px;
+            color: #4fc3dc;
+            transition: all .25s ease;
+        }
+
+        .dropdown-menu a:hover i {
+            color: white;
+            transform: scale(1.15);
+        }
+
+        .dropdown-arrow {
+            font-size: 16px;
+            color: #4fc3dc;
+            transition: transform .3s ease;
+        }
+
+        .dropdown.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- =========================================================
+         NAVBAR
+    ========================================================== -->
+
+    <nav class="bg-mist border-b border-mist-line shadow-lg sticky top-0 z-50">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="flex items-center justify-between h-20">
+
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+
+                    <svg width="185" height="78"
+                        viewBox="60 50 1420 590"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <text x="90"
+                            y="370"
+                            font-family="Bitter, serif"
+                            font-size="180"
+                            font-weight="700"
+                            fill="#c9651b">
+                            BePharma
+                        </text>
+
+                        <text x="95"
+                            y="485"
+                            font-family="Inter, sans-serif"
+                            font-size="72"
+                            font-weight="600"
+                            fill="#0b2545">
+                            HEALTHCARE DISTRIBUTION
+                        </text>
+
+                    </svg>
+
+                </a>
+
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-7">
+
+                    <a href="index.html"
+                        class="text-navy hover:text-brand font-medium transition">
+                        Home
+                    </a>
+
+                    <a href="about.html"
+                        class="text-navy hover:text-brand font-medium transition">
+                        About Us
+                    </a>
+
+
+                    <!-- Products -->
+                    <div class="relative group">
+
+                        <button
+                            class="flex items-center gap-2 text-navy hover:text-brand font-medium transition">
+
+                            Products
+
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+
+                        </button>
+
+                        <div
+                            class="absolute left-0 top-full mt-4 w-64 bg-white shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-mist-line">
+
+                            <a href="product.html"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Pharmaceutical Products
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                OTC Products
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Surgical & Medical
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Nutraceutical
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Healthcare Essentials
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Veterinary Products
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Vet
+                            </a>
+
+                            <a href="#cattle"
+                                class="block px-5 py-3 bg-mist text-brand font-semibold">
+                                Cattle
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Services -->
+                    <div class="relative group">
+
+                        <button
+                            class="flex items-center gap-2 text-navy hover:text-brand font-medium transition">
+
+                            Services
+
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+
+                        </button>
+
+                        <div
+                            class="absolute left-0 top-full mt-4 w-64 bg-white shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-mist-line">
+
+                            <a href="wholesale-distribution.html"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Wholesale Distribution
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Retail Supply
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Hospital Supply
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Third Party Manufacturing
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Categories -->
+                    <div class="relative group">
+
+                        <button
+                            class="flex items-center gap-2 text-navy hover:text-brand font-medium transition">
+
+                            Categories
+
+                            <i class="fa-solid fa-chevron-down text-xs"></i>
+
+                        </button>
+
+                        <div
+                            class="absolute left-0 top-full mt-4 w-60 bg-white shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-mist-line">
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Medicines
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Injections
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Medical Devices
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Medical Equipment
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Tablets
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Capsules
+                            </a>
+
+                            <a href="#"
+                                class="block px-5 py-3 hover:bg-mist text-navy hover:text-brand transition">
+                                Syrup
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="contact.html"
+                        class="text-navy hover:text-brand font-medium transition">
+                        Contact Us
+                    </a>
+
+                </div>
+
+
+                <!-- Right Side -->
+                <div class="hidden lg:flex items-center gap-4">
+
+                    <!-- Follow Us -->
+                    <div class="relative group">
+
+                        <button
+                            class="w-11 h-11 rounded-full border border-mist-line bg-white text-brand hover:bg-brand hover:text-white transition flex items-center justify-center">
+
+                            <i class="fa-solid fa-share-nodes"></i>
+
+                        </button>
+
+                        <div
+                            class="absolute right-0 top-full mt-4 w-48 bg-white shadow-2xl rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-2 border border-mist-line">
+
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-mist text-navy transition">
+
+                                <i class="fa-brands fa-facebook-f text-brand"></i>
+                                Facebook
+
+                            </a>
+
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-mist text-navy transition">
+
+                                <i class="fa-brands fa-instagram text-brand"></i>
+                                Instagram
+
+                            </a>
+
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-mist text-navy transition">
+
+                                <i class="fa-brands fa-linkedin-in text-brand"></i>
+                                LinkedIn
+
+                            </a>
+
+                            <a href="#"
+                                class="flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-mist text-navy transition">
+
+                                <i class="fa-brands fa-whatsapp text-brand"></i>
+                                WhatsApp
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="contact.html"
+                        class="px-6 py-3 bg-brand hover:bg-brand-dark text-white rounded-xl font-semibold shadow-lg transition">
+
+                        Get in Touch
+
+                    </a>
+
+                </div>
+
+
+                <!-- Mobile Button -->
+                <button id="menuBtn"
+                    class="lg:hidden w-11 h-11 rounded-xl bg-white border border-mist-line text-navy flex items-center justify-center">
+
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="hidden lg:hidden pb-5">
+
+                <div
+                    class="bg-white rounded-2xl p-4 shadow-lg border border-mist-line space-y-2">
+
+                    <a href="index.html"
+                        class="mobile-main-link">
+                        Home
+                    </a>
+
+                    <a href="about.html"
+                        class="mobile-main-link">
+                        About Us
+                    </a>
+
+
+                    <!-- Mobile Products -->
+                    <button data-toggle="mobileProducts"
+                        class="mobile-toggle">
+
+                        Products
+
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                    </button>
+
+                    <div id="mobileProducts"
+                        class="hidden pl-4 space-y-1">
+
+                        <a href="product.html"
+                            class="mobile-sub-link">
+                            Pharmaceuticals
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            OTC
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Surgical
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Consumable
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Disposable
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Nutraceutical
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Healthcare Essentials
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Personal Care
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Veterinary Products
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Vet
+                        </a>
+
+                        <a href="#cattle"
+                            class="mobile-sub-link text-brand font-semibold">
+                            Cattle
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            View All Products
+                        </a>
+
+                    </div>
+
+
+                    <!-- Mobile Services -->
+                    <button data-toggle="mobileServices"
+                        class="mobile-toggle">
+
+                        Services
+
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                    </button>
+
+                    <div id="mobileServices"
+                        class="hidden pl-4 space-y-1">
+
+                        <a href="wholesale-distribution.html"
+                            class="mobile-sub-link">
+                            Wholesale Distribution
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Retail Supply
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Hospital Supply
+                        </a>
+
+                        <a href="#"
+                            class="mobile-sub-link">
+                            Third Party Manufacturing
+                        </a>
+
+                    </div>
+
+
+                    <!-- Mobile Categories -->
+                    <button data-toggle="mobileCategories"
+                        class="mobile-toggle">
+
+                        Categories
+
+                        <i class="fa-solid fa-chevron-down transition-transform"></i>
+
+                    </button>
+
+                    <div id="mobileCategories"
+                        class="hidden pl-4 space-y-1">
+
+                        <a href="#" class="mobile-sub-link">
+                            Medicines
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Injections
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Medical Devices
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Medical Equipment
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Tablets
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Capsules
+                        </a>
+
+                        <a href="#" class="mobile-sub-link">
+                            Syrup
+                        </a>
+
+                    </div>
+
+
+                    <a href="contact.html"
+                        class="mobile-main-link">
+                        Contact Us
+                    </a>
+
+
+                    <!-- Follow -->
+                    <div class="pt-3 border-t border-mist-line">
+
+                        <p class="px-4 text-sm text-slate-500 mb-2">
+                            Follow Us
+                        </p>
+
+                        <div class="flex gap-3 px-4">
+
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-mist text-brand flex items-center justify-center">
+
+                                <i class="fa-brands fa-facebook-f"></i>
+
+                            </a>
+
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-mist text-brand flex items-center justify-center">
+
+                                <i class="fa-brands fa-instagram"></i>
+
+                            </a>
+
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-mist text-brand flex items-center justify-center">
+
+                                <i class="fa-brands fa-linkedin-in"></i>
+
+                            </a>
+
+                            <a href="#"
+                                class="w-10 h-10 rounded-full bg-mist text-brand flex items-center justify-center">
+
+                                <i class="fa-brands fa-whatsapp"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="contact.html"
+                        class="block text-center mt-3 px-5 py-3 bg-brand text-white rounded-xl font-semibold">
+
+                        Get in Touch
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
+
+    <section id="cattle"
+        class="bg-mist py-12 lg:py-20 overflow-hidden">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+                <!-- LEFT CONTENT -->
+                <div class="reveal">
+
+                    <span
+                        class="inline-flex items-center gap-2 bg-white text-brand px-4 py-2 rounded-full text-sm font-semibold shadow-sm">
+
+                        <i class="fa-solid fa-cow"></i>
+
+                        Cattle Healthcare
+
+                    </span>
+
+
+                    <h1
+                        class="bitter text-4xl sm:text-5xl lg:text-6xl font-bold text-navy leading-tight mt-6">
+
+                        Complete
+
+                        <span class="text-brand">
+                            Cattle Care
+                        </span>
+
+                        Solutions
+
+                    </h1>
+
+
+                    <p
+                        class="text-slate-600 text-lg leading-8 mt-6 max-w-xl">
+
+                        Reliable cattle healthcare products designed to support
+                        animal wellness, nutrition, preventive care and everyday
+                        livestock management.
+
+                    </p>
+
+
+                    <div class="flex flex-wrap gap-4 mt-8">
+
+                        <a href="#products"
+                            class="px-6 py-3.5 rounded-xl bg-brand hover:bg-brand-dark text-white font-semibold shadow-lg transition">
+
+                            Explore Products
+
+                            <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                        </a>
+
+
+                        <a href="contact.html"
+                            class="px-6 py-3.5 rounded-xl border border-brand text-brand hover:bg-brand hover:text-white font-semibold transition">
+
+                            Enquire Now
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="grid grid-cols-3 gap-5 mt-10 max-w-xl">
+
+                        <div>
+
+                            <h3 class="text-2xl font-bold text-navy">
+                                25+
+                            </h3>
+
+                            <p class="text-sm text-slate-500 mt-1">
+                                Care Products
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3 class="text-2xl font-bold text-navy">
+                                100%
+                            </h3>
+
+                            <p class="text-sm text-slate-500 mt-1">
+                                Quality Focus
+                            </p>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3 class="text-2xl font-bold text-navy">
+                                24/7
+                            </h3>
+
+                            <p class="text-sm text-slate-500 mt-1">
+                                Support
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT IMAGE -->
+                <div class="reveal">
+
+                    <div
+                        class="hero-image-box relative bg-white rounded-[30px] overflow-hidden shadow-soft border border-mist-line">
+
+                        <div class="relative h-[500px] sm:h-[560px] lg:h-[580px]">
+
+                            <!-- YOUR UPLOADED CATTLE IMAGE -->
+                            <img
+                                src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2F0dGxlJTIwZmFybWluZyUyMGltYWdlfGVufDB8fDB8fHww"
+                                alt="Cattle herd in a green field"
+                                class="absolute inset-0 w-full h-full object-cover object-center">
+
+                            <!-- Image Overlay -->
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#0b2545]/75 via-[#0b2545]/10 to-transparent">
+                            </div>
+
+
+                            <!-- Image Text -->
+                            <div
+                                class="absolute bottom-0 left-0 right-0 p-7 sm:p-8 text-white">
+
+                                <span
+                                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-sm">
+
+                                    <i class="fa-solid fa-heart-pulse"></i>
+
+                                    Trusted Cattle Care
+
+                                </span>
+
+
+                                <h2
+                                    class="bitter text-3xl sm:text-4xl font-bold mt-4">
+
+                                    Healthy Cattle,
+                                    Better Care.
+
+                                </h2>
+
+
+                                <p
+                                    class="text-white/85 mt-2 max-w-lg leading-7">
+
+                                    Supporting responsible livestock healthcare
+                                    with dependable product solutions.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         INTRO
+    ========================================================== -->
+
+    <section class="py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="max-w-3xl mx-auto text-center reveal">
+
+                <span
+                    class="text-brand font-semibold uppercase tracking-[0.2em] text-sm">
+
+                    Cattle Product Range
+
+                </span>
+
+
+                <h2
+                    class="bitter text-4xl lg:text-5xl font-bold text-navy mt-3">
+
+                    Supporting Better Cattle Health
+
+                </h2>
+
+
+                <p
+                    class="text-slate-600 leading-8 mt-5">
+
+                    BePharma brings together essential cattle healthcare
+                    categories focused on nutrition, wellness, routine care
+                    and livestock support.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid md:grid-cols-3 gap-6 mt-12">
+
+                <!-- Card 1 -->
+                <div
+                    class="category-card bg-mist rounded-3xl p-7 border border-mist-line reveal">
+
+                    <div
+                        class="category-icon w-16 h-16 rounded-2xl bg-white text-brand flex items-center justify-center text-2xl shadow-sm">
+
+                        <i class="fa-solid fa-pills"></i>
+
+                    </div>
+
+
+                    <h3 class="text-xl font-bold text-navy mt-6">
+                        Cattle Medicines
+                    </h3>
+
+
+                    <p class="text-slate-600 leading-7 mt-3">
+
+                        Essential therapeutic and preventive care products
+                        for cattle health management.
+
+                    </p>
+
+
+                    <a href="#medicines"
+                        class="inline-flex items-center gap-2 mt-5 text-brand font-semibold">
+
+                        View Products
+
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Card 2 -->
+                <div
+                    class="category-card bg-mist rounded-3xl p-7 border border-mist-line reveal">
+
+                    <div
+                        class="category-icon w-16 h-16 rounded-2xl bg-white text-brand flex items-center justify-center text-2xl shadow-sm">
+
+                        <i class="fa-solid fa-bottle-droplet"></i>
+
+                    </div>
+
+
+                    <h3 class="text-xl font-bold text-navy mt-6">
+                        Nutrition & Supplements
+                    </h3>
+
+
+                    <p class="text-slate-600 leading-7 mt-3">
+
+                        Nutrition-focused products supporting strength,
+                        growth and overall livestock wellness.
+
+                    </p>
+
+
+                    <a href="#supplements"
+                        class="inline-flex items-center gap-2 mt-5 text-brand font-semibold">
+
+                        View Products
+
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+
+                    </a>
+
+                </div>
+
+
+                <!-- Card 3 -->
+                <div
+                    class="category-card bg-mist rounded-3xl p-7 border border-mist-line reveal">
+
+                    <div
+                        class="category-icon w-16 h-16 rounded-2xl bg-white text-brand flex items-center justify-center text-2xl shadow-sm">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+
+                    <h3 class="text-xl font-bold text-navy mt-6">
+                        Livestock Wellness
+                    </h3>
+
+
+                    <p class="text-slate-600 leading-7 mt-3">
+
+                        Daily care and wellness solutions for responsible
+                        cattle management.
+
+                    </p>
+
+
+                    <a href="#wellness"
+                        class="inline-flex items-center gap-2 mt-5 text-brand font-semibold">
+
+                        View Products
+
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SEARCH
+    ========================================================== -->
+
+    <section
+        class="py-8 bg-mist border-y border-mist-line">
+
+        <div class="max-w-4xl mx-auto px-5">
+
+            <div class="relative">
+
+                <i
+                    class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-brand">
+                </i>
+
+
+                <input
+                    id="productSearch"
+                    type="text"
+                    placeholder="Search cattle products..."
+                    class="search-input w-full rounded-2xl bg-white border border-mist-line px-14 py-4 outline-none text-navy placeholder-slate-400">
+
+
+                <button
+                    id="clearSearch"
+                    class="hidden absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-mist text-brand">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PRODUCTS
+    ========================================================== -->
+
+    <section id="products"
+        class="py-20 bg-white">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+
+            <!-- ================= MEDICINES ================= -->
+
+            <div id="medicines" class="mb-20">
+
+                <div
+                    class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
+
+                    <div>
+
+                        <span
+                            class="text-brand font-semibold uppercase tracking-[0.18em] text-sm">
+
+                            Category 01
+
+                        </span>
+
+
+                        <h2
+                            class="bitter text-4xl lg:text-5xl font-bold text-navy mt-2">
+
+                            Cattle Medicines
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="text-slate-500 max-w-xl">
+
+                        Healthcare products designed for routine livestock
+                        care and cattle health management.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Product 1 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle fever care medicine">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-temperature-half"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Medicine
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Cattle Fever Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Product category for supportive cattle
+                                healthcare.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 2 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle digestive care medicine">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-stomach"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Medicine
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Digestive Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Cattle digestive wellness support category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 3 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle infection care medicine">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-shield-virus"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Medicine
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Infection Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Cattle infection-management product category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 4 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle wound care medicine">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-bandage"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Medicine
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Wound Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Routine external care and wound support
+                                category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= SUPPLEMENTS ================= -->
+
+            <div id="supplements" class="mb-20">
+
+                <div
+                    class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
+
+                    <div>
+
+                        <span
+                            class="text-brand font-semibold uppercase tracking-[0.18em] text-sm">
+
+                            Category 02
+
+                        </span>
+
+
+                        <h2
+                            class="bitter text-4xl lg:text-5xl font-bold text-navy mt-2">
+
+                            Nutrition & Supplements
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="text-slate-500 max-w-xl">
+
+                        Cattle nutrition categories supporting daily wellness,
+                        strength and balanced livestock care.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Product 1 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="mineral mixture cattle supplement">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-flask-vial"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Supplement
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Mineral Mixture
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Mineral-support category for cattle nutrition.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 2 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle calcium supplement">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-bone"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Supplement
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Calcium Support
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Nutritional support category focused on
+                                calcium.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 3 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle vitamin supplement">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-capsules"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Supplement
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Vitamin Support
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Vitamin-focused cattle nutrition category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 4 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle energy supplement">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-bolt"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Supplement
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Energy Support
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Nutritional energy-support product category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= WELLNESS ================= -->
+
+            <div id="wellness">
+
+                <div
+                    class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 reveal">
+
+                    <div>
+
+                        <span
+                            class="text-brand font-semibold uppercase tracking-[0.18em] text-sm">
+
+                            Category 03
+
+                        </span>
+
+
+                        <h2
+                            class="bitter text-4xl lg:text-5xl font-bold text-navy mt-2">
+
+                            Livestock Wellness
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="text-slate-500 max-w-xl">
+
+                        Practical cattle care categories for routine wellness
+                        and day-to-day livestock management.
+
+                    </p>
+
+                </div>
+
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <!-- Product 1 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle hygiene care">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-pump-soap"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Wellness
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Hygiene Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Daily hygiene and livestock wellness category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 2 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle skin care">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-hand-dots"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Wellness
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Skin Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                External livestock skin-care support category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 3 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle immunity care">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-shield-heart"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Wellness
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Immunity Support
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                Cattle wellness and immunity-support category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Product 4 -->
+                    <div
+                        class="product-card product-item bg-white border border-mist-line rounded-3xl overflow-hidden reveal"
+                        data-name="cattle routine care">
+
+                        <div
+                            class="h-44 bg-mist flex items-center justify-center">
+
+                            <div
+                                class="product-icon w-20 h-20 rounded-2xl bg-white text-brand flex items-center justify-center text-3xl shadow-sm">
+
+                                <i class="fa-solid fa-heart-pulse"></i>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="p-6">
+
+                            <span
+                                class="text-xs font-semibold text-brand uppercase">
+
+                                Wellness
+
+                            </span>
+
+
+                            <h3
+                                class="font-bold text-navy text-lg mt-2">
+
+                                Routine Care
+
+                            </h3>
+
+
+                            <p
+                                class="text-sm text-slate-500 mt-2 leading-6">
+
+                                General day-to-day livestock care category.
+
+                            </p>
+
+
+                            <a href="contact.html"
+                                class="inline-flex items-center gap-2 mt-4 text-brand font-semibold text-sm">
+
+                                Enquire
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- No Result -->
+            <div id="noResult"
+                class="hidden text-center py-16">
+
+                <div
+                    class="w-20 h-20 mx-auto rounded-full bg-mist text-brand flex items-center justify-center text-3xl">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </div>
+
+
+                <h3
+                    class="text-2xl font-bold text-navy mt-5">
+
+                    No cattle product found
+
+                </h3>
+
+
+                <p class="text-slate-500 mt-2">
+
+                    Try searching with another product name or category.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         WHY BEPHARMA
+    ========================================================== -->
+
+    <section class="py-20 bg-mist">
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+
+            <div class="grid lg:grid-cols-2 gap-14 items-center">
+
+                <!-- Left -->
+                <div class="reveal">
+
+                    <span
+                        class="text-brand font-semibold uppercase tracking-[0.2em] text-sm">
+
+                        Why BePharma
+
+                    </span>
+
+
+                    <h2
+                        class="bitter text-4xl lg:text-5xl font-bold text-navy mt-3">
+
+                        Reliable Cattle Healthcare,
+                        Made Simpler
+
+                    </h2>
+
+
+                    <p
+                        class="text-slate-600 leading-8 mt-5 max-w-xl">
+
+                        We focus on dependable product access, organized
+                        distribution and responsive support for cattle
+                        healthcare requirements.
+
+                    </p>
+
+
+                    <div class="space-y-5 mt-8">
+
+                        <!-- Item 1 -->
+                        <div class="flex gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center shrink-0 shadow-sm">
+
+                                <i class="fa-solid fa-circle-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="font-bold text-navy">
+                                    Quality-Focused Range
+                                </h3>
+
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Organized cattle healthcare product
+                                    categories.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Item 2 -->
+                        <div class="flex gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center shrink-0 shadow-sm">
+
+                                <i class="fa-solid fa-truck-fast"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="font-bold text-navy">
+                                    Dependable Distribution
+                                </h3>
+
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Focused support for product supply
+                                    requirements.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Item 3 -->
+                        <div class="flex gap-4">
+
+                            <div
+                                class="w-12 h-12 rounded-xl bg-white text-brand flex items-center justify-center shrink-0 shadow-sm">
+
+                                <i class="fa-solid fa-headset"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <h3 class="font-bold text-navy">
+                                    Responsive Support
+                                </h3>
+
+                                <p class="text-slate-500 text-sm mt-1">
+                                    Assistance for product enquiries and
+                                    requirements.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Right -->
+                <div class="grid grid-cols-2 gap-5 reveal">
+
+                    <div
+                        class="bg-white rounded-3xl p-7 border border-mist-line shadow-sm">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-2xl">
+
+                            <i class="fa-solid fa-cow"></i>
+
+                        </div>
+
+
+                        <h3
+                            class="text-2xl font-bold text-navy mt-6">
+
+                            Cattle
+
+                        </h3>
+
+
+                        <p
+                            class="text-slate-500 text-sm mt-2">
+
+                            Dedicated livestock category
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="bg-white rounded-3xl p-7 border border-mist-line shadow-sm mt-8">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-2xl">
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                        </div>
+
+
+                        <h3
+                            class="text-2xl font-bold text-navy mt-6">
+
+                            25+
+
+                        </h3>
+
+
+                        <p
+                            class="text-slate-500 text-sm mt-2">
+
+                            Product categories
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="bg-white rounded-3xl p-7 border border-mist-line shadow-sm">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-2xl">
+
+                            <i class="fa-solid fa-handshake"></i>
+
+                        </div>
+
+
+                        <h3
+                            class="text-2xl font-bold text-navy mt-6">
+
+                            Trusted
+
+                        </h3>
+
+
+                        <p
+                            class="text-slate-500 text-sm mt-2">
+
+                            Partner-focused approach
+
+                        </p>
+
+                    </div>
+
+
+                    <div
+                        class="bg-white rounded-3xl p-7 border border-mist-line shadow-sm mt-8">
+
+                        <div
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-2xl">
+
+                            <i class="fa-solid fa-headset"></i>
+
+                        </div>
+
+
+                        <h3
+                            class="text-2xl font-bold text-navy mt-6">
+
+                            Support
+
+                        </h3>
+
+
+                        <p
+                            class="text-slate-500 text-sm mt-2">
+
+                            Easy product enquiries
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CTA
+    ========================================================== -->
+
+    <section
+        class="cta-section py-24"
+        style="background-image:url('cattle-hero.png');">
+
+        <div
+            class="max-w-5xl mx-auto px-5 text-center cta-content reveal">
+
+            <span
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm">
+
+                <i class="fa-solid fa-cow"></i>
+
+                Cattle Healthcare Solutions
+
+            </span>
+
+
+            <h2
+                class="bitter text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-6">
+
+                Looking for Reliable
+                Cattle Products?
+
+            </h2>
+
+
+            <p
+                class="text-white/80 text-lg leading-8 max-w-2xl mx-auto mt-5">
+
+                Connect with BePharma for cattle healthcare products,
+                nutrition solutions and livestock care requirements.
+
+            </p>
+
+
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+
+                <a href="contact.html"
+                    class="px-7 py-3.5 rounded-xl bg-white text-navy hover:bg-mist font-semibold transition">
+
+                    Enquire Now
+
+                    <i class="fa-solid fa-arrow-right ml-2"></i>
+
+                </a>
+
+
+                <a href="tel:+919973100210"
+                    class="px-7 py-3.5 rounded-xl border border-white/40 text-white hover:bg-white/10 font-semibold transition">
+
+                    <i class="fa-solid fa-phone mr-2"></i>
+
+                    +91 99731 00210
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer id="contact"
+        class="bg-navy text-white">
+
+        <div
+            class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-16">
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+
+
+                <!-- Company -->
+                <div>
+
+                    <svg width="210"
+                        height="95"
+                        viewBox="60 50 1420 590"
+                        xmlns="http://www.w3.org/2000/svg">
+
+                        <text x="90"
+                            y="370"
+                            font-family="Bitter, serif"
+                            font-size="180"
+                            font-weight="700"
+                            fill="#ffffff">
+                            BePharma
+                        </text>
+
+                        <text x="95"
+                            y="485"
+                            font-family="Inter, sans-serif"
+                            font-size="72"
+                            font-weight="600"
+                            fill="#4fc3dc">
+                            HEALTHCARE DISTRIBUTION
+                        </text>
+
+                    </svg>
+
+
+                    <p
+                        class="text-white/70 leading-7 mt-4 max-w-sm">
+
+                        We strive to empower our partners and clients with
+                        reliable support, quality products, and innovative
+                        pharmaceutical solutions. Our mission is to advance
+                        healthcare by providing trusted pharmaceutical products
+                        with efficiency, integrity, and excellence.
+
+                    </p>
+
+
+                    <div class="flex gap-3 mt-6">
+
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
+                            <i class="fa-brands fa-facebook-f"></i>
+
+                        </a>
+
+
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
+                            <i class="fa-brands fa-instagram"></i>
+
+                        </a>
+
+
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
+                            <i class="fa-brands fa-linkedin-in"></i>
+
+                        </a>
+
+
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
+                            <i class="fa-brands fa-whatsapp"></i>
+
+                        </a>
+
+
+                        <a href="#"
+                            class="social-icon w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
+                            <i class="fa-brands fa-youtube"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Quick Links -->
+                <div>
+
+                    <h3 class="text-xl font-bold mb-6">
+                        Quick Links
+                    </h3>
+
+
+                    <div class="space-y-3">
+
+                        <a href="index.html"
+                            class="footer-link block text-white/70">
+                            Home
+                        </a>
+
+
+                        <a href="about.html"
+                            class="footer-link block text-white/70">
+                            About Us
+                        </a>
+
+
+                        <!-- Services Dropdown -->
+                        <div class="dropdown">
+
+                            <a href="#"
+                                class="flex items-center justify-between text-white/70">
+
+                                Services
+
+                                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                            </a>
+
+
+                            <div class="dropdown-menu">
+
+                                <a href="wholesale-distribution.html">
+
+                                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                                    Wholesale Distribution
+
+                                </a>
+
+
+                                <a href="#">
+
+                                    <i class="fa-solid fa-store"></i>
+
+                                    Retail Supply
+
+                                </a>
+
+
+                                <a href="#">
+
+                                    <i class="fa-solid fa-hospital"></i>
+
+                                    Hospital Supply
+
+                                </a>
+
+
+                                <a href="#">
+
+                                    <i class="fa-solid fa-industry"></i>
+
+                                    Third Party Manufacturing
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Categories Dropdown -->
+                        <div class="dropdown">
+
+                            <a href="#"
+                                class="flex items-center justify-between text-white/70">
+
+                                Categories
+
+                                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                            </a>
+
+
+                            <div class="dropdown-menu">
+
+                                <a href="#">
+                                    <i class="fa-solid fa-pills"></i>
+                                    Medicines
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-syringe"></i>
+                                    Injections
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-stethoscope"></i>
+                                    Medical Devices
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-bed"></i>
+                                    Medical Equipment
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-tablets"></i>
+                                    Tablets
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-capsules"></i>
+                                    Capsules
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-prescription-bottle"></i>
+                                    Syrup
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Products -->
+                <div>
+
+                    <h3 class="text-xl font-bold mb-6">
+                        Products
+                    </h3>
+
+
+                    <div class="space-y-3">
+
+                        <a href="#"
+                            class="product-link block text-white/70">
+
+                            Pharmaceutical Products
+
+                        </a>
+
+
+                        <a href="#"
+                            class="product-link block text-white/70">
+
+                            OTC Products
+
+                        </a>
+
+
+                        <!-- Surgical Dropdown -->
+                        <div class="dropdown">
+
+                            <a href="#"
+                                class="flex items-center justify-between text-white/70">
+
+                                Surgical & Medical
+
+                                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                            </a>
+
+
+                            <div class="dropdown-menu">
+
+                                <a href="#">
+                                    <i class="fa-solid fa-box"></i>
+                                    Consumable
+                                </a>
+
+                                <a href="#">
+                                    <i class="fa-solid fa-kit-medical"></i>
+                                    Disposable
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <a href="#"
+                            class="product-link block text-white/70">
+
+                            Nutraceutical
+
+                        </a>
+
+
+                        <a href="#"
+                            class="product-link block text-white/70">
+
+                            Healthcare Products
+
+                        </a>
+
+
+                        <!-- Veterinary Dropdown -->
+                        <div class="dropdown">
+
+                            <a href="#"
+                                class="flex items-center justify-between text-white/70">
+
+                                Veterinary Products
+
+                                <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+
+                            </a>
+
+
+                            <div class="dropdown-menu">
+
+                                <a href="#">
+
+                                    <i class="fa-solid fa-paw"></i>
+
+                                    Vet
+
+                                </a>
+
+
+                                <a href="#">
+
+                                    <i class="fa-solid fa-feather"></i>
+
+                                    Poultry
+
+                                </a>
+
+
+                                <a href="#cattle">
+
+                                    <i class="fa-solid fa-cow"></i>
+
+                                    Cattle
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Contact -->
+                <div>
+
+                    <h3 class="text-xl font-bold mb-6">
+                        Contact
+                    </h3>
+
+
+                    <div class="space-y-5">
+
+
+                        <!-- Location -->
+                        <div class="contact-box flex gap-4">
+
+                            <div
+                                class="contact-icon w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+
+                                <i class="fa-solid fa-location-dot text-accent"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="font-semibold">
+                                    Be Pharma Traders
+                                </p>
+
+                                <p class="text-white/65 text-sm mt-1">
+                                    India
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Phone -->
+                        <div class="contact-box flex gap-4">
+
+                            <div
+                                class="contact-icon w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+
+                                <i class="fa-solid fa-phone text-accent"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <a href="tel:+919973100210"
+                                    class="font-semibold hover:text-accent transition">
+
+                                    +91 99731 00210
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="contact-box flex gap-4">
+
+                            <div
+                                class="contact-icon w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+
+                                <i class="fa-solid fa-envelope text-accent"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <a
+                                    href="mailto:addressbepharmatraders@gmail.com"
+                                    class="font-semibold text-sm hover:text-accent transition break-all">
+
+                                    addressbepharmatraders@gmail.com
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Timing -->
+                        <div class="contact-box flex gap-4">
+
+                            <div
+                                class="contact-icon w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center shrink-0">
+
+                                <i class="fa-regular fa-clock text-accent"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <p class="font-semibold">
+                                    Monday - Saturday
+                                </p>
+
+                                <p class="text-white/65 text-sm mt-1">
+                                    9:00 AM - 6:00 PM
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer Bottom -->
+        <div class="border-t border-white/10 bg-brand">
+
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+
+                <p
+                    class="text-sm text-white/80 text-center md:text-left">
+
+                    © 2026 Be Pharma Traders.
+                    All rights reserved.
+
+                </p>
+
+
+                <div class="flex items-center gap-5 text-sm">
+
+                    <a href="privacy-policy.html"
+                        class="text-white/80 hover:text-white transition">
+
+                        Privacy Policy
+
+                    </a>
+
+
+                    <a href="terms.html"
+                        class="text-white/80 hover:text-white transition">
+
+                        Terms & Conditions
+
+                    </a>
+
+
+                    <span class="text-white/60">
+
+                        Crafted by Dev Labs
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* ======================================================
+           MOBILE MENU
+        ====================================================== */
+
+        const menuBtn = document.getElementById("menuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const menuIcon = document.getElementById("menuIcon");
+
+        menuBtn.addEventListener("click", () => {
+
+            mobileMenu.classList.toggle("hidden");
+
+            const open =
+                !mobileMenu.classList.contains("hidden");
+
+            if (open) {
+
+                menuIcon.classList.remove("fa-bars");
+                menuIcon.classList.add("fa-xmark");
+
+            } else {
+
+                menuIcon.classList.remove("fa-xmark");
+                menuIcon.classList.add("fa-bars");
+
+            }
+
+        });
+
+
+        /* ======================================================
+           MOBILE MENU STYLES
+        ====================================================== */
+
+        document
+            .querySelectorAll(".mobile-main-link")
+            .forEach(link => {
+
+                link.className =
+                    "block px-4 py-2.5 rounded-lg text-navy hover:bg-mist hover:text-brand transition";
+
+            });
+
+
+        document
+            .querySelectorAll(".mobile-toggle")
+            .forEach(btn => {
+
+                btn.className =
+                    "w-full flex justify-between items-center px-4 py-2.5 rounded-lg text-navy hover:bg-mist hover:text-brand transition";
+
+            });
+
+
+        document
+            .querySelectorAll(".mobile-sub-link")
+            .forEach(link => {
+
+                link.className =
+                    "block px-4 py-2.5 rounded-lg text-navy hover:bg-mist hover:text-brand transition";
+
+            });
+
+
+        /* ======================================================
+           MOBILE DROPDOWNS
+        ====================================================== */
+
+        document
+            .querySelectorAll("[data-toggle]")
+            .forEach(btn => {
+
+                btn.addEventListener("click", () => {
+
+                    const target =
+                        document.getElementById(
+                            btn.dataset.toggle
+                        );
+
+                    const icon =
+                        btn.querySelector("i");
+
+                    target.classList.toggle("hidden");
+
+                    icon.classList.toggle("rotate-180");
+
+                });
+
+            });
+
+
+        /* ======================================================
+           CLOSE MOBILE MENU ON LINK CLICK
+        ====================================================== */
+
+        mobileMenu
+            .querySelectorAll("a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    mobileMenu.classList.add("hidden");
+
+                    menuIcon.classList.remove("fa-xmark");
+                    menuIcon.classList.add("fa-bars");
+
+                });
+
+            });
+
+
+        /* ======================================================
+           FOOTER DROPDOWNS
+        ====================================================== */
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dropdowns =
+                document.querySelectorAll(".dropdown");
+
+
+            dropdowns.forEach(function (dropdown) {
+
+                const button =
+                    dropdown.querySelector(":scope > a");
+
+                if (!button) return;
+
+
+                button.addEventListener("click", function (e) {
+
+                    e.preventDefault();
+
+
+                    dropdowns.forEach(function (otherDropdown) {
+
+                        if (otherDropdown !== dropdown) {
+
+                            otherDropdown
+                                .classList
+                                .remove("active");
+
+                        }
+
+                    });
+
+
+                    dropdown
+                        .classList
+                        .toggle("active");
+
+                });
+
+            });
+
+
+            document.addEventListener("click", function (e) {
+
+                if (!e.target.closest(".dropdown")) {
+
+                    dropdowns.forEach(function (dropdown) {
+
+                        dropdown.classList.remove("active");
+
+                    });
+
+                }
+
+            });
+
+        });
+
+
+        /* ======================================================
+           PRODUCT SEARCH
+        ====================================================== */
+
+        const searchInput =
+            document.getElementById("productSearch");
+
+        const clearSearch =
+            document.getElementById("clearSearch");
+
+        const products =
+            document.querySelectorAll(".product-item");
+
+        const noResult =
+            document.getElementById("noResult");
+
+
+        searchInput.addEventListener("input", function () {
+
+            const query =
+                this.value.toLowerCase().trim();
+
+            let visibleCount = 0;
+
+
+            if (query.length > 0) {
+
+                clearSearch.classList.remove("hidden");
+
+            } else {
+
+                clearSearch.classList.add("hidden");
+
+            }
+
+
+            products.forEach(product => {
+
+                const productName =
+                    product.dataset.name.toLowerCase();
+
+
+                if (productName.includes(query)) {
+
+                    product.style.display = "";
+
+                    visibleCount++;
+
+                } else {
+
+                    product.style.display = "none";
+
+                }
+
+            });
+
+
+            if (
+                visibleCount === 0 &&
+                query !== ""
+            ) {
+
+                noResult.classList.remove("hidden");
+
+            } else {
+
+                noResult.classList.add("hidden");
+
+            }
+
+        });
+
+
+        /* ======================================================
+           CLEAR SEARCH
+        ====================================================== */
+
+        clearSearch.addEventListener("click", function () {
+
+            searchInput.value = "";
+
+
+            products.forEach(product => {
+
+                product.style.display = "";
+
+            });
+
+
+            noResult.classList.add("hidden");
+
+            clearSearch.classList.add("hidden");
+
+            searchInput.focus();
+
+        });
+
+
+        /* ======================================================
+           REVEAL ANIMATION
+        ====================================================== */
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("show");
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(el => {
+
+            observer.observe(el);
+
+        });
+
+    </script>
+
+</body>
+
+</html>

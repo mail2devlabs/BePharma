@@ -24,8 +24,15 @@
     >
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bitter:ital,wght@0,700;0,800;1,700&display=swap"
@@ -125,7 +132,9 @@
 
         .container {
             width: min(1180px, 92%);
-            margin: auto;
+            max-width: 1180px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section {
@@ -237,7 +246,8 @@
         }
 
         .page-hero-content {
-            width: 650px;
+            width: 100%;
+            max-width: 650px;
             padding: 70px 0;
         }
 
@@ -1092,128 +1102,392 @@
 
 
         /* =========================================================
-           RESPONSIVE
+           RESPONSIVE SYSTEM (All Screen Sizes: Mobile, Tablet, Laptop, Desktop)
         ========================================================= */
 
-        @media (max-width: 1050px) {
+        /* General fluid safety for all screen sizes */
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, a, span {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .container {
+            width: min(1180px, 92%) !important;
+            max-width: 1180px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
+
+        .page-hero-content {
+            width: 100%;
+            max-width: 650px;
+        }
+
+        #mobileMenu {
+            max-height: calc(100dvh - 5rem);
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+        }
+
+        /* ---------------------------------------------------------
+           1. LAPTOP & SMALL DESKTOP (1024px to 1240px)
+              Prevents navbar links, logo, and buttons from wrapping or squeezing
+        --------------------------------------------------------- */
+        @media (min-width: 1024px) and (max-width: 1240px) {
+            nav > div {
+                padding-left: 1.25rem !important;
+                padding-right: 1.25rem !important;
+            }
+
+            nav svg {
+                height: 48px !important;
+                width: auto !important;
+            }
+
+            /* Desktop Navigation Links Container */
+            nav .h-20 > div:nth-child(2) {
+                gap: clamp(10px, 1.25vw, 18px) !important;
+            }
+
+            nav .h-20 > div:nth-child(2) a,
+            nav .h-20 > div:nth-child(2) button {
+                font-size: 13.5px !important;
+                white-space: nowrap !important;
+            }
+
+            /* Desktop Right Side Container */
+            nav .h-20 > div:nth-child(3) {
+                gap: 10px !important;
+            }
+
+            nav .h-20 > div:nth-child(3) a {
+                padding: 9px 15px !important;
+                font-size: 13px !important;
+                white-space: nowrap !important;
+            }
+
+            nav .h-20 > div:nth-child(3) button {
+                width: 38px !important;
+                height: 38px !important;
+            }
+
+            /* Grids spacing on small laptop */
+            .intro-grid,
+            .story-grid {
+                gap: 40px;
+            }
+
+            .mission-grid {
+                gap: 20px;
+            }
+
+            .values-grid {
+                gap: 16px;
+            }
+
+            .documents-grid {
+                gap: 16px;
+            }
+
+            .value-card {
+                padding: 26px 20px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           2. LARGE TABLET & MEDIUM SCREENS (max-width: 1023px)
+        --------------------------------------------------------- */
+        @media (max-width: 1023px) {
+            .section {
+                padding: 70px 0;
+            }
+
+            .page-hero {
+                min-height: 460px;
+                padding: 60px 0;
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(238, 249, 252, 0.98) 0%,
+                        rgba(238, 249, 252, 0.94) 50%,
+                        rgba(238, 249, 252, 0.82) 100%
+                    ),
+                    url("medical-hero.png") center right / cover no-repeat;
+            }
+
+            .page-hero-content {
+                width: 100%;
+                padding: 40px 0;
+            }
 
             .values-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
             }
 
             .documents-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-stat {
+                border-right: 1px solid var(--border);
+                border-bottom: 1px solid var(--border);
+                padding: 18px 20px;
+            }
+
+            .about-stat:nth-child(2n) {
+                border-right: none;
+            }
+
+            .about-stat:nth-last-child(-n+2) {
+                border-bottom: none;
+            }
+
+            .intro-grid,
+            .story-grid {
+                gap: 40px;
             }
         }
 
-
-        @media (max-width: 850px) {
+        /* ---------------------------------------------------------
+           3. TABLET (max-width: 900px)
+              Stack two-column content sections into clean single columns
+        --------------------------------------------------------- */
+        @media (max-width: 900px) {
+            .section {
+                padding: 60px 0;
+            }
 
             .page-hero {
-                min-height: 540px;
+                min-height: auto;
+                padding: 50px 0 60px;
                 background:
                     linear-gradient(
                         90deg,
-                        rgba(238, 249, 252, 0.97),
-                        rgba(238, 249, 252, 0.82)
+                        rgba(238, 249, 252, 0.98),
+                        rgba(238, 249, 252, 0.88)
                     ),
                     url("medical-hero.png") center / cover no-repeat;
             }
 
             .page-hero-content {
-                width: 100%;
-                padding: 55px 0;
+                padding: 20px 0 10px;
+            }
+
+            .page-hero h1 {
+                font-size: clamp(30px, 5vw, 44px);
+                line-height: 1.12;
             }
 
             .intro-grid,
             .story-grid {
                 grid-template-columns: 1fr;
+                gap: 35px;
             }
 
-            .intro-grid {
-                gap: 45px;
-            }
-
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-stat:nth-child(2) {
-                border-right: none;
-            }
-
-            .about-stat:nth-child(-n+2) {
-                border-bottom: 1px solid var(--border);
-                padding-bottom: 20px;
-            }
-
-            .about-stat:nth-child(n+3) {
-                padding-top: 20px;
+            .intro-image {
+                min-height: 360px;
             }
 
             .about-cta-inner {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 24px;
+            }
+
+            .about-cta .btn {
+                width: auto;
             }
         }
 
+        /* ---------------------------------------------------------
+           4. TABLET PORTRAIT & PHABLETS (max-width: 768px)
+        --------------------------------------------------------- */
+        @media (max-width: 768px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
 
-        @media (max-width: 600px) {
+            .intro-image {
+                min-height: 320px;
+            }
 
+            .intro-image-content {
+                inset: 22px;
+                padding: 22px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           5. MOBILE PHONES (max-width: 640px)
+        --------------------------------------------------------- */
+        @media (max-width: 640px) {
             .section {
-                padding: 65px 0;
+                padding: 50px 0;
+            }
+
+            .section-title {
+                margin-bottom: 35px;
+            }
+
+            .section-title .small-title {
+                font-size: 12px;
+                letter-spacing: 1.4px;
+                margin-bottom: 8px;
+            }
+
+            .section-title h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 12px;
+            }
+
+            .section-title p {
+                font-size: 14px;
+                line-height: 1.55;
             }
 
             .page-hero {
-                min-height: 570px;
+                padding: 35px 0 45px;
+                background:
+                    linear-gradient(
+                        180deg,
+                        rgba(238, 249, 252, 0.98) 0%,
+                        rgba(238, 249, 252, 0.94) 100%
+                    ),
+                    url("medical-hero.png") center top / cover no-repeat;
+            }
+
+            .page-hero-label {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+                margin-bottom: 12px;
+            }
+
+            .page-hero-label::before {
+                width: 22px;
             }
 
             .page-hero h1 {
-                font-size: 39px;
+                font-size: clamp(26px, 7vw, 36px);
+                line-height: 1.15;
+                letter-spacing: -0.5px;
+                margin-bottom: 16px;
             }
 
             .page-hero p {
                 font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .intro-content .small-title,
+            .story-content .small-title {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+            }
+
+            .intro-content h2,
+            .story-content h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 14px;
             }
 
             .intro-image {
-                min-height: 350px;
+                min-height: 280px;
+            }
+
+            .intro-image-content {
+                inset: 15px;
+                padding: 18px 14px;
+            }
+
+            .intro-image-content i {
+                font-size: 44px;
+                margin-bottom: 10px;
+            }
+
+            .intro-image-content h3 {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+
+            .intro-image-content p {
+                font-size: 13px;
+                line-height: 1.45;
+                max-width: 100%;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr;
             }
 
-            .about-stat,
-            .about-stat:nth-child(2) {
-                border-right: none;
+            .about-stat {
+                border-right: none !important;
                 border-bottom: 1px solid var(--border);
-                padding: 18px;
+                padding: 14px 10px !important;
             }
 
             .about-stat:last-child {
                 border-bottom: none;
             }
 
+            .about-stat i {
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
+
+            .about-stat h3 {
+                font-size: 26px;
+            }
+
+            .story-card,
+            .mission-card {
+                padding: 24px 20px;
+            }
+
             .values-grid,
             .documents-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
 
-            .story-card {
-                padding: 28px;
+            .value-card {
+                padding: 22px 18px;
             }
 
-            .mission-card {
-                padding: 28px;
+            .document-preview {
+                min-height: 160px;
             }
 
-            .about-cta-inner {
-                gap: 25px;
+            .document-content {
+                padding: 20px 18px;
+            }
+
+            .about-cta-content .small-title {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+            }
+
+            .about-cta-content h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 12px;
+            }
+
+            .about-cta-content p {
+                font-size: 14px;
+                margin-bottom: 18px;
             }
 
             .about-cta .btn {
@@ -1225,39 +1499,142 @@
             }
 
             .document-modal-box {
-                max-height: 96vh;
+                max-height: 94vh;
+                max-height: 94dvh;
                 border-radius: 8px;
+                width: 100%;
             }
 
             .modal-header {
-                min-height: 58px;
-                padding: 10px 12px 10px 15px;
+                min-height: 52px;
+                padding: 10px 14px;
             }
 
             .modal-title {
-                font-size: 14px;
+                font-size: 15px;
             }
 
             .modal-subtitle {
-                font-size: 10px;
+                font-size: 11px;
             }
 
             .modal-close {
-                width: 35px;
-                height: 35px;
-                flex-basis: 35px;
+                width: 36px;
+                height: 36px;
+                flex: 0 0 36px;
+            }
+
+            .modal-document-image {
+                max-height: calc(94dvh - 55px);
             }
 
             .modal-info {
-                padding: 35px 22px;
+                padding: 28px 16px;
             }
 
             .modal-info h3 {
-                font-size: 21px;
+                font-size: 20px;
+            }
+
+            .modal-info p {
+                font-size: 13px;
             }
 
             .modal-error {
-                padding: 35px 20px;
+                padding: 28px 16px;
+            }
+
+            .back-top {
+                right: 16px;
+                bottom: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           6. COMPACT MOBILE SCREENS (max-width: 480px)
+        --------------------------------------------------------- */
+        @media (max-width: 480px) {
+            .container {
+                width: 93% !important;
+            }
+
+            .btn {
+                padding: 12px 18px;
+                font-size: 12.5px;
+            }
+
+            .page-hero-label {
+                font-size: 11.5px;
+            }
+
+            .intro-content .btn {
+                width: 100%;
+            }
+
+            .value-card {
+                padding: 20px 16px;
+            }
+
+            .document-content {
+                padding: 18px 16px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           7. EXTRA SMALL MOBILE (max-width: 360px)
+        --------------------------------------------------------- */
+        @media (max-width: 360px) {
+            nav svg {
+                height: 38px !important;
+                max-width: 120px;
+            }
+
+            #menuBtn {
+                width: 38px !important;
+                height: 38px !important;
+            }
+
+            .page-hero h1 {
+                font-size: 24px;
+            }
+
+            .intro-image {
+                min-height: 250px;
+            }
+
+            .intro-image-content {
+                inset: 10px;
+                padding: 14px 10px;
+            }
+
+            .intro-image-content i {
+                font-size: 36px;
+                margin-bottom: 8px;
+            }
+
+            .intro-image-content h3 {
+                font-size: 18px;
+            }
+
+            .story-card,
+            .mission-card,
+            .value-card {
+                padding: 18px 14px;
+            }
+
+            .document-content {
+                padding: 16px 12px;
+            }
+
+            .modal-info {
+                padding: 22px 12px;
+            }
+
+            .modal-info h3 {
+                font-size: 18px;
             }
         }
 
@@ -1421,7 +1798,8 @@
                 class="flex items-center flex-shrink-0"
             >
 
-                <svg                    viewBox="60 50 1420 590"
+                <svg
+                    viewBox="60 50 1420 590"
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
                     aria-label="Be Pharma Traders &amp; Co"
@@ -2548,7 +2926,8 @@
 
                     <div>
                         <strong>
-                            Long-Term Relationships                        </strong>
+                            Long-Term Relationships
+                        </strong>
 
                         <span>
                             We focus on developing dependable
@@ -2831,7 +3210,7 @@
                         type="button"
                         class="document-action"
                         data-document-type="image"
-                        data-document-src="DL 20B.jpg"
+                        data-document-src="regulatory-documents/form-20b.jpg"
                         data-document-title="Form 20-B"
                         data-document-subtitle="Wholesale Drug Licence Document"
                     >
@@ -2880,7 +3259,7 @@
                         type="button"
                         class="document-action"
                         data-document-type="image"
-                        data-document-src="DL 21 B.jpg"
+                        data-document-src="regulatory-documents/form-21b.jpg"
                         data-document-title="Form 21-B"
                         data-document-subtitle="Wholesale Drug Licence Document"
                     >
@@ -2894,200 +3273,67 @@
 
 
             <!-- DOCUMENT 3 -->
-
             <article class="document-card">
-
                 <div class="document-preview">
-
-                    <div class="document-icon">
-                        <i class="fa-solid fa-file-circle-check"></i>
-                    </div>
-
-                    <div class="document-label">
-                        DOCUMENT
-                    </div>
-
+                    <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="document-label">DOCUMENT</div>
                 </div>
-
                 <div class="document-content">
-
-                    <h3>
-                        Regulatory Compliance
-                    </h3>
-
-                    <p>
-                        Business operations are approached with
-                        attention to applicable pharmaceutical
-                        trading requirements.
-                    </p>
-
-                    <span class="document-status">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Compliance Focus
-                    </span>
-
-                    <button
-                        type="button"
-                        class="document-action"
-                        data-document-type="info"
-                        data-document-title="Regulatory Compliance"
-                        data-document-subtitle="Compliance Focus"
-                        data-document-info="Business operations are approached with attention to applicable pharmaceutical trading requirements. Compliance considerations remain an important part of responsible business coordination."
-                    >
-                        <i class="fa-solid fa-eye"></i>
-                        View Details
+                    <h3>Additional Business Document</h3>
+                    <p>Additional business document supplied for display with the company records.</p>
+                    <span class="document-status"><i class="fa-solid fa-circle-check"></i>Business Document</span>
+                    <button type="button" class="document-action" data-document-type="pdf" data-document-src="regulatory-documents/business-document.pdf" data-document-title="Additional Business Document" data-document-subtitle="Business Document" data-document-info="Additional business document supplied for display with the company records.">
+                        <i class="fa-solid fa-eye"></i> View Document
                     </button>
-
                 </div>
-
             </article>
-
 
             <!-- DOCUMENT 4 -->
-
             <article class="document-card">
-
                 <div class="document-preview">
-
-                    <div class="document-icon">
-                        <i class="fa-solid fa-folder-open"></i>
-                    </div>
-
-                    <div class="document-label">
-                        DOCUMENT
-                    </div>
-
+                    <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="document-label">DOCUMENT</div>
                 </div>
-
                 <div class="document-content">
-
-                    <h3>
-                        Product Documentation
-                    </h3>
-
-                    <p>
-                        Product-related information and documentation
-                        are considered during business enquiries.
-                    </p>
-
-                    <span class="document-status">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Documentation
-                    </span>
-
-                    <button
-                        type="button"
-                        class="document-action"
-                        data-document-type="info"
-                        data-document-title="Product Documentation"
-                        data-document-subtitle="Business Documentation"
-                        data-document-info="Product-related information and documentation are considered during business enquiries to support clear communication and better understanding of product and supply requirements."
-                    >
-                        <i class="fa-solid fa-eye"></i>
-                        View Details
+                    <h3>GST Registration Certificate</h3>
+                    <p>GST registration certificate supplied for the business.</p>
+                    <span class="document-status"><i class="fa-solid fa-circle-check"></i>GST Documentation</span>
+                    <button type="button" class="document-action" data-document-type="pdf" data-document-src="regulatory-documents/gst-certificate.pdf" data-document-title="GST Registration Certificate" data-document-subtitle="GST Registration" data-document-info="GST registration certificate supplied for the business.">
+                        <i class="fa-solid fa-eye"></i> View Document
                     </button>
-
                 </div>
-
             </article>
-
 
             <!-- DOCUMENT 5 -->
-
             <article class="document-card">
-
                 <div class="document-preview">
-
-                    <div class="document-icon">
-                        <i class="fa-solid fa-award"></i>
-                    </div>
-
-                    <div class="document-label">
-                        DOCUMENT
-                    </div>
-
+                    <div class="document-icon"><i class="fa-solid fa-file-pdf"></i></div>
+                    <div class="document-label">DOCUMENT</div>
                 </div>
-
                 <div class="document-content">
-
-                    <h3>
-                        Quality Awareness
-                    </h3>
-
-                    <p>
-                        Quality considerations remain an important
-                        part of product sourcing and supply support.
-                    </p>
-
-                    <span class="document-status">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Quality Focus
-                    </span>
-
-                    <button
-                        type="button"
-                        class="document-action"
-                        data-document-type="info"
-                        data-document-title="Quality Awareness"
-                        data-document-subtitle="Quality Focus"
-                        data-document-info="Quality considerations remain an important part of product sourcing and supply support. The focus is on maintaining clear product-related communication and responsible business coordination."
-                    >
-                        <i class="fa-solid fa-eye"></i>
-                        View Details
+                    <h3>IEC Certificate</h3>
+                    <p>Importer Exporter Code certificate supplied for the business.</p>
+                    <span class="document-status"><i class="fa-solid fa-circle-check"></i>IEC Documentation</span>
+                    <button type="button" class="document-action" data-document-type="pdf" data-document-src="regulatory-documents/iec-certificate.pdf" data-document-title="IEC Certificate" data-document-subtitle="Importer Exporter Code" data-document-info="Importer Exporter Code certificate supplied for the business.">
+                        <i class="fa-solid fa-eye"></i> View Document
                     </button>
-
                 </div>
-
             </article>
 
-
             <!-- DOCUMENT 6 -->
-
             <article class="document-card">
-
                 <div class="document-preview">
-
-                    <div class="document-icon">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-
-                    <div class="document-label">
-                        DOCUMENT
-                    </div>
-
+                    <div class="document-icon"><i class="fa-solid fa-list-check"></i></div>
+                    <div class="document-label">DOCUMENT</div>
                 </div>
-
                 <div class="document-content">
-
-                    <h3>
-                        Responsible Supply
-                    </h3>
-
-                    <p>
-                        We focus on coordinated supply support and
-                        professional communication with business
-                        partners.
-                    </p>
-
-                    <span class="document-status">
-                        <i class="fa-solid fa-circle-check"></i>
-                        Supply Support
-                    </span>
-
-                    <button
-                        type="button"
-                        class="document-action"
-                        data-document-type="info"
-                        data-document-title="Responsible Supply"
-                        data-document-subtitle="Supply Support"
-                        data-document-info="We focus on coordinated supply support and professional communication with business partners to help make the sourcing and supply process more structured and dependable."
-                    >
-                        <i class="fa-solid fa-eye"></i>
-                        View Details
+                    <h3>HSN / SAC Reference</h3>
+                    <p>HSN/SAC codes visible in the supplied reference image, with GST rates shown there: 040210 (5%), 040900 (5%), 090240 (5%), 121190 (5%), 150990 (5%), 170230 (5%), 180690 (5%, 18%), 19011090 (5%, 18%), 19019010 (5%, 18%), 19019090 (5%, 18%), 21061000 (18%), 21069091 (5%, 12%). Rates are reproduced from the image.</p>
+                    <span class="document-status"><i class="fa-solid fa-circle-check"></i>HSN / SAC Information</span>
+                    <button type="button" class="document-action" data-document-type="image" data-document-src="regulatory-documents/hsn-sac-reference.jpeg" data-document-title="HSN / SAC Reference" data-document-subtitle="HSN/SAC and GST rate reference" data-document-info="HSN/SAC codes visible in the supplied reference image, with GST rates shown there: 040210 (5%), 040900 (5%), 090240 (5%), 121190 (5%), 150990 (5%), 170230 (5%), 180690 (5%, 18%), 19011090 (5%, 18%), 19019010 (5%, 18%), 19019090 (5%, 18%), 21061000 (18%), 21069091 (5%, 12%). Rates are reproduced from the image.">
+                        <i class="fa-solid fa-eye"></i> View Document
                     </button>
-
                 </div>
-
             </article>
 
         </div>
@@ -3159,14 +3405,10 @@
     >
 
 
-      <!-- ================================================= -->
       <!-- COMPANY -->
-      <!-- ================================================= -->
 
       <div>
 
-
-        <!-- LOGO (same logo as navbar) -->
 
         <a
           href="index.html"
@@ -3184,14 +3426,10 @@
 
             <title>Be Pharma Traders &amp; Co</title>
 
-            <!-- CROSS (two rounded bars) -->
-
             <g fill="currentColor">
               <rect x="262" y="62" width="186" height="560" rx="93"></rect>
               <rect x="75" y="245" width="562" height="196" rx="98"></rect>
             </g>
-
-            <!-- "B" and "e" inside the cross -->
 
             <text
               x="358" y="415"
@@ -3211,8 +3449,6 @@
               fill="#ffffff"
             >e</text>
 
-            <!-- PHARMA -->
-
             <text
               x="678" y="392"
               font-family="'Bitter', Georgia, serif"
@@ -3222,8 +3458,6 @@
               textLength="777"
               lengthAdjust="spacingAndGlyphs"
             >Pharma</text>
-
-            <!-- TRADERS & CO -->
 
             <text
               x="680" y="528"
@@ -3239,8 +3473,6 @@
 
         </a>
 
-
-        <!-- DESCRIPTION -->
 
         <p
           class="mt-6 max-w-sm
@@ -3258,8 +3490,6 @@
 
         </p>
 
-
-        <!-- SOCIAL (links are set in the SOCIAL_LINKS block at the bottom) -->
 
         <div
           class="mt-7 flex flex-wrap gap-3"
@@ -3355,9 +3585,7 @@
 
 
 
-      <!-- ================================================= -->
       <!-- QUICK LINKS -->
-      <!-- ================================================= -->
 
       <div>
 
@@ -3374,8 +3602,6 @@
                  text-sky-100/70"
         >
 
-
-          <!-- HOME -->
 
           <li>
 
@@ -3397,8 +3623,6 @@
 
 
 
-          <!-- ABOUT -->
-
           <li>
 
             <a
@@ -3419,114 +3643,212 @@
 
 
 
-          <!-- ================================================= -->
-          <!-- SERVICES -->
-          <!-- ================================================= -->
-
           <li class="dropdown">
 
-            <a href="services.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-concierge-bell text-lg text-accent"></i>
+
+            <a
+              href="services.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-service-line
+                       text-lg text-accent"
+              ></i>
+
               Services
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- SERVICES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="pharmaceutical-distribution.html">
-                <i class="fas fa-truck-medical"></i>
-                <span>Pharmaceutical Distribution</span>
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="wholesale-distribution.html"
+              >
+
+                <i class="ri-truck-line"></i>
+
+                <span>
+                  Wholesale Distribution
+                </span>
+
               </a>
 
-              <a href="wholesale-supply.html">
-                <i class="fas fa-boxes-stacked"></i>
-                <span>Wholesale Supply</span>
+
+              <a
+                href="retail-supply.html"
+              >
+
+                <i class="ri-store-2-line"></i>
+
+                <span>
+                  Retail Supply
+                </span>
+
               </a>
 
-              <a href="institutional-supply.html">
-                <i class="fas fa-hospital"></i>
-                <span>Institutional Supply</span>
+
+              <a
+                href="hospital-supply.html"
+              >
+
+                <i class="ri-hospital-line"></i>
+
+                <span>
+                  Hospital Supply
+                </span>
+
               </a>
 
-              <a href="surgical-medical-supplies.html">
-                <i class="fas fa-kit-medical"></i>
-                <span>Surgical &amp; Medical Supply</span>
+
+              <a
+                href="third-party-manufacturing.html"
+              >
+
+                <i class="ri-building-4-line"></i>
+
+                <span>
+                  Third Party Manufacturing
+                </span>
+
               </a>
 
-              <a href="otc-healthcare-products.html">
-                <i class="fas fa-heart-circle-check"></i>
-                <span>OTC &amp; Healthcare Supply</span>
-              </a>
-
-              <a href="delivery-support.html">
-                <i class="fas fa-truck-fast"></i>
-                <span>Delivery Support</span>
-              </a>
-
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="services.html" class="flex items-center justify-between">
-                  <span>View All Services</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
 
             </div>
 
           </li>
 
 
-          <!-- ================================================= -->
-          <!-- CATEGORIES -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
-            <a href="categories.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-list-check text-lg text-accent"></i>
+
+            <a
+              href="categories.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-list-check-2
+                       text-lg text-accent"
+              ></i>
+
               Categories
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- CATEGORIES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="tablets-capsules.html">
-                <i class="fas fa-tablets"></i>
-                <span>Tablets &amp; Capsules</span>
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="medicines.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Medicines
+                </span>
+
               </a>
 
-              <a href="injections.html">
-                <i class="fas fa-syringe"></i>
-                <span>Injections</span>
+
+              <a
+                href="injections.html"
+              >
+
+                <i class="ri-syringe-line"></i>
+
+                <span>
+                  Injections
+                </span>
+
               </a>
 
-              <a href="medical-devices.html">
-                <i class="fas fa-microscope"></i>
-                <span>Medical Devices</span>
+
+              <a
+                href="medical-devices.html"
+              >
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <span>
+                  Medical Devices
+                </span>
+
               </a>
 
-              <a href="surgical-items.html">
-                <i class="fas fa-scissors"></i>
-                <span>Surgical Items</span>
+
+              <a
+                href="medical-equipment.html"
+              >
+
+                <i class="ri-first-aid-kit-line"></i>
+
+                <span>
+                  Medical Equipment
+                </span>
+
               </a>
 
-              <a href="OTC.html">
-                <i class="fas fa-bottle-droplet"></i>
-                <span>OTC Products</span>
+
+              <a
+                href="tablets.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Tablets
+                </span>
+
               </a>
 
-              <a href="healthcare-essentials.html">
-                <i class="fas fa-notes-medical"></i>
-                <span>Healthcare Essentials</span>
+
+              <a
+                href="capsules.html"
+              >
+
+                <i class="ri-capsule-fill"></i>
+
+                <span>
+                  Capsules
+                </span>
+
               </a>
 
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="categories.html" class="flex items-center justify-between">
-                  <span>View All Categories</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
+
+              <a
+                href="syrup.html"
+              >
+
+                <i class="ri-medicine-bottle-line"></i>
+
+                <span>
+                  Syrup
+                </span>
+
+              </a>
+
 
             </div>
 
@@ -3539,9 +3861,7 @@
 
 
 
-      <!-- ================================================= -->
-      <!-- PRODUCTS (same options as navbar) -->
-      <!-- ================================================= -->
+      <!-- PRODUCTS -->
 
       <div>
 
@@ -3558,8 +3878,6 @@
                  text-sky-100/70"
         >
 
-
-          <!-- PHARMACEUTICAL -->
 
           <li>
 
@@ -3580,8 +3898,6 @@
           </li>
 
 
-          <!-- OTC -->
-
           <li>
 
             <a
@@ -3601,10 +3917,6 @@
           </li>
 
 
-
-          <!-- ================================================= -->
-          <!-- SURGICAL & MEDICAL  (DROPDOWN)                     -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
@@ -3664,10 +3976,6 @@
 
 
 
-          <!-- ================================================= -->
-          <!-- NUTRACEUTICAL                                      -->
-          <!-- ================================================= -->
-
           <li>
 
             <a
@@ -3686,8 +3994,6 @@
 
           </li>
 
-
-          <!-- HEALTHCARE -->
 
           <li>
 
@@ -3708,10 +4014,6 @@
           </li>
 
 
-
-          <!-- ================================================= -->
-          <!-- VETERINARY  (DROPDOWN)                             -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
@@ -3789,9 +4091,7 @@
 
 
 
-      <!-- ================================================= -->
       <!-- CONTACT -->
-      <!-- ================================================= -->
 
       <div>
 
@@ -3805,8 +4105,6 @@
 
         <div class="space-y-5">
 
-
-          <!-- ADDRESS -->
 
           <a
             href="contact.html"
@@ -3857,8 +4155,6 @@
 
 
 
-          <!-- PHONE -->
-
           <div
             class="contact-box flex gap-4"
           >
@@ -3906,8 +4202,6 @@
 
 
 
-          <!-- EMAIL -->
-
           <div
             class="contact-box flex gap-4"
           >
@@ -3954,8 +4248,6 @@
           </div>
 
 
-
-          <!-- WORKING HOURS -->
 
           <a
             href="contact.html"
@@ -4017,9 +4309,7 @@
 
 
 
-  <!-- ================================================= -->
   <!-- COPYRIGHT BAR -->
-  <!-- ================================================= -->
 
   <div
     class="bg-brand"
@@ -4042,8 +4332,6 @@
     >
 
 
-      <!-- COPYRIGHT -->
-
       <p>
 
         © 2026
@@ -4062,8 +4350,6 @@
       </p>
 
 
-
-      <!-- PRIVACY / TERMS -->
 
       <div
         class="flex
@@ -4096,14 +4382,12 @@
 
 
 
-      <!-- DEV LABS -->
-
       <p>
 
         Crafted by
 
         <a
-          href="https://devlabs.org.in/"
+          href="index.html"
           class="font-semibold
                  text-white
                  hover:underline"
@@ -4448,6 +4732,18 @@ document.addEventListener("DOMContentLoaded", function () {
             };
 
             modalBody.appendChild(image);
+
+        }
+
+        else if (type === "pdf") {
+
+            const frame = document.createElement("iframe");
+            frame.src = source;
+            frame.title = title;
+            frame.style.width = "100%";
+            frame.style.height = "75vh";
+            frame.style.border = "0";
+            modalBody.appendChild(frame);
 
         }
 

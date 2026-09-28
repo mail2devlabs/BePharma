@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Medical Devices | BePharma Traders</title>
+    <title>Reliable Delivery Support | B.E. Pharma Traders &amp; Co.</title>
 
     <meta
         name="description"
-        content="Explore BePharma Traders medical devices including blood pressure monitors, pulse oximeters, glucometers, thermometers, nebulizers and other healthcare devices."
+        content="B.E. Pharma Traders &amp; Co. provides reliable delivery and fulfilment support for pharmaceutical, medical and healthcare product requirements."
     >
 
     <!-- Font Awesome -->
@@ -29,7 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bitter:ital,wght@0,700;0,800;1,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bitter:ital,wght@0,700;0,800;1,700&family=Poppins:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
 
@@ -40,6 +40,10 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        poppins: ["Poppins", "sans-serif"],
+                        inter: ["Inter", "sans-serif"]
+                    },
                     colors: {
                         /* COLOR PALETTE (same as navbar + footer)
                            brand  -> teal blue (buttons, links, accents)
@@ -82,7 +86,7 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Inter', Arial, Helvetica, sans-serif;
             color: #183244;
             background: #ffffff;
             line-height: 1.6;
@@ -113,6 +117,10 @@
             display: block;
         }
 
+        .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
         :root {
             --navy: #0b2545;
             --navy-light: #123f59;
@@ -133,405 +141,80 @@
             --text: #183244;
             --muted: #637681;
             --white: #ffffff;
-            --shadow: 0 12px 35px rgba(9, 47, 73, 0.10);
+            --shadow: 0 12px 35px rgba(11, 37, 69, 0.10);
         }
 
         section[id] {
             scroll-margin-top: 95px;
         }
 
-        .primary-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--primary);
-            color: #fff;
-            transition: .3s;
-        }
-
-        .primary-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
         /* =========================================================
            HERO
         ========================================================= */
 
-        .hero {
-            position: relative;
-            min-height: 455px;
-            overflow: hidden;
-            color: #fff;
-
+        .hero-bg {
             background:
                 linear-gradient(
                     90deg,
-                    rgba(11, 37, 69, .95),
-                    rgba(11, 37, 69, .80),
-                    rgba(11, 37, 69, .40)
+                    rgba(11, 37, 69, 0.96) 0%,
+                    rgba(11, 37, 69, 0.85) 45%,
+                    rgba(11, 37, 69, 0.40) 100%
                 ),
-                url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=2000&q=85")
-                center / cover no-repeat;
-        }
-
-        .hero:after {
-            content: "";
-            position: absolute;
-            right: -100px;
-            top: -120px;
-            width: 360px;
-            height: 360px;
-            border: 1px solid rgba(255,255,255,.1);
-            border-radius: 50%;
-            box-shadow:
-                0 0 0 60px rgba(255,255,255,.025),
-                0 0 0 120px rgba(255,255,255,.018);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 9px;
-            font-size: 14px;
-            color: rgba(255,255,255,.72);
-        }
-
-        .breadcrumb a {
-            color: #fff;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent);
+                url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=2000&q=85');
+            background-size: cover;
+            background-position: center;
         }
 
         /* =========================================================
-           SEARCH & FILTER
+           GLASS EFFECT
         ========================================================= */
 
-        .filter-wrap {
-            background: #f8fcfe;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            padding: 0 15px;
-        }
-
-        .search-box:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(11, 123, 151, .15);
-        }
-
-        .search-box input {
-            width: 100%;
-            height: 48px;
-            border: 0;
-            outline: 0;
-            color: var(--text);
-            background: transparent;
-        }
-
-        .filter-btn {
-            border: 1px solid var(--border);
-            background: #fff;
-            color: #4b5563;
-            border-radius: 11px;
-            padding: 10px 15px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: .2s;
-            cursor: pointer;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
+        .glass {
+            background: rgba(255, 255, 255, 0.10);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.16);
         }
 
         /* =========================================================
-           PRODUCT CARD
+           CARDS
         ========================================================= */
 
-        .product-card {
-            position: relative;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 22px;
-            overflow: hidden;
-            transition: .3s;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        .delivery-card {
+            transition: all 0.35s ease;
         }
 
-        .product-card:hover {
+        .delivery-card:hover {
             transform: translateY(-7px);
-            border-color: var(--accent);
-            box-shadow: 0 22px 50px rgba(11, 37, 69, .10);
+            box-shadow: 0 18px 45px rgba(11, 37, 69, 0.10);
+            border-color: rgba(11, 123, 151, 0.25);
         }
 
-        .product-image {
-            height: 220px;
-            background: var(--primary-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+        /* =========================================================
+           PROCESS TIMELINE
+        ========================================================= */
+
+        .process-item {
+            position: relative;
         }
 
-        .product-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: .35s;
-        }
-
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
-        .product-content {
-            padding: 22px;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .product-badge {
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: var(--primary-light);
-            color: var(--primary);
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .product-meta {
-            color: var(--muted);
-            font-size: 13px;
-            line-height: 1.7;
-        }
-
-        .product-actions {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 9px;
-            margin-top: auto;
-            padding-top: 18px;
-        }
-
-        .view-btn,
-        .enquiry-product-btn {
-            min-height: 43px;
-            border-radius: 11px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 7px;
-            font-size: 13px;
-            font-weight: 800;
-            transition: .25s;
-            cursor: pointer;
-        }
-
-        .view-btn {
-            border: 1px solid var(--border);
-            color: #374151;
-            background: #fff;
-        }
-
-        .view-btn:hover {
-            background: var(--primary-light);
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .enquiry-product-btn {
-            border: 1px solid var(--primary);
-            color: #fff;
-            background: var(--primary);
-        }
-
-        .enquiry-product-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-        }
-
-        .product-number {
+        .process-line {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255, 255, 255, .94);
-            color: var(--primary);
-            font-size: 11px;
-            font-weight: 900;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+            left: 25px;
+            top: 55px;
+            bottom: -30px;
+            width: 2px;
+            background: #cfe9f3;
         }
 
-        /* =========================================================
-           MODAL
-        ========================================================= */
-
-        .modal-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(11, 37, 69, .70);
-            backdrop-filter: blur(5px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: .25s;
-        }
-
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-box {
-            width: min(900px, 100%);
-            max-height: 90vh;
-            overflow-y: auto;
-            background: #fff;
-            border-radius: 24px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, .2);
-            transform: translateY(20px) scale(.98);
-            transition: .25s;
-        }
-
-        .modal-overlay.show .modal-box {
-            transform: translateY(0) scale(1);
-        }
-
-        .modal-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 18px;
-        }
-
-        /* =========================================================
-           TOAST
-        ========================================================= */
-
-        .toast {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1100;
-            background: var(--navy);
-            color: #fff;
-            padding: 14px 18px;
-            border-radius: 13px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, .18);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transform: translateY(30px);
-            opacity: 0;
-            pointer-events: none;
-            transition: .3s;
-            border-left: 4px solid var(--accent);
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .empty-state {
+        .process-item:last-child .process-line {
             display: none;
         }
 
-        .empty-state.show {
-            display: block;
-        }
-
-        @media(max-width:768px) {
-            .hero {
-                min-height: 430px;
-                background:
-                    linear-gradient(
-                        180deg,
-                        rgba(11, 37, 69, .76),
-                        rgba(11, 37, 69, .95)
-                    ),
-                    url("https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=85")
-                    center / cover no-repeat;
+        @media (max-width: 640px) {
+            .process-line {
+                left: 24px;
             }
-
-            .product-image {
-                height: 200px;
-            }
-
-            .product-actions {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media(prefers-reduced-motion:reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-            *,
-            *:before,
-            *:after {
-                animation-duration: .01ms !important;
-                transition-duration: .01ms !important;
-            }
-        }
-
-        button:focus-visible,
-        a:focus-visible {
-            outline: 3px solid rgba(11, 123, 151, .3);
-            outline-offset: 3px;
-        }
-
-        .search-box input:focus,
-        .search-box input:focus-visible {
-            outline: none;
-            box-shadow: none;
         }
 
         /* =================================================== */
@@ -1786,1004 +1469,1353 @@
 
 </nav>
 
-<!-- HERO -->
+<main>
 
-<section class="hero">
-
-    <div
-        class="hero-content max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 min-h-[455px] flex items-center">
-
-        <div class="max-w-3xl pt-8">
-
-            <div class="breadcrumb mb-6">
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <i class="fas fa-chevron-right text-[9px]"></i>
-
-                <a href="categories.html">
-                    Categories
-                </a>
-
-                <i class="fas fa-chevron-right text-[9px]"></i>
-
-                <span>
-                    Medical Devices
-                </span>
-
-            </div>
-
-            <span class="eyebrow">
-
-                <i class="fas fa-microscope"></i>
-
-                Healthcare Equipment Category
-
-            </span>
-
-            <h1
-                class="font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl mt-5">
-
-                Medical
-
-                <span class="block text-accent">
-                    Devices
-                </span>
-
-            </h1>
-
-            <p
-                class="text-white/85 leading-7 text-base sm:text-lg max-w-2xl mt-6">
-
-                Explore our range of essential medical devices and healthcare
-                equipment designed for hospitals, clinics, pharmacies,
-                healthcare professionals and institutional requirements.
-
-            </p>
-
-            <div class="flex flex-wrap gap-3 mt-7">
-
-                <a href="#products"
-                    class="primary-btn bg-white !text-brand hover:!bg-mist px-6 py-3 rounded-xl font-bold text-sm">
-
-                    <i class="fas fa-microscope"></i>
-
-                    Browse Devices
-
-                </a>
-
-                <a href="contact.html"
-                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
-
-                    <i class="fas fa-paper-plane"></i>
-
-                    Send Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CATEGORY INFO -->
-
-<section class="py-12 md:py-16 bg-[#f8fcfe]">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            <div class="bg-white border border-mist-line rounded-2xl p-5">
-
-                <div
-                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                    <i class="fas fa-heart-pulse"></i>
-
-                </div>
-
-                <p class="text-2xl font-extrabold text-brand mt-4">
-                    Monitoring
-                </p>
-
-                <p class="text-sm text-gray-500 mt-1">
-                    Patient monitoring devices
-                </p>
-
-            </div>
-
-
-            <div class="bg-white border border-mist-line rounded-2xl p-5">
-
-                <div
-                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                    <i class="fas fa-temperature-half"></i>
-
-                </div>
-
-                <p class="text-2xl font-extrabold text-brand mt-4">
-                    Diagnostics
-                </p>
-
-                <p class="text-sm text-gray-500 mt-1">
-                    Everyday diagnostic devices
-                </p>
-
-            </div>
-
-
-            <div class="bg-white border border-mist-line rounded-2xl p-5">
-
-                <div
-                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                    <i class="fas fa-lungs"></i>
-
-                </div>
-
-                <p class="text-2xl font-extrabold text-brand mt-4">
-                    Respiratory
-                </p>
-
-                <p class="text-sm text-gray-500 mt-1">
-                    Respiratory care devices
-                </p>
-
-            </div>
-
-
-            <div class="bg-white border border-mist-line rounded-2xl p-5">
-
-                <div
-                    class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                    <i class="fas fa-hospital"></i>
-
-                </div>
-
-                <p class="text-2xl font-extrabold text-brand mt-4">
-                    B2B Supply
-                </p>
-
-                <p class="text-sm text-gray-500 mt-1">
-                    Institutional procurement
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- PRODUCTS -->
-
-<section id="products"
-    class="py-20 md:py-24">
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="max-w-3xl mx-auto text-center">
-
-            <span
-                class="text-brand text-xs font-extrabold uppercase tracking-[.12em]">
-
-                Medical Devices
-
-            </span>
-
-            <h2
-                class="text-3xl md:text-4xl font-extrabold text-gray-800 mt-3">
-
-                Explore Our
-
-                <span class="text-brand">
-                    Medical Devices
-                </span>
-
-            </h2>
-
-            <p class="text-gray-500 leading-7 mt-5">
-
-                Search and explore healthcare devices available in the
-                Medical Devices category.
-
-            </p>
-
-        </div>
-
-
-        <!-- FILTER -->
-
-        <div class="filter-wrap p-4 md:p-5 mt-10">
-
-            <div class="grid lg:grid-cols-[1fr_auto] gap-4 items-center">
-
-                <div class="search-box">
-
-                    <i class="fas fa-search text-brand"></i>
-
-                    <input
-                        id="productSearch"
-                        type="search"
-                        placeholder="Search medical devices..."
-                        aria-label="Search medical devices">
-
-                </div>
-
-
-                <div class="flex flex-wrap gap-2">
-
-                    <button
-                        class="filter-btn active"
-                        data-filter="all">
-
-                        All
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="monitoring">
-
-                        Monitoring
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="diagnostic">
-
-                        Diagnostic
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="respiratory">
-
-                        Respiratory
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="homecare">
-
-                        Homecare
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCT GRID -->
-
-        <div id="productGrid"
-            class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-
-
-            <!-- PRODUCT 01 -->
-
-            <article
-                class="product-card product-item"
-                data-category="monitoring"
-                data-search="digital blood pressure monitor bp machine blood pressure monitoring">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85"
-                        alt="Digital Blood Pressure Monitor"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    01
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Monitoring
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Digital BP Monitor
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Digital blood pressure monitoring device
-                        suitable for home and healthcare use.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Monitoring Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Monitoring
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Digital BP Monitor"
-                            data-description="Digital blood pressure monitoring device suitable for healthcare facilities, pharmacies and homecare requirements."
-                            data-type="Monitoring Device"
-                            data-category="Monitoring"
-                            data-image="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Digital BP Monitor">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 02 -->
-
-            <article
-                class="product-card product-item"
-                data-category="monitoring homecare"
-                data-search="pulse oximeter spo2 oxygen saturation monitor">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85"
-                        alt="Pulse Oximeter"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    02
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Monitoring
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Pulse Oximeter
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Compact device for measuring oxygen
-                        saturation and pulse rate.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Monitoring Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Homecare
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Pulse Oximeter"
-                            data-description="Compact pulse oximetry device designed for oxygen saturation and pulse rate monitoring requirements."
-                            data-type="Monitoring Device"
-                            data-category="Homecare"
-                            data-image="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Pulse Oximeter">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 03 -->
-
-            <article
-                class="product-card product-item"
-                data-category="diagnostic homecare"
-                data-search="glucometer blood glucose sugar testing glucose meter diabetes">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85"
-                        alt="Blood Glucose Meter"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    03
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Diagnostic
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Blood Glucose Meter
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Portable glucose monitoring device for
-                        routine blood sugar testing requirements.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Diagnostic Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Diagnostic
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Blood Glucose Meter"
-                            data-description="Portable blood glucose monitoring device intended for routine healthcare and home monitoring requirements."
-                            data-type="Diagnostic Device"
-                            data-category="Diagnostic"
-                            data-image="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Blood Glucose Meter">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 04 -->
-
-            <article
-                class="product-card product-item"
-                data-category="diagnostic homecare"
-                data-search="digital thermometer temperature medical thermometer fever">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85"
-                        alt="Digital Thermometer"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    04
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Diagnostic
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Digital Thermometer
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Compact temperature measurement device
-                        for routine healthcare requirements.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Diagnostic Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Homecare
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Digital Thermometer"
-                            data-description="Digital temperature measurement device suitable for homecare, pharmacy and general healthcare requirements."
-                            data-type="Diagnostic Device"
-                            data-category="Homecare"
-                            data-image="https://images.unsplash.com/photo-1588776814546-daab30f310ce?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Digital Thermometer">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 05 -->
-
-            <article
-                class="product-card product-item"
-                data-category="respiratory homecare"
-                data-search="nebulizer machine respiratory nebulisation inhalation device">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85"
-                        alt="Nebulizer Machine"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    05
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Respiratory
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Nebulizer Machine
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Respiratory care device used for
-                        nebulization and inhalation therapy requirements.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Respiratory Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Respiratory
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Nebulizer Machine"
-                            data-description="Respiratory care device designed for nebulization and inhalation therapy supply requirements."
-                            data-type="Respiratory Device"
-                            data-category="Respiratory"
-                            data-image="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Nebulizer Machine">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-            <!-- PRODUCT 06 -->
-
-            <article
-                class="product-card product-item"
-                data-category="monitoring"
-                data-search="stethoscope medical diagnostic auscultation doctor healthcare">
-
-                <div class="product-image">
-
-                    <img
-                        src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
-                        alt="Medical Stethoscope"
-                        loading="lazy">
-
-                </div>
-
-                <span class="product-number">
-                    06
-                </span>
-
-                <div class="product-content">
-
-                    <span class="product-badge">
-                        Monitoring
-                    </span>
-
-                    <h3
-                        class="text-xl font-extrabold text-gray-800 mt-4">
-
-                        Medical Stethoscope
-
-                    </h3>
-
-                    <p class="product-meta mt-3">
-
-                        Essential clinical diagnostic device
-                        for routine examination and auscultation.
-
-                    </p>
-
-                    <div class="mt-4 space-y-1">
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Type:</strong> Clinical Device
-                        </p>
-
-                        <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Monitoring
-                        </p>
-
-                    </div>
-
-                    <div class="product-actions">
-
-                        <button
-                            class="view-btn"
-                            data-product="Medical Stethoscope"
-                            data-description="Essential clinical diagnostic device used for routine examination and auscultation requirements."
-                            data-type="Clinical Device"
-                            data-category="Monitoring"
-                            data-image="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85">
-
-                            <i class="fas fa-eye"></i>
-                            View Details
-
-                        </button>
-
-                        <button
-                            class="enquiry-product-btn"
-                            data-add="Medical Stethoscope">
-
-                            <i class="fas fa-plus"></i>
-                            Enquiry
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-
-        <!-- NO RESULTS -->
-
-        <div id="noResults"
-            class="empty-state text-center py-16">
+        <section
+            class="hero-bg min-h-[620px] lg:min-h-[680px] flex items-center pt-20">
 
             <div
-                class="w-16 h-16 mx-auto rounded-2xl bg-mist text-brand flex items-center justify-center text-xl">
+                class="max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8">
 
-                <i class="fas fa-magnifying-glass"></i>
-
-            </div>
-
-            <h3 class="font-extrabold text-xl text-gray-800 mt-5">
-                No devices found
-            </h3>
-
-            <p class="text-gray-500 mt-2">
-                Try another device name or select another category.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
+                <div class="max-w-3xl text-white">
 
 
-<!-- CTA -->
+                    <!-- BREADCRUMB -->
 
-<section class="py-20 md:py-24 bg-[#f8fcfe]">
+                    <div
+                        class="flex items-center gap-2 text-sm text-white/70 mb-7">
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <a
+                            href="services.html"
+                            class="hover:text-white transition">
 
-        <div
-            class="bg-brand rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
+                            Services
 
-            <div
-                class="mx-auto w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-xl">
-
-                <i class="fas fa-microscope"></i>
-
-            </div>
-
-            <h2
-                class="text-2xl md:text-4xl font-extrabold text-white mt-5">
-
-                Need A Specific Medical Device?
-
-            </h2>
-
-            <p class="text-sky-100/90 mt-3 text-sm md:text-base max-w-2xl mx-auto">
-
-                Share your required device, quantity or preferred
-                healthcare equipment with our team.
-
-            </p>
-
-            <div
-                class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
-
-                <a href="contact.html"
-                    class="inline-flex items-center gap-2 bg-white text-brand px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-mist transition">
-
-                    <i class="fas fa-paper-plane"></i>
-
-                    Send An Enquiry
-
-                </a>
-
-                <a href="categories.html"
-                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
-
-                    <i class="fas fa-layer-group"></i>
-
-                    Other Categories
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+                        </a>
 
 
-<!-- PRODUCT MODAL -->
+                        <i
+                            class="fa-solid fa-chevron-right text-[9px]">
+                        </i>
 
-<div id="productModal"
-    class="modal-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalProductName">
 
-    <div class="modal-box">
+                        <span class="text-white">
 
-        <div class="p-5 md:p-7">
+                            Reliable Delivery Support
 
-            <div class="flex items-center justify-between gap-4 mb-5">
+                        </span>
 
-                <div>
+                    </div>
+
+
+
+                    <!-- BADGE -->
 
                     <span
-                        class="text-brand text-xs font-extrabold uppercase tracking-wider">
+                        class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm font-medium mb-6">
 
-                        Device Details
+                        <i
+                            class="fa-solid fa-truck-fast text-accent">
+                        </i>
+
+                        Reliable Delivery Support
 
                     </span>
 
-                    <h2
-                        id="modalProductName"
-                        class="text-2xl md:text-3xl font-extrabold text-gray-800 mt-1">
 
-                        Medical Device
+
+                    <h2
+                        class="font-poppins text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+
+                        Reliable Healthcare Delivery,
+                        <span class="text-accent">
+                            From Order to Destination
+                        </span>
 
                     </h2>
 
-                </div>
 
-                <button id="modalClose"
-                    type="button"
-                    aria-label="Close product details"
-                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-mist hover:text-brand transition">
 
-                    <i class="fas fa-xmark"></i>
+                    <p
+                        class="mt-6 text-lg text-white/80 leading-8 max-w-2xl">
 
-                </button>
+                        BePharma helps coordinate the fulfilment and delivery
+                        of pharmaceutical, medical and healthcare product
+                        requirements through an organized supply process.
 
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-7 items-start">
-
-                <img id="modalImage"
-                    class="modal-image"
-                    src=""
-                    alt="">
-
-                <div>
-
-                    <p id="modalDescription"
-                        class="text-gray-500 leading-7">
                     </p>
 
-                    <div class="mt-6 space-y-3">
 
-                        <div
-                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-mist/50">
 
-                            <span class="text-sm text-gray-500">
-                                Device Type
-                            </span>
+                    <!-- BUTTONS -->
 
-                            <strong id="modalType"
-                                class="text-sm text-gray-800">
-                            </strong>
+                    <div class="flex flex-wrap gap-4 mt-9">
 
-                        </div>
+                        <a
+                            href="contact.html"
+                            class="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-white text-brand font-semibold hover:bg-mist transition shadow-lg">
 
-                        <div
-                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-mist/50">
+                            Discuss Your Requirement
 
-                            <span class="text-sm text-gray-500">
-                                Category
-                            </span>
+                            <i class="fa-solid fa-arrow-right"></i>
 
-                            <strong id="modalCategory"
-                                class="text-sm text-gray-800">
-                            </strong>
+                        </a>
 
-                        </div>
+
+                        <a
+                            href="#delivery-features"
+                            class="inline-flex items-center gap-3 px-7 py-4 rounded-full border border-white/40 text-white font-semibold hover:bg-white/10 transition">
+
+                            Explore Delivery Support
+
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+
+                        </a>
 
                     </div>
 
-                    <button id="modalEnquiryBtn"
-                        type="button"
-                        class="primary-btn w-full py-3.5 rounded-xl font-bold mt-6">
-
-                        <i class="fas fa-clipboard-list"></i>
-
-                        Add To Enquiry
-
-                    </button>
-
                 </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</div>
+        </section>
 
 
-<!-- TOAST -->
 
-<div id="toast"
-    class="toast">
+        <!-- =====================================================
+             OVERVIEW
+        ====================================================== -->
 
-    <i class="fas fa-circle-check text-accent"></i>
+        <section class="py-20 lg:py-28">
 
-    <span id="toastText">
-        Product added to enquiry.
-    </span>
+            <div
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-</div>
+                <div
+                    class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+
+
+                    <!-- IMAGE -->
+
+                    <div
+                        class="relative">
+
+                        <div
+                            class="rounded-3xl overflow-hidden shadow-2xl">
+
+                            <img
+                                src="https://images.unsplash.com/photo-1616401784845-180882ba9ba8?auto=format&fit=crop&w=1200&q=85" 
+                                alt="Healthcare product delivery" 
+                                class="w-full h-[480px] object-cover"> 
+ 
+                        </div> 
+ 
+ 
+                        <div 
+                            class="absolute -bottom-7 right-5 sm:right-7 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4"> 
+ 
+                            <div 
+                                class="w-12 h-12 rounded-xl bg-brand text-white flex items-center justify-center"> 
+ 
+                                <i class="fa-solid fa-location-dot"></i> 
+ 
+                            </div> 
+ 
+ 
+                            <div> 
+ 
+                                <p class="text-xs text-slate-500"> 
+ 
+                                    Supply Support 
+ 
+                                </p> 
+ 
+ 
+                                <p 
+                                    class="font-poppins font-bold text-slate-900"> 
+ 
+                                    Coordinated Delivery 
+ 
+                                </p> 
+ 
+                            </div> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- TEXT --> 
+ 
+                    <div> 
+ 
+                        <span 
+                            class="text-sm font-semibold uppercase tracking-[2px] text-brand"> 
+ 
+                            Delivery & Fulfilment 
+ 
+                        </span> 
+ 
+ 
+                        <h2 
+                            class="font-poppins text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mt-4 leading-tight"> 
+ 
+                            Keeping healthcare supply 
+                            <span class="text-brand"> 
+                                organized and moving 
+                            </span> 
+ 
+                        </h2> 
+ 
+ 
+                        <p 
+                            class="mt-6 text-slate-600 leading-8"> 
+ 
+                            Reliable delivery is an important part of an 
+                            efficient healthcare supply chain. BePharma 
+                            coordinates order fulfilment and delivery 
+                            requirements with a focus on clear communication 
+                            and organized execution. 
+ 
+                        </p> 
+ 
+ 
+                        <p 
+                            class="mt-4 text-slate-600 leading-8"> 
+ 
+                            From confirming an order to coordinating its 
+                            dispatch and delivery, our process is designed to 
+                            keep every stage clear for our customers. 
+ 
+                        </p> 
+ 
+ 
+ 
+                        <div 
+                            class="grid sm:grid-cols-2 gap-4 mt-8"> 
+ 
+ 
+                            <div 
+                                class="flex items-start gap-3"> 
+ 
+                                <div 
+                                    class="w-10 h-10 shrink-0 rounded-xl bg-mist flex items-center justify-center text-brand"> 
+ 
+                                    <i class="fa-solid fa-clipboard-check"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Order Coordination 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1"> 
+ 
+                                        Clear handling of confirmed orders. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div 
+                                class="flex items-start gap-3"> 
+ 
+                                <div 
+                                    class="w-10 h-10 shrink-0 rounded-xl bg-mist flex items-center justify-center text-brand"> 
+ 
+                                    <i class="fa-solid fa-route"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Delivery Coordination 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1"> 
+ 
+                                        Organized dispatch and delivery support. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+ 
+        <!-- ===================================================== 
+             DELIVERY FEATURES 
+        ====================================================== --> 
+ 
+        <section 
+            id="delivery-features" 
+            class="py-20 lg:py-24 bg-slate-50"> 
+ 
+            <div 
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8"> 
+ 
+ 
+                <div 
+                    class="max-w-2xl mb-12"> 
+ 
+                    <span 
+                        class="text-sm font-semibold uppercase tracking-[2px] text-brand"> 
+ 
+                        Delivery Support 
+ 
+                    </span> 
+ 
+ 
+                    <h2 
+                        class="font-poppins text-3xl sm:text-4xl font-bold text-slate-900 mt-3"> 
+ 
+                        Built around dependable fulfilment 
+ 
+                    </h2> 
+ 
+ 
+                    <p 
+                        class="text-slate-600 mt-4 leading-7"> 
+ 
+                        Our delivery support focuses on the practical steps 
+                        required to move healthcare products from confirmed 
+                        orders to their intended destination. 
+ 
+                    </p> 
+ 
+                </div> 
+ 
+ 
+ 
+                <div 
+                    class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"> 
+ 
+ 
+                    <!-- CARD 1 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-box"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Order Processing 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            Confirmed product requirements are organized for 
+                            efficient fulfilment and dispatch. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CARD 2 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-boxes-packing"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Dispatch Coordination 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            Products are coordinated for dispatch according to 
+                            the confirmed supply requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CARD 3 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-truck"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Delivery Coordination 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            Delivery arrangements are coordinated based on 
+                            order and destination requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CARD 4 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-location-crosshairs"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Destination Management 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            Delivery details are handled carefully to help 
+                            keep fulfilment organized. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CARD 5 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-comments"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Clear Communication 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            We focus on clear communication throughout the 
+                            order and delivery coordination process. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CARD 6 --> 
+ 
+                    <div 
+                        class="delivery-card bg-white rounded-3xl p-7 border border-slate-100"> 
+ 
+                        <div 
+                            class="w-14 h-14 rounded-2xl bg-mist text-brand flex items-center justify-center text-xl"> 
+ 
+                            <i class="fa-solid fa-headset"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-xl font-semibold mt-6"> 
+ 
+                            Support When Needed 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-slate-500 mt-3 leading-7 text-sm"> 
+ 
+                            Our team remains available to help coordinate 
+                            delivery-related requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+ 
+        <!-- ===================================================== 
+             KEY BENEFITS 
+        ====================================================== --> 
+ 
+        <section class="py-20 lg:py-28"> 
+ 
+            <div 
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8"> 
+ 
+                <div 
+                    class="grid lg:grid-cols-2 gap-16 items-center"> 
+ 
+ 
+                    <div> 
+ 
+                        <span 
+                            class="text-sm font-semibold uppercase tracking-[2px] text-brand"> 
+ 
+                            Our Commitment 
+ 
+                        </span> 
+ 
+ 
+                        <h2 
+                            class="font-poppins text-3xl sm:text-4xl font-bold text-slate-900 mt-3 leading-tight"> 
+ 
+                            Delivery support designed for 
+                            <span class="text-brand"> 
+                                healthcare supply 
+                            </span> 
+ 
+                        </h2> 
+ 
+ 
+                        <p 
+                            class="mt-5 text-slate-600 leading-8"> 
+ 
+                            We understand that healthcare businesses depend 
+                            on organized supply processes. That's why our 
+                            delivery support focuses on coordination, 
+                            communication and dependable fulfilment. 
+ 
+                        </p> 
+ 
+ 
+ 
+                        <div class="mt-8 space-y-5"> 
+ 
+ 
+                            <div class="flex gap-4"> 
+ 
+                                <div 
+                                    class="w-11 h-11 shrink-0 rounded-full bg-mist text-brand flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-check"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Organized Fulfilment 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1 leading-6"> 
+ 
+                                        Orders are handled through a clear and 
+                                        structured fulfilment process. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div class="flex gap-4"> 
+ 
+                                <div 
+                                    class="w-11 h-11 shrink-0 rounded-full bg-mist text-brand flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-check"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Clear Delivery Information 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1 leading-6"> 
+ 
+                                        Delivery requirements and destination 
+                                        details are clearly coordinated. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div class="flex gap-4"> 
+ 
+                                <div 
+                                    class="w-11 h-11 shrink-0 rounded-full bg-mist text-brand flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-check"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Responsive Support 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1 leading-6"> 
+ 
+                                        Our team can assist with delivery and 
+                                        fulfilment-related communication. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div class="flex gap-4"> 
+ 
+                                <div 
+                                    class="w-11 h-11 shrink-0 rounded-full bg-mist text-brand flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-check"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <div> 
+ 
+                                    <h3 
+                                        class="font-semibold text-slate-900"> 
+ 
+                                        Flexible Requirements 
+ 
+                                    </h3> 
+ 
+ 
+                                    <p 
+                                        class="text-sm text-slate-500 mt-1 leading-6"> 
+ 
+                                        Support for different order sizes and 
+                                        destination requirements. 
+ 
+                                    </p> 
+ 
+                                </div> 
+ 
+                            </div> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- DARK CARD --> 
+ 
+                    <div 
+                        class="bg-navy rounded-[2rem] p-8 sm:p-10 text-white"> 
+ 
+                        <div 
+                            class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-2xl"> 
+ 
+                            <i class="fa-solid fa-truck-fast"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-poppins text-2xl font-bold mt-7"> 
+ 
+                            From Order to Destination 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-white/75 mt-4 leading-7"> 
+ 
+                            Our delivery support connects the key stages of 
+                            the supply process so customers have a clear path 
+                            from enquiry and confirmation through dispatch 
+                            and delivery. 
+ 
+                        </p> 
+ 
+ 
+ 
+                        <div class="mt-8 space-y-4"> 
+ 
+ 
+                            <div 
+                                class="flex items-center gap-3"> 
+ 
+                                <div 
+                                    class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-clipboard-check text-accent text-sm"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <span class="text-sm"> 
+ 
+                                    Requirement confirmation 
+ 
+                                </span> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div 
+                                class="flex items-center gap-3"> 
+ 
+                                <div 
+                                    class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-box text-accent text-sm"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <span class="text-sm"> 
+ 
+                                    Order fulfilment 
+ 
+                                </span> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div 
+                                class="flex items-center gap-3"> 
+ 
+                                <div 
+                                    class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-truck text-accent text-sm"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <span class="text-sm"> 
+ 
+                                    Dispatch & delivery coordination 
+ 
+                                </span> 
+ 
+                            </div> 
+ 
+ 
+ 
+                            <div 
+                                class="flex items-center gap-3"> 
+ 
+                                <div 
+                                    class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"> 
+ 
+                                    <i class="fa-solid fa-circle-check text-accent text-sm"></i> 
+ 
+                                </div> 
+ 
+ 
+                                <span class="text-sm"> 
+ 
+                                    Delivery completion 
+ 
+                                </span> 
+ 
+                            </div> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+ 
+        <!-- ===================================================== 
+             PROCESS 
+        ====================================================== --> 
+ 
+        <section 
+            class="py-20 lg:py-28 bg-slate-50"> 
+ 
+            <div 
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8"> 
+ 
+ 
+                <div 
+                    class="text-center max-w-2xl mx-auto"> 
+ 
+                    <span 
+                        class="text-sm font-semibold uppercase tracking-[2px] text-brand"> 
+ 
+                        Delivery Process 
+ 
+                    </span> 
+ 
+ 
+                    <h2 
+                        class="font-poppins text-3xl sm:text-4xl font-bold text-slate-900 mt-3"> 
+ 
+                        A simple and organized workflow 
+ 
+                    </h2> 
+ 
+ 
+                    <p 
+                        class="text-slate-600 mt-4 leading-7"> 
+ 
+                        Every delivery starts with a clear requirement and 
+                        moves through a structured fulfilment process. 
+ 
+                    </p> 
+ 
+                </div> 
+ 
+ 
+ 
+                <div 
+                    class="max-w-3xl mx-auto mt-14"> 
+ 
+ 
+                    <!-- STEP 1 --> 
+ 
+                    <div 
+                        class="process-item flex gap-6 pb-12"> 
+ 
+                        <div class="process-line"></div> 
+ 
+ 
+                        <div 
+                            class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-brand text-white flex items-center justify-center font-bold shadow-lg"> 
+ 
+                            01 
+ 
+                        </div> 
+ 
+ 
+                        <div> 
+ 
+                            <h3 
+                                class="font-poppins text-xl font-semibold"> 
+ 
+                                Requirement Received 
+ 
+                            </h3> 
+ 
+ 
+                            <p 
+                                class="text-slate-500 mt-2 leading-7"> 
+ 
+                                We receive the customer's product, 
+                                quantity and delivery requirements. 
+ 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- STEP 2 --> 
+ 
+                    <div 
+                        class="process-item flex gap-6 pb-12"> 
+ 
+                        <div class="process-line"></div> 
+ 
+ 
+                        <div 
+                            class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-brand text-white flex items-center justify-center font-bold shadow-lg"> 
+ 
+                            02 
+ 
+                        </div> 
+ 
+ 
+                        <div> 
+ 
+                            <h3 
+                                class="font-poppins text-xl font-semibold"> 
+ 
+                                Order Confirmation 
+ 
+                            </h3> 
+ 
+ 
+                            <p 
+                                class="text-slate-500 mt-2 leading-7"> 
+ 
+                                Product details and fulfilment requirements 
+                                are reviewed and confirmed. 
+ 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- STEP 3 --> 
+ 
+                    <div 
+                        class="process-item flex gap-6 pb-12"> 
+ 
+                        <div class="process-line"></div> 
+ 
+ 
+                        <div 
+                            class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-brand text-white flex items-center justify-center font-bold shadow-lg"> 
+ 
+                            03 
+ 
+                        </div> 
+ 
+ 
+                        <div> 
+ 
+                            <h3 
+                                class="font-poppins text-xl font-semibold"> 
+ 
+                                Dispatch Coordination 
+ 
+                            </h3> 
+ 
+ 
+                            <p 
+                                class="text-slate-500 mt-2 leading-7"> 
+ 
+                                Confirmed products move through the fulfilment 
+                                and dispatch stage. 
+ 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- STEP 4 --> 
+ 
+                    <div 
+                        class="process-item flex gap-6"> 
+ 
+                        <div 
+                            class="relative z-10 w-[52px] h-[52px] shrink-0 rounded-full bg-brand text-white flex items-center justify-center font-bold shadow-lg"> 
+ 
+                            04 
+ 
+                        </div> 
+ 
+ 
+                        <div> 
+ 
+                            <h3 
+                                class="font-poppins text-xl font-semibold"> 
+ 
+                                Delivery Completion 
+ 
+                            </h3> 
+ 
+ 
+                            <p 
+                                class="text-slate-500 mt-2 leading-7"> 
+ 
+                                The order proceeds to its intended destination 
+                                through coordinated delivery support. 
+ 
+                            </p> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+ 
+        <!-- ===================================================== 
+             WHO WE SERVE 
+        ====================================================== --> 
+ 
+        <section class="py-20 lg:py-28"> 
+ 
+            <div 
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8"> 
+ 
+ 
+                <div class="max-w-2xl mb-12"> 
+ 
+                    <span 
+                        class="text-sm font-semibold uppercase tracking-[2px] text-brand"> 
+ 
+                        Who We Support 
+ 
+                    </span> 
+ 
+ 
+                    <h2 
+                        class="font-poppins text-3xl sm:text-4xl font-bold text-slate-900 mt-3"> 
+ 
+                        Delivery support across healthcare 
+ 
+                    </h2> 
+ 
+ 
+                    <p 
+                        class="text-slate-600 mt-4 leading-7"> 
+ 
+                        Our fulfilment and delivery coordination can support 
+                        a range of healthcare businesses and institutions. 
+ 
+                    </p> 
+ 
+                </div> 
+ 
+ 
+ 
+                <div 
+                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"> 
+ 
+ 
+                    <!-- PHARMACIES --> 
+ 
+                    <div 
+                        class="delivery-card rounded-3xl border border-slate-200 p-7"> 
+ 
+                        <div 
+                            class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center"> 
+ 
+                            <i class="fa-solid fa-prescription-bottle-medical"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-semibold text-lg mt-5"> 
+ 
+                            Pharmacies 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-sm text-slate-500 mt-2 leading-6"> 
+ 
+                            Support for routine pharmaceutical and healthcare 
+                            product deliveries. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- HOSPITALS --> 
+ 
+                    <div 
+                        class="delivery-card rounded-3xl border border-slate-200 p-7"> 
+ 
+                        <div 
+                            class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center"> 
+ 
+                            <i class="fa-solid fa-hospital"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-semibold text-lg mt-5"> 
+ 
+                            Hospitals 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-sm text-slate-500 mt-2 leading-6"> 
+ 
+                            Coordinated delivery support for hospital supply 
+                            requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- CLINICS --> 
+ 
+                    <div 
+                        class="delivery-card rounded-3xl border border-slate-200 p-7"> 
+ 
+                        <div 
+                            class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center"> 
+ 
+                            <i class="fa-solid fa-house-medical"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-semibold text-lg mt-5"> 
+ 
+                            Clinics 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-sm text-slate-500 mt-2 leading-6"> 
+ 
+                            Delivery coordination for clinic and healthcare 
+                            centre requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+ 
+ 
+                    <!-- INSTITUTIONS --> 
+ 
+                    <div 
+                        class="delivery-card rounded-3xl border border-slate-200 p-7"> 
+ 
+                        <div 
+                            class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center"> 
+ 
+                            <i class="fa-solid fa-building-circle-check"></i> 
+ 
+                        </div> 
+ 
+ 
+                        <h3 
+                            class="font-semibold text-lg mt-5"> 
+ 
+                            Institutions 
+ 
+                        </h3> 
+ 
+ 
+                        <p 
+                            class="text-sm text-slate-500 mt-2 leading-6"> 
+ 
+                            Organized delivery support for institutional 
+                            healthcare requirements. 
+ 
+                        </p> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+ 
+ 
+        <!-- ===================================================== 
+             CTA 
+        ====================================================== --> 
+ 
+        <section class="pb-20 lg:pb-28"> 
+ 
+            <div 
+                class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8"> 
+ 
+                <div 
+                    class="relative overflow-hidden rounded-[2rem] bg-navy px-7 py-12 sm:px-12 lg:px-16 lg:py-14"> 
+ 
+ 
+                    <div 
+                        class="absolute -right-20 -top-20 w-72 h-72 rounded-full bg-white/5"> 
+                    </div> 
+ 
+ 
+                    <div 
+                        class="absolute -left-20 -bottom-32 w-80 h-80 rounded-full bg-white/5"> 
+                    </div> 
+ 
+ 
+                    <div 
+                        class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8"> 
+ 
+ 
+                        <div class="max-w-2xl text-white"> 
+ 
+                            <span 
+                                class="text-sm font-semibold uppercase tracking-[2px] text-accent"> 
+ 
+                                Delivery Enquiry 
+ 
+                            </span> 
+ 
+ 
+                            <h2 
+                                class="font-poppins text-3xl sm:text-4xl font-bold mt-3"> 
+ 
+                                Need reliable healthcare delivery support? 
+ 
+                            </h2> 
+ 
+ 
+                            <p 
+                                class="text-white/70 mt-4 leading-7"> 
+ 
+                                Share your product and delivery requirements 
+                                with our team and discuss a suitable supply 
+                                solution. 
+ 
+                            </p> 
+ 
+                        </div> 
+ 
+ 
+                        <div class="shrink-0"> 
+ 
+                            <a 
+                                href="contact.html" 
+                                class="inline-flex items-center gap-3 px-7 py-4 rounded-full bg-white text-brand font-semibold hover:bg-mist transition shadow-lg"> 
+ 
+                                Contact Our Team 
+ 
+                                <i class="fa-solid fa-arrow-right"></i> 
+ 
+                            </a> 
+ 
+                        </div> 
+ 
+                    </div> 
+ 
+                </div> 
+ 
+            </div> 
+ 
+        </section> 
+ 
+    </main>
 
 <!-- ========================================================= -->
 <!--                         FOOTER                            -->
@@ -3073,55 +3105,91 @@
 
           <li class="dropdown">
 
-            <a href="services.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-concierge-bell text-lg text-accent"></i>
+
+            <a
+              href="services.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-service-line
+                       text-lg text-accent"
+              ></i>
+
               Services
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- SERVICES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="pharmaceutical-distribution.html">
-                <i class="fas fa-truck-medical"></i>
-                <span>Pharmaceutical Distribution</span>
+            <!-- SERVICES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="wholesale-distribution.html"
+              >
+
+                <i class="ri-truck-line"></i>
+
+                <span>
+                  Wholesale Distribution
+                </span>
+
               </a>
 
-              <a href="wholesale-supply.html">
-                <i class="fas fa-boxes-stacked"></i>
-                <span>Wholesale Supply</span>
+
+              <a
+                href="retail-supply.html"
+              >
+
+                <i class="ri-store-2-line"></i>
+
+                <span>
+                  Retail Supply
+                </span>
+
               </a>
 
-              <a href="institutional-supply.html">
-                <i class="fas fa-hospital"></i>
-                <span>Institutional Supply</span>
+
+              <a
+                href="hospital-supply.html"
+              >
+
+                <i class="ri-hospital-line"></i>
+
+                <span>
+                  Hospital Supply
+                </span>
+
               </a>
 
-              <a href="surgical-medical-supplies.html">
-                <i class="fas fa-kit-medical"></i>
-                <span>Surgical &amp; Medical Supply</span>
+
+              <a
+                href="third-party-manufacturing.html"
+              >
+
+                <i class="ri-building-4-line"></i>
+
+                <span>
+                  Third Party Manufacturing
+                </span>
+
               </a>
 
-              <a href="otc-healthcare-products.html">
-                <i class="fas fa-heart-circle-check"></i>
-                <span>OTC &amp; Healthcare Supply</span>
-              </a>
-
-              <a href="delivery-support.html">
-                <i class="fas fa-truck-fast"></i>
-                <span>Delivery Support</span>
-              </a>
-
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="services.html" class="flex items-center justify-between">
-                  <span>View All Services</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
 
             </div>
 
           </li>
+
 
 
           <!-- ================================================= -->
@@ -3130,51 +3198,125 @@
 
           <li class="dropdown">
 
-            <a href="categories.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-list-check text-lg text-accent"></i>
+
+            <a
+              href="categories.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-list-check-2
+                       text-lg text-accent"
+              ></i>
+
               Categories
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- CATEGORIES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="tablets-capsules.html">
-                <i class="fas fa-tablets"></i>
-                <span>Tablets &amp; Capsules</span>
+            <!-- CATEGORIES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="medicines.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Medicines
+                </span>
+
               </a>
 
-              <a href="injections.html">
-                <i class="fas fa-syringe"></i>
-                <span>Injections</span>
+
+              <a
+                href="injections.html"
+              >
+
+                <i class="ri-syringe-line"></i>
+
+                <span>
+                  Injections
+                </span>
+
               </a>
 
-              <a href="medical-devices.html">
-                <i class="fas fa-microscope"></i>
-                <span>Medical Devices</span>
+
+              <a
+                href="medical-devices.html"
+              >
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <span>
+                  Medical Devices
+                </span>
+
               </a>
 
-              <a href="surgical-items.html">
-                <i class="fas fa-scissors"></i>
-                <span>Surgical Items</span>
+
+              <a
+                href="medical-equipment.html"
+              >
+
+                <i class="ri-first-aid-kit-line"></i>
+
+                <span>
+                  Medical Equipment
+                </span>
+
               </a>
 
-              <a href="OTC.html">
-                <i class="fas fa-bottle-droplet"></i>
-                <span>OTC Products</span>
+
+              <a
+                href="tablets.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Tablets
+                </span>
+
               </a>
 
-              <a href="healthcare-essentials.html">
-                <i class="fas fa-notes-medical"></i>
-                <span>Healthcare Essentials</span>
+
+              <a
+                href="capsules.html"
+              >
+
+                <i class="ri-capsule-fill"></i>
+
+                <span>
+                  Capsules
+                </span>
+
               </a>
 
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="categories.html" class="flex items-center justify-between">
-                  <span>View All Categories</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
+
+              <a
+                href="syrup.html"
+              >
+
+                <i class="ri-medicine-bottle-line"></i>
+
+                <span>
+                  Syrup
+                </span>
+
+              </a>
+
 
             </div>
 
@@ -3751,7 +3893,7 @@
         Crafted by
 
         <a
-          href="https://devlabs.org.in/"
+          href="index.html"
           class="font-semibold
                  text-white
                  hover:underline"
@@ -4007,526 +4149,6 @@ document.addEventListener("DOMContentLoaded", function () {
             behavior: "smooth"
         });
     });
-
-    const contactForm = document.getElementById("contactForm");
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-            alert("Thank you for your enquiry. B.E. Pharma Traders & Co. will get in touch with you.");
-            this.reset();
-        });
-    }
-</script>
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================================
-       ENQUIRY SYSTEM
-    ========================================= */
-
-    function getEnquiryList() {
-
-        try {
-
-            const data =
-                JSON.parse(
-                    localStorage.getItem(
-                        "bepharmaEnquiry"
-                    )
-                );
-
-            return Array.isArray(data)
-                ? data
-                : [];
-
-        } catch (error) {
-
-            return [];
-
-        }
-
-    }
-
-
-    function saveEnquiryList(list) {
-
-        localStorage.setItem(
-            "bepharmaEnquiry",
-            JSON.stringify(list)
-        );
-
-        window.dispatchEvent(
-            new Event("bepharmaEnquiryUpdated")
-        );
-
-    }
-
-
-    function addToEnquiry(productName) {
-
-        const list =
-            getEnquiryList();
-
-
-        const exists =
-            list.some(function (item) {
-
-                if (typeof item === "string") {
-
-                    return item === productName;
-
-                }
-
-                return item &&
-                    item.name === productName;
-
-            });
-
-
-        if (exists) {
-
-            showToast(
-                "This product is already in your enquiry list."
-            );
-
-            return;
-
-        }
-
-
-        list.push({
-            name: productName,
-            category: "Medical Devices",
-            addedAt: new Date().toISOString()
-        });
-
-
-        saveEnquiryList(list);
-
-
-        showToast(
-            productName + " added to enquiry."
-        );
-
-    }
-
-
-    document
-        .querySelectorAll("[data-add]")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    addToEnquiry(
-                        button.dataset.add
-                    );
-
-                }
-            );
-
-        });
-
-
-    /* =========================================
-       PRODUCT FILTER
-    ========================================= */
-
-    const cards =
-        [
-            ...document.querySelectorAll(
-                ".product-item"
-            )
-        ];
-
-
-    const buttons =
-        [
-            ...document.querySelectorAll(
-                ".filter-btn"
-            )
-        ];
-
-
-    const search =
-        document.getElementById(
-            "productSearch"
-        );
-
-
-    const noResults =
-        document.getElementById(
-            "noResults"
-        );
-
-
-    let activeFilter =
-        "all";
-
-
-    function filterProducts() {
-
-        const query =
-            (search?.value || "")
-                .trim()
-                .toLowerCase();
-
-
-        let visible =
-            0;
-
-
-        cards.forEach(function (card) {
-
-            const categories =
-                (
-                    card.dataset.category ||
-                    ""
-                ).toLowerCase();
-
-
-            const searchableText =
-                (
-                    card.dataset.search ||
-                    card.textContent ||
-                    ""
-                ).toLowerCase();
-
-
-            const filterMatch =
-                activeFilter === "all" ||
-                categories.includes(
-                    activeFilter
-                );
-
-
-            const searchMatch =
-                !query ||
-                searchableText.includes(
-                    query
-                );
-
-
-            const show =
-                filterMatch &&
-                searchMatch;
-
-
-            card.style.display =
-                show
-                    ? "flex"
-                    : "none";
-
-
-            if (show) {
-                visible++;
-            }
-
-        });
-
-
-        if (noResults) {
-
-            noResults.classList.toggle(
-                "show",
-                visible === 0
-            );
-
-        }
-
-    }
-
-
-    buttons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            function () {
-
-                buttons.forEach(
-                    function (item) {
-
-                        item.classList.remove(
-                            "active"
-                        );
-
-                    }
-                );
-
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                activeFilter =
-                    button.dataset.filter;
-
-
-                filterProducts();
-
-            }
-        );
-
-    });
-
-
-    search?.addEventListener(
-        "input",
-        filterProducts
-    );
-
-
-    /* =========================================
-       PRODUCT MODAL
-    ========================================= */
-
-    const modal =
-        document.getElementById(
-            "productModal"
-        );
-
-
-    const modalClose =
-        document.getElementById(
-            "modalClose"
-        );
-
-
-    const modalName =
-        document.getElementById(
-            "modalProductName"
-        );
-
-
-    const modalDescription =
-        document.getElementById(
-            "modalDescription"
-        );
-
-
-    const modalImage =
-        document.getElementById(
-            "modalImage"
-        );
-
-
-    const modalType =
-        document.getElementById(
-            "modalType"
-        );
-
-
-    const modalCategory =
-        document.getElementById(
-            "modalCategory"
-        );
-
-
-    const modalEnquiry =
-        document.getElementById(
-            "modalEnquiryBtn"
-        );
-
-
-    let currentProduct =
-        "";
-
-
-    function openModal(button) {
-
-        currentProduct =
-            button.dataset.product || "";
-
-
-        if (modalName) {
-
-            modalName.textContent =
-                currentProduct;
-
-        }
-
-
-        if (modalDescription) {
-
-            modalDescription.textContent =
-                button.dataset.description || "";
-
-        }
-
-
-        if (modalType) {
-
-            modalType.textContent =
-                button.dataset.type || "";
-
-        }
-
-
-        if (modalCategory) {
-
-            modalCategory.textContent =
-                button.dataset.category || "";
-
-        }
-
-
-        if (modalImage) {
-
-            modalImage.src =
-                button.dataset.image || "";
-
-            modalImage.alt =
-                currentProduct;
-
-        }
-
-
-        modal?.classList.add("show");
-
-        document.body.style.overflow =
-            "hidden";
-
-    }
-
-
-    function closeModal() {
-
-        modal?.classList.remove("show");
-
-        document.body.style.overflow =
-            "";
-
-    }
-
-
-    document
-        .querySelectorAll(".view-btn")
-        .forEach(function (button) {
-
-            button.addEventListener(
-                "click",
-                function () {
-
-                    openModal(button);
-
-                }
-            );
-
-        });
-
-
-    modalClose?.addEventListener(
-        "click",
-        closeModal
-    );
-
-
-    modal?.addEventListener(
-        "click",
-        function (event) {
-
-            if (event.target === modal) {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-    modalEnquiry?.addEventListener(
-        "click",
-        function () {
-
-            if (currentProduct) {
-
-                addToEnquiry(
-                    currentProduct
-                );
-
-            }
-
-        }
-    );
-
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (event.key === "Escape") {
-
-                closeModal();
-
-            }
-
-        }
-    );
-
-
-    /* =========================================
-       TOAST
-    ========================================= */
-
-    const toast =
-        document.getElementById(
-            "toast"
-        );
-
-
-    const toastText =
-        document.getElementById(
-            "toastText"
-        );
-
-
-    let toastTimer;
-
-
-    function showToast(message) {
-
-        if (!toast) return;
-
-
-        if (toastText) {
-
-            toastText.textContent =
-                message;
-
-        }
-
-
-        toast.classList.add(
-            "show"
-        );
-
-
-        clearTimeout(
-            toastTimer
-        );
-
-
-        toastTimer =
-            setTimeout(
-                function () {
-
-                    toast.classList.remove(
-                        "show"
-                    );
-
-                },
-                2500
-            );
-
-    }
-
-});
-
 </script>
 
 </body>

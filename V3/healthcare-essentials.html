@@ -6,9 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Tablets & Capsules | BePharma Traders</title>
-
-      <!-- Font Awesome -->
+     <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -29,17 +27,22 @@
     rel="stylesheet"
   >
 
-
+    <title>Healthcare Essentials | BePharma Traders</title>
+    
 
     <meta name="description"
-        content="Explore BePharma Traders tablets and capsules including pharmaceutical medicines, antibiotics, vitamins, pain relief, gastro medicines and other solid dosage products.">
+        content="Explore BePharma Traders healthcare essentials including personal care products, hygiene supplies, wellness products, first aid essentials and everyday healthcare supplies.">
 
     <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
+        /* Same Tailwind palette used by index.html navbar + footer */
         tailwind.config = {
+            corePlugins: {
+                container: false
+            },
             theme: {
                 extend: {
                     colors: {
@@ -58,12 +61,13 @@
             }
         }
     </script>
+
     <style>
 
         :root {
             --primary: #0b7b97;
             --primary-dark: #08627a;
-            --primary-light: #eaf6fb;
+            --primary-light: #dff5fa;
             --dark: #0b2545;
         }
 
@@ -78,153 +82,8 @@
         body {
             margin: 0;
             background: #fff;
-            color: #1f2937;
+            color: #183244;
             font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .main-navbar {
-            background: rgba(255, 255, 255, .97);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .top-bar {
-            background: var(--primary);
-        }
-
-        .nav-link {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            color: #374151;
-            font-size: 15px;
-            font-weight: 600;
-            transition: .25s;
-            padding: 27px 0;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--primary);
-        }
-
-        .nav-link.active:after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 10px;
-            height: 2px;
-            border-radius: 10px;
-            background: var(--primary);
-        }
-
-        .dropdown {
-            position: relative;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% - 2px);
-            left: 50%;
-            transform: translateX(-50%) translateY(12px);
-            width: 285px;
-            background: #fff;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            padding: 10px;
-            box-shadow: 0 20px 50px rgba(15, 23, 42, .14);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: .25s;
-            z-index: 100;
-        }
-
-        .dropdown:hover .dropdown-menu,
-        .dropdown:focus-within .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            width: 100%;
-            padding: 12px 13px;
-            border-radius: 10px;
-            color: #374151;
-            font-size: 14px;
-            font-weight: 500;
-            transition: .2s;
-        }
-
-        .dropdown-item:hover {
-            background: var(--primary-light);
-            color: var(--primary);
-        }
-
-        .dropdown-icon {
-            width: 34px;
-            height: 34px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 9px;
-            background: var(--primary-light);
-            color: var(--primary);
-        }
-
-        .dropdown-footer {
-            margin-top: 5px;
-            border-top: 1px solid #f0f0f0;
-            padding-top: 8px;
-        }
-
-        .dropdown-footer a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 11px 13px;
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 700;
-            border-radius: 9px;
-        }
-
-        .dropdown-footer a:hover {
-            background: var(--primary-light);
-        }
-
-        .enquiry-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--primary);
-            font-size: 15px;
-            font-weight: 700;
-            white-space: nowrap;
-            padding: 10px 0;
-        }
-
-        .enquiry-count {
-            min-width: 21px;
-            height: 21px;
-            padding: 0 6px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 999px;
-            background: var(--primary);
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
         }
 
         .primary-btn {
@@ -242,6 +101,8 @@
             transform: translateY(-2px);
         }
 
+        /* HERO */
+
         .hero {
             position: relative;
             min-height: 455px;
@@ -255,7 +116,7 @@
                     rgba(8, 36, 48, .80),
                     rgba(8, 36, 48, .42)
                 ),
-                url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=2000&q=85")
+                url("https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=2000&q=85")
                 center / cover no-repeat;
         }
 
@@ -306,9 +167,11 @@
             color: #4fc3dc;
         }
 
+        /* SEARCH */
+
         .filter-wrap {
-            background: #f7fbfa;
-            border: 1px solid #e5efed;
+            background: #eef9fc;
+            border: 1px solid #cfe9f3;
             border-radius: 20px;
         }
 
@@ -317,14 +180,14 @@
             align-items: center;
             gap: 10px;
             background: #fff;
-            border: 1px solid #dce8e6;
+            border: 1px solid #d9e8ed;
             border-radius: 13px;
             padding: 0 15px;
         }
 
         .search-box:focus-within {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(11,123,151,.08);
+            box-shadow: 0 0 0 4px rgba(16,117,109,.08);
         }
 
         .search-box input {
@@ -332,14 +195,14 @@
             height: 48px;
             border: 0;
             outline: 0;
-            color: #374151;
+            color: #183244;
             background: transparent;
         }
 
         .filter-btn {
-            border: 1px solid #d8e5e3;
+            border: 1px solid #d9e8ed;
             background: #fff;
-            color: #4b5563;
+            color: #637681;
             border-radius: 11px;
             padding: 10px 15px;
             font-size: 13px;
@@ -354,10 +217,12 @@
             border-color: var(--primary);
         }
 
+        /* PRODUCT CARD */
+
         .product-card {
             position: relative;
             background: #fff;
-            border: 1px solid #e4eceb;
+            border: 1px solid #d9e8ed;
             border-radius: 22px;
             overflow: hidden;
             transition: .3s;
@@ -368,13 +233,13 @@
 
         .product-card:hover {
             transform: translateY(-7px);
-            border-color: #cfe5e2;
+            border-color: #cfe9f3;
             box-shadow: 0 22px 50px rgba(15,23,42,.10);
         }
 
         .product-image {
             height: 220px;
-            background: #f5faf9;
+            background: #eef9fc;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -412,7 +277,7 @@
         }
 
         .product-meta {
-            color: #6b7280;
+            color: #637681;
             font-size: 13px;
             line-height: 1.7;
         }
@@ -439,8 +304,8 @@
         }
 
         .view-btn {
-            border: 1px solid #d8e5e3;
-            color: #374151;
+            border: 1px solid #d9e8ed;
+            color: #183244;
             background: #fff;
         }
 
@@ -477,6 +342,8 @@
             font-weight: 900;
             box-shadow: 0 5px 15px rgba(0,0,0,.08);
         }
+
+        /* MODAL */
 
         .modal-overlay {
             position: fixed;
@@ -520,6 +387,8 @@
             border-radius: 18px;
         }
 
+        /* TOAST */
+
         .toast {
             position: fixed;
             right: 20px;
@@ -544,42 +413,7 @@
             opacity: 1;
         }
 
-        .mobile-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 13px 20px;
-            color: #374151;
-            font-size: 15px;
-            font-weight: 600;
-            border-radius: 10px;
-        }
-
-        .mobile-link:hover,
-        .mobile-link.active {
-            background: var(--primary-light);
-            color: var(--primary);
-        }
-
-        .mobile-submenu {
-            display: none;
-            padding: 0 20px 8px 36px;
-        }
-
-        .mobile-submenu.open {
-            display: block;
-        }
-
-        .mobile-submenu a {
-            display: block;
-            padding: 9px 0;
-            color: #6b7280;
-            font-size: 14px;
-        }
-
-        .mobile-submenu a:hover {
-            color: var(--primary);
-        }
+        /* EMPTY */
 
         .empty-state {
             display: none;
@@ -600,7 +434,7 @@
                         rgba(8,36,48,.76),
                         rgba(8,36,48,.95)
                     ),
-                    url("https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1600&q=85")
+                    url("https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=1600&q=85")
                     center / cover no-repeat;
             }
 
@@ -631,7 +465,7 @@
 
         button:focus-visible,
         a:focus-visible {
-            outline: 3px solid rgba(11,123,151,.3);
+            outline: 3px solid rgba(16,117,109,.3);
             outline-offset: 3px;
         }
 
@@ -641,6 +475,8 @@
             box-shadow: none;
         }
 
+
+        
          /* ================================================= */
     /* FOOTER LINKS */
     /* ================================================= */
@@ -774,7 +610,7 @@
 
       padding: 11px 16px;
 
-      color: #ccfbf1;
+      color: #d6eef6;
 
       font-size: 14px;
 
@@ -872,62 +708,6 @@
 
     }
 
-
-    /* =========================================================
-       FOOTER DROPDOWN FIX
-       ========================================================= */
-
-    #site-footer .dropdown {
-        position: relative;
-    }
-
-    #site-footer .dropdown-menu {
-        position: static;
-        width: 100%;
-        min-width: 0;
-        margin-top: 0;
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-        transform: none;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    #site-footer .dropdown.active .dropdown-menu {
-        max-height: 500px;
-        margin-top: 10px;
-        padding: 8px 0;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-
-    #site-footer .dropdown-menu a {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-        padding: 11px 16px;
-        color: #d9f3fa;
-        text-decoration: none;
-    }
-
-    #site-footer .dropdown-menu a:hover {
-        background: rgba(255,255,255,.08);
-        color: #fff;
-    }
-
-    #site-footer .dropdown-arrow {
-        transition: transform .3s ease;
-    }
-
-    #site-footer .dropdown.active .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-
     </style>
 
 </head>
@@ -936,7 +716,7 @@
 
 
 
-<!-- =====================================================
+    <!-- =====================================================
                         NAVBAR
 ====================================================== -->
 
@@ -1982,7 +1762,6 @@
 </nav>
 
 
-
 <!-- HERO -->
 
 <section class="hero">
@@ -2007,54 +1786,49 @@
                 <i class="fas fa-chevron-right text-[9px]"></i>
 
                 <span>
-                    Tablets & Capsules
+                    Healthcare Essentials
                 </span>
 
             </div>
 
-
             <span class="eyebrow">
 
-                <i class="fas fa-tablets"></i>
+                <i class="fas fa-notes-medical"></i>
 
-                Pharmaceutical Category
+                Everyday Healthcare
 
             </span>
-
 
             <h1
                 class="font-extrabold leading-tight tracking-tight text-4xl sm:text-5xl lg:text-6xl mt-5">
 
-                Tablets &
+                Healthcare
 
-                <span class="block text-[#66d8ce]">
-                    Capsules
+                <span class="block text-[#4fc3dc]">
+                    Essentials
                 </span>
 
             </h1>
 
-
             <p
                 class="text-white/85 leading-7 text-base sm:text-lg max-w-2xl mt-6">
 
-                Explore our range of pharmaceutical tablets and capsules
-                including antibiotics, vitamins, analgesics, gastro medicines
-                and other solid dosage formulations.
+                Explore everyday healthcare essentials including personal care,
+                hygiene products, wellness supplies, first aid items and
+                essential healthcare products for homes and institutions.
 
             </p>
-
 
             <div class="flex flex-wrap gap-3 mt-7">
 
                 <a href="#products"
                     class="primary-btn bg-white !text-[#0b7b97] hover:!bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm">
 
-                    <i class="fas fa-tablets"></i>
+                    <i class="fas fa-notes-medical"></i>
 
                     Browse Products
 
                 </a>
-
 
                 <a href="contact.html"
                     class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
@@ -2076,76 +1850,73 @@
 
 <!-- CATEGORY INFO -->
 
-<section class="py-12 md:py-16 bg-[#f7fbfa]">
+<section class="py-12 md:py-16 bg-[#eef9fc]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
 
-                    <i class="fas fa-tablets"></i>
+                    <i class="fas fa-hand-sparkles"></i>
 
                 </div>
 
                 <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Tablets
+                    Hygiene
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Solid dosage formulations
+                    Everyday hygiene supplies
                 </p>
 
             </div>
 
-
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
 
-                    <i class="fas fa-capsules"></i>
+                    <i class="fas fa-kit-medical"></i>
 
                 </div>
 
                 <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Capsules
+                    First Aid
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Pharmaceutical capsule products
+                    Basic first aid essentials
                 </p>
 
             </div>
 
-
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
 
-                    <i class="fas fa-shield-virus"></i>
+                    <i class="fas fa-pump-soap"></i>
 
                 </div>
 
                 <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
-                    Antibiotics
+                    Personal Care
                 </p>
 
                 <p class="text-sm text-gray-500 mt-1">
-                    Antibiotic tablet & capsule products
+                    Personal wellness products
                 </p>
 
             </div>
 
-
-            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
+            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
 
                     <i class="fas fa-boxes-stacked"></i>
 
@@ -2180,7 +1951,7 @@
             <span
                 class="text-[#0b7b97] text-xs font-extrabold uppercase tracking-[.12em]">
 
-                Tablets & Capsules
+                Healthcare Essentials
 
             </span>
 
@@ -2190,20 +1961,22 @@
                 Explore Our
 
                 <span class="text-[#0b7b97]">
-                    Tablet & Capsule Products
+                    Healthcare Essentials
                 </span>
 
             </h2>
 
             <p class="text-gray-500 leading-7 mt-5">
 
-                Search and explore pharmaceutical tablets and capsules
-                available in this category.
+                Search and explore everyday healthcare products
+                available in the Healthcare Essentials category.
 
             </p>
 
         </div>
 
+
+        <!-- FILTER -->
 
         <div class="filter-wrap p-4 md:p-5 mt-10">
 
@@ -2216,11 +1989,10 @@
                     <input
                         id="productSearch"
                         type="search"
-                        placeholder="Search tablets, capsules, antibiotics..."
-                        aria-label="Search tablets and capsules">
+                        placeholder="Search hygiene, first aid, personal care..."
+                        aria-label="Search healthcare essentials">
 
                 </div>
-
 
                 <div class="flex flex-wrap gap-2">
 
@@ -2234,49 +2006,41 @@
 
                     <button
                         class="filter-btn"
-                        data-filter="tablet">
+                        data-filter="hygiene">
 
-                        Tablets
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="capsule">
-
-                        Capsules
+                        Hygiene
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="antibiotic">
+                        data-filter="firstaid">
 
-                        Antibiotic
-
-                    </button>
-
-                    <button
-                        class="filter-btn"
-                        data-filter="vitamin">
-
-                        Vitamins
+                        First Aid
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="analgesic">
+                        data-filter="personal">
 
-                        Analgesic
+                        Personal Care
 
                     </button>
 
                     <button
                         class="filter-btn"
-                        data-filter="gastro">
+                        data-filter="wellness">
 
-                        Gastro
+                        Wellness
+
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="homecare">
+
+                        Home Care
 
                     </button>
 
@@ -2287,6 +2051,8 @@
         </div>
 
 
+        <!-- PRODUCT GRID -->
+
         <div id="productGrid"
             class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
 
@@ -2295,14 +2061,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet antibiotic"
-                data-search="amoxicillin tablet antibiotic tablets medicine">
+                data-category="hygiene"
+                data-search="hand sanitizer sanitizer hygiene hand hygiene healthcare">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85"
-                        alt="Amoxicillin Tablets"
+                        src="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=900&q=85"
+                        alt="Hand Sanitizer"
                         loading="lazy">
 
                 </div>
@@ -2314,31 +2080,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Hygiene
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Amoxicillin Tablets
+                        Hand Sanitizer
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Pharmaceutical antibiotic tablet formulation
-                        supplied for healthcare and institutional requirements.
+                        Everyday hand hygiene product suitable
+                        for personal and institutional use.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Hygiene
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Antibiotic
+                            <strong>Category:</strong> Hand Care
                         </p>
 
                     </div>
@@ -2346,12 +2112,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Amoxicillin Tablets"
-                            data-description="Pharmaceutical antibiotic tablet formulation supplied for healthcare, pharmaceutical and institutional procurement requirements."
-                            data-type="Tablet"
-                            data-category="Antibiotic"
-                            data-image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Hand Sanitizer"
+                            data-description="Hand hygiene product intended for everyday personal, workplace and institutional healthcare requirements."
+                            data-type="Hygiene Product"
+                            data-category="Hand Care"
+                            data-image="https://images.unsplash.com/photo-1584483766114-2cea6facdf57?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2359,8 +2125,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Amoxicillin Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Hand Sanitizer">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2378,14 +2144,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="capsule antibiotic"
-                data-search="azithromycin capsule antibiotic capsule medicine">
+                data-category="hygiene"
+                data-search="antiseptic liquid disinfectant hygiene antiseptic">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=900&q=85"
-                        alt="Azithromycin Capsules"
+                        src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=900&q=85"
+                        alt="Antiseptic Liquid"
                         loading="lazy">
 
                 </div>
@@ -2397,31 +2163,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Capsule
+                        Hygiene
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Azithromycin Capsules
+                        Antiseptic Liquid
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Pharmaceutical antibiotic capsule formulation
-                        for healthcare and pharmaceutical supply requirements.
+                        Antiseptic healthcare supply for
+                        hygiene and general care requirements.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Capsule
+                            <strong>Type:</strong> Liquid
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Antibiotic
+                            <strong>Category:</strong> Hygiene
                         </p>
 
                     </div>
@@ -2429,12 +2195,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Azithromycin Capsules"
-                            data-description="Pharmaceutical antibiotic capsule formulation supplied for healthcare and institutional procurement requirements."
-                            data-type="Capsule"
-                            data-category="Antibiotic"
-                            data-image="https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Antiseptic Liquid"
+                            data-description="Antiseptic liquid product supplied for general hygiene and healthcare requirements."
+                            data-type="Liquid"
+                            data-category="Hygiene"
+                            data-image="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2442,8 +2208,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Azithromycin Capsules">
+                            class="enquiry-product-btn"
+                            data-add="Antiseptic Liquid">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2461,14 +2227,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet vitamin"
-                data-search="vitamin c tablet vitamin tablet supplement">
+                data-category="firstaid"
+                data-search="first aid kit medical kit emergency kit healthcare">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1729700985359-a7ffadd963f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bWVkaWNhbCUyMHN1cHBsaWVzJTIwdml0YW1pbiUyMGMlMjB0YWJsZXRzfGVufDB8fDB8fHww"
-                        alt="Vitamin C Tablets"
+                        src="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=900&q=85"
+                        alt="First Aid Kit"
                         loading="lazy">
 
                 </div>
@@ -2480,31 +2246,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        First Aid
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Vitamin C Tablets
+                        First Aid Kit
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Vitamin-based tablet formulation supplied for
-                        pharmaceutical and healthcare requirements.
+                        Convenient healthcare kit containing
+                        basic first aid essentials.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> First Aid
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Vitamins
+                            <strong>Category:</strong> Emergency Care
                         </p>
 
                     </div>
@@ -2512,12 +2278,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Vitamin C Tablets"
-                            data-description="Vitamin-based tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Vitamins"
-                            data-image="https://images.unsplash.com/photo-1550572017-9e7d7d4a8c7e?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="First Aid Kit"
+                            data-description="Basic first aid kit designed for homes, offices, institutions and general healthcare preparedness."
+                            data-type="First Aid Kit"
+                            data-category="Emergency Care"
+                            data-image="https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2525,8 +2291,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Vitamin C Tablets">
+                            class="enquiry-product-btn"
+                            data-add="First Aid Kit">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2544,14 +2310,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet analgesic"
-                data-search="paracetamol tablet analgesic pain relief tablet medicine">
+                data-category="firstaid"
+                data-search="adhesive bandage band aid wound care first aid">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=85"
-                        alt="Paracetamol Tablets"
+                        src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85"
+                        alt="Adhesive Bandages"
                         loading="lazy">
 
                 </div>
@@ -2563,31 +2329,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        First Aid
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Paracetamol Tablets
+                        Adhesive Bandages
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Analgesic and antipyretic tablet formulation
-                        supplied for pharmaceutical procurement.
+                        Everyday wound-care and first-aid
+                        essentials for general healthcare use.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Wound Care
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Analgesic
+                            <strong>Category:</strong> First Aid
                         </p>
 
                     </div>
@@ -2595,12 +2361,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Paracetamol Tablets"
-                            data-description="Analgesic and antipyretic tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Analgesic"
-                            data-image="https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Adhesive Bandages"
+                            data-description="Adhesive bandages intended for basic wound-care and first-aid supply requirements."
+                            data-type="Wound Care"
+                            data-category="First Aid"
+                            data-image="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2608,8 +2374,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Paracetamol Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Adhesive Bandages">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2627,14 +2393,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="capsule gastro"
-                data-search="omeprazole capsule gastro gastric acidity capsule">
+                data-category="personal"
+                data-search="moisturizing cream skin care personal care lotion">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
-                        alt="Omeprazole Capsules"
+                        src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=85"
+                        alt="Moisturizing Cream"
                         loading="lazy">
 
                 </div>
@@ -2646,31 +2412,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Capsule
+                        Personal Care
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Omeprazole Capsules
+                        Moisturizing Cream
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Gastrointestinal capsule formulation supplied
-                        for pharmaceutical healthcare requirements.
+                        Personal care product intended for
+                        everyday skin-care requirements.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Capsule
+                            <strong>Type:</strong> Skin Care
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Gastro
+                            <strong>Category:</strong> Personal Care
                         </p>
 
                     </div>
@@ -2678,12 +2444,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Omeprazole Capsules"
-                            data-description="Gastrointestinal capsule formulation supplied for pharmaceutical, healthcare and institutional procurement requirements."
-                            data-type="Capsule"
-                            data-category="Gastro"
-                            data-image="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Moisturizing Cream"
+                            data-description="Everyday personal care product for general skin-care and moisturizing requirements."
+                            data-type="Skin Care"
+                            data-category="Personal Care"
+                            data-image="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2691,8 +2457,8 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Omeprazole Capsules">
+                            class="enquiry-product-btn"
+                            data-add="Moisturizing Cream">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2710,14 +2476,14 @@
 
             <article
                 class="product-card product-item"
-                data-category="tablet vitamin"
-                data-search="multivitamin tablets vitamin mineral tablet healthcare">
+                data-category="wellness"
+                data-search="digital thermometer temperature thermometer wellness healthcare">
 
                 <div class="product-image">
 
                     <img
-                        src="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=85"
-                        alt="Multivitamin Tablets"
+                        src="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=900&q=85"
+                        alt="Digital Thermometer"
                         loading="lazy">
 
                 </div>
@@ -2729,31 +2495,31 @@
                 <div class="product-content">
 
                     <span class="product-badge">
-                        Tablet
+                        Wellness
                     </span>
 
                     <h3
                         class="text-xl font-extrabold text-gray-800 mt-4">
 
-                        Multivitamin Tablets
+                        Digital Thermometer
 
                     </h3>
 
                     <p class="product-meta mt-3">
 
-                        Multivitamin and mineral tablet formulation
-                        supplied for healthcare and pharmaceutical needs.
+                        Everyday healthcare monitoring
+                        accessory for temperature measurement.
 
                     </p>
 
                     <div class="mt-4 space-y-1">
 
                         <p class="text-xs text-gray-500">
-                            <strong>Dosage:</strong> Tablet
+                            <strong>Type:</strong> Monitoring
                         </p>
 
                         <p class="text-xs text-gray-500">
-                            <strong>Category:</strong> Vitamins
+                            <strong>Category:</strong> Wellness
                         </p>
 
                     </div>
@@ -2761,12 +2527,12 @@
                     <div class="product-actions">
 
                         <button
-                            class="view-btn" type="button"
-                            data-product="Multivitamin Tablets"
-                            data-description="Multivitamin and mineral tablet formulation supplied for pharmaceutical and healthcare procurement requirements."
-                            data-type="Tablet"
-                            data-category="Vitamins"
-                            data-image="https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=900&q=85">
+                            class="view-btn"
+                            data-product="Digital Thermometer"
+                            data-description="Healthcare monitoring accessory intended for routine temperature measurement."
+                            data-type="Monitoring Device"
+                            data-category="Wellness"
+                            data-image="https://images.unsplash.com/photo-1584036561566-baf8f5f1b144?auto=format&fit=crop&w=900&q=85">
 
                             <i class="fas fa-eye"></i>
                             View Details
@@ -2774,8 +2540,257 @@
                         </button>
 
                         <button
-                            class="enquiry-product-btn" type="button"
-                            data-add="Multivitamin Tablets">
+                            class="enquiry-product-btn"
+                            data-add="Digital Thermometer">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 07 -->
+
+            <article
+                class="product-card product-item"
+                data-category="homecare"
+                data-search="disposable gloves gloves home care hygiene healthcare">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=900&q=85"
+                        alt="Disposable Gloves"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    07
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Home Care
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Disposable Gloves
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Disposable protective gloves for
+                        routine hygiene and healthcare tasks.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Protective Supply
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Home Care
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Disposable Gloves"
+                            data-description="Disposable protective gloves suitable for routine hygiene, home care and healthcare supply requirements."
+                            data-type="Protective Supply"
+                            data-category="Home Care"
+                            data-image="https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Disposable Gloves">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 08 -->
+
+            <article
+                class="product-card product-item"
+                data-category="hygiene"
+                data-search="face mask surgical mask hygiene protective mask healthcare">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=900&q=85"
+                        alt="Protective Face Masks"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    08
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Hygiene
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Protective Face Masks
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Everyday protective masks for
+                        hygiene and healthcare environments.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Protective
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Hygiene
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Protective Face Masks"
+                            data-description="Protective face masks intended for general hygiene and healthcare environment requirements."
+                            data-type="Protective Supply"
+                            data-category="Hygiene"
+                            data-image="https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Protective Face Masks">
+
+                            <i class="fas fa-plus"></i>
+                            Enquiry
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCT 09 -->
+
+            <article
+                class="product-card product-item"
+                data-category="personal"
+                data-search="body wash personal care cleansing body care">
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85"
+                        alt="Personal Care Cleansing Products"
+                        loading="lazy">
+
+                </div>
+
+                <span class="product-number">
+                    09
+                </span>
+
+                <div class="product-content">
+
+                    <span class="product-badge">
+                        Personal Care
+                    </span>
+
+                    <h3
+                        class="text-xl font-extrabold text-gray-800 mt-4">
+
+                        Personal Care Cleansers
+
+                    </h3>
+
+                    <p class="product-meta mt-3">
+
+                        Everyday cleansing and personal
+                        hygiene products for routine care.
+
+                    </p>
+
+                    <div class="mt-4 space-y-1">
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Type:</strong> Personal Care
+                        </p>
+
+                        <p class="text-xs text-gray-500">
+                            <strong>Category:</strong> Skin & Body Care
+                        </p>
+
+                    </div>
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            data-product="Personal Care Cleansers"
+                            data-description="Personal care cleansing products intended for routine hygiene and everyday body-care requirements."
+                            data-type="Personal Care"
+                            data-category="Skin & Body Care"
+                            data-image="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=900&q=85">
+
+                            <i class="fas fa-eye"></i>
+                            View Details
+
+                        </button>
+
+                        <button
+                            class="enquiry-product-btn"
+                            data-add="Personal Care Cleansers">
 
                             <i class="fas fa-plus"></i>
                             Enquiry
@@ -2791,11 +2806,13 @@
         </div>
 
 
+        <!-- NO RESULTS -->
+
         <div id="noResults"
             class="empty-state text-center py-16">
 
             <div
-                class="w-16 h-16 mx-auto rounded-2xl bg-[#eaf6fb] text-[#0b7b97] flex items-center justify-center text-xl">
+                class="w-16 h-16 mx-auto rounded-2xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center text-xl">
 
                 <i class="fas fa-magnifying-glass"></i>
 
@@ -2806,7 +2823,7 @@
             </h3>
 
             <p class="text-gray-500 mt-2">
-                Try another tablet or capsule name or select another category.
+                Try another product name or select another category.
             </p>
 
         </div>
@@ -2818,7 +2835,7 @@
 
 <!-- CTA -->
 
-<section class="py-20 md:py-24 bg-[#f7fbfa]">
+<section class="py-20 md:py-24 bg-[#eef9fc]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -2832,22 +2849,19 @@
 
             </div>
 
-
             <h2
                 class="text-2xl md:text-4xl font-extrabold text-white mt-5">
 
-                Need A Specific Tablet Or Capsule?
+                Need A Specific Healthcare Product?
 
             </h2>
 
-
             <p class="text-teal-50 mt-3 text-sm md:text-base max-w-2xl mx-auto">
 
-                Share your tablet or capsule requirement, quantity or
-                preferred pharmaceutical formulation with our team.
+                Share your healthcare product requirement, quantity or
+                preferred item with our team.
 
             </p>
-
 
             <div
                 class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
@@ -2860,7 +2874,6 @@
                     Send An Enquiry
 
                 </a>
-
 
                 <a href="categories.html"
                     class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
@@ -2878,6 +2891,129 @@
     </div>
 
 </section>
+
+
+<!-- PRODUCT MODAL -->
+
+<div id="productModal"
+    class="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalProductName">
+
+    <div class="modal-box">
+
+        <div class="p-5 md:p-7">
+
+            <div class="flex items-center justify-between gap-4 mb-5">
+
+                <div>
+
+                    <span
+                        class="text-[#0b7b97] text-xs font-extrabold uppercase tracking-wider">
+
+                        Product Details
+
+                    </span>
+
+                    <h2
+                        id="modalProductName"
+                        class="text-2xl md:text-3xl font-extrabold text-gray-800 mt-1">
+
+                        Product
+
+                    </h2>
+
+                </div>
+
+                <button id="modalClose"
+                    type="button"
+                    aria-label="Close product details"
+                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-[#dff5fa] hover:text-[#0b7b97] transition">
+
+                    <i class="fas fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-7 items-start">
+
+                <img id="modalImage"
+                    class="modal-image"
+                    src=""
+                    alt="">
+
+                <div>
+
+                    <p id="modalDescription"
+                        class="text-gray-500 leading-7">
+                    </p>
+
+                    <div class="mt-6 space-y-3">
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#eef9fc]">
+
+                            <span class="text-sm text-gray-500">
+                                Product Type
+                            </span>
+
+                            <strong id="modalType"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#eef9fc]">
+
+                            <span class="text-sm text-gray-500">
+                                Category
+                            </span>
+
+                            <strong id="modalCategory"
+                                class="text-sm text-gray-800">
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                    <button id="modalEnquiryBtn"
+                        type="button"
+                        class="primary-btn w-full py-3.5 rounded-xl font-bold mt-6">
+
+                        <i class="fas fa-clipboard-list"></i>
+
+                        Add To Enquiry
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast"
+    class="toast">
+
+    <i class="fas fa-circle-check text-[#4fc3dc]"></i>
+
+    <span id="toastText">
+        Product added to enquiry.
+    </span>
+
+</div>
+
 
     <!-- ========================================================= -->
 <!--                         FOOTER                            -->
@@ -3070,7 +3206,7 @@
                     </li>
 
 
-                    <!-- SERVICES - SAME AS NAVBAR SERVICES -->
+                    <!-- SERVICES -->
 
                     <li class="dropdown">
 
@@ -3082,45 +3218,25 @@
 
                         <div class="dropdown-menu">
 
-                            <a href="pharmaceutical-distribution.html">
-                                <i class="fas fa-truck-medical"></i>
-                                <span>Pharmaceutical Distribution</span>
+                            <a href="wholesale-distribution.html">
+                                <i class="ri-truck-line"></i>
+                                <span>Wholesale Distribution</span>
                             </a>
 
-                            <a href="wholesale-supply.html">
-                                <i class="fas fa-boxes-stacked"></i>
-                                <span>Wholesale Supply</span>
+                            <a href="retail-supply.html">
+                                <i class="ri-store-2-line"></i>
+                                <span>Retail Supply</span>
                             </a>
 
-                            <a href="institutional-supply.html">
-                                <i class="fas fa-hospital"></i>
-                                <span>Institutional Supply</span>
+                            <a href="hospital-supply.html">
+                                <i class="ri-hospital-line"></i>
+                                <span>Hospital Supply</span>
                             </a>
 
-                            <a href="surgical-medical-supplies.html">
-                                <i class="fas fa-kit-medical"></i>
-                                <span>Surgical &amp; Medical Supply</span>
+                            <a href="third-party-manufacturing.html">
+                                <i class="ri-building-4-line"></i>
+                                <span>Third Party Manufacturing</span>
                             </a>
-
-                            <a href="otc-healthcare-products.html">
-                                <i class="fas fa-heart-circle-check"></i>
-                                <span>OTC &amp; Healthcare Supply</span>
-                            </a>
-
-                            <a href="delivery-support.html">
-                                <i class="fas fa-truck-fast"></i>
-                                <span>Delivery Support</span>
-                            </a>
-
-                            <div class="mt-1 border-t border-white/10 pt-1">
-
-                                <a href="services.html"
-                                   class="text-accent font-semibold">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span>View All Services</span>
-                                </a>
-
-                            </div>
 
                         </div>
 
@@ -3139,44 +3255,40 @@
 
                         <div class="dropdown-menu">
 
-                            <a href="tablets-capsules.html">
-                                <i class="fas fa-tablets"></i>
-                                <span>Tablets &amp; Capsules</span>
+                            <a href="medicines.html">
+                                <i class="ri-capsule-line"></i>
+                                <span>Medicines</span>
                             </a>
 
                             <a href="injections.html">
-                                <i class="fas fa-syringe"></i>
+                                <i class="ri-syringe-line"></i>
                                 <span>Injections</span>
                             </a>
 
                             <a href="medical-devices.html">
-                                <i class="fas fa-microscope"></i>
+                                <i class="ri-heart-pulse-line"></i>
                                 <span>Medical Devices</span>
                             </a>
 
-                            <a href="surgical-items.html">
-                                <i class="fas fa-scissors"></i>
-                                <span>Surgical Items</span>
+                            <a href="medical-equipment.html">
+                                <i class="ri-first-aid-kit-line"></i>
+                                <span>Medical Equipment</span>
                             </a>
 
-                            <a href="OTC.html">
-                                <i class="fas fa-bottle-droplet"></i>
-                                <span>OTC Products</span>
+                            <a href="tablets.html">
+                                <i class="ri-capsule-line"></i>
+                                <span>Tablets</span>
                             </a>
 
-                            <a href="healthcare-essentials.html">
-                                <i class="fas fa-notes-medical"></i>
-                                <span>Healthcare Essentials</span>
+                            <a href="capsules.html">
+                                <i class="ri-capsule-fill"></i>
+                                <span>Capsules</span>
                             </a>
 
-                            <div class="mt-1 border-t border-white/10 pt-1">
-
-                                <a href="categories.html" class="text-accent font-semibold">
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                    <span>View All Categories</span>
-                                </a>
-
-                            </div>
+                            <a href="syrup.html">
+                                <i class="ri-medicine-bottle-line"></i>
+                                <span>Syrup</span>
+                            </a>
 
                         </div>
 
@@ -3445,7 +3557,7 @@
 
             <p>
                 Crafted by
-                <a href="https://devlabs.org.in/" class="font-semibold text-white hover:underline">
+                <a href="index.html" class="font-semibold text-white hover:underline">
                     Dev Labs
                 </a>
             </p>
@@ -3464,248 +3576,108 @@
  
 <script> 
  
+document.addEventListener("DOMContentLoaded", function () { 
+ 
+ 
+  /* Get all dropdowns */ 
+ 
+  const dropdowns = 
+    document.querySelectorAll(".dropdown"); 
+ 
+ 
+  dropdowns.forEach(function (dropdown) { 
+ 
+ 
+    /* Get main dropdown link */ 
+ 
+    const button = 
+      dropdown.querySelector(":scope > a"); 
+ 
+ 
+    button.addEventListener("click", function (e) { 
+ 
+ 
+      /* 
+        Services/Categories ka main page 
+        click karne ke bajay pehle dropdown open hoga. 
+      */ 
+ 
+      e.preventDefault(); 
+ 
+ 
+      /* 
+        Baaki dropdown close karo 
+      */ 
+ 
+      dropdowns.forEach(function (otherDropdown) { 
+ 
+        if (otherDropdown !== dropdown) { 
+ 
+          otherDropdown.classList.remove("active"); 
+ 
+        } 
+ 
+      }); 
+ 
+ 
+      /* 
+        Current dropdown open/close 
+      */ 
+ 
+      dropdown.classList.toggle("active"); 
+ 
+    }); 
+ 
+  }); 
+ 
+ 
+ 
+  /* 
+    Dropdown ke bahar click karne par 
+    dropdown close hoga. 
+  */ 
+ 
+  document.addEventListener("click", function (e) { 
+ 
+ 
+    if (!e.target.closest(".dropdown")) { 
+ 
+ 
+      dropdowns.forEach(function (dropdown) { 
+ 
+        dropdown.classList.remove("active"); 
+ 
+      }); 
+ 
+ 
+    } 
+ 
+  }); 
+ 
+ 
+}); 
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* =====================================================
-                        FOOTER DROPDOWN
-       ===================================================== */
-
-    const footer = document.getElementById("site-footer");
-
-    if (!footer) return;
-
-    const dropdowns = footer.querySelectorAll(".dropdown");
-
-    dropdowns.forEach(function (dropdown) {
-
-        const button = dropdown.querySelector(":scope > a");
-
-        if (!button) return;
-
-        button.addEventListener("click", function (e) {
-
-            e.preventDefault();
-            e.stopPropagation();
-
-            dropdowns.forEach(function (otherDropdown) {
-
-                if (otherDropdown !== dropdown) {
-                    otherDropdown.classList.remove("active");
-                }
-
-            });
-
-            dropdown.classList.toggle("active");
-
-        });
-
-    });
-
-    document.addEventListener("click", function (e) {
-
-        if (!e.target.closest("#site-footer .dropdown")) {
-
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("active");
-            });
-
-        }
-
-    });
-
-    document.addEventListener("keydown", function (e) {
-
-        if (e.key === "Escape") {
-
-            dropdowns.forEach(function (dropdown) {
-                dropdown.classList.remove("active");
-            });
-
-        }
-
-    });
-
-});
-
-
-document.addEventListener("DOMContentLoaded", function () {
-
-
-
-
-    
-
-
-/* =====================================================
-                    MAIN MOBILE MENU
-====================================================== */
-
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-const menuIcon = document.getElementById("menuIcon");
-
-
-if (menuBtn && mobileMenu && menuIcon) {
-
-    menuBtn.addEventListener("click", () => {
-
-        mobileMenu.classList.toggle("hidden");
-
-        const open =
-            !mobileMenu.classList.contains("hidden");
-
-
-        if (open) {
-
-            menuIcon.classList.remove("fa-bars");
-            menuIcon.classList.add("fa-xmark");
-
-        } else {
-
-            menuIcon.classList.remove("fa-xmark");
-            menuIcon.classList.add("fa-bars");
-
-        }
-
-    });
-
-}
-
-
-
-/* =====================================================
-                        PRODUCTS
-====================================================== */
-
-const productBtn = document.getElementById("productBtn");
-const productMenu = document.getElementById("productMenu");
-const productIcon = document.getElementById("productIcon");
-
-
-if (productBtn && productMenu && productIcon) {
-
-    productBtn.addEventListener("click", () => {
-
-        productMenu.classList.toggle("hidden");
-        productIcon.classList.toggle("rotate-180");
-
-    });
-
-}
-
-
-
-/* =====================================================
-                        SERVICES
-====================================================== */
-
-const serviceBtn = document.getElementById("serviceBtn");
-const serviceMenu = document.getElementById("serviceMenu");
-const serviceIcon = document.getElementById("serviceIcon");
-
-
-if (serviceBtn && serviceMenu && serviceIcon) {
-
-    serviceBtn.addEventListener("click", () => {
-
-        serviceMenu.classList.toggle("hidden");
-        serviceIcon.classList.toggle("rotate-180");
-
-    });
-
-}
-
-
-
-/* =====================================================
-                        CATEGORIES
-====================================================== */
-
-const categoryBtn = document.getElementById("categoryBtn");
-const categoryMenu = document.getElementById("categoryMenu");
-const categoryIcon = document.getElementById("categoryIcon");
-
-
-if (categoryBtn && categoryMenu && categoryIcon) {
-
-    categoryBtn.addEventListener("click", () => {
-
-        categoryMenu.classList.toggle("hidden");
-        categoryIcon.classList.toggle("rotate-180");
-
-    });
-
-}
-
-
-
-/* =====================================================
-                    MOBILE SUB LINKS
-====================================================== */
-
-document.querySelectorAll(".mobile-sub-link").forEach(link => {
-
-    link.className = `
-        block
-        px-4
-        py-2.5
-        rounded-lg
-        text-brand
-        hover:bg-teal-50
-        transition
-    `;
-
-});
-
-
-
-/* =====================================================
-                CLOSE MOBILE MENU
-====================================================== */
-
-if (mobileMenu && menuIcon) {
-
-    mobileMenu.querySelectorAll("a").forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mobileMenu.classList.add("hidden");
-
-            menuIcon.classList.remove("fa-xmark");
-            menuIcon.classList.add("fa-bars");
-
-        });
-
-    });
-
-}
-
-
 
     /* =========================================
        ENQUIRY SYSTEM
-       COMMON STORAGE KEY
     ========================================= */
-
-    const ENQUIRY_KEY = "bepharmaEnquiry";
-
 
     function getEnquiryList() {
 
         try {
 
-            const saved =
-                localStorage.getItem(ENQUIRY_KEY);
+            const data =
+                JSON.parse(
+                    localStorage.getItem(
+                        "bepharmaEnquiry"
+                    )
+                );
 
-            if (!saved) {
-                return [];
-            }
-
-            const parsed =
-                JSON.parse(saved);
-
-            return Array.isArray(parsed)
-                ? parsed
+            return Array.isArray(data)
+                ? data
                 : [];
 
         } catch (error) {
@@ -3717,127 +3689,45 @@ if (mobileMenu && menuIcon) {
     }
 
 
-    function normalizeProduct(item) {
-
-        if (typeof item === "string") {
-
-            const name =
-                item.trim();
-
-            return {
-                name: name,
-                productName: name,
-                category: "Tablets & Capsules",
-                source: "tablets-capsules.html",
-                addedAt: ""
-            };
-
-        }
-
-
-        if (
-            item &&
-            typeof item === "object"
-        ) {
-
-            const name =
-                String(
-                    item.name ||
-                    item.productName ||
-                    item.title ||
-                    ""
-                ).trim();
-
-
-            return {
-                ...item,
-                name: name,
-                productName:
-                    item.productName ||
-                    name
-            };
-
-        }
-
-
-        return null;
-
-    }
-
-
-    function cleanEnquiryList(list) {
-
-        const cleaned = [];
-        const names = new Set();
-
-
-        list.forEach(function (item) {
-
-            const product =
-                normalizeProduct(item);
-
-            if (!product) {
-                return;
-            }
-
-
-            const name =
-                String(
-                    product.name || ""
-                ).trim();
-
-
-            if (!name) {
-                return;
-            }
-
-
-            const key =
-                name.toLowerCase();
-
-
-            if (names.has(key)) {
-                return;
-            }
-
-
-            names.add(key);
-
-
-            cleaned.push({
-                ...product,
-                name: name,
-                productName:
-                    product.productName ||
-                    name
-            });
-
-        });
-
-
-        return cleaned;
-
-    }
-
-
     function saveEnquiryList(list) {
 
-        const cleanedList =
-            cleanEnquiryList(list);
+        localStorage.setItem(
+            "bepharmaEnquiry",
+            JSON.stringify(list)
+        );
+
+        window.dispatchEvent(
+            new Event("bepharmaEnquiryUpdated")
+        );
+
+    }
 
 
-        try {
+    function addToEnquiry(productName) {
 
-            localStorage.setItem(
-                ENQUIRY_KEY,
-                JSON.stringify(cleanedList)
-            );
+        const list =
+            getEnquiryList();
 
-        } catch (error) {
 
-            console.error(
-                "Unable to save enquiry list:",
-                error
+        const exists =
+            list.some(function (item) {
+
+                if (typeof item === "string") {
+
+                    return item === productName;
+
+                }
+
+                return item &&
+                    item.name === productName;
+
+            });
+
+
+        if (exists) {
+
+            showToast(
+                "This product is already in your enquiry list."
             );
 
             return;
@@ -3845,123 +3735,10 @@ if (mobileMenu && menuIcon) {
         }
 
 
-        updateEnquiryCount();
-
-
-        window.dispatchEvent(
-            new CustomEvent(
-                "bepharmaEnquiryUpdated",
-                {
-                    detail: cleanedList
-                }
-            )
-        );
-
-    }
-
-
-    function updateEnquiryCount() {
-
-        const list =
-            cleanEnquiryList(
-                getEnquiryList()
-            );
-
-
-        const count =
-            list.length;
-
-
-        const desktopCount =
-            document.getElementById(
-                "enquiryCount"
-            );
-
-
-        const mobileCount =
-            document.getElementById(
-                "mobileEnquiryCount"
-            );
-
-
-        if (desktopCount) {
-
-            desktopCount.textContent =
-                count;
-
-        }
-
-
-        if (mobileCount) {
-
-            mobileCount.textContent =
-                count;
-
-        }
-
-    }
-
-
-    function addToEnquiry(productName) {
-
-        const cleanName =
-            String(
-                productName || ""
-            ).trim();
-
-
-        if (!cleanName) {
-            return false;
-        }
-
-
-        let list =
-            cleanEnquiryList(
-                getEnquiryList()
-            );
-
-
-        const exists =
-            list.some(function (item) {
-
-                return (
-                    String(
-                        item.name || ""
-                    )
-                    .trim()
-                    .toLowerCase() ===
-                    cleanName.toLowerCase()
-                );
-
-            });
-
-
-        if (exists) {
-
-            saveEnquiryList(list);
-
-            showToast(
-                "This product is already in your enquiry list."
-            );
-
-            return false;
-
-        }
-
-
         list.push({
-
-            name: cleanName,
-
-            productName: cleanName,
-
-            category: "Tablets & Capsules",
-
-            source: "tablets-capsules.html",
-
-            addedAt:
-                new Date().toISOString()
-
+            name: productName,
+            category: "Healthcare Essentials",
+            addedAt: new Date().toISOString()
         });
 
 
@@ -3969,19 +3746,11 @@ if (mobileMenu && menuIcon) {
 
 
         showToast(
-            cleanName +
-            " added to enquiry."
+            productName + " added to enquiry."
         );
-
-
-        return true;
 
     }
 
-
-    /* =========================================
-       PRODUCT ENQUIRY BUTTONS
-    ========================================= */
 
     document
         .querySelectorAll("[data-add]")
@@ -3989,18 +3758,10 @@ if (mobileMenu && menuIcon) {
 
             button.addEventListener(
                 "click",
-                function (event) {
-
-                    event.preventDefault();
-                    event.stopPropagation();
-
-
-                    const productName =
-                        button.dataset.add;
-
+                function () {
 
                     addToEnquiry(
-                        productName
+                        button.dataset.add
                     );
 
                 }
@@ -4010,111 +3771,26 @@ if (mobileMenu && menuIcon) {
 
 
     /* =========================================
-       DESKTOP ENQUIRY BUTTON
+       PRODUCT FILTER
     ========================================= */
 
-    const desktopEnquiryBtn =
-        document.getElementById(
-            "desktopEnquiryBtn"
-        );
+    const cards =
+        [
+            ...document.querySelectorAll(
+                ".product-item"
+            )
+        ];
 
 
-    if (desktopEnquiryBtn) {
-
-        desktopEnquiryBtn.addEventListener(
-            "click",
-            function () {
-
-                window.location.href =
-                    "product.html";
-
-            }
-        );
-
-    }
+    const buttons =
+        [
+            ...document.querySelectorAll(
+                ".filter-btn"
+            )
+        ];
 
 
-    /* =========================================
-       MOBILE ENQUIRY BUTTON
-    ========================================= */
-
-    const mobileEnquiryBtn =
-        document.getElementById(
-            "mobileEnquiryBtn"
-        );
-
-
-    if (mobileEnquiryBtn) {
-
-        mobileEnquiryBtn.addEventListener(
-            "click",
-            function () {
-
-                window.location.href =
-                    "product.html";
-
-            }
-        );
-
-    }
-
-
-    /* =========================================
-       INITIAL COUNT
-    ========================================= */
-
-    updateEnquiryCount();
-
-
-    /* =========================================
-       STORAGE SYNC
-    ========================================= */
-
-    window.addEventListener(
-        "storage",
-        function (event) {
-
-            if (
-                event.key === ENQUIRY_KEY
-            ) {
-
-                updateEnquiryCount();
-
-            }
-
-        }
-    );
-
-
-    window.addEventListener(
-        "bepharmaEnquiryUpdated",
-        function () {
-
-            updateEnquiryCount();
-
-        }
-    );
-
-
-    /* =========================================
-       PRODUCT FILTER + SEARCH
-    ========================================= */
-
-    const cards = [
-        ...document.querySelectorAll(
-            ".product-item"
-        )
-    ];
-
-
-    const filterButtons = [
-        ...document.querySelectorAll(
-            ".filter-btn"
-        )
-    ];
-
-
-    const searchInput =
+    const search =
         document.getElementById(
             "productSearch"
         );
@@ -4133,26 +3809,26 @@ if (mobileMenu && menuIcon) {
     function filterProducts() {
 
         const query =
-            String(
-                searchInput?.value || ""
-            )
-            .trim()
-            .toLowerCase();
+            (search?.value || "")
+                .trim()
+                .toLowerCase();
 
 
-        let visibleCount = 0;
+        let visible =
+            0;
 
 
         cards.forEach(function (card) {
 
             const categories =
-                String(
-                    card.dataset.category || ""
+                (
+                    card.dataset.category ||
+                    ""
                 ).toLowerCase();
 
 
             const searchableText =
-                String(
+                (
                     card.dataset.search ||
                     card.textContent ||
                     ""
@@ -4161,29 +3837,31 @@ if (mobileMenu && menuIcon) {
 
             const filterMatch =
                 activeFilter === "all" ||
-                categories
-                    .split(/\s+/)
-                    .includes(activeFilter);
+                categories.includes(
+                    activeFilter
+                );
 
 
             const searchMatch =
                 !query ||
-                searchableText.includes(query);
+                searchableText.includes(
+                    query
+                );
 
 
-            const shouldShow =
+            const show =
                 filterMatch &&
                 searchMatch;
 
 
             card.style.display =
-                shouldShow
+                show
                     ? "flex"
                     : "none";
 
 
-            if (shouldShow) {
-                visibleCount++;
+            if (show) {
+                visible++;
             }
 
         });
@@ -4193,7 +3871,7 @@ if (mobileMenu && menuIcon) {
 
             noResults.classList.toggle(
                 "show",
-                visibleCount === 0
+                visible === 0
             );
 
         }
@@ -4201,13 +3879,13 @@ if (mobileMenu && menuIcon) {
     }
 
 
-    filterButtons.forEach(function (button) {
+    buttons.forEach(function (button) {
 
         button.addEventListener(
             "click",
             function () {
 
-                filterButtons.forEach(
+                buttons.forEach(
                     function (item) {
 
                         item.classList.remove(
@@ -4224,8 +3902,7 @@ if (mobileMenu && menuIcon) {
 
 
                 activeFilter =
-                    button.dataset.filter ||
-                    "all";
+                    button.dataset.filter;
 
 
                 filterProducts();
@@ -4236,14 +3913,10 @@ if (mobileMenu && menuIcon) {
     });
 
 
-    if (searchInput) {
-
-        searchInput.addEventListener(
-            "input",
-            filterProducts
-        );
-
-    }
+    search?.addEventListener(
+        "input",
+        filterProducts
+    );
 
 
     /* =========================================
@@ -4298,7 +3971,8 @@ if (mobileMenu && menuIcon) {
         );
 
 
-    let currentProduct = "";
+    let currentProduct =
+        "";
 
 
     function openModal(button) {
@@ -4318,8 +3992,7 @@ if (mobileMenu && menuIcon) {
         if (modalDescription) {
 
             modalDescription.textContent =
-                button.dataset.description ||
-                "";
+                button.dataset.description || "";
 
         }
 
@@ -4327,8 +4000,7 @@ if (mobileMenu && menuIcon) {
         if (modalType) {
 
             modalType.textContent =
-                button.dataset.type ||
-                "";
+                button.dataset.type || "";
 
         }
 
@@ -4336,8 +4008,7 @@ if (mobileMenu && menuIcon) {
         if (modalCategory) {
 
             modalCategory.textContent =
-                button.dataset.category ||
-                "";
+                button.dataset.category || "";
 
         }
 
@@ -4345,8 +4016,7 @@ if (mobileMenu && menuIcon) {
         if (modalImage) {
 
             modalImage.src =
-                button.dataset.image ||
-                "";
+                button.dataset.image || "";
 
             modalImage.alt =
                 currentProduct;
@@ -4354,14 +4024,7 @@ if (mobileMenu && menuIcon) {
         }
 
 
-        if (modal) {
-
-            modal.classList.add(
-                "show"
-            );
-
-        }
-
+        modal?.classList.add("show");
 
         document.body.style.overflow =
             "hidden";
@@ -4371,19 +4034,10 @@ if (mobileMenu && menuIcon) {
 
     function closeModal() {
 
-        if (modal) {
-
-            modal.classList.remove(
-                "show"
-            );
-
-        }
-
+        modal?.classList.remove("show");
 
         document.body.style.overflow =
             "";
-
-        currentProduct = "";
 
     }
 
@@ -4404,105 +4058,49 @@ if (mobileMenu && menuIcon) {
         });
 
 
-    if (modalClose) {
-
-        modalClose.addEventListener(
-            "click",
-            closeModal
-        );
-
-    }
+    modalClose?.addEventListener(
+        "click",
+        closeModal
+    );
 
 
-    if (modal) {
+    modal?.addEventListener(
+        "click",
+        function (event) {
 
-        modal.addEventListener(
-            "click",
-            function (event) {
+            if (event.target === modal) {
 
-                if (
-                    event.target === modal
-                ) {
-
-                    closeModal();
-
-                }
+                closeModal();
 
             }
-        );
 
-    }
-
-
-    /* =========================================
-       MODAL ENQUIRY
-    ========================================= */
-
-    if (modalEnquiry) {
-
-        modalEnquiry.addEventListener(
-            "click",
-            function (event) {
-
-                event.preventDefault();
+        }
+    );
 
 
-                if (currentProduct) {
+    modalEnquiry?.addEventListener(
+        "click",
+        function () {
 
-                    addToEnquiry(
-                        currentProduct
-                    );
+            if (currentProduct) {
 
-                }
+                addToEnquiry(
+                    currentProduct
+                );
 
             }
-        );
 
-    }
+        }
+    );
 
-
-    /* =========================================
-       ESCAPE KEY
-    ========================================= */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (
-                event.key !== "Escape"
-            ) {
-                return;
-            }
+            if (event.key === "Escape") {
 
-
-            closeModal();
-
-
-            if (
-                mobileMenu &&
-                !mobileMenu.classList.contains(
-                    "hidden"
-                )
-            ) {
-
-                mobileMenu.classList.add(
-                    "hidden"
-                );
-
-
-                menuBtn?.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
-
-
-                if (menuIcon) {
-
-                    menuIcon.className =
-                        "fas fa-bars";
-
-                }
+                closeModal();
 
             }
 
@@ -4526,14 +4124,12 @@ if (mobileMenu && menuIcon) {
         );
 
 
-    let toastTimer = null;
+    let toastTimer;
 
 
     function showToast(message) {
 
-        if (!toast) {
-            return;
-        }
+        if (!toast) return;
 
 
         if (toastText) {
@@ -4568,152 +4164,93 @@ if (mobileMenu && menuIcon) {
 
     }
 
-});
-
-
-/* =========================================================
-   PRODUCT BUTTON SAFETY FIX
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const modal = document.getElementById("productModal");
-    const modalClose = document.getElementById("modalClose");
-    const modalName = document.getElementById("modalProductName");
-    const modalDescription = document.getElementById("modalDescription");
-    const modalImage = document.getElementById("modalImage");
-    const modalType = document.getElementById("modalType");
-    const modalCategory = document.getElementById("modalCategory");
-    const modalEnquiry = document.getElementById("modalEnquiryBtn");
-
-    let selectedProduct = "";
-
-    function openProductModal(button) {
-
-        selectedProduct = button.dataset.product || "";
-
-        if (modalName) modalName.textContent = selectedProduct;
-        if (modalDescription) modalDescription.textContent =
-            button.dataset.description || "";
-        if (modalType) modalType.textContent =
-            button.dataset.type || "";
-        if (modalCategory) modalCategory.textContent =
-            button.dataset.category || "";
-
-        if (modalImage) {
-            modalImage.src = button.dataset.image || "";
-            modalImage.alt = selectedProduct;
-        }
-
-        if (modal) {
-            modal.classList.add("show");
-            document.body.style.overflow = "hidden";
-        }
-
-    }
-
-    function closeProductModal() {
-
-        if (modal) modal.classList.remove("show");
-        document.body.style.overflow = "";
-        selectedProduct = "";
-
-    }
-
-    document.querySelectorAll(".view-btn").forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            openProductModal(button);
-
-        });
-
-    });
-
-    document.querySelectorAll(".enquiry-product-btn").forEach(function (button) {
-
-        button.addEventListener("click", function (event) {
-
-            event.preventDefault();
-            event.stopPropagation();
-
-            const name = button.dataset.add || "";
-
-            if (typeof addToEnquiry === "function") {
-                addToEnquiry(name);
-            }
-
-        });
-
-    });
-
-    if (modalClose) {
-        modalClose.addEventListener("click", closeProductModal);
-    }
-
-    if (modal) {
-        modal.addEventListener("click", function (event) {
-
-            if (event.target === modal) {
-                closeProductModal();
-            }
-
-        });
-    }
-
-    if (modalEnquiry) {
-        modalEnquiry.addEventListener("click", function (event) {
-
-            event.preventDefault();
-
-            if (
-                selectedProduct &&
-                typeof addToEnquiry === "function"
-            ) {
-                addToEnquiry(selectedProduct);
-            }
-
-        });
-    }
 
 });
 
 </script>
 
+<script>
 
-<!-- PRODUCT DETAILS MODAL -->
-<div id="productModal" class="modal-overlay" aria-hidden="true">
-  <div class="modal-box relative p-6 md:p-8">
-    <button id="modalClose" type="button" class="absolute right-4 top-4 w-10 h-10 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 text-xl font-bold" aria-label="Close">&times;</button>
+/* MAIN MOBILE MENU */
 
-    <div class="grid md:grid-cols-2 gap-6 items-center">
-      <div>
-        <img id="modalImage" class="modal-image" src="" alt="Product">
-      </div>
-      <div>
-        <p class="text-xs uppercase tracking-widest text-cyan-600 font-bold mb-2">Product Details</p>
-        <h2 id="modalProductName" class="text-2xl md:text-3xl font-extrabold text-[#0b2545] mb-4"></h2>
-        <p id="modalDescription" class="text-gray-600 leading-7 mb-5"></p>
-        <div class="space-y-2 text-sm mb-6">
-          <p><strong>Dosage:</strong> <span id="modalType"></span></p>
-          <p><strong>Category:</strong> <span id="modalCategory"></span></p>
-        </div>
-        <button id="modalEnquiryBtn" type="button" class="enquiry-product-btn">
-          <i class="fas fa-plus"></i> Enquiry
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+const menuIcon = document.getElementById("menuIcon");
 
-<!-- TOAST -->
-<div id="toast" class="toast" role="status" aria-live="polite">
-  <i class="fas fa-check-circle"></i>
-  <span id="toastText"></span>
-</div>
+menuBtn.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("hidden");
+
+    const open = !mobileMenu.classList.contains("hidden");
+
+    if (open) {
+
+        menuIcon.classList.remove("fa-bars");
+        menuIcon.classList.add("fa-xmark");
+
+    } else {
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+
+    }
+
+});
+
+
+/* MOBILE DROPDOWNS
+   Any button with data-toggle="ID" opens/closes
+   the element with that ID and rotates its arrow. */
+
+document.querySelectorAll("[data-toggle]").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const target = document.getElementById(btn.dataset.toggle);
+        const icon = btn.querySelector("i");
+
+        target.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
+
+    });
+
+});
+
+
+/* MOBILE SUB LINKS */
+
+document.querySelectorAll(".mobile-sub-link").forEach(link => {
+
+    link.className = `
+        block
+        px-4
+        py-2.5
+        rounded-lg
+        text-navy
+        hover:bg-white
+        hover:text-brand
+        transition
+    `;
+
+});
+
+
+/* CLOSE MOBILE MENU ON LINK CLICK */
+
+mobileMenu.querySelectorAll("a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.add("hidden");
+
+        menuIcon.classList.remove("fa-xmark");
+        menuIcon.classList.add("fa-bars");
+
+    });
+
+});
+
+</script>
 
 </body>
 

@@ -482,112 +482,6 @@
 
     }
 
-
-    /* =====================================================
-       FOOTER SERVICES + CATEGORIES
-       Same dropdown design/options as navbar
-    ====================================================== */
-
-    footer .footer-navbar-dropdown {
-      position: absolute;
-      left: 0;
-      bottom: calc(100% + 10px);
-      width: 256px;
-      max-height: none;
-      overflow: visible;
-      margin: 0;
-      padding: 8px;
-      background: #ffffff;
-      border: 1px solid var(--mint);
-      border-radius: 12px;
-      box-shadow: 0 20px 45px rgba(11, 37, 69, 0.18);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(8px);
-      transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
-      z-index: 100;
-    }
-
-    footer .dropdown.active > .footer-navbar-dropdown {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    footer .footer-navbar-dropdown a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 10px 12px;
-      border-radius: 8px;
-      color: var(--dark-teal);
-      font-size: 14px;
-      line-height: 1.35;
-      white-space: normal;
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    footer .footer-navbar-dropdown a:hover {
-      background: var(--light-gray);
-      color: var(--teal);
-      transform: translateX(2px);
-    }
-
-    footer .footer-navbar-dropdown a > span:first-child {
-      width: 36px;
-      height: 36px;
-      min-width: 36px;
-      border-radius: 8px;
-      background: #ffffff;
-      border: 1px solid var(--mint);
-      color: var(--teal);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    footer .footer-navbar-dropdown a > span:last-child {
-      flex: 1;
-    }
-
-    footer .footer-navbar-dropdown .footer-view-all {
-      margin-top: 4px;
-      padding-top: 8px;
-      border-top: 1px solid var(--mint);
-    }
-
-    footer .footer-navbar-dropdown .footer-view-all a {
-      color: var(--teal);
-      font-weight: 600;
-      justify-content: space-between;
-    }
-
-    footer .footer-navbar-dropdown .footer-view-all a > span:first-child {
-      width: auto;
-      height: auto;
-      min-width: 0;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      justify-content: flex-start;
-    }
-
-    @media (max-width: 767px) {
-      footer .footer-navbar-dropdown {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 10px;
-        transform: translateY(-4px);
-      }
-
-      footer .dropdown.active > .footer-navbar-dropdown {
-        transform: translateY(0);
-      }
-    }
-
     </style>
 
 </head>
@@ -2396,7 +2290,8 @@
 ========================================================= -->
 
 <footer
-  class="site-footer mt-auto mb-0 text-white" style="background-color:#0b2545;"
+  id="contact"
+  class="mt-auto mb-0 bg-dark-teal text-white"
 >
 
 
@@ -2625,7 +2520,7 @@
         <ul
           class="space-y-4
                  text-sm
-                 text-sky-100/70"
+                 text-mint/80"
         >
 
 
@@ -2640,7 +2535,7 @@
 
               <i
                 class="ri-home-5-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Home
@@ -2662,7 +2557,7 @@
 
               <i
                 class="ri-information-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               About Us
@@ -2679,55 +2574,91 @@
 
           <li class="dropdown">
 
-            <a href="services.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-concierge-bell text-lg text-accent"></i>
+
+            <a
+              href="services.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-service-line
+                       text-lg text-light-teal"
+              ></i>
+
               Services
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- SERVICES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="pharmaceutical-distribution.html">
-                <i class="fas fa-truck-medical"></i>
-                <span>Pharmaceutical Distribution</span>
+            <!-- SERVICES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="wholesale-distribution.html"
+              >
+
+                <i class="ri-truck-line"></i>
+
+                <span>
+                  Wholesale Distribution
+                </span>
+
               </a>
 
-              <a href="wholesale-supply.html">
-                <i class="fas fa-boxes-stacked"></i>
-                <span>Wholesale Supply</span>
+
+              <a
+                href="retail-supply.html"
+              >
+
+                <i class="ri-store-2-line"></i>
+
+                <span>
+                  Retail Supply
+                </span>
+
               </a>
 
-              <a href="institutional-supply.html">
-                <i class="fas fa-hospital"></i>
-                <span>Institutional Supply</span>
+
+              <a
+                href="hospital-supply.html"
+              >
+
+                <i class="ri-hospital-line"></i>
+
+                <span>
+                  Hospital Supply
+                </span>
+
               </a>
 
-              <a href="surgical-medical-supplies.html">
-                <i class="fas fa-kit-medical"></i>
-                <span>Surgical &amp; Medical Supply</span>
+
+              <a
+                href="third-party-manufacturing.html"
+              >
+
+                <i class="ri-building-4-line"></i>
+
+                <span>
+                  Third Party Manufacturing
+                </span>
+
               </a>
 
-              <a href="otc-healthcare-products.html">
-                <i class="fas fa-heart-circle-check"></i>
-                <span>OTC &amp; Healthcare Supply</span>
-              </a>
-
-              <a href="delivery-support.html">
-                <i class="fas fa-truck-fast"></i>
-                <span>Delivery Support</span>
-              </a>
-
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="services.html" class="flex items-center justify-between">
-                  <span>View All Services</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
 
             </div>
 
           </li>
+
 
 
           <!-- ================================================= -->
@@ -2736,51 +2667,125 @@
 
           <li class="dropdown">
 
-            <a href="categories.html" class="footer-link flex items-center gap-2">
-              <i class="fas fa-list-check text-lg text-accent"></i>
+
+            <a
+              href="categories.html"
+              class="footer-link flex items-center gap-2"
+            >
+
+              <i
+                class="ri-list-check-2
+                       text-lg text-light-teal"
+              ></i>
+
               Categories
-              <i class="fa-solid fa-chevron-down dropdown-arrow ml-auto"></i>
+
+              <i
+                class="ri-arrow-down-s-line
+                       dropdown-arrow
+                       ml-auto"
+              ></i>
+
             </a>
 
-            <!-- CATEGORIES MENU — same options as navbar -->
-            <div class="dropdown-menu">
 
-              <a href="tablets-capsules.html">
-                <i class="fas fa-tablets"></i>
-                <span>Tablets &amp; Capsules</span>
+            <!-- CATEGORIES MENU -->
+
+            <div
+              class="dropdown-menu"
+            >
+
+
+              <a
+                href="medicines.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Medicines
+                </span>
+
               </a>
 
-              <a href="injections.html">
-                <i class="fas fa-syringe"></i>
-                <span>Injections</span>
+
+              <a
+                href="injections.html"
+              >
+
+                <i class="ri-syringe-line"></i>
+
+                <span>
+                  Injections
+                </span>
+
               </a>
 
-              <a href="medical-devices.html">
-                <i class="fas fa-microscope"></i>
-                <span>Medical Devices</span>
+
+              <a
+                href="medical-devices.html"
+              >
+
+                <i class="ri-heart-pulse-line"></i>
+
+                <span>
+                  Medical Devices
+                </span>
+
               </a>
 
-              <a href="surgical-items.html">
-                <i class="fas fa-scissors"></i>
-                <span>Surgical Items</span>
+
+              <a
+                href="medical-equipment.html"
+              >
+
+                <i class="ri-first-aid-kit-line"></i>
+
+                <span>
+                  Medical Equipment
+                </span>
+
               </a>
 
-              <a href="OTC.html">
-                <i class="fas fa-bottle-droplet"></i>
-                <span>OTC Products</span>
+
+              <a
+                href="tablets.html"
+              >
+
+                <i class="ri-capsule-line"></i>
+
+                <span>
+                  Tablets
+                </span>
+
               </a>
 
-              <a href="healthcare-essentials.html">
-                <i class="fas fa-notes-medical"></i>
-                <span>Healthcare Essentials</span>
+
+              <a
+                href="capsules.html"
+              >
+
+                <i class="ri-capsule-fill"></i>
+
+                <span>
+                  Capsules
+                </span>
+
               </a>
 
-              <div class="mt-1 border-t border-white/10 pt-1">
-                <a href="categories.html" class="flex items-center justify-between">
-                  <span>View All Categories</span>
-                  <i class="fa-solid fa-arrow-right text-xs"></i>
-                </a>
-              </div>
+
+              <a
+                href="syrup.html"
+              >
+
+                <i class="ri-medicine-bottle-line"></i>
+
+                <span>
+                  Syrup
+                </span>
+
+              </a>
+
 
             </div>
 
@@ -2809,7 +2814,7 @@
         <ul
           class="space-y-4
                  text-sm
-                 text-sky-100/70"
+                 text-mint/80"
         >
 
 
@@ -2824,7 +2829,7 @@
 
               <i
                 class="ri-medicine-bottle-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Pharmaceutical Products
@@ -2845,7 +2850,7 @@
 
               <i
                 class="ri-medicine-bottle-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               OTC Products
@@ -2858,6 +2863,7 @@
 
           <!-- ================================================= -->
           <!-- SURGICAL & MEDICAL  (DROPDOWN)                     -->
+          <!-- 1. Consumable   2. Disposable                      -->
           <!-- ================================================= -->
 
           <li class="dropdown">
@@ -2869,7 +2875,7 @@
 
               <i
                 class="ri-first-aid-kit-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Surgical &amp; Medical
@@ -2919,7 +2925,7 @@
 
 
           <!-- ================================================= -->
-          <!-- NUTRACEUTICAL                                      -->
+          <!-- NUTRACEUTICAL (NEW)                                -->
           <!-- ================================================= -->
 
           <li>
@@ -2931,7 +2937,7 @@
 
               <i
                 class="ri-leaf-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Nutraceutical
@@ -2952,7 +2958,7 @@
 
               <i
                 class="ri-capsule-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Healthcare Products
@@ -2964,7 +2970,8 @@
 
 
           <!-- ================================================= -->
-          <!-- VETERINARY  (DROPDOWN)                             -->
+          <!-- VETERINARY  (DROPDOWN, NO LOGO)                    -->
+          <!-- 1. Vet   2. Poultry   3. Cattle                    -->
           <!-- ================================================= -->
 
           <li class="dropdown">
@@ -2976,7 +2983,7 @@
 
               <i
                 class="ri-stethoscope-line
-                       text-lg text-accent"
+                       text-lg text-light-teal"
               ></i>
 
               Veterinary Products
@@ -3073,7 +3080,7 @@
                      items-center justify-center
                      rounded-xl
                      bg-white/10
-                     text-accent"
+                     text-light-teal"
             >
 
               <i
@@ -3088,7 +3095,7 @@
               <p
                 class="text-xs uppercase
                        tracking-wider
-                       text-sky-200/50"
+                       text-light-teal/70"
               >
                 Address
               </p>
@@ -3097,7 +3104,7 @@
               <p
                 class="mt-1
                        text-sm leading-6
-                       text-sky-100/70"
+                       text-mint/80"
               >
 
                 Be Pharma Traders<br>
@@ -3123,7 +3130,7 @@
                      items-center justify-center
                      rounded-xl
                      bg-white/10
-                     text-accent"
+                     text-light-teal"
             >
 
               <i
@@ -3138,7 +3145,7 @@
               <p
                 class="text-xs uppercase
                        tracking-wider
-                       text-sky-200/50"
+                       text-light-teal/70"
               >
                 Phone
               </p>
@@ -3148,7 +3155,7 @@
                 href="tel:+919973100210"
                 class="mt-1 block
                        text-sm
-                       text-sky-100/70
+                       text-mint/80
                        hover:text-white"
               >
                 +91 99731 00210
@@ -3172,7 +3179,7 @@
                      items-center justify-center
                      rounded-xl
                      bg-white/10
-                     text-accent"
+                     text-light-teal"
             >
 
               <i
@@ -3187,7 +3194,7 @@
               <p
                 class="text-xs uppercase
                        tracking-wider
-                       text-sky-200/50"
+                       text-light-teal/70"
               >
                 Email
               </p>
@@ -3197,7 +3204,7 @@
                 href="mailto:addressbepharmatraders@gmail.com"
                 class="mt-1 block break-all
                        text-sm
-                       text-sky-100/70
+                       text-mint/80
                        hover:text-white"
               >
                 addressbepharmatraders@gmail.com
@@ -3222,7 +3229,7 @@
                      items-center justify-center
                      rounded-xl
                      bg-white/10
-                     text-accent"
+                     text-light-teal"
             >
 
               <i
@@ -3237,7 +3244,7 @@
               <p
                 class="text-xs uppercase
                        tracking-wider
-                       text-sky-200/50"
+                       text-light-teal/70"
               >
                 Working Hours
               </p>
@@ -3247,7 +3254,7 @@
                 class="mt-1
                        text-sm
                        leading-6
-                       text-sky-100/70"
+                       text-mint/80"
               >
 
                 Monday - Saturday<br>
@@ -3272,11 +3279,11 @@
 
 
   <!-- ================================================= -->
-  <!-- COPYRIGHT BAR -->
+  <!-- COPYRIGHT BAR (teal, like the reference design) -->
   <!-- ================================================= -->
 
   <div
-    class="bg-brand" style="background-color:#0b7b97;"
+    class="bg-teal"
   >
 
     <div
@@ -3358,6 +3365,8 @@
 
         <a
           href="https://devlabs.org.in/"
+          target="_blank"
+          rel="noopener noreferrer"
           class="font-semibold
                  text-white
                  hover:underline"
