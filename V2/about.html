@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Product Categories | B.E. Pharma Traders &amp; Co.</title>
+    <title>About Us | B.E. Pharma Traders & Co.</title>
 
     <meta
         name="description"
-        content="Explore BePharma Traders product categories including pharmaceuticals, injections, medical devices, surgical items, OTC products and healthcare essentials."
+        content="Learn about B.E. Pharma Traders & Co. - a dependable pharmaceutical trading, sourcing and supply partner."
     >
 
     <!-- Font Awesome -->
@@ -24,22 +24,15 @@
     >
 
     <!-- Google Fonts -->
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
-    <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&family=Bitter:ital,wght@0,700;0,800;1,700&display=swap"
         rel="stylesheet"
     >
 
-    <!-- Tailwind (navbar + footer ke liye) -->
+    <!-- Tailwind (navbar + footer) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
@@ -47,11 +40,6 @@
             theme: {
                 extend: {
                     colors: {
-                        /* COLOR PALETTE (same as navbar + footer)
-                           brand  -> teal blue (buttons, links, accents)
-                           navy   -> dark navy (text, footer background)
-                           accent -> light cyan (footer icons)
-                           mist   -> very light sky blue (nav background, hover) */
                         brand: {
                             DEFAULT: "#0b7b97",
                             dark: "#08627a"
@@ -69,8 +57,9 @@
     </script>
 
     <style>
+
         /* =========================================================
-           GLOBAL (from index.html)
+           GLOBAL
         ========================================================= */
 
         * {
@@ -97,6 +86,10 @@
             min-height: 100dvh;
             display: flex;
             flex-direction: column;
+        }
+
+        body.modal-open {
+            overflow: hidden;
         }
 
         a {
@@ -128,313 +121,943 @@
             --white: #ffffff;
             --border: #d9e8ed;
             --shadow: 0 12px 35px rgba(9, 47, 73, 0.10);
-            --primary: #0b7b97;
-            --primary-dark: #08627a;
-            --primary-light: #eaf6fb;
-            --brand: #0b7b97;
-            --brand-dark: #08627a;
-            --accent: #4fc3dc;
-            --mist: #eaf6fb;
-            --mist-line: #cfe9f3;
         }
 
-        /* sticky navbar ke neeche section chhup na jaye */
-        section[id] {
-            scroll-margin-top: 95px;
+        .container {
+            width: min(1180px, 92%);
+            margin: auto;
         }
 
-        .primary-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--primary);
-            color: #fff;
-            transition: 0.3s;
-        }
-
-        .primary-btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-        }
-
-        .hero {
-            position: relative;
-            min-height: 455px;
-            overflow: hidden;
-            color: #fff;
-            background:
-                linear-gradient(
-                    90deg,
-                    rgba(9, 47, 73, 0.95),
-                    rgba(9, 47, 73, 0.8),
-                    rgba(9, 47, 73, 0.45)
-                ),
-                url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=2000&q=85")
-                center / cover no-repeat;
-        }
-
-        .hero:after {
-            content: "";
-            position: absolute;
-            right: -100px;
-            top: -120px;
-            width: 360px;
-            height: 360px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            box-shadow:
-                0 0 0 60px rgba(255, 255, 255, 0.025),
-                0 0 0 120px rgba(255, 255, 255, 0.018);
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--accent);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 9px;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.72);
-        }
-
-        .breadcrumb a {
-            color: #fff;
-            transition: color 0.2s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: var(--accent);
-        }
-
-        .section-eyebrow {
-            color: var(--primary);
-            font-size: 12px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
+        .section {
+            padding: 90px 0;
         }
 
         .section-title {
-            color: var(--navy);
-            font-weight: 800;
-            line-height: 1.15;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        .category-card {
+        .section-title .small-title {
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            color: var(--navy);
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+        ========================================================= */
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            min-height: 46px;
+            padding: 13px 22px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            border: 1px solid transparent;
+            transition:
+                background 0.3s ease,
+                color 0.3s ease,
+                border-color 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--blue);
+            color: var(--white);
+            border-color: var(--blue);
+            box-shadow: 0 8px 22px rgba(8, 127, 155, 0.20);
+        }
+
+        .btn-primary:hover {
+            background: var(--navy);
+            border-color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(9, 47, 73, 0.18);
+        }
+
+        .btn-outline {
+            color: var(--blue);
+            border-color: var(--blue);
+            background: var(--white);
+        }
+
+        .btn-outline:hover {
+            color: var(--white);
+            background: var(--blue);
+            border-color: var(--blue);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           PAGE HERO
+        ========================================================= */
+
+        .page-hero {
+            min-height: 480px;
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
             position: relative;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 28px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(238, 249, 252, 0.98) 0%,
+                    rgba(238, 249, 252, 0.94) 36%,
+                    rgba(238, 249, 252, 0.55) 62%,
+                    rgba(238, 249, 252, 0.08) 100%
+                ),
+                url("medical-hero.png") center right / cover no-repeat;
+        }
+
+        .page-hero-content {
+            width: 650px;
+            padding: 70px 0;
+        }
+
+        .page-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.6px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .page-hero-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--cyan);
+        }
+
+        .page-hero h1 {
+            color: var(--navy);
+            font-size: clamp(40px, 5vw, 62px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 span {
+            color: var(--blue);
+        }
+
+        .page-hero p {
+            max-width: 600px;
+            color: #4f6672;
+            font-size: 17px;
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro {
+            background: var(--white);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .intro-image {
+            position: relative;
+            min-height: 450px;
+            background: var(--pale);
+            border-radius: 12px;
             overflow: hidden;
-            transition: 0.3s;
+            border: 1px solid var(--border);
+        }
+
+        .intro-image::before {
+            content: "";
+            position: absolute;
+            width: 270px;
+            height: 270px;
+            border-radius: 50%;
+            background: rgba(16, 168, 196, 0.10);
+            top: -100px;
+            left: -90px;
+        }
+
+        .intro-image::after {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(8, 127, 155, 0.07);
+            right: -60px;
+            bottom: -60px;
+        }
+
+        .intro-image-content {
+            position: absolute;
+            inset: 35px;
+            border: 1px solid rgba(8, 127, 155, 0.18);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.65);
+            z-index: 1;
+        }
+
+        .intro-image-content i {
+            color: var(--blue);
+            font-size: 72px;
+            margin-bottom: 20px;
+        }
+
+        .intro-image-content h3 {
+            color: var(--navy);
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        .intro-image-content p {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 350px;
+        }
+
+        .intro-content .small-title {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .intro-content h2 {
+            color: var(--navy);
+            font-size: clamp(32px, 4vw, 46px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .intro-content h2 span {
+            color: var(--blue);
+        }
+
+        .intro-content > p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .intro-content > p:last-of-type {
+            margin-bottom: 28px;
+        }
+
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats-section {
+            background: var(--pale);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .about-stat {
+            text-align: center;
+            padding: 15px 20px;
+            border-right: 1px solid var(--border);
+        }
+
+        .about-stat:last-child {
+            border-right: none;
+        }
+
+        .about-stat i {
+            color: var(--blue);
+            font-size: 26px;
+            margin-bottom: 9px;
+        }
+
+        .about-stat h3 {
+            color: var(--navy);
+            font-size: 30px;
+            line-height: 1.2;
+            margin-bottom: 4px;
+        }
+
+        .about-stat p {
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           STORY
+        ========================================================= */
+
+        .story {
+            background: var(--white);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .story-content .small-title {
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .story-content h2 {
+            color: var(--navy);
+            font-size: clamp(32px, 4vw, 44px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .story-content h2 span {
+            color: var(--blue);
+        }
+
+        .story-content p {
+            color: var(--muted);
+            margin-bottom: 17px;
+        }
+
+        .story-points {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .story-point {
+            display: flex;
+            gap: 12px;
+        }
+
+        .story-point i {
+            color: var(--blue);
+            margin-top: 4px;
+        }
+
+        .story-point strong {
+            display: block;
+            color: var(--navy);
+            font-size: 14px;
+            margin-bottom: 2px;
+        }
+
+        .story-point span {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .story-card {
+            background: var(--pale);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 35px;
+        }
+
+        .story-card-icon {
+            width: 62px;
+            height: 62px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cyan-light);
+            color: var(--blue);
+            border-radius: 50%;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .story-card h3 {
+            color: var(--navy);
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .story-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           MISSION / VISION
+        ========================================================= */
+
+        .mission-vision {
+            background: var(--pale);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .mission-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            padding: 35px;
+            transition: 0.3s ease;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(16, 168, 196, 0.35);
+        }
+
+        .mission-icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--cyan-light);
+            color: var(--blue);
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        .mission-card h3 {
+            color: var(--navy);
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .mission-card p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           VALUES
+        ========================================================= */
+
+        .values {
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .value-card {
+            background: #fbfdfe;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 30px 24px;
+            transition: 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+            border-color: rgba(16, 168, 196, 0.35);
+        }
+
+        .value-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--cyan-light);
+            color: var(--blue);
+            border-radius: 7px;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .value-card h3 {
+            color: var(--navy);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .value-card p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           DOCUMENTS
+        ========================================================= */
+
+        .documents {
+            background: var(--pale);
+        }
+
+        .documents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .document-card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            overflow: hidden;
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
-        .category-card:before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: 0.3s;
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: rgba(16, 168, 196, 0.35);
         }
 
-        .category-card:hover {
-            transform: translateY(-7px);
-            border-color: rgba(11, 123, 151, 0.35);
-            box-shadow: 0 22px 50px rgba(9, 47, 73, 0.12);
-        }
-
-        .category-card:hover:before {
-            transform: scaleX(1);
-        }
-
-        .category-icon {
-            width: 62px;
-            height: 62px;
-            border-radius: 18px;
-            background: var(--primary-light);
-            color: var(--primary);
+        .document-preview {
+            min-height: 190px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(223, 245, 250, 0.9),
+                    rgba(238, 249, 252, 0.95)
+                );
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            transition: 0.3s;
-        }
-
-        .category-card:hover .category-icon {
-            background: var(--primary);
-            color: #fff;
-            transform: rotate(-4deg);
-        }
-
-        .category-number {
-            position: absolute;
-            right: 22px;
-            top: 20px;
-            font-size: 42px;
-            line-height: 1;
-            font-weight: 900;
-            color: var(--primary-light);
-        }
-
-        .category-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-size: 14px;
-            font-weight: 800;
-            margin-top: auto;
-            padding-top: 20px;
-        }
-
-        .category-link i {
-            transition: 0.2s;
-        }
-
-        .category-card:hover .category-link i {
-            transform: translateX(4px);
-        }
-
-        .filter-wrap {
-            background: #f8fcfe;
-            border: 1px solid var(--border);
-            border-radius: 20px;
-        }
-
-        .search-box {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 13px;
-            padding: 0 15px;
-        }
-
-        .search-box:focus-within {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(11, 123, 151, 0.12);
-        }
-
-        .search-box input {
-            width: 100%;
-            height: 48px;
-            border: 0;
-            outline: 0;
-            color: var(--text);
-            background: transparent;
-        }
-
-        .filter-btn {
-            border: 1px solid var(--border);
-            background: #fff;
-            color: var(--muted);
-            border-radius: 11px;
-            padding: 10px 15px;
-            font-size: 13px;
-            font-weight: 700;
-            transition: 0.2s;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
-        }
-
-        .mini-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 18px;
-            padding: 20px;
-            transition: 0.25s;
-        }
-
-        .mini-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(9, 47, 73, 0.08);
-            border-color: rgba(11, 123, 151, 0.3);
-        }
-
-        .cta {
-            background: var(--primary);
+            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
 
-        .circle {
+        .document-preview::before {
+            content: "";
             position: absolute;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
+            background: rgba(16, 168, 196, 0.08);
+            top: -70px;
+            right: -50px;
         }
 
-        @media (max-width: 768px) {
-            .hero {
-                min-height: 410px;
-                background:
-                    linear-gradient(
-                        180deg,
-                        rgba(9, 47, 73, 0.82),
-                        rgba(9, 47, 73, 0.95)
-                    ),
-                    url("https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=85")
-                    center / cover no-repeat;
-            }
+        .document-icon {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            background: var(--white);
+            color: var(--blue);
+            font-size: 27px;
+            box-shadow: 0 8px 20px rgba(9, 47, 73, 0.08);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 12px;
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *,
-            *:before,
-            *:after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
+        .document-label {
+            color: var(--blue);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
         }
 
-        button:focus-visible,
-        a:focus-visible {
-            outline: 3px solid rgba(11, 123, 151, 0.35);
-            outline-offset: 3px;
+        .document-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
-        .search-box input:focus,
-        .search-box input:focus-visible {
-            outline: none;
-            box-shadow: none;
+        .document-content h3 {
+            color: var(--navy);
+            font-size: 19px;
+            margin-bottom: 8px;
         }
+
+        .document-content p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .document-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--blue);
+            background: var(--cyan-light);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            width: fit-content;
+        }
+
+        .document-status i {
+            font-size: 9px;
+        }
+
+        .view-document-btn {
+            width: 100%;
+            margin-top: auto;
+            padding: 13px 16px;
+            min-height: 44px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            background: var(--blue);
+            color: var(--white);
+            border: none;
+            border-radius: 6px;
+
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .view-document-btn:hover {
+            background: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(8, 127, 155, 0.20);
+        }
+
+        .view-document-btn i {
+            font-size: 13px;
+        }
+
+        .document-action {
+            margin-top: auto;
+            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 12px 15px;
+            border: 1px solid var(--blue);
+            border-radius: 6px;
+            background: var(--blue);
+            color: var(--white);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .document-action:hover {
+            background: var(--navy);
+            border-color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(9, 47, 73, 0.16);
+        }
+
+        .document-action i {
+            font-size: 12px;
+        }
+
 
         /* =========================================================
-           BACK TO TOP (from index.html)
+           DOCUMENT MODAL
+        ========================================================= */
+
+        .document-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(3, 20, 31, 0.78);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease;
+            z-index: 5000;
+        }
+
+        .document-modal.show {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .document-modal-box {
+            width: min(1000px, 100%);
+            max-height: 92vh;
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.30);
+            transform: translateY(20px) scale(0.98);
+            transition: transform 0.25s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .document-modal.show .document-modal-box {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-header {
+            min-height: 62px;
+            padding: 12px 18px 12px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            background: var(--navy);
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .modal-title-wrap {
+            min-width: 0;
+        }
+
+        .modal-title {
+            font-size: 17px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        .modal-subtitle {
+            color: rgba(255, 255, 255, 0.68);
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .modal-close {
+            width: 38px;
+            height: 38px;
+            flex: 0 0 38px;
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--white);
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.25s ease;
+        }
+
+        .modal-close:hover {
+            background: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        .modal-body {
+            background: #eef3f5;
+            min-height: 300px;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-document-image {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: calc(92vh - 65px);
+            object-fit: contain;
+            margin: auto;
+        }
+
+        .modal-info {
+            width: 100%;
+            padding: 45px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .modal-info-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--cyan-light);
+            color: var(--blue);
+            font-size: 28px;
+        }
+
+        .modal-info h3 {
+            color: var(--navy);
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .modal-info p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .modal-error {
+            padding: 45px;
+            text-align: center;
+            background: var(--white);
+        }
+
+        .modal-error i {
+            color: var(--blue);
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .modal-error h3 {
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .modal-error p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .about-cta {
+            background: var(--navy);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-cta::before {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(16, 168, 196, 0.08);
+            right: -180px;
+            top: -230px;
+        }
+
+        .about-cta-inner {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 35px;
+        }
+
+        .about-cta-content .small-title {
+            color: var(--cyan);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .about-cta-content h2 {
+            color: var(--white);
+            font-size: clamp(30px, 4vw, 43px);
+            line-height: 1.15;
+            margin-bottom: 10px;
+        }
+
+        .about-cta-content p {
+            color: rgba(255, 255, 255, 0.70);
+            max-width: 650px;
+        }
+
+
+        /* =========================================================
+           BACK TO TOP
         ========================================================= */
 
         .back-top {
@@ -453,6 +1076,7 @@
             transform: translateY(15px);
             transition: 0.3s ease;
             z-index: 900;
+            box-shadow: 0 8px 20px rgba(8, 127, 155, 0.22);
         }
 
         .back-top.show {
@@ -463,11 +1087,183 @@
 
         .back-top:hover {
             background: var(--navy);
+            transform: translateY(-2px);
         }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1050px) {
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .documents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 850px) {
+
+            .page-hero {
+                min-height: 540px;
+                background:
+                    linear-gradient(
+                        90deg,
+                        rgba(238, 249, 252, 0.97),
+                        rgba(238, 249, 252, 0.82)
+                    ),
+                    url("medical-hero.png") center / cover no-repeat;
+            }
+
+            .page-hero-content {
+                width: 100%;
+                padding: 55px 0;
+            }
+
+            .intro-grid,
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-grid {
+                gap: 45px;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .about-stat:nth-child(-n+2) {
+                border-bottom: 1px solid var(--border);
+                padding-bottom: 20px;
+            }
+
+            .about-stat:nth-child(n+3) {
+                padding-top: 20px;
+            }
+
+            .about-cta-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .page-hero {
+                min-height: 570px;
+            }
+
+            .page-hero h1 {
+                font-size: 39px;
+            }
+
+            .page-hero p {
+                font-size: 15px;
+            }
+
+            .intro-image {
+                min-height: 350px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stat,
+            .about-stat:nth-child(2) {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 18px;
+            }
+
+            .about-stat:last-child {
+                border-bottom: none;
+            }
+
+            .values-grid,
+            .documents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .story-card {
+                padding: 28px;
+            }
+
+            .mission-card {
+                padding: 28px;
+            }
+
+            .about-cta-inner {
+                gap: 25px;
+            }
+
+            .about-cta .btn {
+                width: 100%;
+            }
+
+            .document-modal {
+                padding: 10px;
+            }
+
+            .document-modal-box {
+                max-height: 96vh;
+                border-radius: 8px;
+            }
+
+            .modal-header {
+                min-height: 58px;
+                padding: 10px 12px 10px 15px;
+            }
+
+            .modal-title {
+                font-size: 14px;
+            }
+
+            .modal-subtitle {
+                font-size: 10px;
+            }
+
+            .modal-close {
+                width: 35px;
+                height: 35px;
+                flex-basis: 35px;
+            }
+
+            .modal-info {
+                padding: 35px 22px;
+            }
+
+            .modal-info h3 {
+                font-size: 21px;
+            }
+
+            .modal-error {
+                padding: 35px 20px;
+            }
+        }
+
 
         /* =================================================== */
         /* ============  NAVBAR + FOOTER STYLES  ============= */
-        /* ====  (index.html se exactly same)    ============= */
         /* =================================================== */
 
         nav,
@@ -527,13 +1323,19 @@
         .dropdown-menu {
             visibility: hidden;
             opacity: 0;
+
             max-height: 0;
             overflow: hidden;
+
             margin-top: 0;
             padding: 0;
+
             background: #0e3158;
+
             border-radius: 10px;
+
             box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+
             transition:
                 max-height 0.35s ease,
                 opacity 0.25s ease,
@@ -592,7 +1394,9 @@
     </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
                     NAVBAR
@@ -609,9 +1413,7 @@
         <div class="flex items-center justify-between h-20">
 
 
-            <!-- =================================================
-                                LOGO
-            ================================================== -->
+            <!-- LOGO -->
 
             <a
                 href="index.html"
@@ -619,8 +1421,7 @@
                 class="flex items-center flex-shrink-0"
             >
 
-                <svg
-                    viewBox="60 50 1420 590"
+                <svg                    viewBox="60 50 1420 590"
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
                     aria-label="Be Pharma Traders &amp; Co"
@@ -629,14 +1430,10 @@
 
                     <title>Be Pharma Traders &amp; Co</title>
 
-                    <!-- CROSS (two rounded bars) -->
-
                     <g fill="currentColor">
                         <rect x="262" y="62" width="186" height="560" rx="93"></rect>
                         <rect x="75" y="245" width="562" height="196" rx="98"></rect>
                     </g>
-
-                    <!-- "B" and "e" inside the cross -->
 
                     <text
                         x="358" y="415"
@@ -656,8 +1453,6 @@
                         fill="#ffffff"
                     >e</text>
 
-                    <!-- PHARMA -->
-
                     <text
                         x="678" y="392"
                         font-family="'Bitter', Georgia, serif"
@@ -667,8 +1462,6 @@
                         textLength="777"
                         lengthAdjust="spacingAndGlyphs"
                     >Pharma</text>
-
-                    <!-- TRADERS & CO -->
 
                     <text
                         x="680" y="528"
@@ -686,30 +1479,19 @@
 
 
 
-            <!-- =================================================
-                        DESKTOP NAVIGATION
-            ================================================== -->
+            <!-- DESKTOP NAVIGATION -->
 
             <div class="hidden lg:flex items-center gap-7">
-
-                <!-- HOME -->
 
                 <a href="index.html" class="text-navy font-medium hover:text-brand transition">
                     Home
                 </a>
 
-
-                <!-- ABOUT -->
-
                 <a href="about.html" class="text-navy font-medium hover:text-brand transition">
                     About Us
                 </a>
 
-
-
-                <!-- =================================================
-                            PRODUCTS
-                ================================================== -->
+                <!-- PRODUCTS -->
 
                 <div class="relative group">
 
@@ -720,7 +1502,6 @@
                         Products
                         <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
                     </button>
-
 
                     <div
                         class="
@@ -736,8 +1517,6 @@
 
                         <div class="p-2">
 
-                            <!-- PHARMACEUTICALS -->
-
                             <a
                                 href="pharmaceuticals.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -748,9 +1527,6 @@
                                 <span>Pharmaceuticals</span>
                             </a>
 
-
-                            <!-- OTC -->
-
                             <a
                                 href="OTC.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -760,11 +1536,6 @@
                                 </span>
                                 <span>OTC Products</span>
                             </a>
-
-
-                            <!-- =========================================
-                                 SURGICAL & MEDICAL  (DROPDOWN)
-                            ========================================== -->
 
                             <div class="relative group/sub">
 
@@ -783,8 +1554,6 @@
                                     <span class="flex-1">Surgical</span>
                                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
                                 </a>
-
-                                <!-- SUB MENU -->
 
                                 <div
                                     class="
@@ -826,9 +1595,6 @@
 
                             </div>
 
-
-                            <!-- NUTRACEUTICAL -->
-
                             <a
                                 href="nutraceutical.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -838,9 +1604,6 @@
                                 </span>
                                 <span>Nutraceutical</span>
                             </a>
-
-
-                            <!-- HEALTHCARE ESSENTIALS -->
 
                             <a
                                 href="healthcare-essentials.html"
@@ -852,9 +1615,6 @@
                                 <span>Healthcare Essentials</span>
                             </a>
 
-
-                            <!-- PERSONAL CARE -->
-
                             <a
                                 href="personal-care.html"
                                 class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
@@ -864,11 +1624,6 @@
                                 </span>
                                 <span>Personal Care</span>
                             </a>
-
-
-                            <!-- =========================================
-                                 VETERINARY  (DROPDOWN)
-                            ========================================== -->
 
                             <div class="relative group/sub">
 
@@ -887,8 +1642,6 @@
                                     <span class="flex-1">Veterinary Products</span>
                                     <i class="fa-solid fa-chevron-right text-[10px]"></i>
                                 </a>
-
-                                <!-- SUB MENU -->
 
                                 <div
                                     class="
@@ -935,9 +1688,6 @@
 
                             </div>
 
-
-                            <!-- VIEW ALL -->
-
                             <div class="mt-1 border-t border-mist-line pt-1">
 
                                 <a
@@ -958,9 +1708,7 @@
 
 
 
-                <!-- =================================================
-                            SERVICES
-                ================================================== -->
+                <!-- SERVICES -->
 
                 <div class="relative group">
 
@@ -971,7 +1719,6 @@
                         Services
                         <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
                     </button>
-
 
                     <div
                         class="
@@ -1067,9 +1814,7 @@
 
 
 
-                <!-- =================================================
-                            CATEGORIES
-                ================================================== -->
+                <!-- CATEGORIES -->
 
                 <div class="relative group">
 
@@ -1080,7 +1825,6 @@
                         Categories
                         <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
                     </button>
-
 
                     <div
                         class="
@@ -1176,8 +1920,6 @@
 
 
 
-                <!-- CONTACT -->
-
                 <a href="contact.html" class="text-navy font-medium hover:text-brand transition">
                     Contact Us
                 </a>
@@ -1186,14 +1928,9 @@
 
 
 
-            <!-- =================================================
-                    DESKTOP RIGHT SIDE
-            ================================================== -->
+            <!-- DESKTOP RIGHT SIDE -->
 
             <div class="hidden lg:flex items-center gap-4">
-
-
-                <!-- FOLLOW US ICON -->
 
                 <div class="relative group">
 
@@ -1210,9 +1947,6 @@
                     >
                         <i class="fa-solid fa-user-plus text-lg"></i>
                     </button>
-
-
-                    <!-- FOLLOW US DROPDOWN -->
 
                     <div
                         class="
@@ -1254,10 +1988,6 @@
 
                 </div>
 
-
-
-                <!-- GET IN TOUCH -->
-
                 <a
                     href="contact.html"
                     class="
@@ -1275,9 +2005,7 @@
 
 
 
-            <!-- =================================================
-                        MOBILE MENU BUTTON
-            ================================================== -->
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 id="menuBtn"
@@ -1298,31 +2026,19 @@
 
 
 
-        <!-- =================================================
-                        MOBILE MENU
-        ================================================== -->
+        <!-- MOBILE MENU -->
 
         <div id="mobileMenu" class="hidden lg:hidden pb-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
 
             <div class="pt-4 border-t border-mist-line space-y-2">
 
-
-                <!-- HOME -->
-
                 <a href="index.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
                     Home
                 </a>
 
-
-                <!-- ABOUT -->
-
                 <a href="about.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
                     About Us
                 </a>
-
-
-
-                <!-- MOBILE PRODUCTS -->
 
                 <div>
 
@@ -1334,7 +2050,6 @@
                         <span>Products</span>
                         <i class="fa-solid fa-chevron-down text-xs transition"></i>
                     </button>
-
 
                     <div
                         id="productMenu"
@@ -1348,9 +2063,6 @@
                         <a href="OTC.html" class="mobile-sub-link">
                             OTC Products
                         </a>
-
-
-                        <!-- SURGICAL (DROPDOWN) -->
 
                         <div>
 
@@ -1383,9 +2095,6 @@
 
                         </div>
 
-
-                        <!-- NUTRACEUTICAL -->
-
                         <a href="nutraceutical.html" class="mobile-sub-link">
                             Nutraceutical
                         </a>
@@ -1397,9 +2106,6 @@
                         <a href="personal-care.html" class="mobile-sub-link">
                             Personal Care
                         </a>
-
-
-                        <!-- VETERINARY (DROPDOWN) -->
 
                         <div>
 
@@ -1435,7 +2141,6 @@
 
                         </div>
 
-
                         <a
                             href="product.html"
                             class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
@@ -1448,10 +2153,6 @@
 
                 </div>
 
-
-
-                <!-- MOBILE SERVICES -->
-
                 <div>
 
                     <button
@@ -1462,7 +2163,6 @@
                         <span>Services</span>
                         <i class="fa-solid fa-chevron-down text-xs transition"></i>
                     </button>
-
 
                     <div
                         id="serviceMenu"
@@ -1505,10 +2205,6 @@
 
                 </div>
 
-
-
-                <!-- MOBILE CATEGORIES -->
-
                 <div>
 
                     <button
@@ -1519,7 +2215,6 @@
                         <span>Categories</span>
                         <i class="fa-solid fa-chevron-down text-xs transition"></i>
                     </button>
-
 
                     <div
                         id="categoryMenu"
@@ -1562,17 +2257,9 @@
 
                 </div>
 
-
-
-                <!-- CONTACT -->
-
                 <a href="contact.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
                     Contact Us
                 </a>
-
-
-
-                <!-- MOBILE FOLLOW US -->
 
                 <div class="pt-5">
 
@@ -1596,9 +2283,6 @@
                         </div>
 
                     </div>
-
-
-                    <!-- SOCIAL ICONS -->
 
                     <div class="flex gap-3 px-4">
 
@@ -1638,10 +2322,6 @@
 
                 </div>
 
-
-
-                <!-- MOBILE GET IN TOUCH -->
-
                 <div class="pt-4 px-4">
 
                     <a
@@ -1662,851 +2342,799 @@
 </nav>
 
 
-    <!-- HERO -->
+<!-- =========================================================
+     PAGE HERO
+========================================================== -->
 
-    <section class="hero">
+<section class="page-hero">
 
-        <div class="hero-content max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 min-h-[455px] flex items-center">
+    <div class="container">
 
-            <div class="max-w-3xl pt-8">
+        <div class="page-hero-content">
 
-
-                <div class="breadcrumb mb-6">
-
-                    <a href="index.html">
-                        Home
-                    </a>
-
-                    <i class="fas fa-chevron-right text-[9px]"></i>
-
-                    <span>
-                        Categories
-                    </span>
-
-                </div>
-
-
-                <div
-                    class="
-                        inline-flex
-                        items-center
-                        gap-2
-                        px-4
-                        py-2
-                        rounded-full
-                        bg-white/10
-                        backdrop-blur-md
-                        border
-                        border-white/15
-                        text-xs
-                        tracking-wider
-                        uppercase
-                        font-extrabold
-                        mb-4
-                    "
-                >
-
-                    <span
-                        class="
-                            w-2
-                            h-2
-                            rounded-full
-                            bg-accent
-                            animate-pulse
-                        "
-                    ></span>
-
-                    Product Catalog
-
-                </div>
-
-
-                <h1
-                    class="
-                        text-3xl
-                        sm:text-4xl
-                        lg:text-5xl
-                        font-black
-                        tracking-tight
-                        leading-tight
-                        mb-4
-                    "
-                >
-
-                    Explore Our
-
-                    <span class="block text-accent">
-                        Healthcare Categories
-                    </span>
-
-                </h1>
-
-
-                <p
-                    class="
-                        text-sky-100/90
-                        text-sm
-                        sm:text-base
-                        lg:text-lg
-                        max-w-2xl
-                        leading-relaxed
-                        mb-8
-                    "
-                >
-
-                    Discover verified pharmaceuticals, surgical solutions,
-                    diagnostic devices, and institutional wellness essentials
-                    curated for hospitals, clinics, and wholesale distribution networks.
-
-                </p>
-
-
-                <div class="flex flex-wrap gap-3">
-
-                    <a href="#categories"
-                        class="primary-btn bg-white !text-brand hover:!bg-mist px-6 py-3 rounded-xl font-bold text-sm">
-
-                        <i class="fas fa-arrow-down"></i>
-
-                        Browse Categories
-
-                    </a>
-
-
-                    <a href="contact.html"
-                        class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
-
-                        Send Enquiry
-
-                        <i class="fas fa-paper-plane text-xs"></i>
-
-                    </a>
-
-                </div>
-
+            <div class="page-hero-label">
+                About B.E. Pharma Traders & Co.
             </div>
 
-        </div>
-
-    </section>
-
-
-
-
-    <!-- STATS -->
-
-    <section class="py-16 md:py-20 bg-[#f8fcfe]">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-
-
-                <div class="mini-card">
-
-                    <div class="flex items-center gap-4">
-
-                        <div class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                            <i class="fas fa-box-open"></i>
-
-                        </div>
-
-                        <div>
-
-                            <p class="text-2xl font-extrabold text-brand">
-                                6+
-                            </p>
-
-                            <p class="text-xs text-gray-500 font-semibold">
-                                Core Product Categories
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="mini-card">
-
-                    <div class="flex items-center gap-4">
-
-                        <div class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                            <i class="fas fa-layer-group"></i>
-
-                        </div>
-
-                        <div>
-
-                            <p class="text-2xl font-extrabold text-brand">
-                                500+
-                            </p>
-
-                            <p class="text-xs text-gray-500 font-semibold">
-                                Listed Products &amp; SKUs
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="mini-card">
-
-                    <div class="flex items-center gap-4">
-
-                        <div class="w-12 h-12 rounded-xl bg-mist text-brand flex items-center justify-center">
-
-                            <i class="fas fa-truck-ramp-box"></i>
-
-                        </div>
-
-                        <div>
-
-                            <p class="text-2xl font-extrabold text-brand">
-                                B2B
-                            </p>
-
-                            <p class="text-xs text-gray-500 font-semibold">
-                                Verified Quality Supply
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- CATEGORIES -->
-
-    <section id="categories" class="py-20 bg-white">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
-            <div class="text-center max-w-2xl mx-auto mb-12">
-
-                <span class="section-eyebrow">
-                    Product Verticals
-                </span>
-
-                <h2 class="section-title text-2xl sm:text-3xl md:text-4xl mt-2">
-
-                    Healthcare Products Organized For
-
-                    <span class="text-brand">
-                        Easy Discovery
-                    </span>
-
-                </h2>
-
-                <p class="text-gray-500 text-sm md:text-base mt-3">
-
-                    Filter by segment or search directly to locate medicine lines,
-                    disposables, critical care, and everyday healthcare goods.
-
-                </p>
-
-            </div>
-
-
-
-
-            <!-- SEARCH & FILTER -->
-
-            <div class="filter-wrap p-4 md:p-6 mb-12">
-
-                <div class="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-between">
-
-
-                    <div class="w-full lg:max-w-md">
-
-                        <div class="search-box">
-
-                            <i class="fas fa-search text-brand"></i>
-
-                            <input id="categorySearch" type="text"
-                                placeholder="Search category by name or keyword...">
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="flex flex-wrap gap-2">
-
-                        <button class="filter-btn active" data-filter="all">
-                            All Categories
-                        </button>
-
-                        <button class="filter-btn" data-filter="pharmaceuticals">
-                            Pharmaceuticals
-                        </button>
-
-                        <button class="filter-btn" data-filter="surgical">
-                            Surgical
-                        </button>
-
-                        <button class="filter-btn" data-filter="otc">
-                            OTC
-                        </button>
-
-                        <button class="filter-btn" data-filter="devices">
-                            Devices
-                        </button>
-
-                        <button class="filter-btn" data-filter="healthcare">
-                            Healthcare
-                        </button>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-
-
-
-            <!-- CATEGORY GRID -->
-
-            <div id="categoryGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-
-
-                <!-- 01 TABLETS -->
-
-                <div class="category-item" data-tags="pharmaceuticals tablets capsules oral solid dosage blister strips antibiotics analgesics">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            01
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-pills"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                Pharmaceuticals
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            Tablets &amp; Capsules
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Wide range of branded and generic solid oral dosage forms including antibiotics, analgesics, anti-infectives, multivitamins, and chronic therapeutic medications.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>High-demand formulations &amp; strengths</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Blister &amp; strip packaging for clinics/retail</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>GMP-certified pharmaceutical supply</span>
-                            </div>
-
-                        </div>
-
-                        <a href="tablets-capsules.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- 02 INJECTIONS -->
-
-                <div class="category-item" data-tags="pharmaceuticals injections critical care vials ampoules parenteral hospital emergency">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            02
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-syringe"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                Injectables
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            Injections
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Hospital-grade injectable solutions, freeze-dried vials, ampoules, IV therapeutics, and life-saving critical care formulations maintained with cold-chain integrity.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Emergency, ICU &amp; OT injectables</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Strict batch tracing &amp; temperature standards</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Institutional supply bulk packaging</span>
-                            </div>
-
-                        </div>
-
-                        <a href="injections.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- 03 MEDICAL DEVICES -->
-
-                <div class="category-item" data-tags="devices diagnostic equipment monitors bp machines thermometer nebulizer glucometer hospital">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            03
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-stethoscope"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                Devices &amp; Tools
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            Medical Devices
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Essential clinical monitoring and diagnostic equipment designed for practitioner precision, patient vital recording, and reliable healthcare delivery.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Digital BP monitors &amp; pulse oximeters</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Diagnostic nebulizers &amp; thermometers</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Durable construction with service support</span>
-                            </div>
-
-                        </div>
-
-                        <a href="medical-devices.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- 04 SURGICAL -->
-
-                <div class="category-item" data-tags="surgical disposables cotton bandages iv sets gloves cannulas dressings operation theatre">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            04
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-scissors"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                Surgical &amp; Wound
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            Surgical Items
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Sterile surgical consumables, wound dressing textiles, infusion sets, cannulas, gloves, and disposable theater essentials built for hospital compliance.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>EO-gas sterilized disposable items</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Wound management &amp; surgical dressings</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>High-volume institutional replenishment</span>
-                            </div>
-
-                        </div>
-
-                        <a href="surgical-items.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- 05 OTC -->
-
-                <div class="category-item" data-tags="otc consumer healthcare pain relief syrups balms digestive wellness retail pharmacy">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            05
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-notes-medical"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                OTC Products
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            OTC Healthcare Products
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Over-the-counter daily healthcare items including antacids, pain-relief ointments, cough syrups, digestive supplements, and first-aid remedies for pharmacy retail.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>High consumer turnaround brands</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Everyday health &amp; recovery formulations</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Wholesale carton deals for retailers</span>
-                            </div>
-
-                        </div>
-
-                        <a href="otc-products.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-
-
-                <!-- 06 HEALTHCARE -->
-
-                <div class="category-item" data-tags="healthcare hygiene sanitizers masks gloves antiseptic protection essentials wellness">
-
-                    <div class="category-card">
-
-                        <span class="category-number">
-                            06
-                        </span>
-
-                        <div class="category-icon mb-6">
-                            <i class="fas fa-shield-virus"></i>
-                        </div>
-
-                        <div class="flex items-center gap-2 mb-3">
-
-                            <span class="text-xs font-bold bg-mist text-brand px-3 py-1.5 rounded-full">
-                                Essentials
-                            </span>
-
-                        </div>
-
-                        <h3 class="text-xl font-extrabold text-navy mb-2">
-                            Healthcare Essentials
-                        </h3>
-
-                        <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                            Personal protection products, sanitizing agents, medical masks, surface disinfectants, and institutional hygiene consumables for preventative health management.
-                        </p>
-
-                        <div class="space-y-2 mb-6 text-xs text-gray-600">
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Infection prevention consumables</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Bulk antiseptic solutions &amp; PPE</span>
-                            </div>
-
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check text-brand"></i>
-                                <span>Suitable for hospitals, offices, schools</span>
-                            </div>
-
-                        </div>
-
-                        <a href="healthcare-essentials.html" class="category-link">
-                            <span>Explore Category Products</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-
-
-            <!-- NO RESULTS -->
-
-            <div id="noResults" class="hidden text-center py-16">
-
-                <div class="w-14 h-14 mx-auto rounded-2xl bg-mist text-brand flex items-center justify-center text-xl">
-                    <i class="fas fa-search"></i>
-                </div>
-
-                <h3 class="text-lg font-bold text-navy mt-4">
-                    No Matching Categories Found
-                </h3>
-
-                <p class="text-sm text-gray-500 mt-1 max-w-sm mx-auto">
-                    Try searching for another medical term or click "All Categories" to view the full list.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- SPECIFIC PRODUCT CTA -->
-
-    <section class="py-20 md:py-24 bg-[#f8fcfe]">
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-            <div class="bg-white border border-gray-100 rounded-3xl p-8 md:p-12 shadow-sm">
-
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
-
-                    <div class="max-w-xl text-center lg:text-left">
-
-                        <span class="section-eyebrow">
-                            Direct Inquiries
-                        </span>
-
-                        <h3 class="text-2xl sm:text-3xl font-extrabold text-navy mt-2">
-                            Can't Find The
-                            <span class="text-brand">
-                                Product You Need?
-                            </span>
-                        </h3>
-
-                        <p class="text-gray-500 text-sm mt-3 leading-relaxed">
-                            We source specialized pharmaceutical compositions, rare surgical supplies, and custom institutional bulk orders on demand with prompt fulfillment quotes.
-                        </p>
-
-                    </div>
-
-
-                    <div class="flex flex-wrap gap-4 justify-center">
-
-                        <a href="product.html"
-                            class="inline-flex items-center gap-2 border border-brand text-brand px-6 py-3 rounded-xl font-bold text-sm hover:bg-brand hover:text-white transition">
-                            <i class="fas fa-list"></i>
-                            <span>View Full Catalog</span>
-                        </a>
-
-                        <a href="contact.html"
-                            class="primary-btn px-6 py-3 rounded-xl font-bold text-sm">
-                            <i class="fas fa-envelope"></i>
-                            <span>Request Product Quote</span>
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-
-    <!-- FINAL CTA -->
-
-    <section class="cta py-20 text-white">
-
-        <div class="circle w-96 h-96 -top-20 -right-20"></div>
-        <div class="circle w-64 h-64 -bottom-16 -left-16"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-
-            <span class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-xs font-bold uppercase tracking-wider mb-4">
-                Partner With Us
-            </span>
-
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-black max-w-3xl mx-auto leading-tight">
-                Strengthen Your Medicine Supply Chain With Reliable Distribution
-            </h2>
-
-            <p class="text-sky-100/90 max-w-2xl mx-auto mt-4 text-sm sm:text-base leading-relaxed">
-                Connect with B.E. Pharma Traders &amp; Co. for verified manufacturer distribution, competitive wholesale pricing, and doorstep healthcare fulfillment.
+            <h1>
+                Building Trust Through
+                <span>Pharmaceutical Supply.</span>
+            </h1>
+
+            <p>
+                We focus on dependable pharmaceutical trading,
+                sourcing and supply solutions while building
+                professional and transparent business relationships.
             </p>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
+        </div>
 
-                <div class="mini-card flex items-center gap-3 !bg-white/10 !border-white/15 !text-white text-left">
-                    <div class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-                        <i class="fas fa-truck text-base"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-sm">Swift Delivery</p>
-                        <p class="text-xs text-sky-100/80">Safe &amp; tracked logistics</p>
-                    </div>
-                </div>
+    </div>
 
-                <div class="mini-card flex items-center gap-3 !bg-white/10 !border-white/15 !text-white text-left">
-                    <div class="w-11 h-11 rounded-xl bg-mist text-brand flex items-center justify-center">
-                        <i class="fas fa-certificate text-base"></i>
-                    </div>
-                    <div>
-                        <p class="font-bold text-sm">Genuine Products</p>
-                        <p class="text-xs text-sky-100/80">Batch-verified brands</p>
-                    </div>
-                </div>
+</section>
 
-            </div>
 
-            <div class="mt-10 flex flex-wrap justify-center gap-4">
+<!-- =========================================================
+     INTRO
+========================================================== -->
 
-                <a href="contact.html"
-                    class="inline-flex items-center gap-2 bg-white text-brand px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-mist transition">
-                    <i class="fas fa-phone-alt"></i>
-                    <span>Contact Sales Desk</span>
-                </a>
+<section class="section intro">
 
-                <a href="index.html"
-                    class="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-brand transition">
-                    <i class="fas fa-home"></i>
-                    <span>Back to Home</span>
-                </a>
+    <div class="container intro-grid">
+
+        <div class="intro-image">
+
+            <div class="intro-image-content">
+
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+
+                <h3>
+                    B.E. Pharma Traders & Co.
+                </h3>
+
+                <p>
+                    A dependable pharmaceutical trading and supply
+                    partner focused on quality, communication and
+                    long-term business relationships.
+                </p>
 
             </div>
 
         </div>
 
-    </section>
+
+        <div class="intro-content">
+
+            <div class="small-title">
+                Who We Are
+            </div>
+
+            <h2>
+                A dependable partner for
+                <span>pharmaceutical business.</span>
+            </h2>
+
+            <p>
+                B.E. Pharma Traders & Co. is focused on connecting
+                pharmaceutical products with businesses that value
+                dependable sourcing, consistent communication and
+                professional service.
+            </p>
+
+            <p>
+                Our approach is built around understanding business
+                requirements, supporting product sourcing and
+                coordinating reliable supply solutions.
+            </p>
+
+            <a href="contact.html" class="btn btn-primary">
+                Contact Us
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STATS
+========================================================== -->
+
+<section class="section stats-section">
+
+    <div class="container stats-grid">
+
+        <div class="about-stat">
+            <i class="fa-solid fa-pills"></i>
+            <h3>10+</h3>
+            <p>Product Categories</p>
+        </div>
+
+        <div class="about-stat">
+            <i class="fa-solid fa-earth-americas"></i>
+            <h3>25+</h3>
+            <p>Target Markets</p>
+        </div>
+
+        <div class="about-stat">
+            <i class="fa-solid fa-handshake"></i>
+            <h3>100+</h3>
+            <p>Business Connections</p>
+        </div>
+
+        <div class="about-stat">
+            <i class="fa-solid fa-headset"></i>
+            <h3>24/7</h3>
+            <p>Enquiry Support</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     OUR STORY
+========================================================== -->
+
+<section class="section story">
+
+    <div class="container story-grid">
+
+        <div class="story-content">
+
+            <div class="small-title">
+                Our Approach
+            </div>
+
+            <h2>
+                Focused on
+                <span>reliable partnerships.</span>
+            </h2>
+
+            <p>
+                Pharmaceutical supply requires dependable
+                communication, careful coordination and attention
+                to business requirements.
+            </p>
+
+            <p>
+                At B.E. Pharma Traders & Co., we aim to make the
+                sourcing and supply process straightforward by
+                understanding requirements and supporting our
+                business partners with professional communication.
+            </p>
+
+
+            <div class="story-points">
+
+                <div class="story-point">
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <strong>
+                            Requirement Understanding
+                        </strong>
+
+                        <span>
+                            We focus on understanding product and
+                            supply requirements before coordination.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="story-point">
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <strong>
+                            Professional Communication
+                        </strong>
+
+                        <span>
+                            Clear communication supports smoother
+                            business coordination.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="story-point">
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <div>
+                        <strong>
+                            Long-Term Relationships                        </strong>
+
+                        <span>
+                            We focus on developing dependable
+                            professional partnerships.
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="story-card">
+
+            <div class="story-card-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+
+            <h3>
+                Our Commitment
+            </h3>
+
+            <p>
+                We are committed to supporting pharmaceutical
+                business requirements with quality-focused
+                sourcing, reliable coordination and responsive
+                communication.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MISSION & VISION
+========================================================== -->
+
+<section class="section mission-vision">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                Mission & Vision
+            </div>
+
+            <h2>
+                What Guides Our Work
+            </h2>
+
+            <p>
+                Our mission and vision shape the way we approach
+                pharmaceutical trading and business relationships.
+            </p>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+
+                <h3>
+                    Our Mission
+                </h3>
+
+                <p>
+                    To support pharmaceutical businesses with
+                    dependable sourcing, professional trading and
+                    coordinated supply solutions while maintaining
+                    clear and transparent communication.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="mission-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <h3>
+                    Our Vision
+                </h3>
+
+                <p>
+                    To build a trusted pharmaceutical supply network
+                    that connects reliable products and business
+                    partners across domestic and international
+                    markets.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VALUES
+========================================================== -->
+
+<section class="section values">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                Our Values
+            </div>
+
+            <h2>
+                Principles Behind Our Business
+            </h2>
+
+            <p>
+                Our working principles are centered around
+                reliability, transparency and professional service.
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <h3>
+                    Quality Focus
+                </h3>
+
+                <p>
+                    We keep quality considerations at the center
+                    of product sourcing and supply discussions.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>
+                    Trust
+                </h3>
+
+                <p>
+                    We value professional relationships built
+                    through dependable communication and service.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <h3>
+                    Transparency
+                </h3>
+
+                <p>
+                    Clear communication helps create better
+                    understanding throughout the business process.
+                </p>
+
+            </div>
+
+
+            <div class="value-card">
+
+                <div class="value-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h3>
+                    Reliability
+                </h3>
+
+                <p>
+                    We aim to provide responsive support and
+                    dependable coordination for business enquiries.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     DOCUMENTS
+========================================================== -->
+
+<section class="section documents">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <div class="small-title">
+                Business Documentation
+            </div>
+
+            <h2>
+                Our Regulatory Documents
+            </h2>
+
+            <p>
+                Click on a document button to view the document
+                or information directly on this page.
+            </p>
+
+        </div>
+
+
+        <div class="documents-grid">
+
+
+            <!-- DOCUMENT 1 - FORM 20-B -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Form 20-B
+                    </h3>
+
+                    <p>
+                        Wholesale drug licence document associated
+                        with pharmaceutical trading activities.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Regulatory Document
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="image"
+                        data-document-src="DL 20B.jpg"
+                        data-document-title="Form 20-B"
+                        data-document-subtitle="Wholesale Drug Licence Document"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Document
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT 2 - FORM 21-B -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-file-medical"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Form 21-B
+                    </h3>
+
+                    <p>
+                        Wholesale drug licence document relating to
+                        specified pharmaceutical product categories.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Regulatory Document
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="image"
+                        data-document-src="DL 21 B.jpg"
+                        data-document-title="Form 21-B"
+                        data-document-subtitle="Wholesale Drug Licence Document"
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Document
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT 3 -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Regulatory Compliance
+                    </h3>
+
+                    <p>
+                        Business operations are approached with
+                        attention to applicable pharmaceutical
+                        trading requirements.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Compliance Focus
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="info"
+                        data-document-title="Regulatory Compliance"
+                        data-document-subtitle="Compliance Focus"
+                        data-document-info="Business operations are approached with attention to applicable pharmaceutical trading requirements. Compliance considerations remain an important part of responsible business coordination."
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT 4 -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Product Documentation
+                    </h3>
+
+                    <p>
+                        Product-related information and documentation
+                        are considered during business enquiries.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Documentation
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="info"
+                        data-document-title="Product Documentation"
+                        data-document-subtitle="Business Documentation"
+                        data-document-info="Product-related information and documentation are considered during business enquiries to support clear communication and better understanding of product and supply requirements."
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT 5 -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Quality Awareness
+                    </h3>
+
+                    <p>
+                        Quality considerations remain an important
+                        part of product sourcing and supply support.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Quality Focus
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="info"
+                        data-document-title="Quality Awareness"
+                        data-document-subtitle="Quality Focus"
+                        data-document-info="Quality considerations remain an important part of product sourcing and supply support. The focus is on maintaining clear product-related communication and responsible business coordination."
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <!-- DOCUMENT 6 -->
+
+            <article class="document-card">
+
+                <div class="document-preview">
+
+                    <div class="document-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                    <div class="document-label">
+                        DOCUMENT
+                    </div>
+
+                </div>
+
+                <div class="document-content">
+
+                    <h3>
+                        Responsible Supply
+                    </h3>
+
+                    <p>
+                        We focus on coordinated supply support and
+                        professional communication with business
+                        partners.
+                    </p>
+
+                    <span class="document-status">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Supply Support
+                    </span>
+
+                    <button
+                        type="button"
+                        class="document-action"
+                        data-document-type="info"
+                        data-document-title="Responsible Supply"
+                        data-document-subtitle="Supply Support"
+                        data-document-info="We focus on coordinated supply support and professional communication with business partners to help make the sourcing and supply process more structured and dependable."
+                    >
+                        <i class="fa-solid fa-eye"></i>
+                        View Details
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================== -->
+
+<section class="section about-cta">
+
+    <div class="container about-cta-inner">
+
+        <div class="about-cta-content">
+
+            <div class="small-title">
+                Work With Us
+            </div>
+
+            <h2>
+                Looking for a dependable
+                pharmaceutical supply partner?
+            </h2>
+
+            <p>
+                Share your product or supply requirement with us
+                and let us discuss how we can support your business.
+            </p>
+
+        </div>
+
+
+        <a
+            href="contact.html"
+            class="btn btn-primary"
+        >
+            Send An Enquiry
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
 
 
 <!-- ========================================================= -->
@@ -2531,14 +3159,10 @@
     >
 
 
-      <!-- ================================================= -->
       <!-- COMPANY -->
-      <!-- ================================================= -->
 
       <div>
 
-
-        <!-- LOGO (same logo as navbar) -->
 
         <a
           href="index.html"
@@ -2556,14 +3180,10 @@
 
             <title>Be Pharma Traders &amp; Co</title>
 
-            <!-- CROSS (two rounded bars) -->
-
             <g fill="currentColor">
               <rect x="262" y="62" width="186" height="560" rx="93"></rect>
               <rect x="75" y="245" width="562" height="196" rx="98"></rect>
             </g>
-
-            <!-- "B" and "e" inside the cross -->
 
             <text
               x="358" y="415"
@@ -2583,8 +3203,6 @@
               fill="#ffffff"
             >e</text>
 
-            <!-- PHARMA -->
-
             <text
               x="678" y="392"
               font-family="'Bitter', Georgia, serif"
@@ -2594,8 +3212,6 @@
               textLength="777"
               lengthAdjust="spacingAndGlyphs"
             >Pharma</text>
-
-            <!-- TRADERS & CO -->
 
             <text
               x="680" y="528"
@@ -2611,8 +3227,6 @@
 
         </a>
 
-
-        <!-- DESCRIPTION -->
 
         <p
           class="mt-6 max-w-sm
@@ -2630,8 +3244,6 @@
 
         </p>
 
-
-        <!-- SOCIAL (links are set in the SOCIAL_LINKS block at the bottom) -->
 
         <div
           class="mt-7 flex flex-wrap gap-3"
@@ -2727,9 +3339,7 @@
 
 
 
-      <!-- ================================================= -->
       <!-- QUICK LINKS -->
-      <!-- ================================================= -->
 
       <div>
 
@@ -2746,8 +3356,6 @@
                  text-sky-100/70"
         >
 
-
-          <!-- HOME -->
 
           <li>
 
@@ -2769,8 +3377,6 @@
 
 
 
-          <!-- ABOUT -->
-
           <li>
 
             <a
@@ -2790,10 +3396,6 @@
           </li>
 
 
-
-          <!-- ================================================= -->
-          <!-- SERVICES -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
@@ -2818,8 +3420,6 @@
 
             </a>
 
-
-            <!-- SERVICES MENU -->
 
             <div
               class="dropdown-menu"
@@ -2884,10 +3484,6 @@
 
 
 
-          <!-- ================================================= -->
-          <!-- CATEGORIES -->
-          <!-- ================================================= -->
-
           <li class="dropdown">
 
 
@@ -2911,8 +3507,6 @@
 
             </a>
 
-
-            <!-- CATEGORIES MENU -->
 
             <div
               class="dropdown-menu"
@@ -3021,9 +3615,7 @@
 
 
 
-      <!-- ================================================= -->
-      <!-- PRODUCTS (same options as navbar) -->
-      <!-- ================================================= -->
+      <!-- PRODUCTS -->
 
       <div>
 
@@ -3040,8 +3632,6 @@
                  text-sky-100/70"
         >
 
-
-          <!-- PHARMACEUTICAL -->
 
           <li>
 
@@ -3062,8 +3652,6 @@
           </li>
 
 
-          <!-- OTC -->
-
           <li>
 
             <a
@@ -3083,10 +3671,6 @@
           </li>
 
 
-
-          <!-- ================================================= -->
-          <!-- SURGICAL & MEDICAL  (DROPDOWN)                     -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
@@ -3146,10 +3730,6 @@
 
 
 
-          <!-- ================================================= -->
-          <!-- NUTRACEUTICAL                                      -->
-          <!-- ================================================= -->
-
           <li>
 
             <a
@@ -3168,8 +3748,6 @@
 
           </li>
 
-
-          <!-- HEALTHCARE -->
 
           <li>
 
@@ -3190,10 +3768,6 @@
           </li>
 
 
-
-          <!-- ================================================= -->
-          <!-- VETERINARY  (DROPDOWN)                             -->
-          <!-- ================================================= -->
 
           <li class="dropdown">
 
@@ -3271,9 +3845,7 @@
 
 
 
-      <!-- ================================================= -->
       <!-- CONTACT -->
-      <!-- ================================================= -->
 
       <div>
 
@@ -3287,8 +3859,6 @@
 
         <div class="space-y-5">
 
-
-          <!-- ADDRESS -->
 
           <a
             href="contact.html"
@@ -3339,8 +3909,6 @@
 
 
 
-          <!-- PHONE -->
-
           <div
             class="contact-box flex gap-4"
           >
@@ -3388,8 +3956,6 @@
 
 
 
-          <!-- EMAIL -->
-
           <div
             class="contact-box flex gap-4"
           >
@@ -3436,8 +4002,6 @@
           </div>
 
 
-
-          <!-- WORKING HOURS -->
 
           <a
             href="contact.html"
@@ -3499,9 +4063,7 @@
 
 
 
-  <!-- ================================================= -->
   <!-- COPYRIGHT BAR -->
-  <!-- ================================================= -->
 
   <div
     class="bg-brand"
@@ -3524,8 +4086,6 @@
     >
 
 
-      <!-- COPYRIGHT -->
-
       <p>
 
         © 2026
@@ -3544,8 +4104,6 @@
       </p>
 
 
-
-      <!-- PRIVACY / TERMS -->
 
       <div
         class="flex
@@ -3578,8 +4136,6 @@
 
 
 
-      <!-- DEV LABS -->
-
       <p>
 
         Crafted by
@@ -3603,26 +4159,83 @@
 
 </footer>
 
-    <!-- BACK TO TOP -->
 
-    <button
-        class="back-top"
-        id="backTop"
-        aria-label="Back to Top"
-    >
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+<!-- =========================================================
+     DOCUMENT MODAL
+========================================================== -->
+
+<div
+    class="document-modal"
+    id="documentModal"
+    aria-hidden="true"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+>
+
+    <div class="document-modal-box">
+
+        <div class="modal-header">
+
+            <div class="modal-title-wrap">
+
+                <div
+                    class="modal-title"
+                    id="modalTitle"
+                >
+                    Document
+                </div>
+
+                <div
+                    class="modal-subtitle"
+                    id="modalSubtitle"
+                >
+                    Document Preview
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close Document"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div
+            class="modal-body"
+            id="modalBody"
+        >
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- BACK TO TOP -->
+
+<button
+    class="back-top"
+    id="backTop"
+    aria-label="Back to Top"
+    type="button"
+>
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
 
 <!-- ========================================================= -->
 <!--                   NAVBAR JAVASCRIPT                       -->
 <!-- ========================================================= -->
 
 <script>
-
-
-/* =====================================================
-                    MAIN MOBILE MENU
-====================================================== */
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
@@ -3650,11 +4263,6 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-
-/* =====================================================
-        MOBILE DROPDOWNS
-====================================================== */
-
 document.querySelectorAll("[data-toggle]").forEach(btn => {
 
     btn.addEventListener("click", () => {
@@ -3669,11 +4277,6 @@ document.querySelectorAll("[data-toggle]").forEach(btn => {
 
 });
 
-
-
-/* =====================================================
-                    MOBILE SUB LINKS
-====================================================== */
 
 document.querySelectorAll(".mobile-sub-link").forEach(link => {
 
@@ -3691,11 +4294,6 @@ document.querySelectorAll(".mobile-sub-link").forEach(link => {
 });
 
 
-
-/* =====================================================
-                CLOSE MOBILE MENU
-====================================================== */
-
 mobileMenu.querySelectorAll("a").forEach(link => {
 
     link.addEventListener("click", () => {
@@ -3709,19 +4307,14 @@ mobileMenu.querySelectorAll("a").forEach(link => {
 
 });
 
-
 </script>
+
 
 <!-- ========================================================= -->
 <!--                   FOOTER JAVASCRIPT                       -->
 <!-- ========================================================= -->
 
 <script>
-
-
-/* =====================================================
-            SOCIAL LINKS  (PASTE YOUR LINKS HERE)
-====================================================== */
 
 const SOCIAL_LINKS = {
     facebook:  "https://www.facebook.com/YOUR_PAGE",
@@ -3731,7 +4324,6 @@ const SOCIAL_LINKS = {
     whatsapp:  "919973100210"
 };
 
-/* WhatsApp khulne par ye message pehle se likha hoga */
 const WHATSAPP_MESSAGE = "Hello Be Pharma Traders, I would like to know more about your products.";
 
 
@@ -3740,7 +4332,6 @@ document.querySelectorAll("[data-social]").forEach(function (link) {
   const key = link.dataset.social;
   const value = SOCIAL_LINKS[key];
 
-  /* jab tak asli link nahi daala, purana link waisa hi rahega */
   if (!value || /YOUR_PAGE|X{4,}/.test(value)) {
 
     console.warn("Social link not set yet: " + key);
@@ -3758,29 +4349,17 @@ document.querySelectorAll("[data-social]").forEach(function (link) {
 });
 
 
-
-/* =====================================================
-                    FOOTER DROPDOWNS
-====================================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
 
-
-  const dropdowns =
-    document.querySelectorAll(".dropdown");
-
+  const dropdowns = document.querySelectorAll(".dropdown");
 
   dropdowns.forEach(function (dropdown) {
 
-
-    const button =
-      dropdown.querySelector(":scope > a");
-
+    const button = dropdown.querySelector(":scope > a");
 
     button.addEventListener("click", function (e) {
 
       e.preventDefault();
-
 
       dropdowns.forEach(function (otherDropdown) {
 
@@ -3792,7 +4371,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
-
       dropdown.classList.toggle("active");
 
     });
@@ -3800,12 +4378,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 
-
   document.addEventListener("click", function (e) {
 
-
     if (!e.target.closest(".dropdown")) {
-
 
       dropdowns.forEach(function (dropdown) {
 
@@ -3813,201 +4388,204 @@ document.addEventListener("DOMContentLoaded", function () {
 
       });
 
-
     }
 
   });
-
 
 });
 
 </script>
 
+
 <!-- ========================================================= -->
-<!--                   BACK TO TOP JAVASCRIPT                  -->
+<!--                   PAGE JAVASCRIPT                         -->
 <!-- ========================================================= -->
+
 <script>
+
+    /* BACK TO TOP */
+
     const backTop = document.getElementById("backTop");
+
     window.addEventListener("scroll", function () {
+
         if (window.scrollY > 500) {
+
             backTop.classList.add("show");
+
         } else {
+
             backTop.classList.remove("show");
+
         }
+
     });
 
     backTop.addEventListener("click", function () {
+
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
+
     });
+
+
+    /* DOCUMENT MODAL */
+
+    const documentModal = document.getElementById("documentModal");
+    const modalClose = document.getElementById("modalClose");
+    const modalBody = document.getElementById("modalBody");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalSubtitle = document.getElementById("modalSubtitle");
+
+
+    function openDocumentModal(button) {
+
+        const type = button.dataset.documentType;
+        const source = button.dataset.documentSrc || "";
+        const title = button.dataset.documentTitle || "Document";
+        const subtitle = button.dataset.documentSubtitle || "Document Preview";
+        const info = button.dataset.documentInfo || "";
+
+        modalTitle.textContent = title;
+        modalSubtitle.textContent = subtitle;
+
+        modalBody.innerHTML = "";
+
+        if (type === "image") {
+
+            const image = document.createElement("img");
+
+            image.className = "modal-document-image";
+            image.alt = title;
+            image.src = source;
+
+            image.onload = function () {
+
+                modalBody.innerHTML = "";
+                modalBody.appendChild(image);
+
+            };
+
+            image.onerror = function () {
+
+                modalBody.innerHTML = `
+                    <div class="modal-error">
+                        <i class="fa-solid fa-file-circle-xmark"></i>
+                        <h3>Document Could Not Be Loaded</h3>
+                        <p>
+                            Please make sure
+                            <strong>${source}</strong>
+                            is present in the same folder as
+                            about.html.
+                        </p>
+                    </div>
+                `;
+
+            };
+
+            modalBody.appendChild(image);
+
+        }
+
+        else {
+
+            modalBody.innerHTML = `
+                <div class="modal-info">
+
+                    <div class="modal-info-icon">
+                        <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <h3>
+                        ${title}
+                    </h3>
+
+                    <p>
+                        ${info}
+                    </p>
+
+                </div>
+            `;
+
+        }
+
+
+        documentModal.classList.add("show");
+        documentModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        modalClose.focus();
+
+    }
+
+
+    document
+        .querySelectorAll(".document-action")
+        .forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                openDocumentModal(button);
+
+            });
+
+        });
+
+
+    function closeDocumentModal() {
+
+        documentModal.classList.remove("show");
+        documentModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+
+        setTimeout(function () {
+
+            if (!documentModal.classList.contains("show")) {
+
+                modalBody.innerHTML = "";
+
+            }
+
+        }, 250);
+
+    }
+
+
+    modalClose.addEventListener("click", closeDocumentModal);
+
+
+    documentModal.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === documentModal) {
+
+                closeDocumentModal();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                documentModal.classList.contains("show")
+            ) {
+
+                closeDocumentModal();
+
+            }
+
+        }
+    );
+
 </script>
-
-<!-- ========================================================= -->
-<!--                   CATEGORY SEARCH & FILTER                -->
-<!-- ========================================================= -->
-
-<script> 
-        document.addEventListener("DOMContentLoaded", function () { 
- 
-            /* ========================= 
-               CATEGORY SEARCH & FILTER 
-            ========================= */ 
- 
-            const cards = 
-                [ 
-                    ...document.querySelectorAll( 
-                        ".category-item" 
-                    ) 
-                ]; 
- 
- 
-            const buttons = 
-                [ 
-                    ...document.querySelectorAll( 
-                        ".filter-btn" 
-                    ) 
-                ]; 
- 
- 
-            const search = 
-                document.getElementById( 
-                    "categorySearch" 
-                ); 
- 
- 
-            const empty = 
-                document.getElementById( 
-                    "noResults" 
-                ); 
- 
- 
-            let activeFilter = 
-                "all"; 
- 
- 
-            function filterCategories() { 
- 
-                const query = 
-                    ( 
-                        search?.value || "" 
-                    ) 
-                    .trim() 
-                    .toLowerCase(); 
- 
- 
-                let shown = 
-                    0; 
- 
- 
-                cards.forEach(function (card) { 
- 
-                    const tags = 
-                        ( 
-                            card.dataset.tags || "" 
-                        ) 
-                        .toLowerCase(); 
- 
- 
-                    const text = 
-                        card.textContent 
-                            .toLowerCase(); 
- 
- 
-                    const filterMatch = 
-                        activeFilter === "all" || 
-                        tags 
-                            .split(/\s+/) 
-                            .includes(activeFilter); 
- 
- 
-                    const searchMatch = 
-                        !query || 
-                        tags.includes(query) || 
-                        text.includes(query); 
- 
- 
-                    const shouldShow = 
-                        filterMatch && 
-                        searchMatch; 
- 
- 
-                    card.style.display = 
-                        shouldShow 
-                            ? "flex" 
-                            : "none"; 
- 
- 
-                    if (shouldShow) { 
- 
-                        shown++; 
- 
-                    } 
- 
-                }); 
- 
- 
-                if (empty) { 
- 
-                    empty.classList.toggle( 
-                        "hidden", 
-                        shown !== 0 
-                    ); 
- 
-                } 
- 
-            } 
- 
- 
- 
-            buttons.forEach(function (button) { 
- 
-                button.addEventListener( 
-                    "click", 
-                    function () { 
- 
-                        buttons.forEach( 
-                            function (item) { 
- 
-                                item.classList.remove( 
-                                    "active" 
-                                ); 
- 
-                            } 
-                        ); 
- 
- 
-                        button.classList.add( 
-                            "active" 
-                        ); 
- 
- 
-                        activeFilter = 
-                            button.dataset.filter || 
-                            "all"; 
- 
- 
-                        filterCategories(); 
- 
-                    } 
-                ); 
- 
-            }); 
- 
- 
- 
-            if (search) { 
- 
-                search.addEventListener( 
-                    "input", 
-                    filterCategories 
-                ); 
- 
-            } 
- 
-        }); 
-    </script>
 
 </body>
 </html>

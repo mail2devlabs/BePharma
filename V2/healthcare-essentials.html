@@ -38,24 +38,11 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script>
-        /* Same Tailwind palette used by index.html navbar + footer */
         tailwind.config = {
-            corePlugins: {
-                container: false
-            },
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            DEFAULT: "#0b7b97",
-                            dark: "#08627a"
-                        },
-                        navy: "#0b2545",
-                        accent: "#4fc3dc",
-                        mist: {
-                            DEFAULT: "#eaf6fb",
-                            line: "#cfe9f3"
-                        }
+                        brand: "#10756d"
                     }
                 }
             }
@@ -65,10 +52,10 @@
     <style>
 
         :root {
-            --primary: #0b7b97;
-            --primary-dark: #08627a;
-            --primary-light: #dff5fa;
-            --dark: #0b2545;
+            --primary: #10756d;
+            --primary-dark: #0d5e57;
+            --primary-light: #e8f6f4;
+            --dark: #102f2c;
         }
 
         * {
@@ -82,7 +69,7 @@
         body {
             margin: 0;
             background: #fff;
-            color: #183244;
+            color: #1f2937;
             font-family: Arial, Helvetica, sans-serif;
         }
 
@@ -143,7 +130,7 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            color: #4fc3dc;
+            color: #72e0d5;
             font-size: 13px;
             font-weight: 800;
             letter-spacing: .08em;
@@ -164,14 +151,14 @@
         }
 
         .breadcrumb a:hover {
-            color: #4fc3dc;
+            color: #72e0d5;
         }
 
         /* SEARCH */
 
         .filter-wrap {
-            background: #eef9fc;
-            border: 1px solid #cfe9f3;
+            background: #f7fbfa;
+            border: 1px solid #e5efed;
             border-radius: 20px;
         }
 
@@ -180,7 +167,7 @@
             align-items: center;
             gap: 10px;
             background: #fff;
-            border: 1px solid #d9e8ed;
+            border: 1px solid #dce8e6;
             border-radius: 13px;
             padding: 0 15px;
         }
@@ -195,14 +182,14 @@
             height: 48px;
             border: 0;
             outline: 0;
-            color: #183244;
+            color: #374151;
             background: transparent;
         }
 
         .filter-btn {
-            border: 1px solid #d9e8ed;
+            border: 1px solid #d8e5e3;
             background: #fff;
-            color: #637681;
+            color: #4b5563;
             border-radius: 11px;
             padding: 10px 15px;
             font-size: 13px;
@@ -222,7 +209,7 @@
         .product-card {
             position: relative;
             background: #fff;
-            border: 1px solid #d9e8ed;
+            border: 1px solid #e4eceb;
             border-radius: 22px;
             overflow: hidden;
             transition: .3s;
@@ -233,13 +220,13 @@
 
         .product-card:hover {
             transform: translateY(-7px);
-            border-color: #cfe9f3;
+            border-color: #cfe5e2;
             box-shadow: 0 22px 50px rgba(15,23,42,.10);
         }
 
         .product-image {
             height: 220px;
-            background: #eef9fc;
+            background: #f5faf9;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -277,7 +264,7 @@
         }
 
         .product-meta {
-            color: #637681;
+            color: #6b7280;
             font-size: 13px;
             line-height: 1.7;
         }
@@ -304,8 +291,8 @@
         }
 
         .view-btn {
-            border: 1px solid #d9e8ed;
-            color: #183244;
+            border: 1px solid #d8e5e3;
+            color: #374151;
             background: #fff;
         }
 
@@ -394,7 +381,7 @@
             right: 20px;
             bottom: 20px;
             z-index: 1100;
-            background: #0b2545;
+            background: #102f2c;
             color: #fff;
             padding: 14px 18px;
             border-radius: 13px;
@@ -501,7 +488,7 @@
 
     .social-icon:hover {
       transform: translateY(-5px);
-      background: #0b7b97;
+      background: #10756d;
       color: white;
     }
 
@@ -515,7 +502,7 @@
     }
 
     .contact-box:hover .contact-icon {
-      background: #0b7b97;
+      background: #10756d;
       color: white;
       transform: scale(1.08);
     }
@@ -555,7 +542,7 @@
 
       min-width: 260px;
 
-      background: #0b2545;
+      background: #073b3a;
 
       padding: 10px 0;
 
@@ -610,7 +597,7 @@
 
       padding: 11px 16px;
 
-      color: #d6eef6;
+      color: #ccfbf1;
 
       font-size: 14px;
 
@@ -623,7 +610,7 @@
 
     .dropdown-menu a:hover {
 
-      background: #0b7b97;
+      background: #10756d;
 
       color: white;
 
@@ -640,7 +627,7 @@
 
       font-size: 17px;
 
-      color: #4fc3dc;
+      color: #55c9bd;
 
       transition: all 0.25s ease;
 
@@ -664,7 +651,7 @@
 
       font-size: 16px;
 
-      color: #4fc3dc;
+      color: #55c9bd;
 
       transition: transform 0.3s ease;
 
@@ -720,342 +707,455 @@
                         NAVBAR
 ====================================================== -->
 
-<nav class="bg-mist border-b border-mist-line shadow-lg sticky top-0 z-50">
+<nav
+    class="
+        bg-white
+        border-b border-gray-200
+        shadow-xl
+        sticky top-0
+        z-50
+    "
+>
 
     <div class="w-full px-3 sm:px-5 lg:px-8">
 
-        <!-- NAVBAR ROW -->
+        <!-- =================================================
+                            NAVBAR ROW
+        ================================================== -->
 
         <div class="flex items-center justify-between h-20">
 
 
-            <!-- LOGO -->
+            <!-- =================================================
+                                LOGO
+            ================================================== -->
 
             <a
                 href="index.html"
-                aria-label="Be Pharma Traders &amp; Co - Home"
-                class="flex items-center flex-shrink-0"
+                class="
+                    flex
+                    items-center
+                    gap-3
+                    group
+                    flex-shrink-0
+                "
             >
 
-                <svg
-                    viewBox="60 50 1420 590"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Be Pharma Traders &amp; Co"
-                    class="h-12 sm:h-14 lg:h-16 w-auto text-[#c9651b] hover:opacity-90 transition"
-                >
+                <!-- LOGO -->
 
-                    <title>Be Pharma Traders &amp; Co</title>
+                <div class="relative w-14 h-14">
 
-                    <!-- CROSS (two rounded bars) -->
+                    <div
+                        class="
+                            absolute inset-0
+                            rounded-2xl
+                            bg-brand
+                            shadow-lg
+                            shadow-teal-200
+                            group-hover:scale-105
+                            transition duration-300
+                        "
+                    ></div>
 
-                    <g fill="currentColor">
-                        <rect x="262" y="62" width="186" height="560" rx="93"></rect>
-                        <rect x="75" y="245" width="562" height="196" rx="98"></rect>
-                    </g>
 
-                    <!-- "B" and "e" inside the cross -->
+                    <div
+                        class="
+                            absolute inset-1.5
+                            rounded-xl
+                            bg-white
+                            flex
+                            items-center
+                            justify-center
+                        "
+                    >
 
-                    <text
-                        x="358" y="415"
-                        text-anchor="middle"
-                        font-family="'Bitter', Georgia, serif"
-                        font-weight="800"
-                        font-size="240"
-                        fill="#ffffff"
-                    >B</text>
+                        <div class="relative w-7 h-7">
 
-                    <text
-                        x="500" y="382"
-                        font-family="'Bitter', Georgia, serif"
-                        font-style="italic"
-                        font-weight="700"
-                        font-size="115"
-                        fill="#ffffff"
-                    >e</text>
+                            <div
+                                class="
+                                    absolute
+                                    left-2.5
+                                    top-0
+                                    w-2
+                                    h-7
+                                    bg-brand
+                                    rounded-full
+                                "
+                            ></div>
 
-                    <!-- PHARMA -->
+                            <div
+                                class="
+                                    absolute
+                                    top-2.5
+                                    left-0
+                                    w-7
+                                    h-2
+                                    bg-brand
+                                    rounded-full
+                                "
+                            ></div>
 
-                    <text
-                        x="678" y="392"
-                        font-family="'Bitter', Georgia, serif"
-                        font-weight="800"
-                        font-size="205"
-                        fill="currentColor"
-                        textLength="777"
-                        lengthAdjust="spacingAndGlyphs"
-                    >Pharma</text>
+                        </div>
 
-                    <!-- TRADERS & CO -->
+                    </div>
 
-                    <text
-                        x="680" y="528"
-                        font-family="'Bitter', Georgia, serif"
-                        font-weight="700"
-                        font-size="96"
-                        fill="currentColor"
-                        textLength="760"
-                        lengthAdjust="spacingAndGlyphs"
-                    >Traders &amp; Co</text>
 
-                </svg>
+                    <!-- CAPSULE -->
+
+                    <div
+                        class="
+                            absolute
+                            -right-1
+                            -bottom-1
+                            w-6
+                            h-6
+                            bg-brand
+                            rounded-full
+                            border-2
+                            border-white
+                            flex
+                            items-center
+                            justify-center
+                        "
+                    >
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-capsules
+                                text-white
+                                text-[10px]
+                            "
+                        ></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BRAND NAME -->
+
+                <div class="leading-none">
+
+                    <h1
+                        class="
+                            text-2xl
+                            font-extrabold
+                            tracking-tight
+                            text-brand
+                        "
+                    >
+                        Be Pharma
+                    </h1>
+
+                    <div class="flex items-center gap-2 mt-1.5">
+
+                        <span class="h-px w-5 bg-brand"></span>
+
+                        <p
+                            class="
+                                text-xs
+                                font-bold
+                                tracking-[0.25em]
+                                text-brand
+                                uppercase
+                            "
+                        >
+                            Traders
+                        </p>
+
+                    </div>
+
+                </div>
 
             </a>
 
 
 
-            <!-- DESKTOP NAVIGATION -->
+            <!-- =================================================
+                        DESKTOP NAVIGATION
+            ================================================== -->
 
-            <div class="hidden lg:flex items-center gap-7">
+            <div
+                class="
+                    hidden
+                    lg:flex
+                    items-center
+                    gap-7
+                "
+            >
 
                 <!-- HOME -->
 
-                <a href="index.html" class="text-navy font-medium hover:text-brand transition">
+                <a
+                    href="index.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
                     Home
                 </a>
 
 
                 <!-- ABOUT -->
 
-                <a href="about.html" class="text-navy font-medium hover:text-brand transition">
+                <a
+                    href="about.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
                     About Us
                 </a>
 
 
 
-                <!-- PRODUCTS -->
+                <!-- =================================================
+                            PRODUCTS
+                ================================================== -->
 
                 <div class="relative group">
 
                     <button
                         type="button"
-                        class="flex items-center gap-2 text-navy font-medium hover:text-brand transition"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
                     >
+
                         Products
-                        <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         class="
-                            absolute left-0 top-full mt-4 w-64
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-64
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
                             transition-all duration-300
-                            before:absolute before:-top-4 before:left-0 before:h-4 before:w-full
                         "
                     >
 
                         <div class="p-2">
 
-                            <!-- PHARMACEUTICALS -->
-
                             <a
                                 href="pharmaceuticals.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-pills"></i>
                                 </span>
+
                                 <span>Pharmaceuticals</span>
                             </a>
 
 
-                            <!-- OTC -->
-
                             <a
                                 href="OTC.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-capsules"></i>
                                 </span>
+
                                 <span>OTC Products</span>
                             </a>
 
 
-                            <!-- SURGICAL & MEDICAL (DROPDOWN): Consumable / Disposable -->
-
-                            <div class="relative group/sub">
-
-                                <a
-                                    href="surgical-medical.html"
-                                    class="
-                                        flex items-center gap-3 px-4 py-3 rounded-lg
-                                        text-navy hover:bg-mist hover:text-brand
-                                        group-hover/sub:bg-mist group-hover/sub:text-brand
-                                        transition
-                                    "
-                                >
-                                    <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                        <i class="fas fa-kit-medical"></i>
-                                    </span>
-                                    <span class="flex-1">Surgical</span>
-                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                                </a>
-
-                                <!-- SUB MENU -->
-
-                                <div
-                                    class="
-                                        absolute left-full -top-2 w-60 pl-2
-                                        opacity-0 invisible -translate-x-2
-                                        group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0
-                                        transition-all duration-300
-                                    "
-                                >
-                                    <div class="bg-white rounded-xl shadow-xl border border-mist-line p-2">
-
-                                        <a
-                                            href="surgical-medical-consumable.html"
-                                            class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
-                                        >
-                                            <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                                <i class="fas fa-bandage"></i>
-                                            </span>
-                                            <span>Consumable</span>
-                                        </a>
-
-                                        <a
-                                            href="surgical-medical-disposable.html"
-                                            class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
-                                        >
-                                            <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                                <i class="fas fa-mask-face"></i>
-                                            </span>
-                                            <span>Disposable</span>
-                                        </a>
-
-                                        <a href="surgical-medical.html" class="mobile-sub-link">
-                                            All Surgical products
-                                            <i class="fa-solid fa-arrow-right text-xs ml-3"></i>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                            </div>
-
-
-                            <!-- NUTRACEUTICAL -->
-
                             <a
-                                href="nutraceutical.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                href="surgical-medical.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                    <i class="fas fa-leaf"></i>
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
+                                    <i class="fas fa-kit-medical"></i>
                                 </span>
-                                <span>Nutraceutical</span>
+
+                                <span>Surgical & Medical</span>
                             </a>
 
 
-                            <!-- HEALTHCARE ESSENTIALS -->
-
                             <a
                                 href="healthcare-essentials.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-heart-pulse"></i>
                                 </span>
+
                                 <span>Healthcare Essentials</span>
                             </a>
 
 
-                            <!-- PERSONAL CARE -->
-
                             <a
                                 href="personal-care.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-hand-holding-medical"></i>
                                 </span>
+
                                 <span>Personal Care</span>
                             </a>
 
 
-                            <!-- VETERINARY (DROPDOWN): Vet / Poultry / Cattle -->
-
-                            <div class="relative group/sub">
-
-                                <a
-                                    href="veterinary-products.html"
+                            <a
+                                href="veterinary-products.html"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    hover:text-brand
+                                    transition
+                                "
+                            >
+                                <span
                                     class="
-                                        flex items-center gap-3 px-4 py-3 rounded-lg
-                                        text-navy hover:bg-mist hover:text-brand
-                                        group-hover/sub:bg-mist group-hover/sub:text-brand
-                                        transition
+                                        w-9 h-9
+                                        rounded-lg
+                                        bg-teal-50
+                                        text-brand
+                                        flex items-center justify-center
                                     "
                                 >
-                                    <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                        <i class="fas fa-paw"></i>
-                                    </span>
-                                    <span class="flex-1">Veterinary Products</span>
-                                    <i class="fa-solid fa-chevron-right text-[10px]"></i>
-                                </a>
+                                    <i class="fas fa-paw"></i>
+                                </span>
 
-                                <!-- SUB MENU -->
-
-                                <div
-                                    class="
-                                        absolute left-full -top-2 w-60 pl-2
-                                        opacity-0 invisible -translate-x-2
-                                        group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-x-0
-                                        transition-all duration-300
-                                    "
-                                >
-                                    <div class="bg-white rounded-xl shadow-xl border border-mist-line p-2">
-
-                                        <a
-                                            href="veterinary-vet.html"
-                                            class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
-                                        >
-                                            <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                                <i class="fas fa-dog"></i>
-                                            </span>
-                                            <span>Vet</span>
-                                        </a>
-
-                                        <a
-                                            href="veterinary-poultry.html"
-                                            class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
-                                        >
-                                            <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                                <i class="fas fa-egg"></i>
-                                            </span>
-                                            <span>Poultry</span>
-                                        </a>
-
-                                        <a
-                                            href="veterinary-cattle.html"
-                                            class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
-                                        >
-                                            <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
-                                                <i class="fas fa-cow"></i>
-                                            </span>
-                                            <span>Cattle</span>
-                                        </a>
-
-                                    </div>
-                                </div>
-
-                            </div>
+                                <span>Veterinary Products</span>
+                            </a>
 
 
-                            <!-- VIEW ALL -->
-
-                            <div class="mt-1 border-t border-mist-line pt-1">
+                            <div class="mt-1 border-t border-gray-100 pt-1">
 
                                 <a
                                     href="product.html"
-                                    class="flex items-center justify-between px-4 py-3 rounded-lg text-brand font-semibold hover:bg-mist transition"
+                                    class="
+                                        flex
+                                        items-center
+                                        justify-between
+                                        px-4 py-3
+                                        rounded-lg
+                                        text-brand
+                                        font-semibold
+                                        hover:bg-teal-50
+                                        transition
+                                    "
                                 >
+
                                     <span>View All Products</span>
+
                                     <i class="fa-solid fa-arrow-right text-xs"></i>
+
                                 </a>
 
                             </div>
@@ -1068,28 +1168,58 @@
 
 
 
-                <!-- SERVICES -->
+                <!-- =================================================
+                            SERVICES
+                ================================================== -->
 
                 <div class="relative group">
 
                     <button
                         type="button"
-                        class="flex items-center gap-2 text-navy font-medium hover:text-brand transition"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
                     >
+
                         Services
-                        <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         class="
-                            absolute left-0 top-full mt-4 w-64
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-64
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
                             transition-all duration-300
-                            before:absolute before:-top-4 before:left-0 before:h-4 before:w-full
                         "
                     >
 
@@ -1097,69 +1227,152 @@
 
                             <a
                                 href="pharmaceutical-distribution.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-truck-medical"></i>
                                 </span>
+
                                 <span>Pharmaceutical Distribution</span>
                             </a>
 
+
                             <a
                                 href="wholesale-supply.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-boxes-stacked"></i>
                                 </span>
+
                                 <span>Wholesale Supply</span>
                             </a>
 
+
                             <a
                                 href="institutional-supply.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-hospital"></i>
                                 </span>
+
                                 <span>Institutional Supply</span>
                             </a>
 
+
                             <a
                                 href="surgical-medical-supplies.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-kit-medical"></i>
                                 </span>
-                                <span>Surgical &amp; Medical Supply</span>
+
+                                <span>Surgical & Medical Supply</span>
                             </a>
+
 
                             <a
                                 href="otc-healthcare-products.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-heart-circle-check"></i>
                                 </span>
-                                <span>OTC &amp; Healthcare Supply</span>
+
+                                <span>OTC & Healthcare Supply</span>
                             </a>
+
 
                             <a
                                 href="delivery-support.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-truck-fast"></i>
                                 </span>
+
                                 <span>Delivery Support</span>
                             </a>
 
-                            <div class="mt-1 border-t border-mist-line pt-1">
+
+                            <div class="mt-1 border-t border-gray-100 pt-1">
 
                                 <a
                                     href="services.html"
-                                    class="flex items-center justify-between px-4 py-3 rounded-lg text-brand font-semibold hover:bg-mist transition"
+                                    class="
+                                        flex items-center justify-between
+                                        px-4 py-3 rounded-lg
+                                        text-brand font-semibold
+                                        hover:bg-teal-50 transition
+                                    "
                                 >
                                     <span>View All Services</span>
                                     <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -1175,28 +1388,58 @@
 
 
 
-                <!-- CATEGORIES -->
+                <!-- =================================================
+                            CATEGORIES
+                ================================================== -->
 
                 <div class="relative group">
 
                     <button
                         type="button"
-                        class="flex items-center gap-2 text-navy font-medium hover:text-brand transition"
+                        class="
+                            flex
+                            items-center
+                            gap-2
+                            text-brand
+                            font-medium
+                            hover:opacity-70
+                            transition
+                        "
                     >
+
                         Categories
-                        <i class="fa-solid fa-chevron-down text-[10px] group-hover:rotate-180 transition"></i>
+
+                        <i
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-[10px]
+                                group-hover:rotate-180
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         class="
-                            absolute left-0 top-full mt-4 w-56
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            absolute
+                            left-0
+                            top-full
+                            mt-4
+                            w-56
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
                             transition-all duration-300
-                            before:absolute before:-top-4 before:left-0 before:h-4 before:w-full
                         "
                     >
 
@@ -1204,69 +1447,157 @@
 
                             <a
                                 href="tablets-capsules.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-tablets"></i>
                                 </span>
-                                <span>Tablets &amp; Capsules</span>
+
+                                <span>Tablets & Capsules</span>
                             </a>
+
 
                             <a
                                 href="injections.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-syringe"></i>
                                 </span>
+
                                 <span>Injections</span>
                             </a>
 
+
                             <a
                                 href="medical-devices.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-microscope"></i>
                                 </span>
+
                                 <span>Medical Devices</span>
                             </a>
 
+
                             <a
                                 href="surgical-items.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-scissors"></i>
                                 </span>
+
                                 <span>Surgical Items</span>
                             </a>
 
+
                             <a
                                 href="OTC.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-bottle-droplet"></i>
                                 </span>
+
                                 <span>OTC Products</span>
                             </a>
 
+
                             <a
                                 href="healthcare-essentials.html"
-                                class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition"
+                                class="
+                                    flex items-center gap-3
+                                    px-4 py-3 rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
                             >
-                                <span class="w-9 h-9 rounded-lg bg-white border border-mist-line text-brand flex items-center justify-center">
+                                <span
+                                    class="
+                                        w-9 h-9 rounded-lg
+                                        bg-teal-50 text-brand
+                                        flex items-center justify-center
+                                    "
+                                >
                                     <i class="fas fa-notes-medical"></i>
                                 </span>
+
                                 <span>Healthcare Essentials</span>
                             </a>
 
-                            <div class="mt-1 border-t border-mist-line pt-1">
+
+                            <div class="mt-1 border-t border-gray-100 pt-1">
 
                                 <a
                                     href="categories.html"
-                                    class="flex items-center justify-between px-4 py-3 rounded-lg text-brand font-semibold hover:bg-mist transition"
+                                    class="
+                                        flex
+                                        items-center
+                                        justify-between
+                                        px-4 py-3
+                                        rounded-lg
+                                        text-brand
+                                        font-semibold
+                                        hover:bg-teal-50
+                                        transition
+                                    "
                                 >
                                     <span>View All Categories</span>
                                     <i class="fa-solid fa-arrow-right text-xs"></i>
@@ -1284,7 +1615,15 @@
 
                 <!-- CONTACT -->
 
-                <a href="contact.html" class="text-navy font-medium hover:text-brand transition">
+                <a
+                    href="contact.html"
+                    class="
+                        text-brand
+                        font-medium
+                        hover:opacity-70
+                        transition
+                    "
+                >
                     Contact Us
                 </a>
 
@@ -1292,12 +1631,23 @@
 
 
 
-            <!-- DESKTOP RIGHT SIDE -->
+            <!-- =================================================
+                    DESKTOP RIGHT SIDE
+            ================================================== -->
 
-            <div class="hidden lg:flex items-center gap-4">
+            <div
+                class="
+                    hidden
+                    lg:flex
+                    items-center
+                    gap-4
+                "
+            >
 
 
-                <!-- FOLLOW US ICON -->
+                <!-- =================================================
+                            FOLLOW US ICON
+                ================================================== -->
 
                 <div class="relative group">
 
@@ -1305,14 +1655,24 @@
                         type="button"
                         aria-label="Follow Us"
                         class="
-                            w-11 h-11 rounded-full
-                            bg-white border border-mist-line text-brand
-                            flex items-center justify-center
-                            hover:bg-brand hover:text-white hover:border-brand
-                            transition duration-300
+                            w-11 h-11
+                            rounded-full
+                            bg-teal-50
+                            text-brand
+                            flex
+                            items-center
+                            justify-center
+                            hover:bg-brand
+                            hover:text-white
+                            transition
+                            duration-300
                         "
                     >
+
+                        <!-- FOLLOW US ICON -->
+
                         <i class="fa-solid fa-user-plus text-lg"></i>
+
                     </button>
 
 
@@ -1320,36 +1680,145 @@
 
                     <div
                         class="
-                            absolute right-0 top-full mt-4 w-52
-                            bg-white rounded-xl shadow-xl
-                            border border-mist-line
-                            opacity-0 invisible translate-y-2
-                            group-hover:opacity-100 group-hover:visible group-hover:translate-y-0
+                            absolute
+                            right-0
+                            top-full
+                            mt-4
+                            w-52
+                            bg-white
+                            rounded-xl
+                            shadow-xl
+                            border border-gray-200
+                            opacity-0
+                            invisible
+                            translate-y-2
+                            group-hover:opacity-100
+                            group-hover:visible
+                            group-hover:translate-y-0
                             transition-all duration-300
-                            before:absolute before:-top-4 before:left-0 before:h-4 before:w-full
                         "
                     >
 
                         <div class="p-2">
 
-                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
-                                <i class="fa-brands fa-facebook text-brand text-lg w-5"></i>
-                                <span>Facebook</span>
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-facebook
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    Facebook
+                                </span>
+
                             </a>
 
-                            <a href="https://www.instagram.com/" class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
-                                <i class="fa-brands fa-instagram text-brand text-lg w-5"></i>
-                                <span>Instagram</span>
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-instagram
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    Instagram
+                                </span>
+
                             </a>
 
-                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
-                                <i class="fa-brands fa-linkedin text-brand text-lg w-5"></i>
-                                <span>LinkedIn</span>
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-linkedin
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    LinkedIn
+                                </span>
+
                             </a>
 
-                            <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
-                                <i class="fa-brands fa-whatsapp text-brand text-lg w-5"></i>
-                                <span>WhatsApp</span>
+
+                            <a
+                                href="#"
+                                class="
+                                    flex
+                                    items-center
+                                    gap-3
+                                    px-4 py-3
+                                    rounded-lg
+                                    hover:bg-teal-50
+                                    transition
+                                "
+                            >
+
+                                <i
+                                    class="
+                                        fa-brands
+                                        fa-whatsapp
+                                        text-brand
+                                        text-lg
+                                        w-5
+                                    "
+                                ></i>
+
+                                <span class="text-brand">
+                                    WhatsApp
+                                </span>
+
                             </a>
 
                         </div>
@@ -1365,10 +1834,14 @@
                 <a
                     href="contact.html"
                     class="
-                        bg-brand text-white
-                        px-5 py-3 rounded-lg font-semibold
-                        hover:bg-brand-dark
-                        shadow-md hover:shadow-lg
+                        bg-brand
+                        text-white
+                        px-5 py-3
+                        rounded-lg
+                        font-semibold
+                        hover:bg-[#0b625b]
+                        shadow-md
+                        hover:shadow-lg
                         transition
                     "
                 >
@@ -1379,66 +1852,148 @@
 
 
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- =================================================
+                        MOBILE MENU BUTTON
+            ================================================== -->
 
             <button
                 id="menuBtn"
                 type="button"
                 aria-label="Open Menu"
                 class="
-                    lg:hidden w-11 h-11 rounded-lg
-                    bg-white border border-mist-line text-brand
-                    flex items-center justify-center
-                    hover:bg-brand hover:text-white hover:border-brand
+                    lg:hidden
+                    w-11 h-11
+                    rounded-lg
+                    bg-teal-50
+                    text-brand
+                    flex
+                    items-center
+                    justify-center
+                    hover:bg-brand
+                    hover:text-white
                     transition
                 "
             >
-                <i id="menuIcon" class="fa-solid fa-bars text-xl"></i>
+
+                <i
+                    id="menuIcon"
+                    class="fa-solid fa-bars text-xl"
+                ></i>
+
             </button>
 
         </div>
 
 
 
-        <!-- MOBILE MENU -->
+        <!-- =================================================
+                        MOBILE MENU
+        ================================================== -->
 
-        <div id="mobileMenu" class="hidden lg:hidden pb-6 max-h-[calc(100vh-5rem)] overflow-y-auto">
+        <div
+            id="mobileMenu"
+            class="
+                hidden
+                lg:hidden
+                pb-6
+            "
+        >
 
-            <div class="pt-4 border-t border-mist-line space-y-2">
+            <div
+                class="
+                    pt-4
+                    border-t border-gray-200
+                    space-y-2
+                "
+            >
 
 
                 <!-- HOME -->
 
-                <a href="index.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
+                <a
+                    href="index.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
                     Home
                 </a>
 
 
                 <!-- ABOUT -->
 
-                <a href="about.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
+                <a
+                    href="about.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
                     About Us
                 </a>
 
 
 
-                <!-- MOBILE PRODUCTS -->
+                <!-- =================================================
+                            MOBILE PRODUCTS
+                ================================================== -->
 
                 <div>
 
                     <button
+                        id="productBtn"
                         type="button"
-                        data-toggle="productMenu"
-                        class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
                     >
+
                         <span>Products</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition"></i>
+
+                        <i
+                            id="productIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         id="productMenu"
-                        class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
                     >
 
                         <a href="pharmaceuticals.html" class="mobile-sub-link">
@@ -1449,45 +2004,8 @@
                             OTC Products
                         </a>
 
-
-                        <!-- SURGICAL (DROPDOWN) -->
-
-                        <div>
-
-                            <button
-                                type="button"
-                                data-toggle="surgicalSub"
-                                class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-navy hover:bg-white hover:text-brand transition"
-                            >
-                                <span>Surgical </span>
-                                <i class="fa-solid fa-chevron-down text-xs transition"></i>
-                            </button>
-
-                            <div
-                                id="surgicalSub"
-                                class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
-                            >
-                                <a href="surgical-medical.html" class="mobile-sub-link">
-                                    All Surgical products
-                                    <i class="fa-solid fa-arrow-right text-xs ml-4"></i>
-                                </a>
-
-                                <a href="surgical-medical-consumable.html" class="mobile-sub-link">
-                                    Consumable
-                                </a>
-
-                                <a href="surgical-medical-disposable.html" class="mobile-sub-link">
-                                    Disposable
-                                </a>
-                            </div>
-
-                        </div>
-
-
-                        <!-- NUTRACEUTICAL -->
-
-                        <a href="nutraceutical.html" class="mobile-sub-link">
-                            Nutraceutical
+                        <a href="surgical-medical.html" class="mobile-sub-link">
+                            Surgical & Medical
                         </a>
 
                         <a href="healthcare-essentials.html" class="mobile-sub-link">
@@ -1498,47 +2016,21 @@
                             Personal Care
                         </a>
 
-
-                        <!-- VETERINARY (DROPDOWN) -->
-
-                        <div>
-
-                            <button
-                                type="button"
-                                data-toggle="vetSub"
-                                class="w-full flex items-center justify-between px-4 py-2.5 rounded-lg text-navy hover:bg-white hover:text-brand transition"
-                            >
-                                <span>Veterinary Products</span>
-                                <i class="fa-solid fa-chevron-down text-xs transition"></i>
-                            </button>
-
-                            <div
-                                id="vetSub"
-                                class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
-                            >
-                                <a href="veterinary-products.html" class="mobile-sub-link">
-                                    All Veterinary Products
-                                </a>
-
-                                <a href="veterinary-vet.html" class="mobile-sub-link">
-                                    Vet
-                                </a>
-
-                                <a href="veterinary-poultry.html" class="mobile-sub-link">
-                                    Poultry
-                                </a>
-
-                                <a href="veterinary-cattle.html" class="mobile-sub-link">
-                                    Cattle
-                                </a>
-                            </div>
-
-                        </div>
-
+                        <a href="veterinary-products.html" class="mobile-sub-link">
+                            Veterinary Products
+                        </a>
 
                         <a
                             href="product.html"
-                            class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
                         >
                             View All Products
                             <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
@@ -1550,52 +2042,110 @@
 
 
 
-                <!-- MOBILE SERVICES -->
+                <!-- =================================================
+                            MOBILE SERVICES
+                ================================================== -->
 
                 <div>
 
                     <button
+                        id="serviceBtn"
                         type="button"
-                        data-toggle="serviceMenu"
-                        class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
                     >
+
                         <span>Services</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition"></i>
+
+                        <i
+                            id="serviceIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         id="serviceMenu"
-                        class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
                     >
 
-                        <a href="pharmaceutical-distribution.html" class="mobile-sub-link">
+                        <a
+                            href="pharmaceutical-distribution.html"
+                            class="mobile-sub-link"
+                        >
                             Pharmaceutical Distribution
                         </a>
 
-                        <a href="wholesale-supply.html" class="mobile-sub-link">
+                        <a
+                            href="wholesale-supply.html"
+                            class="mobile-sub-link"
+                        >
                             Wholesale Supply
                         </a>
 
-                        <a href="institutional-supply.html" class="mobile-sub-link">
+                        <a
+                            href="institutional-supply.html"
+                            class="mobile-sub-link"
+                        >
                             Institutional Supply
                         </a>
 
-                        <a href="surgical-medical-supplies.html" class="mobile-sub-link">
-                            Surgical &amp; Medical Supply
+                        <a
+                            href="surgical-medical-supplies.html"
+                            class="mobile-sub-link"
+                        >
+                            Surgical & Medical Supply
                         </a>
 
-                        <a href="otc-healthcare-products.html" class="mobile-sub-link">
-                            OTC &amp; Healthcare Supply
+                        <a
+                            href="otc-healthcare-products.html"
+                            class="mobile-sub-link"
+                        >
+                            OTC & Healthcare Supply
                         </a>
 
-                        <a href="delivery-support.html" class="mobile-sub-link">
+                        <a
+                            href="delivery-support.html"
+                            class="mobile-sub-link"
+                        >
                             Delivery Support
                         </a>
 
                         <a
                             href="services.html"
-                            class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
                         >
                             View All Services
                             <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
@@ -1607,52 +2157,110 @@
 
 
 
-                <!-- MOBILE CATEGORIES -->
+                <!-- =================================================
+                            MOBILE CATEGORIES
+                ================================================== -->
 
                 <div>
 
                     <button
+                        id="categoryBtn"
                         type="button"
-                        data-toggle="categoryMenu"
-                        class="w-full flex items-center justify-between px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition"
+                        class="
+                            w-full
+                            flex
+                            items-center
+                            justify-between
+                            px-4 py-3
+                            rounded-lg
+                            text-brand
+                            font-medium
+                            hover:bg-teal-50
+                            transition
+                        "
                     >
+
                         <span>Categories</span>
-                        <i class="fa-solid fa-chevron-down text-xs transition"></i>
+
+                        <i
+                            id="categoryIcon"
+                            class="
+                                fa-solid
+                                fa-chevron-down
+                                text-xs
+                                transition
+                            "
+                        ></i>
+
                     </button>
 
 
                     <div
                         id="categoryMenu"
-                        class="hidden ml-4 mt-1 space-y-1 border-l-2 border-mist-line pl-2"
+                        class="
+                            hidden
+                            ml-4
+                            mt-1
+                            space-y-1
+                            border-l-2
+                            border-teal-100
+                            pl-2
+                        "
                     >
 
-                        <a href="tablets-capsules.html" class="mobile-sub-link">
-                            Tablets &amp; Capsules
+                        <a
+                            href="tablets-capsules.html"
+                            class="mobile-sub-link"
+                        >
+                            Tablets & Capsules
                         </a>
 
-                        <a href="injections.html" class="mobile-sub-link">
+                        <a
+                            href="injections.html"
+                            class="mobile-sub-link"
+                        >
                             Injections
                         </a>
 
-                        <a href="medical-devices.html" class="mobile-sub-link">
+                        <a
+                            href="medical-devices.html"
+                            class="mobile-sub-link"
+                        >
                             Medical Devices
                         </a>
 
-                        <a href="surgical-items.html" class="mobile-sub-link">
+                        <a
+                            href="surgical-items.html"
+                            class="mobile-sub-link"
+                        >
                             Surgical Items
                         </a>
 
-                        <a href="OTC.html" class="mobile-sub-link">
+                        <a
+                            href="OTC.html"
+                            class="mobile-sub-link"
+                        >
                             OTC Products
                         </a>
 
-                        <a href="healthcare-essentials.html" class="mobile-sub-link">
+                        <a
+                            href="healthcare-essentials.html"
+                            class="mobile-sub-link"
+                        >
                             Healthcare Essentials
                         </a>
 
                         <a
                             href="categories.html"
-                            class="block px-4 py-2.5 rounded-lg text-brand font-semibold hover:bg-white transition"
+                            class="
+                                block
+                                px-4 py-2.5
+                                rounded-lg
+                                text-brand
+                                font-semibold
+                                hover:bg-teal-50
+                                transition
+                            "
                         >
                             View All Categories
                             <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
@@ -1666,31 +2274,90 @@
 
                 <!-- CONTACT -->
 
-                <a href="contact.html" class="block px-4 py-3 rounded-lg text-navy font-medium hover:bg-white hover:text-brand transition">
+                <a
+                    href="contact.html"
+                    class="
+                        block
+                        px-4 py-3
+                        rounded-lg
+                        text-brand
+                        font-medium
+                        hover:bg-teal-50
+                        transition
+                    "
+                >
                     Contact Us
                 </a>
 
 
 
-                <!-- MOBILE FOLLOW US -->
+                <!-- =================================================
+                            MOBILE FOLLOW US
+                ================================================== -->
 
                 <div class="pt-5">
 
                     <div class="px-4 pb-3">
 
-                        <div class="flex items-center gap-3 p-3 rounded-2xl bg-gradient-to-r from-white to-mist border border-mist-line">
+                        <div
+                            class="
+                                flex
+                                items-center
+                                gap-3
+                                p-3
+                                rounded-2xl
+                                bg-gradient-to-r
+                                from-teal-50
+                                to-white
+                                border
+                                border-teal-100
+                            "
+                        >
 
-                            <div class="w-11 h-11 rounded-xl bg-brand text-white flex items-center justify-center shadow-md">
+                            <!-- FOLLOW ICON -->
+
+                            <div
+                                class="
+                                    w-11 h-11
+                                    rounded-xl
+                                    bg-brand
+                                    text-white
+                                    flex
+                                    items-center
+                                    justify-center
+                                    shadow-md
+                                "
+                            >
+
                                 <i class="fa-solid fa-user-plus text-lg"></i>
+
                             </div>
 
+
+                            <!-- TEXT -->
+
                             <div>
-                                <p class="text-navy font-bold text-sm">
+
+                                <p
+                                    class="
+                                        text-brand
+                                        font-bold
+                                        text-sm
+                                    "
+                                >
                                     Follow Us
                                 </p>
-                                <p class="text-gray-500 text-xs mt-0.5">
+
+                                <p
+                                    class="
+                                        text-gray-400
+                                        text-xs
+                                        mt-0.5
+                                    "
+                                >
                                     Stay connected with Be Pharma
                                 </p>
+
                             </div>
 
                         </div>
@@ -1702,34 +2369,86 @@
 
                     <div class="flex gap-3 px-4">
 
+
                         <a
                             href="#"
                             aria-label="Facebook"
-                            class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
                         >
                             <i class="fa-brands fa-facebook"></i>
                         </a>
 
+
                         <a
                             href="#"
                             aria-label="Instagram"
-                            class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
                         >
                             <i class="fa-brands fa-instagram"></i>
                         </a>
 
+
                         <a
                             href="#"
                             aria-label="LinkedIn"
-                            class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
                         >
                             <i class="fa-brands fa-linkedin"></i>
                         </a>
 
+
                         <a
                             href="#"
                             aria-label="WhatsApp"
-                            class="w-10 h-10 rounded-full bg-white border border-mist-line text-brand flex items-center justify-center hover:bg-brand hover:text-white hover:-translate-y-1 transition"
+                            class="
+                                w-10 h-10
+                                rounded-full
+                                bg-teal-50
+                                text-brand
+                                flex
+                                items-center
+                                justify-center
+                                hover:bg-brand
+                                hover:text-white
+                                hover:-translate-y-1
+                                transition
+                            "
                         >
                             <i class="fa-brands fa-whatsapp"></i>
                         </a>
@@ -1740,13 +2459,26 @@
 
 
 
-                <!-- MOBILE GET IN TOUCH -->
+                <!-- =================================================
+                        MOBILE GET IN TOUCH
+                ================================================== -->
 
                 <div class="pt-4 px-4">
 
                     <a
                         href="contact.html"
-                        class="block text-center bg-brand text-white py-3 rounded-lg font-semibold hover:bg-brand-dark shadow-md transition"
+                        class="
+                            block
+                            text-center
+                            bg-brand
+                            text-white
+                            py-3
+                            rounded-lg
+                            font-semibold
+                            hover:bg-[#0b625b]
+                            shadow-md
+                            transition
+                        "
                     >
                         Get in Touch
                     </a>
@@ -1804,7 +2536,7 @@
 
                 Healthcare
 
-                <span class="block text-[#4fc3dc]">
+                <span class="block text-[#66d8ce]">
                     Essentials
                 </span>
 
@@ -1822,7 +2554,7 @@
             <div class="flex flex-wrap gap-3 mt-7">
 
                 <a href="#products"
-                    class="primary-btn bg-white !text-[#0b7b97] hover:!bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm">
+                    class="primary-btn bg-white !text-[#10756d] hover:!bg-teal-50 px-6 py-3 rounded-xl font-bold text-sm">
 
                     <i class="fas fa-notes-medical"></i>
 
@@ -1831,7 +2563,7 @@
                 </a>
 
                 <a href="contact.html"
-                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
+                    class="inline-flex items-center gap-2 border border-white/40 bg-white/10 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-white hover:text-[#10756d] transition">
 
                     <i class="fas fa-paper-plane"></i>
 
@@ -1850,22 +2582,22 @@
 
 <!-- CATEGORY INFO -->
 
-<section class="py-12 md:py-16 bg-[#eef9fc]">
+<section class="py-12 md:py-16 bg-[#f7fbfa]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
 
                     <i class="fas fa-hand-sparkles"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
                     Hygiene
                 </p>
 
@@ -1875,16 +2607,16 @@
 
             </div>
 
-            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
 
                     <i class="fas fa-kit-medical"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
                     First Aid
                 </p>
 
@@ -1894,16 +2626,16 @@
 
             </div>
 
-            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
 
                     <i class="fas fa-pump-soap"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
                     Personal Care
                 </p>
 
@@ -1913,16 +2645,16 @@
 
             </div>
 
-            <div class="bg-white border border-[#cfe9f3] rounded-2xl p-5">
+            <div class="bg-white border border-[#e5efed] rounded-2xl p-5">
 
                 <div
-                    class="w-11 h-11 rounded-xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center">
+                    class="w-11 h-11 rounded-xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center">
 
                     <i class="fas fa-boxes-stacked"></i>
 
                 </div>
 
-                <p class="text-2xl font-extrabold text-[#0b7b97] mt-4">
+                <p class="text-2xl font-extrabold text-[#10756d] mt-4">
                     B2B Supply
                 </p>
 
@@ -1949,7 +2681,7 @@
         <div class="max-w-3xl mx-auto text-center">
 
             <span
-                class="text-[#0b7b97] text-xs font-extrabold uppercase tracking-[.12em]">
+                class="text-[#10756d] text-xs font-extrabold uppercase tracking-[.12em]">
 
                 Healthcare Essentials
 
@@ -1960,7 +2692,7 @@
 
                 Explore Our
 
-                <span class="text-[#0b7b97]">
+                <span class="text-[#10756d]">
                     Healthcare Essentials
                 </span>
 
@@ -1984,7 +2716,7 @@
 
                 <div class="search-box">
 
-                    <i class="fas fa-search text-[#0b7b97]"></i>
+                    <i class="fas fa-search text-[#10756d]"></i>
 
                     <input
                         id="productSearch"
@@ -2812,7 +3544,7 @@
             class="empty-state text-center py-16">
 
             <div
-                class="w-16 h-16 mx-auto rounded-2xl bg-[#dff5fa] text-[#0b7b97] flex items-center justify-center text-xl">
+                class="w-16 h-16 mx-auto rounded-2xl bg-[#e8f6f4] text-[#10756d] flex items-center justify-center text-xl">
 
                 <i class="fas fa-magnifying-glass"></i>
 
@@ -2835,12 +3567,12 @@
 
 <!-- CTA -->
 
-<section class="py-20 md:py-24 bg-[#eef9fc]">
+<section class="py-20 md:py-24 bg-[#f7fbfa]">
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div
-            class="bg-[#0b7b97] rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
+            class="bg-[#10756d] rounded-3xl px-6 py-12 md:px-12 md:py-14 text-center shadow-xl">
 
             <div
                 class="mx-auto w-14 h-14 rounded-2xl bg-white/10 text-white flex items-center justify-center text-xl">
@@ -2867,7 +3599,7 @@
                 class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-7">
 
                 <a href="contact.html"
-                    class="inline-flex items-center gap-2 bg-white text-[#0b7b97] px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-teal-50 transition">
+                    class="inline-flex items-center gap-2 bg-white text-[#10756d] px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-teal-50 transition">
 
                     <i class="fas fa-paper-plane"></i>
 
@@ -2876,7 +3608,7 @@
                 </a>
 
                 <a href="categories.html"
-                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-[#0b7b97] transition">
+                    class="inline-flex items-center gap-2 border border-white/30 bg-white/10 text-white px-6 py-3.5 rounded-xl font-bold text-sm hover:bg-white hover:text-[#10756d] transition">
 
                     <i class="fas fa-layer-group"></i>
 
@@ -2910,7 +3642,7 @@
                 <div>
 
                     <span
-                        class="text-[#0b7b97] text-xs font-extrabold uppercase tracking-wider">
+                        class="text-[#10756d] text-xs font-extrabold uppercase tracking-wider">
 
                         Product Details
 
@@ -2929,7 +3661,7 @@
                 <button id="modalClose"
                     type="button"
                     aria-label="Close product details"
-                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-[#dff5fa] hover:text-[#0b7b97] transition">
+                    class="w-10 h-10 rounded-xl bg-gray-100 text-gray-600 hover:bg-[#e8f6f4] hover:text-[#10756d] transition">
 
                     <i class="fas fa-xmark"></i>
 
@@ -2953,7 +3685,7 @@
                     <div class="mt-6 space-y-3">
 
                         <div
-                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#eef9fc]">
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#f7fbfa]">
 
                             <span class="text-sm text-gray-500">
                                 Product Type
@@ -2966,7 +3698,7 @@
                         </div>
 
                         <div
-                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#eef9fc]">
+                            class="flex items-center justify-between gap-4 p-4 rounded-xl bg-[#f7fbfa]">
 
                             <span class="text-sm text-gray-500">
                                 Category
@@ -3006,7 +3738,7 @@
 <div id="toast"
     class="toast">
 
-    <i class="fas fa-circle-check text-[#4fc3dc]"></i>
+    <i class="fas fa-circle-check text-[#72e0d5]"></i>
 
     <span id="toastText">
         Product added to enquiry.
@@ -3019,553 +3751,952 @@
 <!--                         FOOTER                            -->
 <!-- ========================================================= -->
 
-<footer id="site-footer" class="bg-navy text-white">
+<footer
+  id="contact"
+  class="bg-[#073b3a] text-white"
+>
 
 
-    <!-- MAIN FOOTER -->
+  <!-- ================================================= -->
+  <!-- MAIN FOOTER -->
+  <!-- ================================================= -->
 
-    <div class="mx-auto max-w-7xl px-6 py-16 sm:px-8">
+  <div
+    class="mx-auto max-w-7xl px-6 py-16 sm:px-8"
+  >
 
-        <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-
-
-            <!-- COMPANY -->
-
-            <div>
-
-                <!-- LOGO (same logo as navbar) -->
-
-                <a
-                    href="index.html"
-                    aria-label="Be Pharma Traders &amp; Co - Home"
-                    class="inline-flex items-center"
-                >
-
-                    <svg
-                        viewBox="60 50 1420 590"
-                        xmlns="http://www.w3.org/2000/svg"
-                        role="img"
-                        aria-label="Be Pharma Traders &amp; Co"
-                        class="h-16 md:h-20 w-auto text-[#c9651b] hover:opacity-90 transition"
-                    >
-
-                        <title>Be Pharma Traders &amp; Co</title>
-
-                        <g fill="currentColor">
-                            <rect x="262" y="62" width="186" height="560" rx="93"></rect>
-                            <rect x="75" y="245" width="562" height="196" rx="98"></rect>
-                        </g>
-
-                        <text
-                            x="358" y="415"
-                            text-anchor="middle"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="800"
-                            font-size="240"
-                            fill="#ffffff"
-                        >B</text>
-
-                        <text
-                            x="500" y="382"
-                            font-family="'Bitter', Georgia, serif"
-                            font-style="italic"
-                            font-weight="700"
-                            font-size="115"
-                            fill="#ffffff"
-                        >e</text>
-
-                        <text
-                            x="678" y="392"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="800"
-                            font-size="205"
-                            fill="currentColor"
-                            textLength="777"
-                            lengthAdjust="spacingAndGlyphs"
-                        >Pharma</text>
-
-                        <text
-                            x="680" y="528"
-                            font-family="'Bitter', Georgia, serif"
-                            font-weight="700"
-                            font-size="96"
-                            fill="currentColor"
-                            textLength="760"
-                            lengthAdjust="spacingAndGlyphs"
-                        >Traders &amp; Co</text>
-
-                    </svg>
-
-                </a>
+    <div
+      class="grid gap-12 md:grid-cols-2 lg:grid-cols-4"
+    >
 
 
-                <!-- DESCRIPTION -->
+      <!-- ================================================= -->
+      <!-- COMPANY -->
+      <!-- ================================================= -->
 
-                <p class="mt-6 max-w-sm text-sm leading-7 text-white">
-                    We strive to empower our partners and clients
-                    with reliable support, quality products, and
-                    innovative pharmaceutical solutions.
-
-                    Our mission is to advance healthcare by providing
-                    trusted pharmaceutical products with efficiency,
-                    integrity, and excellence.
-                </p>
+      <div>
 
 
-                <!-- SOCIAL (links are set in the SOCIAL_LINKS block at the bottom) -->
+        <!-- LOGO -->
 
-                <div class="mt-7 flex flex-wrap gap-3">
+        <a
+          href="index.html"
+          class="group flex items-center gap-3"
+        >
 
-                    <a
-                        href="https://www.facebook.com/"
-                        data-social="facebook"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
+          <div
+            class="relative h-14 w-14 shrink-0"
+          >
 
-                    <a
-                        href="https://www.instagram.com/"
-                        data-social="instagram"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-instagram"></i>
-                    </a>
+            <div
+              class="absolute inset-0
+                     rounded-2xl
+                     bg-[#0f766e]
+                     shadow-lg shadow-black/20
+                     transition duration-300
+                     group-hover:scale-105"
+            ></div>
 
-                    <a
-                        href="https://www.linkedin.com/"
-                        data-social="linkedin"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
 
-                    <a
-                        href="https://wa.me/"
-                        data-social="whatsapp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="WhatsApp"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
+            <div
+              class="absolute inset-1.5
+                     flex items-center justify-center
+                     rounded-xl bg-white"
+            >
 
-                    <a
-                        href="https://www.youtube.com/"
-                        data-social="youtube"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="YouTube"
-                        class="social-icon flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
-                    >
-                        <i class="fab fa-youtube"></i>
-                    </a>
+              <div
+                class="relative h-7 w-7"
+              >
 
-                </div>
+                <div
+                  class="absolute left-2.5 top-0
+                         h-7 w-2
+                         rounded-full bg-[#0f766e]"
+                ></div>
+
+                <div
+                  class="absolute left-0 top-2.5
+                         h-2 w-7
+                         rounded-full bg-[#0f766e]"
+                ></div>
+
+              </div>
 
             </div>
 
 
+            <div
+              class="absolute -bottom-1 -right-1
+                     flex h-6 w-6
+                     items-center justify-center
+                     rounded-full
+                     border-2 border-[#073b3a]
+                     bg-[#0f766e]"
+            >
 
-            <!-- QUICK LINKS -->
-
-            <div>
-
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Quick Links
-                </h3>
-
-                <ul class="space-y-4 text-sm text-sky-100/70">
-
-                    <!-- HOME -->
-
-                    <li>
-                        <a href="index.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-home-5-line text-lg text-accent"></i>
-                            Home
-                        </a>
-                    </li>
-
-                    <!-- ABOUT -->
-
-                    <li>
-                        <a href="about.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-information-line text-lg text-accent"></i>
-                            About Us
-                        </a>
-                    </li>
-
-
-                    <!-- SERVICES -->
-
-                    <li class="dropdown">
-
-                        <a href="services.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-service-line text-lg text-accent"></i>
-                            Services
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="wholesale-distribution.html">
-                                <i class="ri-truck-line"></i>
-                                <span>Wholesale Distribution</span>
-                            </a>
-
-                            <a href="retail-supply.html">
-                                <i class="ri-store-2-line"></i>
-                                <span>Retail Supply</span>
-                            </a>
-
-                            <a href="hospital-supply.html">
-                                <i class="ri-hospital-line"></i>
-                                <span>Hospital Supply</span>
-                            </a>
-
-                            <a href="third-party-manufacturing.html">
-                                <i class="ri-building-4-line"></i>
-                                <span>Third Party Manufacturing</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- CATEGORIES -->
-
-                    <li class="dropdown">
-
-                        <a href="categories.html" class="footer-link flex items-center gap-2">
-                            <i class="ri-list-check-2 text-lg text-accent"></i>
-                            Categories
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="medicines.html">
-                                <i class="ri-capsule-line"></i>
-                                <span>Medicines</span>
-                            </a>
-
-                            <a href="injections.html">
-                                <i class="ri-syringe-line"></i>
-                                <span>Injections</span>
-                            </a>
-
-                            <a href="medical-devices.html">
-                                <i class="ri-heart-pulse-line"></i>
-                                <span>Medical Devices</span>
-                            </a>
-
-                            <a href="medical-equipment.html">
-                                <i class="ri-first-aid-kit-line"></i>
-                                <span>Medical Equipment</span>
-                            </a>
-
-                            <a href="tablets.html">
-                                <i class="ri-capsule-line"></i>
-                                <span>Tablets</span>
-                            </a>
-
-                            <a href="capsules.html">
-                                <i class="ri-capsule-fill"></i>
-                                <span>Capsules</span>
-                            </a>
-
-                            <a href="syrup.html">
-                                <i class="ri-medicine-bottle-line"></i>
-                                <span>Syrup</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-                </ul>
+              <i
+                class="fa-solid fa-capsules
+                       text-[10px] text-white"
+              ></i>
 
             </div>
 
+          </div>
 
 
-            <!-- PRODUCTS (same options as navbar) -->
+          <div>
 
-            <div>
+            <h2
+              class="text-2xl font-extrabold
+                     tracking-tight text-white"
+            >
+              Be Pharma
+            </h2>
 
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Products
-                </h3>
+            <div
+              class="mt-1 flex items-center gap-2"
+            >
 
-                <ul class="space-y-4 text-sm text-sky-100/70">
+              <span
+                class="h-px w-5 bg-[#55c9bd]"
+              ></span>
 
-                    <!-- PHARMACEUTICAL -->
-
-                    <li>
-                        <a href="pharmaceutical-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-medicine-bottle-line text-lg text-accent"></i>
-                            Pharmaceutical Products
-                        </a>
-                    </li>
-
-                    <!-- OTC -->
-
-                    <li>
-                        <a href="otc-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-medicine-bottle-line text-lg text-accent"></i>
-                            OTC Products
-                        </a>
-                    </li>
-
-
-                    <!-- SURGICAL & MEDICAL (DROPDOWN): Consumable / Disposable -->
-
-                    <li class="dropdown">
-
-                        <a href="surgical-medical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-first-aid-kit-line text-lg text-accent"></i>
-                            Surgical &amp; Medical
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="surgical-medical-consumable.html">
-                                <i class="fas fa-bandage"></i>
-                                <span>Consumable</span>
-                            </a>
-
-                            <a href="surgical-medical-disposable.html">
-                                <i class="fas fa-mask-face"></i>
-                                <span>Disposable</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-
-                    <!-- NUTRACEUTICAL -->
-
-                    <li>
-                        <a href="nutraceutical.html" class="product-link flex items-center gap-3">
-                            <i class="ri-leaf-line text-lg text-accent"></i>
-                            Nutraceutical
-                        </a>
-                    </li>
-
-
-                    <!-- HEALTHCARE -->
-
-                    <li>
-                        <a href="healthcare-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-capsule-line text-lg text-accent"></i>
-                            Healthcare Products
-                        </a>
-                    </li>
-
-
-                    <!-- VETERINARY (DROPDOWN): Vet / Poultry / Cattle -->
-
-                    <li class="dropdown">
-
-                        <a href="veterinary-products.html" class="product-link flex items-center gap-3">
-                            <i class="ri-stethoscope-line text-lg text-accent"></i>
-                            Veterinary Products
-                            <i class="ri-arrow-down-s-line dropdown-arrow ml-auto"></i>
-                        </a>
-
-                        <div class="dropdown-menu">
-
-                            <a href="veterinary-vet.html">
-                                <i class="fas fa-dog"></i>
-                                <span>Vet</span>
-                            </a>
-
-                            <a href="veterinary-poultry.html">
-                                <i class="fas fa-egg"></i>
-                                <span>Poultry</span>
-                            </a>
-
-                            <a href="veterinary-cattle.html">
-                                <i class="fas fa-cow"></i>
-                                <span>Cattle</span>
-                            </a>
-
-                        </div>
-
-                    </li>
-
-                </ul>
+              <p
+                class="text-xs font-bold
+                       uppercase
+                       tracking-[0.25em]
+                       text-[#55c9bd]"
+              >
+                Traders
+              </p>
 
             </div>
 
+          </div>
+
+        </a>
 
 
-            <!-- CONTACT -->
+        <!-- DESCRIPTION -->
 
-            <div>
+        <p
+          class="mt-6 max-w-sm
+                 text-sm leading-7
+                 text-white"
+        >
 
-                <h3 class="mb-6 text-lg font-bold text-white">
-                    Contact Us
-                </h3>
+          We strive to empower our partners and clients
+          with reliable support, quality products, and
+          innovative pharmaceutical solutions.
 
-                <div class="space-y-5">
+          Our mission is to advance healthcare by providing
+          trusted pharmaceutical products with efficiency,
+          integrity, and excellence.
 
-                    <!-- ADDRESS -->
-
-                    <a href="contact.html" class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-map-pin-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Address
-                            </p>
-
-                            <p class="mt-1 text-sm leading-6 text-sky-100/70">
-                                Be Pharma Traders<br>
-                                India
-                            </p>
-                        </div>
-
-                    </a>
+        </p>
 
 
-                    <!-- PHONE -->
+        <!-- SOCIAL -->
 
-                    <div class="contact-box flex gap-4">
+        <div
+          class="mt-7 flex gap-3"
+        >
 
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-phone-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Phone
-                            </p>
-
-                            <a href="tel:+919973100210" class="mt-1 block text-sm text-sky-100/70 hover:text-white">
-                                +91 99731 00210
-                            </a>
-                        </div>
-
-                    </div>
-
-
-                    <!-- EMAIL -->
-
-                    <div class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-mail-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Email
-                            </p>
-
-                            <a href="mailto:addressbepharmatraders@gmail.com" class="mt-1 block break-all text-sm text-sky-100/70 hover:text-white">
-                                addressbepharmatraders@gmail.com
-                            </a>
-                        </div>
-
-                    </div>
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
 
 
-                    <!-- WORKING HOURS -->
-
-                    <a href="contact.html" class="contact-box flex gap-4">
-
-                        <div class="contact-icon flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 text-accent">
-                            <i class="ri-time-line text-xl"></i>
-                        </div>
-
-                        <div>
-                            <p class="text-xs uppercase tracking-wider text-sky-200/50">
-                                Working Hours
-                            </p>
-
-                            <p class="mt-1 text-sm leading-6 text-sky-100/70">
-                                Monday - Saturday<br>
-                                9:00 AM - 6:00 PM
-                            </p>
-                        </div>
-
-                    </a>
-
-                </div>
-
-            </div>
+          <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
 
 
-        </div>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            class="social-icon
+                   flex h-10 w-10
+                   items-center justify-center
+                   rounded-full
+                   bg-white/10
+                   text-white"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
 
-    </div>
 
-
-
-    <!-- COPYRIGHT BAR -->
-
-    <div class="bg-brand">
-
-        <div class="mx-auto flex max-w-7xl flex-col gap-3 px-6 py-6 text-center text-xs text-white/85 sm:px-8 md:flex-row md:items-center md:justify-between md:text-left">
-
-            <!-- COPYRIGHT -->
-
-            <p>
-                © 2026
-                <a href="index.html" class="font-semibold text-white hover:underline">
-                    Be Pharma Traders
-                </a>
-                . All Rights Reserved.
-            </p>
-
-            <!-- PRIVACY / TERMS -->
-
-            <div class="flex justify-center gap-5 md:justify-end">
-
-                <a href="privacy-policy.html" class="transition hover:text-white hover:underline">
-                    Privacy Policy
-                </a>
-
-                <span class="text-white/40">
-                    |
-                </span>
-
-                <a href="terms.html" class="transition hover:text-white hover:underline">
-                    Terms &amp; Conditions
-                </a>
-
-            </div>
-
-            <!-- DEV LABS -->
-
-            <p>
-                Crafted by
-                <a href="index.html" class="font-semibold text-white hover:underline">
-                    Dev Labs
-                </a>
-            </p>
-
-        </div>
-
-    </div>
-
+          <a
+            href="https://www.youtube.com/" 
+            target="_blank" 
+            class="social-icon 
+                   flex h-10 w-10 
+                   items-center justify-center 
+                   rounded-full 
+                   bg-white/10 
+                   text-white" 
+          > 
+            <i class="fab fa-youtube"></i> 
+          </a> 
+ 
+        </div> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- QUICK LINKS --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Quick Links 
+        </h3> 
+ 
+ 
+        <ul 
+          class="space-y-4 
+                 text-sm 
+                 text-teal-100/70" 
+        > 
+ 
+ 
+          <!-- HOME --> 
+ 
+          <li> 
+ 
+            <a 
+              href="index.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-home-5-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Home 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ABOUT --> 
+ 
+          <li> 
+ 
+            <a 
+              href="about.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-information-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              About Us 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ================================================= --> 
+          <!-- SERVICES --> 
+          <!-- ================================================= --> 
+ 
+          <li class="dropdown"> 
+ 
+ 
+            <a 
+              href="services.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-service-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Services 
+ 
+              <i 
+                class="ri-arrow-down-s-line 
+                       dropdown-arrow 
+                       ml-auto" 
+              ></i> 
+ 
+            </a> 
+ 
+ 
+            <!-- SERVICES MENU --> 
+ 
+            <div 
+              class="dropdown-menu" 
+            > 
+ 
+ 
+              <a 
+                href="pharmaceutical-distribution.html" 
+              > 
+ 
+                <i class="ri-truck-line"></i> 
+ 
+                <span> 
+                  Pharmaceutical Distribution 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="wholesale-supply.html" 
+              > 
+ 
+                <i class="ri-store-2-line"></i> 
+ 
+                <span> 
+                  Wholesale Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="institutional-supply.html" 
+              > 
+ 
+                <i class="ri-hospital-line"></i> 
+ 
+                <span> 
+                  Institutional Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="surgical-medical-supplies.html" 
+              > 
+ 
+                <i class="ri-building-4-line"></i> 
+ 
+                <span> 
+                  Surgical & Medical Supply 
+                </span> 
+ 
+              </a> 
+ 
+ 
+            </div> 
+ 
+          </li> 
+ 
+ 
+ 
+          <!-- ================================================= --> 
+          <!-- CATEGORIES --> 
+          <!-- ================================================= --> 
+ 
+          <li class="dropdown"> 
+ 
+ 
+            <a 
+              href="categories.html" 
+              class="footer-link flex items-center gap-2" 
+            > 
+ 
+              <i 
+                class="ri-list-check-2 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Categories 
+ 
+              <i 
+                class="ri-arrow-down-s-line 
+                       dropdown-arrow 
+                       ml-auto" 
+              ></i> 
+ 
+            </a> 
+ 
+ 
+            <!-- CATEGORIES MENU --> 
+ 
+            <div 
+              class="dropdown-menu" 
+            > 
+ 
+ 
+              <a 
+                href="tablets-healthcare-essentials.html" 
+              > 
+ 
+                <i class="ri-capsule-line"></i> 
+ 
+                <span> 
+                  OTC Products & Healthcare Essentials 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="injections.html" 
+              > 
+ 
+                <i class="ri-syringe-line"></i> 
+ 
+                <span> 
+                  Injections 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="medical-devices.html" 
+              > 
+ 
+                <i class="ri-heart-pulse-line"></i> 
+ 
+                <span> 
+                  Medical Devices 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="surgical-items.html" 
+              > 
+ 
+                <i class="ri-first-aid-kit-line"></i> 
+ 
+                <span> 
+                  Surgical Items 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="OTC.html" 
+              > 
+ 
+                <i class="ri-capsule-line"></i> 
+ 
+                <span> 
+                  OTC Products 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="healthcare-essentials.html" 
+              > 
+ 
+                <i class="ri-capsule-fill"></i> 
+ 
+                <span> 
+                  Healthcare Essentials 
+                </span> 
+ 
+              </a> 
+ 
+ 
+              <a 
+                href="personal-care.html" 
+              > 
+ 
+                <i class="ri-medicine-bottle-line"></i> 
+ 
+                <span> 
+                  Personal Care 
+                </span> 
+ 
+              </a> 
+ 
+ 
+            </div> 
+ 
+          </li> 
+ 
+ 
+        </ul> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- PRODUCTS --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Products 
+        </h3> 
+ 
+ 
+        <ul 
+          class="space-y-4 
+                 text-sm 
+                 text-teal-100/70" 
+        > 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="pharmaceuticals.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-medicine-bottle-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Pharmaceuticals 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="surgical-medical.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-capsule-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Surgical & Medical 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="OTC.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-medicine-bottle-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              OTC Products 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+          <li> 
+ 
+            <a 
+              href="healthcare-essentials.html" 
+              class="product-link flex items-center gap-3" 
+            > 
+ 
+              <i 
+                class="ri-capsule-line 
+                       text-lg text-[#55c9bd]" 
+              ></i> 
+ 
+              Healthcare Essentials 
+ 
+            </a> 
+ 
+          </li> 
+ 
+ 
+        </ul> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- ================================================= --> 
+      <!-- CONTACT --> 
+      <!-- ================================================= --> 
+ 
+      <div> 
+ 
+ 
+        <h3 
+          class="mb-6 text-lg font-bold text-white" 
+        > 
+          Contact Us 
+        </h3> 
+ 
+ 
+        <div class="space-y-5"> 
+ 
+ 
+          <!-- ADDRESS --> 
+ 
+          <a 
+            href="contact.html" 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-map-pin-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Address 
+              </p> 
+ 
+ 
+              <p 
+                class="mt-1 
+                       text-sm leading-6 
+                       text-teal-100/70" 
+              > 
+ 
+                Be Pharma Traders<br> 
+                India 
+ 
+              </p> 
+ 
+            </div> 
+ 
+          </a> 
+ 
+ 
+ 
+          <!-- PHONE --> 
+ 
+          <div 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-phone-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Phone 
+              </p> 
+ 
+ 
+              <a 
+                href="tel:+919973100210" 
+                class="mt-1 block 
+                       text-sm 
+                       text-teal-100/70 
+                       hover:text-white" 
+              > 
+                +91 99731 00210 
+              </a> 
+ 
+            </div> 
+ 
+          </div> 
+ 
+ 
+ 
+          <!-- EMAIL --> 
+ 
+          <div 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-mail-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Email 
+              </p> 
+ 
+ 
+              <a 
+                href="mailto:addressbepharmatraders@gmail.com" 
+                class="mt-1 block break-all 
+                       text-sm 
+                       text-teal-100/70 
+                       hover:text-white" 
+              > 
+                addressbepharmatraders@gmail.com 
+              </a> 
+ 
+            </div> 
+ 
+          </div> 
+ 
+ 
+ 
+          <!-- WORKING HOURS --> 
+ 
+          <a 
+            href="contact.html" 
+            class="contact-box flex gap-4" 
+          > 
+ 
+            <div 
+              class="contact-icon 
+                     flex h-11 w-11 shrink-0 
+                     items-center justify-center 
+                     rounded-xl 
+                     bg-white/10 
+                     text-[#55c9bd]" 
+            > 
+ 
+              <i 
+                class="ri-time-line text-xl" 
+              ></i> 
+ 
+            </div> 
+ 
+ 
+            <div> 
+ 
+              <p 
+                class="text-xs uppercase 
+                       tracking-wider 
+                       text-teal-200/50" 
+              > 
+                Working Hours 
+              </p> 
+ 
+ 
+              <p 
+                class="mt-1 
+                       text-sm 
+                       leading-6 
+                       text-teal-100/70" 
+              > 
+ 
+                Monday - Saturday<br> 
+                9:00 AM - 6:00 PM 
+ 
+              </p> 
+ 
+            </div> 
+ 
+          </a> 
+ 
+ 
+        </div> 
+ 
+      </div> 
+ 
+ 
+    </div> 
+ 
+  </div> 
+ 
+ 
+ 
+  <!-- ================================================= --> 
+  <!-- COPYRIGHT --> 
+  <!-- ================================================= --> 
+ 
+  <div 
+    class="border-t border-white/10" 
+  > 
+ 
+    <div 
+      class="mx-auto 
+             flex max-w-7xl 
+             flex-col 
+             gap-3 
+             px-6 py-6 
+             text-center 
+             text-xs 
+             text-teal-100/50 
+             sm:px-8 
+             md:flex-row 
+             md:items-center 
+             md:justify-between 
+             md:text-left" 
+    > 
+ 
+ 
+      <!-- COPYRIGHT --> 
+ 
+      <p> 
+ 
+        © 2026 
+ 
+        <a 
+          href="index.html" 
+          class="font-semibold 
+                 text-teal-100/80 
+                 hover:text-white" 
+        > 
+          Be Pharma Traders 
+        </a> 
+ 
+        . All Rights Reserved. 
+ 
+      </p> 
+ 
+ 
+ 
+      <!-- PRIVACY / TERMS --> 
+ 
+      <div 
+        class="flex 
+               justify-center 
+               gap-5 
+               md:justify-end" 
+      > 
+ 
+        <a 
+          href="privacy-policy.html" 
+          class="transition hover:text-white" 
+        > 
+          Privacy Policy 
+        </a> 
+ 
+ 
+        <span class="text-white/20"> 
+          | 
+        </span> 
+ 
+ 
+        <a 
+          href="terms.html" 
+          class="transition hover:text-white" 
+        > 
+          Terms & Conditions 
+        </a> 
+ 
+      </div> 
+ 
+ 
+ 
+      <!-- DEV LABS --> 
+ 
+      <p> 
+ 
+        Crafted by 
+ 
+ <a 
+          href="appreciation.html" 
+          class="font-semibold 
+                 text-[#55c9bd] 
+                 hover:text-white" 
+        > 
+          Our Team |  
+        </a> 
+        <a 
+          href="https://devlabs.org.in/" 
+          class="font-semibold 
+                 text-[#55c9bd] 
+                 hover:text-white" 
+        > 
+          Dev Labs  
+        </a> 
+ 
+      </p> 
+ 
+ 
+    </div> 
+ 
+  </div> 
+ 
+ 
 </footer> 
  
  
@@ -4171,17 +5302,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <script>
 
-/* MAIN MOBILE MENU */
+
+/* =====================================================
+                    MAIN MOBILE MENU
+====================================================== */
 
 const menuBtn = document.getElementById("menuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const menuIcon = document.getElementById("menuIcon");
 
+
 menuBtn.addEventListener("click", () => {
 
     mobileMenu.classList.toggle("hidden");
 
-    const open = !mobileMenu.classList.contains("hidden");
+    const open =
+        !mobileMenu.classList.contains("hidden");
+
 
     if (open) {
 
@@ -4198,26 +5335,64 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-/* MOBILE DROPDOWNS
-   Any button with data-toggle="ID" opens/closes
-   the element with that ID and rotates its arrow. */
 
-document.querySelectorAll("[data-toggle]").forEach(btn => {
+/* =====================================================
+                        PRODUCTS
+====================================================== */
 
-    btn.addEventListener("click", () => {
+const productBtn = document.getElementById("productBtn");
+const productMenu = document.getElementById("productMenu");
+const productIcon = document.getElementById("productIcon");
 
-        const target = document.getElementById(btn.dataset.toggle);
-        const icon = btn.querySelector("i");
 
-        target.classList.toggle("hidden");
-        icon.classList.toggle("rotate-180");
+productBtn.addEventListener("click", () => {
 
-    });
+    productMenu.classList.toggle("hidden");
+    productIcon.classList.toggle("rotate-180");
 
 });
 
 
-/* MOBILE SUB LINKS */
+
+/* =====================================================
+                        SERVICES
+====================================================== */
+
+const serviceBtn = document.getElementById("serviceBtn");
+const serviceMenu = document.getElementById("serviceMenu");
+const serviceIcon = document.getElementById("serviceIcon");
+
+
+serviceBtn.addEventListener("click", () => {
+
+    serviceMenu.classList.toggle("hidden");
+    serviceIcon.classList.toggle("rotate-180");
+
+});
+
+
+
+/* =====================================================
+                        CATEGORIES
+====================================================== */
+
+const categoryBtn = document.getElementById("categoryBtn");
+const categoryMenu = document.getElementById("categoryMenu");
+const categoryIcon = document.getElementById("categoryIcon");
+
+
+categoryBtn.addEventListener("click", () => {
+
+    categoryMenu.classList.toggle("hidden");
+    categoryIcon.classList.toggle("rotate-180");
+
+});
+
+
+
+/* =====================================================
+                    MOBILE SUB LINKS
+====================================================== */
 
 document.querySelectorAll(".mobile-sub-link").forEach(link => {
 
@@ -4226,16 +5401,18 @@ document.querySelectorAll(".mobile-sub-link").forEach(link => {
         px-4
         py-2.5
         rounded-lg
-        text-navy
-        hover:bg-white
-        hover:text-brand
+        text-brand
+        hover:bg-teal-50
         transition
     `;
 
 });
 
 
-/* CLOSE MOBILE MENU ON LINK CLICK */
+
+/* =====================================================
+                CLOSE MOBILE MENU
+====================================================== */
 
 mobileMenu.querySelectorAll("a").forEach(link => {
 
@@ -4249,6 +5426,7 @@ mobileMenu.querySelectorAll("a").forEach(link => {
     });
 
 });
+
 
 </script>
 

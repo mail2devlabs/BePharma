@@ -882,33 +882,110 @@
 
 
         /* =========================================================
-           RESPONSIVE (page content)
+           RESPONSIVE SYSTEM (All Screen Sizes: Mobile, Tablet, Laptop, Desktop)
         ========================================================= */
 
-        @media (max-width: 1050px) {
+        /* General fluid safety for all screen sizes */
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
 
-            .service-grid {
-                grid-template-columns: repeat(2, 1fr);
+        h1, h2, h3, h4, h5, h6, p, a, span {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .hero-content {
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .hero-trust {
+            width: 100%;
+            max-width: 620px;
+        }
+
+        /* ---------------------------------------------------------
+           1. LAPTOP & SMALL DESKTOP (max-width: 1200px)
+        --------------------------------------------------------- */
+        @media (min-width: 1024px) and (max-width: 1200px) {
+            nav .hidden.lg\:flex.items-center.gap-7 {
+                gap: 1.15rem;
+            }
+
+            nav .hidden.lg\:flex.items-center.gap-7 a,
+            nav .hidden.lg\:flex.items-center.gap-7 button {
+                font-size: 13.5px;
             }
         }
 
+        /* ---------------------------------------------------------
+           2. LARGE TABLET & MEDIUM SCREENS (max-width: 1050px)
+        --------------------------------------------------------- */
+        @media (max-width: 1050px) {
+            .section {
+                padding: 75px 0;
+            }
 
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .about-grid {
+                gap: 45px;
+            }
+
+            .global-grid {
+                gap: 45px;
+            }
+
+            .contact-grid {
+                gap: 40px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           3. TABLET PORTRAIT & MEDIUM SCREENS (max-width: 850px)
+        --------------------------------------------------------- */
         @media (max-width: 850px) {
+            .section {
+                padding: 65px 0;
+            }
 
             .hero {
-                min-height: 650px;
+                min-height: auto;
+                padding: 50px 0 60px;
                 background:
                     linear-gradient(
                         90deg,
-                        rgba(238, 249, 252, 0.97),
-                        rgba(238, 249, 252, 0.82)
+                        rgba(238, 249, 252, 0.98),
+                        rgba(238, 249, 252, 0.88)
                     ),
                     url("medical-hero.png") center / cover no-repeat;
             }
 
             .hero-content {
                 width: 100%;
-                padding: 55px 0;
+                max-width: 100%;
+                padding: 30px 0 10px;
+            }
+
+            .hero h1 {
+                font-size: clamp(32px, 5.5vw, 50px);
+                line-height: 1.12;
             }
 
             .about-grid,
@@ -918,15 +995,23 @@
             }
 
             .about-grid {
-                gap: 45px;
+                gap: 40px;
             }
 
-            .product-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .about-image {
+                min-height: 380px;
             }
 
-            .why-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .global-content p {
+                max-width: 100%;
+            }
+
+            .contact-info {
+                max-width: 100%;
+            }
+
+            .contact-info h2 {
+                font-size: clamp(28px, 4.5vw, 38px);
             }
 
             .quick-grid {
@@ -945,55 +1030,108 @@
             .quick-item:nth-child(n+3) {
                 padding-top: 15px;
             }
+
+            .hero-trust {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 18px 12px;
+                max-width: 100%;
+            }
+
+            .trust-item:nth-child(2n) {
+                border-right: none;
+            }
         }
 
-
+        /* ---------------------------------------------------------
+           4. MOBILE PHONES & PHABLETS (max-width: 600px)
+        --------------------------------------------------------- */
         @media (max-width: 600px) {
-
             .section {
-                padding: 65px 0;
+                padding: 50px 0;
+            }
+
+            .section-title {
+                margin-bottom: 35px;
+            }
+
+            .section-title .small-title {
+                font-size: 12px;
+                letter-spacing: 1.4px;
+                margin-bottom: 8px;
+            }
+
+            .section-title h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin-bottom: 12px;
+            }
+
+            .section-title p {
+                font-size: 14px;
+                line-height: 1.55;
             }
 
             .hero {
-                min-height: 680px;
+                min-height: auto;
+                padding: 30px 0 45px;
+            }
+
+            .hero-content {
+                padding: 15px 0 0;
+            }
+
+            .hero-label {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+                margin-bottom: 14px;
+            }
+
+            .hero-label::before {
+                width: 20px;
             }
 
             .hero h1 {
-                font-size: 39px;
+                font-size: clamp(27px, 7.5vw, 38px);
+                line-height: 1.15;
+                letter-spacing: -0.5px;
+                margin-bottom: 16px;
             }
 
             .hero-description {
                 font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 24px;
             }
 
             .hero-trust {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 18px 0;
+                gap: 16px 8px;
+                margin-top: 30px;
+                padding-top: 18px;
             }
 
-            .trust-item:nth-child(2) {
-                border-right: none;
+            .trust-item {
+                gap: 8px;
+                padding-right: 8px;
             }
 
-            .trust-item:nth-child(1),
-            .trust-item:nth-child(2) {
-                padding-bottom: 10px;
+            .trust-item i {
+                font-size: 20px;
             }
 
-            .trust-item:nth-child(3),
-            .trust-item:nth-child(4) {
-                padding-top: 10px;
+            .trust-item span {
+                font-size: 10.5px;
+                line-height: 1.25;
             }
 
             .quick-grid {
                 grid-template-columns: 1fr;
             }
 
-            .quick-item,
-            .quick-item:nth-child(2) {
-                border-right: none;
+            .quick-item {
+                border-right: none !important;
                 border-bottom: 1px solid var(--border);
-                padding: 15px;
+                padding: 12px 6px !important;
+                justify-content: flex-start;
             }
 
             .quick-item:last-child {
@@ -1004,14 +1142,142 @@
             .product-grid,
             .why-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .service-card {
+                padding: 24px 20px;
+            }
+
+            .product-card {
+                padding: 22px 18px;
+                gap: 16px;
+            }
+
+            .product-icon {
+                min-width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+
+            .why-card {
+                padding: 24px 20px;
+            }
+
+            .about-content .small-title {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+            }
+
+            .about-content h2 {
+                font-size: clamp(24px, 6vw, 34px);
+                margin-bottom: 15px;
+            }
+
+            .about-image {
+                min-height: 290px;
+            }
+
+            .about-image-content {
+                inset: 15px;
+                padding: 20px 14px;
+            }
+
+            .about-image-content i {
+                font-size: 48px;
+                margin-bottom: 12px;
+            }
+
+            .about-image-content h3 {
+                font-size: 20px;
+                margin-bottom: 6px;
+            }
+
+            .about-image-content p {
+                font-size: 13px;
+                line-height: 1.45;
+                max-width: 100%;
+            }
+
+            .about-points {
+                gap: 12px;
+                margin-bottom: 22px;
+            }
+
+            .about-point strong {
+                font-size: 14px;
+            }
+
+            .about-point span {
+                font-size: 12.5px;
+            }
+
+            .global-content .small-title {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+            }
+
+            .global-content h2 {
+                font-size: clamp(24px, 6vw, 34px);
+                margin: 10px 0 14px;
+            }
+
+            .global-content p {
+                font-size: 14px;
+                margin-bottom: 20px;
             }
 
             .global-points {
                 grid-template-columns: 1fr;
+                gap: 10px;
             }
 
             .global-stats {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
+            .stat-box {
+                padding: 20px 14px;
+            }
+
+            .stat-box i {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .stat-box h3 {
+                font-size: 26px;
+            }
+
+            .stat-box p {
+                font-size: 11px;
+            }
+
+            .contact-info .small-title {
+                font-size: 12px;
+                letter-spacing: 1.3px;
+            }
+
+            .contact-info h2 {
+                font-size: clamp(24px, 6vw, 32px);
+                margin: 10px 0 14px;
+            }
+
+            .contact-info > p {
+                font-size: 14px;
+                margin-bottom: 22px;
+            }
+
+            .contact-detail {
+                gap: 12px;
+                margin-bottom: 16px;
+            }
+
+            .contact-detail i {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
             }
 
             .form-row {
@@ -1020,11 +1286,84 @@
             }
 
             .contact-form {
-                padding: 23px;
+                padding: 22px 16px;
             }
 
-            .about-image {
-                min-height: 350px;
+            .form-group {
+                margin-bottom: 14px;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                font-size: 16px; /* Prevents auto-zoom in mobile Safari */
+                padding: 12px 13px;
+            }
+
+            .back-top {
+                right: 16px;
+                bottom: 16px;
+                width: 40px;
+                height: 40px;
+                font-size: 14px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           5. COMPACT MOBILE SCREENS (max-width: 480px)
+        --------------------------------------------------------- */
+        @media (max-width: 480px) {
+            .container {
+                width: 93%;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 10px;
+            }
+
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 13px 20px;
+            }
+
+            .btn {
+                padding: 12px 20px;
+            }
+        }
+
+        /* ---------------------------------------------------------
+           6. EXTRA SMALL MOBILE (max-width: 360px)
+        --------------------------------------------------------- */
+        @media (max-width: 360px) {
+            .hero-trust {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .trust-item {
+                border-right: none;
+                border-bottom: 1px solid rgba(9, 47, 73, 0.08);
+                padding-bottom: 8px;
+            }
+
+            .trust-item:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .stat-box {
+                padding: 16px 8px;
+            }
+
+            .stat-box h3 {
+                font-size: 22px;
+            }
+
+            .contact-form {
+                padding: 18px 12px;
             }
         }
 
@@ -1190,6 +1529,588 @@
             transform: rotate(180deg);
         }
     </style>
+<style>
+
+/* =========================================================
+   FINAL RESPONSIVE SAFETY + SPACING FIX
+   Never let text/cards touch the viewport edge.
+   Original desktop alignment is preserved.
+========================================================= */
+
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Every element must be allowed to shrink inside its parent */
+*, *::before, *::after {
+    box-sizing: border-box;
+    min-width: 0;
+}
+
+img, video, iframe, svg {
+    max-width: 100%;
+}
+
+img, video {
+    height: auto;
+}
+
+p, h1, h2, h3, h4, h5, h6, a, span, strong, label, li, button {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+/* ---------------------------------------------------------
+   PAGE-WIDE CONTENT GUTTERS
+--------------------------------------------------------- */
+
+.container {
+    width: min(100% - 48px, 1280px);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section,
+.site-footer,
+footer {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   HERO — KEEP LEFT ALIGNMENT, GIVE IT ROOM
+--------------------------------------------------------- */
+
+.hero,
+.hero-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.hero .container,
+.hero-section .container {
+    width: min(100% - 48px, 1280px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-content,
+.hero-text {
+    min-width: 0;
+    max-width: 720px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.hero h1,
+.hero-title {
+    max-width: 720px;
+    margin-bottom: 22px;
+    line-height: 1.08;
+    overflow-wrap: normal;
+}
+
+.hero p,
+.hero-description {
+    max-width: 650px;
+    margin-bottom: 30px;
+    line-height: 1.75;
+}
+
+.hero-buttons,
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    margin-top: 8px;
+}
+
+.hero-buttons .btn,
+.hero-actions .btn {
+    flex: 0 0 auto;
+    min-height: 48px;
+    padding: 13px 22px;
+}
+
+/* ---------------------------------------------------------
+   ALL COMMON GRIDS / CARDS
+--------------------------------------------------------- */
+
+.about-grid,
+.services-grid,
+.products-grid,
+.categories-grid,
+.why-grid,
+.contact-grid,
+.stats-grid {
+    width: 100%;
+    min-width: 0;
+}
+
+.about-content,
+.about-image,
+.service-card,
+.product-card,
+.category-card,
+.why-card,
+.contact-card,
+.form-card,
+.quick-item {
+    min-width: 0;
+}
+
+.service-card,
+.product-card,
+.category-card,
+.why-card,
+.contact-card {
+    padding: 26px;
+}
+
+.service-card p,
+.product-card p,
+.category-card p,
+.why-card p,
+.contact-card p {
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------
+   NAVBAR
+--------------------------------------------------------- */
+
+nav {
+    width: 100%;
+    max-width: 100%;
+}
+
+nav > div {
+    min-width: 0;
+}
+
+nav svg {
+    max-width: 190px;
+}
+
+/* ---------------------------------------------------------
+   FOOTER
+--------------------------------------------------------- */
+
+footer .container,
+.site-footer > div {
+    min-width: 0;
+}
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container {
+        width: min(100% - 40px, 960px);
+    }
+
+    .hero-content,
+    .hero-text {
+        max-width: 650px;
+    }
+
+    .hero h1,
+    .hero-title {
+        font-size: clamp(38px, 5.5vw, 60px);
+    }
+
+    .hero p,
+    .hero-description {
+        max-width: 600px;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card {
+        padding: 22px;
+    }
+}
+
+/* ---------------------------------------------------------
+   MOBILE — 768px
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* NEVER CENTER THE HOME TEXT */
+    .hero-content,
+    .hero-text {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 22px 0 28px;
+        text-align: left;
+    }
+
+    .hero h1,
+    .hero-title {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(32px, 8vw, 48px);
+        line-height: 1.12;
+        margin: 0 0 18px;
+    }
+
+    .hero p,
+    .hero-description {
+        width: 100%;
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.75;
+        margin: 0 0 26px;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        margin: 0;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        margin: 0;
+    }
+
+    /* Sections */
+    .section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section > .container {
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* Make every grid safe on narrow screens */
+    .about-grid,
+    .services-grid,
+    .products-grid,
+    .categories-grid,
+    .why-grid,
+    .contact-grid {
+        width: 100%;
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .stats-grid {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 22px 18px;
+        margin: 0;
+    }
+
+    .about-content,
+    .about-image,
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        min-width: 0;
+    }
+
+    /* Images never create horizontal overflow */
+    .about-image img,
+    .service-card img,
+    .product-card img,
+    .category-card img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Contact inputs */
+    input,
+    textarea,
+    select {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    textarea {
+        min-height: 140px;
+    }
+
+    .form-submit {
+        width: 100%;
+        max-width: 100%;
+        min-height: 50px;
+        margin-top: 8px;
+    }
+
+    /* Footer */
+    footer .mx-auto,
+    .site-footer .mx-auto {
+        width: calc(100% - 32px);
+        max-width: none;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    /* Prevent giant SVG/logo from forcing width */
+    nav svg,
+    footer svg {
+        width: auto;
+        max-width: 170px;
+    }
+}
+
+/* ---------------------------------------------------------
+   SMALL PHONES — 480px
+--------------------------------------------------------- */
+
+@media (max-width: 480px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container,
+    .section > .container {
+        width: calc(100% - 28px);
+        margin-left: 14px;
+        margin-right: 14px;
+    }
+
+    .hero-content,
+    .hero-text {
+        padding-top: 18px;
+        padding-bottom: 24px;
+    }
+
+    .hero h1,
+    .hero-title {
+        font-size: clamp(29px, 9vw, 40px);
+        line-height: 1.13;
+        margin-bottom: 16px;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 22px;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        gap: 10px;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        min-height: 48px;
+        padding: 12px 16px;
+    }
+
+    .section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .section-title {
+        margin-bottom: 12px;
+    }
+
+    .section-subtitle,
+    .section-description {
+        margin-bottom: 28px;
+        line-height: 1.7;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        padding: 20px 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px;
+    }
+
+    nav svg {
+        max-width: 145px;
+    }
+}
+
+/* ---------------------------------------------------------
+   VERY SMALL PHONES — 363px AND BELOW
+   This is the specific case causing the sticking.
+--------------------------------------------------------- */
+
+@media (max-width: 363px) {
+
+    .container,
+    .hero .container,
+    .hero-section .container,
+    .section > .container {
+        width: calc(100% - 24px) !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+
+    .hero-content,
+    .hero-text {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 0 22px !important;
+    }
+
+    .hero h1,
+    .hero-title {
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+        margin-bottom: 15px !important;
+    }
+
+    .hero p,
+    .hero-description {
+        font-size: 13.5px !important;
+        line-height: 1.7 !important;
+        margin-bottom: 20px !important;
+    }
+
+    .hero-buttons,
+    .hero-actions {
+        width: 100% !important;
+        gap: 9px !important;
+    }
+
+    .hero-buttons .btn,
+    .hero-actions .btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        padding: 11px 14px !important;
+        white-space: normal !important;
+    }
+
+    .service-card,
+    .product-card,
+    .category-card,
+    .why-card,
+    .contact-card,
+    .form-card {
+        width: 100% !important;
+        padding: 18px 14px !important;
+    }
+
+    .service-card *,
+    .product-card *,
+    .category-card *,
+    .why-card *,
+    .contact-card *,
+    .form-card * {
+        max-width: 100%;
+    }
+
+    input,
+    textarea,
+    select,
+    button {
+        max-width: 100% !important;
+    }
+
+    nav svg {
+        max-width: 130px !important;
+    }
+
+    nav .px-3 {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
+    footer .mx-auto,
+    .site-footer .mx-auto {
+        width: calc(100% - 24px) !important;
+        margin-left: 12px !important;
+        margin-right: 12px !important;
+    }
+}
+
+/* ---------------------------------------------------------
+   SAFETY: elements with fixed widths must never overflow
+--------------------------------------------------------- */
+
+@media (max-width: 768px) {
+    [style*="width"],
+    [style*="min-width"] {
+        max-width: 100%;
+    }
+
+    pre,
+    code {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+    }
+
+    .flex,
+    .grid {
+        min-width: 0;
+    }
+}
+
+</style>
 </head>
 
 
