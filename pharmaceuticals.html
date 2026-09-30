@@ -839,7 +839,7 @@ html body { padding-top:80px !important; } .page-hero { margin-top:0 !important;
                                 <span>Facebook</span>
                             </a>
 
-                            <a href="https://www.instagram.com/ " class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
+                            <a href="https://www.instagram.com/bepharma.in " class="flex items-center gap-3 px-4 py-3 rounded-lg text-navy hover:bg-mist hover:text-brand transition">
                                 <i class="fa-brands fa-instagram text-brand text-lg w-5"></i>
                                 <span>Instagram</span>
                             </a>
@@ -2005,7 +2005,7 @@ html body { padding-top:80px !important; } .page-hero { margin-top:0 !important;
 
 
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/bepharma.in"
             data-social="instagram"
             target="_blank"
             rel="noopener noreferrer"
@@ -2700,7 +2700,7 @@ if (menuBtn && mobileMenu && menuIcon) {
     document.querySelectorAll(".mobile-sub-link").forEach(link => { link.className = "block px-4 py-2.5 rounded-lg text-navy hover:bg-white hover:text-brand transition"; });
     mobileMenu.querySelectorAll("a").forEach(link => { link.addEventListener("click", () => { mobileMenu.classList.add("hidden"); menuIcon.classList.remove("fa-xmark"); menuIcon.classList.add("fa-bars"); }); });
 }
-const SOCIAL_LINKS = { facebook:"https://www.facebook.com/bepharma.in", instagram:"https://www.instagram.com/YOUR_PAGE", linkedin:"https://www.linkedin.com/company/YOUR_PAGE", youtube:"https://www.youtube.com/@YOUR_PAGE", whatsapp:"919973100210" };
+const SOCIAL_LINKS = { facebook:"https://www.facebook.com/bepharma.in", instagram:"https://www.instagram.com/bepharma.in", linkedin:"https://www.linkedin.com/company/YOUR_PAGE", youtube:"https://www.youtube.com/@YOUR_PAGE", whatsapp:"919973100210" };
 const WHATSAPP_MESSAGE = "Hello Be Pharma Traders, I would like to know more about your products.";
 document.querySelectorAll("[data-social]").forEach(function(link) { const key=link.dataset.social, value=SOCIAL_LINKS[key]; if(!value || /YOUR_PAGE|X{4,}/.test(value)){ console.warn("Social link not set yet: "+key); return; } link.href=key==="whatsapp" ? "https://wa.me/"+value+"?text="+encodeURIComponent(WHATSAPP_MESSAGE) : value; link.target="_blank"; link.rel="noopener noreferrer"; });
 document.addEventListener("DOMContentLoaded", function(){ const dropdowns=document.querySelectorAll(".dropdown"); dropdowns.forEach(function(dropdown){ const button=dropdown.querySelector(":scope > a"); if(!button)return; button.addEventListener("click",function(e){e.preventDefault(); dropdowns.forEach(function(other){if(other!==dropdown)other.classList.remove("active");}); dropdown.classList.toggle("active");}); }); document.addEventListener("click",function(e){if(!e.target.closest(".dropdown"))dropdowns.forEach(function(d){d.classList.remove("active");});}); });
